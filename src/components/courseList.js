@@ -7,7 +7,7 @@ import Card from '../components/card';
 const CourseList = () => {
   const cardsData = [
     {
-      imageUrl: process.env.PUBLIC_URL + '/DevOps.jpg',
+      imageUrl: '/DevOps.jpg',
       imageAlt: 'DevOps',
       title: 'DeVOps',
       description: '',
@@ -17,7 +17,7 @@ const CourseList = () => {
       syllabusUrl: '/Syllabus/DevOps'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + '/cplusplus.jpeg',
+      imageUrl: '/cplusplus.jpeg',
       imageAlt: 'C++',
       title: 'C++',
       description: '',
@@ -27,7 +27,7 @@ const CourseList = () => {
       syllabusUrl: '/Syllabus/CPlusPlusSyllabus'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + '/AWSCloudPractitioner.jpeg',
+      imageUrl:'/AWSCloudPractitioner.jpeg',
       imageAlt: 'AWS-Cloud-Practitioner',
       title: 'AWS Cloud Practitioner',
       //description: 'Coming Soon',
@@ -37,7 +37,7 @@ const CourseList = () => {
       googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + '/mern.jpg',
+      imageUrl: '/mern.jpg',
       imageAlt: 'mern',
       title: 'Full Stack MERN',
       //description: 'Coming Soon',
@@ -47,7 +47,7 @@ const CourseList = () => {
       googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + '/dotnet.jpg',
+      imageUrl:'/dotnet.jpg',
       imageAlt: 'dotnet',
       title: 'ASP .NET',
       //description: 'Coming Soon',
@@ -56,7 +56,7 @@ const CourseList = () => {
       googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + '/datascience.jpg',
+      imageUrl: '/datascience.jpg',
       imageAlt: 'datascience',
       title: 'Data Analytics and ML',
       //description: 'Coming Soon',
@@ -67,7 +67,7 @@ const CourseList = () => {
     },
 
     {
-      imageUrl: process.env.PUBLIC_URL + '/AWS-Developer-Associate-Courses.png',
+      imageUrl: '/AWS-Developer-Associate-Courses.png',
       imageAlt: 'AWS-Developer Associate',
       title: 'AWS-Developer-Associate',
       //description: 'Coming Soon',
@@ -78,7 +78,7 @@ const CourseList = () => {
     },
     
     {
-      imageUrl: process.env.PUBLIC_URL + '/AWS_solution_associate.png',
+      imageUrl: '/AWS_solution_associate.png',
       imageAlt: 'AWS-Solution-Associate',
       title: 'AWS-Solution-Associate',
       //description: 'Coming Soon',
@@ -89,7 +89,7 @@ const CourseList = () => {
     },
   
     {
-      imageUrl: process.env.PUBLIC_URL + '/rhel.jpg',
+      imageUrl:'/rhel.jpg',
       imageAlt: 'rhel',
       title: 'RHEL',
       //description: 'Coming Soon',
@@ -100,7 +100,7 @@ const CourseList = () => {
     
    
     {
-      imageUrl: process.env.PUBLIC_URL + '/digitalmarketing.jpg',
+      imageUrl: '/digitalmarketing.jpg',
       imageAlt: 'digitalmarketing',
       title: 'Digital Marketing',
       //description: 'Coming Soon',
@@ -110,7 +110,7 @@ const CourseList = () => {
       googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + '/ethical.jpeg',
+      imageUrl: '/ethical.jpeg',
       imageAlt: 'EthicalHacking',
       title: 'Ethical Hacking',
       //description: 'Coming Soon',
@@ -120,7 +120,7 @@ const CourseList = () => {
       googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link' 
        },
          {
-          imageUrl: process.env.PUBLIC_URL + '/computerbasics.png',
+          imageUrl: '/computerbasics.png',
           imageAlt: 'computerbasics',
           title: 'Computer Basics',
           //description: 'Coming Soon',
@@ -130,7 +130,7 @@ const CourseList = () => {
           googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link' 
            },
            {
-            imageUrl: process.env.PUBLIC_URL + '/redhatopenshiftdevI.png',
+            imageUrl: '/redhatopenshiftdevI.png',
             imageAlt: 'redhatopen',
             title: 'Redhat Openshift Dev-I',
             //description: 'Coming Soon',
@@ -140,7 +140,7 @@ const CourseList = () => {
             googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link' 
              },
       {
-      imageUrl: process.env.PUBLIC_URL + '/java.jpg',
+      imageUrl:'/java.jpg',
       imageAlt: 'java',
       title: 'Java',
       //description: 'Coming Soon',
@@ -151,7 +151,7 @@ const CourseList = () => {
     
     
     {
-      imageUrl: process.env.PUBLIC_URL + '/django.png',
+      imageUrl: '/django.png',
       imageAlt: 'django',
       title: 'Python with Django',
       //description: 'Coming Soon',
@@ -161,7 +161,7 @@ const CourseList = () => {
       googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + '/laravel.png',
+      imageUrl: '/laravel.png',
       imageAlt: 'laravel',
       title: 'Laravel',
       //description: 'Coming Soon',
@@ -170,7 +170,7 @@ const CourseList = () => {
       googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + '/php.png',
+      imageUrl: '/php.png',
       imageAlt: 'php',
       title: 'PHP MySQL',
       //description: 'Coming Soon',
@@ -180,7 +180,7 @@ const CourseList = () => {
     },
 
     {
-      imageUrl: process.env.PUBLIC_URL + '/aws.jpg',
+      imageUrl: '/aws.jpg',
       imageAlt: 'Amazon AWS',
       title: 'AWS',
       //description: 'Coming Soon',
@@ -190,7 +190,7 @@ const CourseList = () => {
       googleFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link'
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/BasicComputerCourse.jpg",
+      imageUrl: "/BasicComputerCourse.jpg",
       imageAlt: "Basic Computer Course",
       title: "Basic Computer Course",
       description: "",
@@ -201,7 +201,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/BasicComputerCourse",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/OpenShift.jpg",
+      imageUrl: "/OpenShift.jpg",
       imageAlt: "OpenShift",
       title: "Open Shift",
       description: "",
@@ -211,7 +211,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/OpenShiftSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/C++.jpg",
+      imageUrl: "/C++.jpg",
       imageAlt: "C++",
       title: "C++",
       description: "",
@@ -222,7 +222,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/CPlusPlusSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/OpenShiftAdministrator.jpg",
+      imageUrl: "/OpenShiftAdministrator.jpg",
       imageAlt: "OpenShiftAdministrator",
       title: "Open Shift Administrator",
       description: "",
@@ -233,7 +233,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/OpenShiftAdministratorSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/python.jpg",
+      imageUrl: "/python.jpg",
       imageAlt: "python",
       title: "Python",
       description: "",
@@ -244,7 +244,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/PythonSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/QualityAssuarance.jpg",
+      imageUrl: "/QualityAssuarance.jpg",
       imageAlt: "QualityAssuarance",
       title: "Quality Assuarance",
       description: "",
@@ -255,7 +255,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/QualityAssuranceSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/WebDesign.jpg",
+      imageUrl: "/WebDesign.jpg",
       imageAlt: "Web Design",
       title: "Web Design",
       description: "",
@@ -266,7 +266,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/WebDesignSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/VideoEditing.jpg",
+      imageUrl: "/VideoEditing.jpg",
       imageAlt: "VideoEditing",
       title: "Video Editing",
       description: "",
@@ -277,7 +277,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/VideoSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/WebDevelopment.jpg",
+      imageUrl: "/WebDevelopment.jpg",
       imageAlt: "Web Development",
       title: "Web Development",
       description: "",
@@ -299,7 +299,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/DevOpsMasterSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/OracleDBA.jpg",
+      imageUrl: "/OracleDBA.jpg",
       imageAlt: "Oracle DBA",
       title: "Oracle DBA",
       description: "",
@@ -310,7 +310,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/OracleDBASyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/CProgramming.jpg",
+      imageUrl: "/CProgramming.jpg",
       imageAlt: "C Programming",
       title: "C Programming",
       description: "",
@@ -321,7 +321,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/CProgrammingSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/GraphicDesign.jpg",
+      imageUrl: "/GraphicDesign.jpg",
       imageAlt: "Graphic Design",
       title: "Graphic Design",
       description: "",
