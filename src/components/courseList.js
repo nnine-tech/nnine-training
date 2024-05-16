@@ -288,7 +288,7 @@ const CourseList = () => {
       syllabusUrl: "/Syllabus/WebdevelopmentSyllabus",
     },
     {
-      imageUrl: process.env.PUBLIC_URL + "/DevOpsMaster.jpg",
+      imageUrl: "/DevOpsMaster.jpg",
       imageAlt: "DevOps Master",
       title: "DevOps Master",
       description: "",
