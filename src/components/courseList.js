@@ -1,6 +1,7 @@
 // CardList.js
 import React from 'react';
-// import Card from '../components/card';
+import Card from '../components/card';
+
 
 
 const CourseList = () => {
@@ -335,7 +336,7 @@ const CourseList = () => {
 
   return (
     <>
-    {/* <NavBar/>
+    {/* <NavBar/> */}
     <br></br>
     <br></br>
     <br></br>
@@ -344,7 +345,7 @@ const CourseList = () => {
       {cardsData.map((card, index) => (
         <Card key={index} {...card} />
       ))}
-    </div> */}
+    </div>
     </>
   );
 };
