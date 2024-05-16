@@ -5,11 +5,7 @@ import Navbar from '../components/Navbar';
 function About() {
   return (
     <>
-    <Navbar/>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+    <br />
     <div className="bg-blue-300 min-h-screen p-8">
       <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
         <h1 className="text-blue-900 text-3xl font-bold mb-4 text-justify">About N9 Solution</h1>
