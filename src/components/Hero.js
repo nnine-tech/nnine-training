@@ -1,8 +1,8 @@
+'use client';
 import React from "react";
 
 const Hero = () => {
   const handleEnrollNowClick = () => {
-    // this.open('https://forms.gle/in86LKYEFJRimao1A', '_blank');
     if (typeof window !== "undefined") {
       window.open("https://forms.gle/in86LKYEFJRimao1A", "_blank");
     }
@@ -26,7 +26,7 @@ const Hero = () => {
                 2081.
               </p>
               <button
-                onClick={handleEnrollNowClick()}
+                onClick={handleEnrollNowClick}
                 className="hover:bg-red-200 bg-white text-gray-800 font-bold rounded-full py-4 px-8"
               >
                 Enroll Now
