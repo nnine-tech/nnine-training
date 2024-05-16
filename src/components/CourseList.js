@@ -1,6 +1,6 @@
 // CardList.js
 import React from "react";
-import Card from "./card";
+import Card from "./Card";
 
 const CourseList = () => {
   const cardsData = [
@@ -13,7 +13,7 @@ const CourseList = () => {
       courseDuration: "2 Months",
       googleFormUrl:
         "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link",
-      syllabusUrl: "/Syllabus/DevOps",
+      syllabusUrl: "/Syllabus/DevOpsSyllabus",
     },
     {
       imageUrl: "/cplusplus.jpeg",
