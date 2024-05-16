@@ -1,5 +1,6 @@
-'use client';
+"use client";
 import React from "react";
+import Navbar from "./Navbar";
 
 const Hero = () => {
   const handleEnrollNowClick = () => {
@@ -9,10 +10,11 @@ const Hero = () => {
   };
 
   return (
-    <>
+    <div className="h-screen w-full">
+      {/* <Navbar /> */}
       <br />
       <div
-        className="w-full h-screen text-white"
+        className="w-full h-full text-white flex items-center justify-center"
         style={{ background: "#5184d6" }}
       >
         <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col lg:flex-row">
@@ -35,7 +37,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
