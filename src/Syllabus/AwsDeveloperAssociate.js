@@ -1,10 +1,10 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
+import Navbar from "../components/Navbar";
 
 const AWSCertifiedDeveloper = () => {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <br />
       <br />
       <br />

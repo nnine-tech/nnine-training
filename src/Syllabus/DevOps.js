@@ -1,11 +1,11 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
+import Navbar from "../components/Navbar";
 // import Footer from '../components/Footer';
 
 const DevOpsSyllabus = () => {
   return (
     <>
-      <NavBar />
+      <Navbar />
       <br />
       <br />
       <br />
@@ -62,7 +62,6 @@ const DevOpsSyllabus = () => {
               <li>Tools for Orchestration</li>
               <li>Source Code Management</li>
             </ul>
-
             <h2 className="text-blue-500 font-bold mb-4">Git Basics</h2>
             <h3 className="text-blue-500 font-bold mb-4">
               The Basics of Using Git [1 Hr 30 Min]
@@ -136,7 +135,6 @@ const DevOpsSyllabus = () => {
                 </ul>
               </li>
             </ul>
-
             <h2 className="text-blue-500 font-bold mb-4">
               Build Automation and Continuous Integration
             </h2>
@@ -155,7 +153,6 @@ const DevOpsSyllabus = () => {
               <li>HOL: Creating Build Automation with Gradle</li>
               <li>HOL: Automate AMI image creation with Packer</li>
             </ul>
-
             <h3 className="text-blue-500 font-bold mb-4">
               Continuous Integration & Jenkins Pipelines [3 Hr]
             </h3>
@@ -198,7 +195,6 @@ const DevOpsSyllabus = () => {
                 <li>Using the Jenkins CLI</li>
               </ul>
             </ul>
-
             <h2 className="text-blue-500 font-bold mb-4">
               Continuous Delivery and Continuous Deployment [3 Hr]
             </h2>
@@ -222,7 +218,6 @@ const DevOpsSyllabus = () => {
                 for AWS
               </li>
             </ul>
-
             <h2 className="text-blue-500 font-bold mb-4">
               Infrastructure Automation
             </h2>
