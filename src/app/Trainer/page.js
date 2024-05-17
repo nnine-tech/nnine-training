@@ -1,9 +1,7 @@
-
-import TrainersPage from "@/components/TrainersPage";
 import React from "react";
 
 const trainer = () => {
-  return <div>This is trsiner page</div>;
+  return <div>This is Trainer Page</div>;
 };
 
 export default trainer;
