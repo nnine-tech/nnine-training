@@ -1,6 +1,6 @@
 // CardList.js
 import React from "react";
-import Card from "./card";
+import Card from "./Card";
 
 const CourseList = () => {
   const cardsData = [
