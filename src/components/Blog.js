@@ -1,5 +1,6 @@
 import React from 'react';
 // import heroImg from '../images/web-dev.svg'; // You don't need this import
+import Footer from './Footer';  
 
 const Blog = () => {
     return (
@@ -28,11 +29,12 @@ const Blog = () => {
                             </div>
                         </div>
                         <div className="flex lg:justify-end w-full lg:w-1/2" data-aos="fade-up" data-aos-delay="700">
-                            <img src="/web-dev.svg" alt="card img" className="rounded-t float-right duration-1000 w-full"  />
+                            {/* <img src="/" alt="/" className="rounded-t float-right duration-1000 w-full"  /> */}
                         </div>
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }
