@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 
 const TrainerProfile = (props) => {
@@ -10,6 +11,7 @@ const TrainerProfile = (props) => {
   const truncatedDescription = props.description.split('\n').slice(0, 4).join('\n');
 
   return (
+    <>
     <div className="max-w-xs rounded overflow-hidden shadow-lg">
       <img
         src={props.imageUrl}
@@ -38,6 +40,7 @@ const TrainerProfile = (props) => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 
