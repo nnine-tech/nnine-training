@@ -1,7 +1,10 @@
 import React from "react";
+import TrainersPage from "@/components/TrainersPage";
 
 const trainer = () => {
-  return <div>This is Trainer Page</div>;
+  return <div>
+    <TrainersPage />
+  </div>;
 };
 
 export default trainer;
