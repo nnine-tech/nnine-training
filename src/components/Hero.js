@@ -13,6 +13,8 @@ const Hero = () => {
     <div className="h-screen w-full">
       {/* <Navbar /> */}
       <br />
+      <br />
+      <br />
       <div
         className="w-full h-full text-white flex items-center justify-center"
         style={{ background: "#5184d6" }}
