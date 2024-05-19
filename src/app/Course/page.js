@@ -1,13 +1,15 @@
-import CourseList from "@/components/CourseList";
-import Footer from "@/components/Footer";
-import React from "react";
+import React from 'react';
+import CourseMarkdown from '../src/app/markdown/CourseMarkdown';
+import Footer from '@/components/Footer';
 
-const Course = () => {
+const CoursePage = () => {
   return (
     <div>
-      <CourseList />
-      <Footer />
+      <h1>Courses</h1>
+      <CourseMarkdown />
+      <Footer/>
     </div>
   );
 };
-export default Course;
+
+export default CoursePage;
