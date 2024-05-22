@@ -1,7 +1,5 @@
 import React from 'react';
-import CourseMarkdown from '../src/app/markdown/CourseMarkdown';
 import Footer from '@/components/Footer';
-
 const CoursePage = () => {
   return (
     <div>
