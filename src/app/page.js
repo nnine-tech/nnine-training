@@ -4,7 +4,6 @@
 import { useEffect, useState } from 'react';
 import Hero from "../components/Hero";
 import CourseList from "../components/CourseList";
-import Footer from "@/components/Footer";
 import { fetchMarkdownFile } from '../utils/fetchMarkdown';
 
 export default function Home() {
@@ -28,7 +27,7 @@ export default function Home() {
     <div>
       <Hero />
       <CourseList courseData={courseData} />
-      <Footer />
+      
     </div>
   );
 }
