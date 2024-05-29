@@ -1,7 +1,5 @@
 // Contact.js
 import React from "react";
-import Navbar from "../components/Navbar";
-// import Footer from '../components/Footer';
 import { useDocTitle } from "@/components/CustomHook"; // Assuming this path is correct
 
 const Contact = () => {
@@ -60,7 +58,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
   );
 };
