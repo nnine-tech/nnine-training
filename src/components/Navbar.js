@@ -65,22 +65,8 @@ const NavBar = () => {
               isOpen ? "block" : "hidden"
             } absolute top-16 right-0 bg-white lg:relative lg:bg-transparent lg:top-auto lg:right-auto lg:w-auto`}
           >
-            <li>
-              <Link
-                href="/Contact"
-                className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
-              >
-                Contact Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/About"
-                className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
-              >
-                About
-              </Link>
-            </li>
+          
+    
             <li>
               <Link
                 href="/Popularcourses"
@@ -103,6 +89,22 @@ const NavBar = () => {
                 className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
               >
                 Blogs
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/About"
+                className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Contact"
+                className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+              >
+                Contact Us
               </Link>
             </li>
           </ul>
