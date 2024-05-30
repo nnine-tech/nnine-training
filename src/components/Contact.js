@@ -25,7 +25,7 @@ const Contact = () => {
                 <i className="fas fa-map-marker-alt text-blue-900 mr-2"></i>
                 <div>
                   <h2 className="text-xl font-bold">Office Address</h2>
-                  <p className="text-gray-700">Chhabahil, Kathmandu, Nepal</p>
+                  <p className="text-gray-700">Chabahil, Kathmandu, Nepal</p>
                 </div>
               </div>
               <div className="flex items-center mb-4">
