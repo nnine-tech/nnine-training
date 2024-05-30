@@ -20,7 +20,8 @@ const Hero = () => {
   };
 
   return (
-    <div className="h-screen w-full relative overflow-hidden">
+    <>
+        <div className="h-screen w-full relative overflow-hidden">
       {isSmallDevice ? (
         <div className="bg-[#2670C6] h-full flex items-center justify-center">
           <div className="text-center">
@@ -88,6 +89,7 @@ const Hero = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 export default Hero;
