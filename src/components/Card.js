@@ -14,11 +14,12 @@ const Card = (props) => {
 
   // Function to handle viewing syllabus
   const handleViewSyllabus = () => {
-    const pdfUrl = props.syllabusPdfUrl; // Get the syllabus PDF URL
-    const width = screen.availWidth;
-    const height = screen.availHeight;
-    const windowFeatures = `width=${width}, height=${height}`;
-    window.open(pdfUrl, "_blank", windowFeatures);
+    router.push(`${props.syllabusUrl}`);
+    // const pdfUrl = props.syllabusPdfUrl; // Get the syllabus PDF URL
+    // const width = screen.availWidth;
+    // const height = screen.availHeight;
+    // const windowFeatures = `width=${width}, height=${height}`;
+    // window.open(pdfUrl, windowFeatures);
     // Navigate user to the syllabus page
     // router.push(`/Popularcourses/${course.id}/syllabus`); // Use router.push for navigation
   };
