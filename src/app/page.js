@@ -25,8 +25,9 @@ export default function Home() {
 
   return (
     <div>
+      {/* <br />
       <br />
-      <br />
+      <br /> */}
       <br />
       <Hero />
       <CourseList courseData={courseData} />

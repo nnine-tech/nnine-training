@@ -20,9 +20,7 @@ const NavBar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 ${
-        !top && "bg-white shadow-lg"
-      }`}
+      className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 bg-white shadow-lg`}
     >
       <div className="flex flex-row justify-between items-center py-1">
         <div className="flex flex-row justify-start md:px-12 md:mx-12 items-center text-center font-semibold">
@@ -65,8 +63,6 @@ const NavBar = () => {
               isOpen ? "block" : "hidden"
             } absolute top-16 right-0 bg-white lg:relative lg:bg-transparent lg:top-auto lg:right-auto lg:w-auto`}
           >
-          
-    
             <li>
               <Link
                 href="/Popularcourses"

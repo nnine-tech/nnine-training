@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../components/Navbar/NavBar";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 
 const BasicComputerCourse = () => {
   return (
