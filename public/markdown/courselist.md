@@ -40,6 +40,7 @@ courses:
     title: "ASP .NET"
     courseDuration: "2.5 Months"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
+    syllabusUrl: "/Syllabus/ASPDotNet"
     syllabusPdfUrl: "/Syllabus/Syllabus of ASP NET.pdf"
 
   - imageUrl: "/datascience.jpg"
