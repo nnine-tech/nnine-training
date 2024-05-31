@@ -1,10 +1,10 @@
 // pages/index.js
 "use client"; // This marks the file as a client component
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import CourseList from "../components/CourseList";
-import { fetchMarkdownFile } from '../utils/fetchMarkdown';
+import { fetchMarkdownFile } from "../utils/fetchMarkdown";
 
 export default function Home() {
   const [courseData, setCourseData] = useState([]);
@@ -12,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchMarkdownFile('/markdown/courselist.md');
+        const data = await fetchMarkdownFile("/markdown/courselist.md");
         setCourseData(data);
       } catch (error) {
         console.error("Error fetching markdown file:", error);
@@ -25,9 +25,11 @@ export default function Home() {
 
   return (
     <div>
+      <br />
+      <br />
+      <br />
       <Hero />
       <CourseList courseData={courseData} />
-      
     </div>
   );
 }

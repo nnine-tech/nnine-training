@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
+import course from "@/app/Popularcourses/page";
 
 const Card = (props) => {
   const router = useRouter(); // Use useRouter hook
@@ -13,8 +14,13 @@ const Card = (props) => {
 
   // Function to handle viewing syllabus
   const handleViewSyllabus = () => {
+    const pdfUrl = props.syllabusPdfUrl; // Get the syllabus PDF URL
+    const width = screen.availWidth;
+    const height = screen.availHeight;
+    const windowFeatures = `width=${width}, height=${height}`;
+    window.open(pdfUrl, "_blank", windowFeatures);
     // Navigate user to the syllabus page
-    router.push(`${props.syllabusUrl}`); // Use router.push for navigation
+    // router.push(`/Popularcourses/${course.id}/syllabus`); // Use router.push for navigation
   };
 
   return (
