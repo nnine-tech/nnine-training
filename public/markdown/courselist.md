@@ -144,5 +144,6 @@ courses:
     title: "Open Shift"
     courseDuration: "2 Months"
     syllabusPdfUrl: "/Syllabus/Red Hat Certified OpenShift Administrator exam.pdf"
+    syllabusUrl: "/Syllabus/RedHatAdministrator"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 ---
