@@ -1,12 +1,8 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
-import Footer from "../../components/Footer";
 
 const DigitalMarketingSyllabus = () => {
   return (
     <>
-      <NavBar />
-      <br />
       <br />
       <br />
       <br />
