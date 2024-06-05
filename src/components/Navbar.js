@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Banner from "@/components/Ads";
 
 const NavBar = () => {
   const [top, setTop] = useState(true);
@@ -9,7 +10,6 @@ const NavBar = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-
   useEffect(() => {
     const scrollHandler = () => {
       window.pageYOffset > 10 ? setTop(false) : setTop(true);
@@ -19,9 +19,12 @@ const NavBar = () => {
   }, []);
 
   return (
+    <>
+    
     <nav
       className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 bg-white shadow-lg`}
     >
+      <Banner />
       <div className="flex flex-row justify-between items-center py-1">
         <div className="flex flex-row justify-start md:px-12 md:mx-12 items-center text-center font-semibold">
           <Link href="/">
@@ -115,6 +118,7 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 

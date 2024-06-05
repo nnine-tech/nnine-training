@@ -66,7 +66,7 @@ const Hero = () => {
                   <div className="flex justify-center items-center">
                     <ReactTyped
                       className="md:text-5xl sm:text-4xl text-xl text-[#1E4FBC] font-bold md:pl-4 pl-2"
-                      strings={[" Welcome to Nnine Training center"]}
+                      strings={["Welcome to Nnine Training Center"]}
                       typeSpeed={110}
                       backSpeed={80}
                       loop

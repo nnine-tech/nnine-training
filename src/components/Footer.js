@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -137,16 +139,7 @@ const Footer = () => {
                       target="_blank"
                       className="flex justify-center items-center transition duration-150 ease-in-out"
                     >
-                      <svg
-                        className="w-8 h-8"
-                        viewBox="0 0 448 512"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill="currentColor"
-                          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9-51.3-114.9-114.9-114.9zm0 190c-41.6 0-75.1-33.5-75.1-75.1s33.5-75.1 75.1-75.1 75.1 33.5 75.1 75.1-33.5 75.1-75.1 75.1zm146.4-194.3c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-.2-54.5-4.9-102.7-48.6-146.4S378.5 5.7 324 5.5c-54.6-.2-109.3-.2-163.9 0C106.3 5.7 58.1 10.4 14.4 54.1-30 97.7-34.7 145.9-34.9 200.4c-.2 54.6-.2 109.3 0 163.9.2 54.5 4.9 102.7 48.6 146.4s91.9 48.4 146.4 48.6c54.6.2 109.3.2 163.9 0 54.5-.2 102.7-4.9 146.4-48.6s48.4-91.9 48.6-146.4c.2-54.6.2-109.3 0-163.9zm-48.6 219.3c-7.8 20.1-23.3 35.6-43.4 43.4-30.1 11.9-101.5 9.2-135.1 9.2s-105-.3-135.1-9.2c-20.1-7.8-35.6-23.3-43.4-43.4-11.9-30.1-9.2-101.5-9.2-135.1s-2.7-105 9.2-135.1c7.8-20.1 23.3-35.6 43.4-43.4 30.1-11.9 101.5-9.2 135.1-9.2s105-.3 135.1 9.2c20.1 7.8 35.6 23.3 43.4 43.4 11.9 30.1 9.2 101.5 9.2 135.1s2.7 105-9.2 135.1z"
-                        />
-                      </svg>
+                      <FontAwesomeIcon icon={faInstagram} className="w-8 h-8" />
                     </Link>
                   </li>
                 </ul>
@@ -156,11 +149,10 @@ const Footer = () => {
 
           <div className="flex flex-wrap items-center md:justify-between justify-center mx-auto px-4">
             <div className="w-full md:w-4/12 px-4 mx-auto text-center py-2">
-              <div className="text-sm text-gray-200 font-semibold py-1">
+              <div className="text-sm font-semibold py-1">
                 Copyright &copy; {new Date().getFullYear()}
-                {"  "}
-                <Link href="#top" className=" hover:text-gray-900">
-                  NNINE Solutions
+                <Link href="/" className=" hover:text-gray-900">
+                  Nnine Solutions
                 </Link>
                 . All rights reserved.
               </div>
