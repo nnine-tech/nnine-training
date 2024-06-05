@@ -5,6 +5,8 @@ import Footer from './Footer';
 const Blog = () => {
     return (
         <>
+        <br />
+        <br />
             <div className="hero" id='hero'>
                 <div className="m-auto overflow-hidden mx-4 mt-8 lg:mt-4 p-2 md:p-12 h-5/6" data-aos="zoom-in">
                     <div className="flex flex-col lg:flex-row py-8 justify-between text-center lg:text-left">

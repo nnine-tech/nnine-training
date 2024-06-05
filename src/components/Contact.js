@@ -9,6 +9,8 @@ const Contact = () => {
     <>
       <br />
       <br />
+      <br />
+      <br />
       <div className="flex justify-center items-center mt-8 w-full bg-gray-200">
         <div
           className="container mx-auto my-8 px-4 lg:px-20 flex flex-wrap"

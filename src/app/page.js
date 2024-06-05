@@ -1,10 +1,11 @@
-// pages/index.js
+
 "use client"; // This marks the file as a client component
 
 import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import CourseList from "../components/CourseList";
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
+// import Banner from '@/components/Ads';
 
 export default function Home() {
   const [courseData, setCourseData] = useState([]);
@@ -25,9 +26,7 @@ export default function Home() {
 
   return (
     <div>
-      {/* <br />
       <br />
-      <br /> */}
       <br />
       <Hero />
       <CourseList courseData={courseData} />
