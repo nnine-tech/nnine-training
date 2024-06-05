@@ -19,10 +19,10 @@ const JobDescription = () => {
       <ul className="list-disc list-inside mb-4">
         <li>Greet and welcome visitors and clients with a positive, helpful attitude.</li>
         <li>Answer and direct phone calls in a polite and friendly manner.</li>
-        <li>Assist clients and visitors with their inquiries and provide accurate<br /> &nbsp;&nbsp;&nbsp;information about our services.</li>
+        <li>Assist clients and visitors with their inquiries and provide accurate information about our services.</li>
         <li>Manage and schedule appointments.</li>
         <li>Maintain the reception area in an orderly fashion.</li>
-        <li>Perform administrative tasks such as filing, copying, and handling <br /> &nbsp;&nbsp;&nbsp;correspondence.</li>
+        <li>Perform administrative tasks such as filing, copying, and handling correspondence.</li>
         <li>Coordinate with other departments to ensure smooth office operations.</li>
       </ul>
       
@@ -47,7 +47,7 @@ const JobDescription = () => {
       
       <h3 className="font-semibold text-lg mb-2">How to Apply</h3>
       <p className="mb-4">
-        Interested candidates are invited to send their resume and a cover letter to <a href="mailto:nninesolutions@gmail.com">nninesolutions@gmail.com</a> with the subject line “Front Desk Officer Application - &lt;Your Name&gt;.”
+        Interested candidates are invited to send their resume and a cover letter to <a href="mailto:nninesolutions@gmail.com" style={{ textDecoration: 'underline', color: 'blue' }}>nninesolutions@gmail.com</a> with the subject line “Front Desk Officer Application - &lt;Your Name&gt;.”
       </p>
       
       <p className="mb-4">
