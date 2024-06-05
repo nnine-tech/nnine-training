@@ -1,11 +1,8 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
 
 const AWSCloudPractitioner = () => {
   return (
     <div>
-      <NavBar />
-      <br />
       <br />
       <br />
       <br />

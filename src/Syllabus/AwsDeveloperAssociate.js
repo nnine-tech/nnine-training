@@ -1,11 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 
 const AWSCertifiedDeveloper = () => {
   return (
     <>
-      <Navbar />
-      <br />
       <br />
       <br />
       <br />
