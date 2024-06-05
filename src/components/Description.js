@@ -53,13 +53,6 @@ const JobDescription = () => {
       <p className="mb-4">
         N9 Solution is an equal opportunity employer. We celebrate diversity and are committed to creating an inclusive environment for all employees.
       </p>
-
-      <button
-        onClick={() => window.location.href = 'mailto:nninesolutions@gmail.com?subject=Front%20Desk%20Officer%20Application%20-%20<Your%20Name>'}
-        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 focus:outline-none"
-      >
-        Apply via Gmail
-      </button>
     </div>
   );
 };
