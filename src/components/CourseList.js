@@ -11,6 +11,8 @@ const CourseList = ({ courseData }) => {
       <br></br>
       <br></br>
       <br></br>
+      <br />
+        <br />
       <div className="flex flex-wrap justify-center">
         {courseData.map((card, index) => (
           <Card key={index} {...card} />

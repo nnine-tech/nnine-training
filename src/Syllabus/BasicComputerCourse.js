@@ -1,12 +1,7 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
-import Footer from "../components/Footer";
-
 const BasicComputerCourse = () => {
   return (
     <>
-      <NavBar />
-      <br />
       <br />
       <br />
       <br />

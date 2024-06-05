@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Banner from "@/components/Ads";
 
 const NavBar = () => {
   const [top, setTop] = useState(true);
@@ -9,7 +10,6 @@ const NavBar = () => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-
   useEffect(() => {
     const scrollHandler = () => {
       window.pageYOffset > 10 ? setTop(false) : setTop(true);
@@ -19,11 +19,12 @@ const NavBar = () => {
   }, []);
 
   return (
+    <>
+    
     <nav
-      className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 ${
-        !top && "bg-white shadow-lg"
-      }`}
+      className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 bg-white shadow-lg`}
     >
+      <Banner />
       <div className="flex flex-row justify-between items-center py-1">
         <div className="flex flex-row justify-start md:px-12 md:mx-12 items-center text-center font-semibold">
           <Link href="/">
@@ -65,8 +66,6 @@ const NavBar = () => {
               isOpen ? "block" : "hidden"
             } absolute top-16 right-0 bg-white lg:relative lg:bg-transparent lg:top-auto lg:right-auto lg:w-auto`}
           >
-          
-    
             <li>
               <Link
                 href="/Popularcourses"
@@ -93,6 +92,14 @@ const NavBar = () => {
             </li>
             <li>
               <Link
+                href="Career"
+                className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+              >
+                Career
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/About"
                 className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
               >
@@ -111,6 +118,7 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
+    </>
   );
 };
 

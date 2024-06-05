@@ -1,11 +1,8 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
 
 const OpenShiftSyllabus = () => {
   return (
     <>
-      <NavBar />
-      <br />
       <br />
       <br />
       <br />

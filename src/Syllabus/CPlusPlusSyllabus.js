@@ -1,11 +1,7 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
-
 const CPlusPlusSyllabus = () => {
   return (
     <>
-      <NavBar />
-      <br />
       <br />
       <br />
       <br />
