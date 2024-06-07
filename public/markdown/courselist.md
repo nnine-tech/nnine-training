@@ -131,6 +131,13 @@ courses:
     syllabusUrl: "/Syllabus/Aws"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
+  - imageUrl: "/RHCA.jpg"
+    imageAlt: "RHCA"
+    title: "RedHat Certified Architect"
+    courseDuration: "2 Months"
+    syllabusUrl: "/Syllabus/RHCA"
+    googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
+
   - imageUrl: "/BasicComputerCourse.jpg"
     imageAlt: "Basic Computer Course"
     title: "Basic Computer Course"
