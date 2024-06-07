@@ -13,7 +13,7 @@ export default function LearnMore() {
         <div className="p-4 lg:flex lg:justify-between lg:items-start">
           <div className="lg:w-1/2">
             {/* <h2 className="font-bold mb-4 sm:text-3xl md:text-4xl lg:text-5xl">N9 Solution Offer for SEE & +2 appeared Students 2081</h2> */}
-            <h1 className="font-bold mb-4 underline sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">Learn More About the Discount</h1>
+            <h1 className="font-bold mb-4 underline sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl">Learn More About the Discount</h1>
             <p className="text-lg max-w-prose mb-4 sm:text-base md:text-lg lg:text-lg xl:text-xl">
               We are offering Rs. 9,999|- for students who have appeared for the SEE & +2 exams. 
               This special offer is designed to help students take the next step in their education 
