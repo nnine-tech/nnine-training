@@ -9,10 +9,9 @@ const RHCSAExamSyllabus = () => {
       <div className="bg-blue-300 min-h-screen p-8">
         <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
           <h1 className="text-blue-500 text-3xl text-center font-bold mb-4">
-            RHCSA Exam Syllabus
+            Red Hat Certified Administrator Syllabus
           </h1>
-
-
+        <br />
         <h2 className="text-blue-500 text-2xl font-bold mb-4">Study Points for the Exam</h2>
         <p className="mb-4">RHCSA exam candidates should be able to accomplish the tasks below without assistance. These have been grouped into several categories.</p>
           
