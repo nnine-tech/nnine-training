@@ -1,10 +1,10 @@
-import MERNStackSyllabus from '@/Syllabus/MernSyllabus'
+import Mern from '@/Syllabus/MernSyllabus'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <MERNStackSyllabus />
+      <Mern />
     </div>
   )
 }
