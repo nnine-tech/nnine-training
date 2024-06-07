@@ -13,7 +13,7 @@ const Banner = () => {
         
         <Link href="/Discount" legacyBehavior>
           <a className="bg-purple-600 text-white flex items-center justify-center h-8 px-3 py-1 ml-2 underline">
-            Offers-Course
+            Offers
           </a>
         </Link>
       </div>

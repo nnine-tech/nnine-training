@@ -42,7 +42,6 @@ const offers = [
 export default function LearnMore() {
   return (
     <>
-      
       <br />
       <br />
       <br />
