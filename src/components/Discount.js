@@ -42,7 +42,6 @@ const offers = [
 export default function LearnMore() {
   return (
     <>
-      
       <br />
       <br />
       <br />
@@ -64,7 +63,7 @@ export default function LearnMore() {
             To avail of this discount, please provide your +2 exam proof during the enrollment process. 
             If you have any questions or need further assistance, feel free to contact our support team.
           </p>
-          <h2 className="text-2xl font-bold mb-4 underline">Terms and Conditions for +2 2081 Students</h2>
+          {/* <h2 className="text-2xl font-bold mb-4 underline">Terms and Conditions for +2 2081 Students</h2>
           <ul className="list-disc pl-8"> 
           <li>
             <p>The Discount offer will be valid from 1st Jestha, 2081 (14th May 2024) to 15th Ashar, 2081 (29th June 2024).</p>
@@ -90,7 +89,7 @@ export default function LearnMore() {
           <li>
             <p>If you want to book your seat for multiple courses to take advantage of this offer, you are allowed to do so.</p>
           </li>
-          </ul>
+          </ul> */}
           <Link href="/" legacyBehavior>
             <a className="text-blue-500 hover:underline">Go Back to Home</a>
           </Link>
