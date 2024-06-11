@@ -12,18 +12,20 @@ const QATrainingSyllabus = () => {
             QA Training Syllabus
           </h1>
           <br />
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-900 text-2xl font-bold mb-4">
             Manual Testing
           </h2>
 
-          <h3 className="font-semibold">Fundamentals of Testing</h3>
+          <h3 className="font-semibold text-blue-500 text-xl">
+            Fundamentals of Testing
+          </h3>
           <ul className="list-disc ml-8">
             <li>Understanding QA/QC/Testing</li>
             <li>Human Errors and Their Impact</li>
             <li>Testing vs. Debugging</li>
             <li>Importance of Software Quality</li>
           </ul>
-          <h3 className="font-semibold">
+          <h3 className="font-semibold text-blue-500 text-xl">
             Software Requirements and Testing Process
           </h3>
           <ul className="list-disc ml-8">
@@ -33,7 +35,7 @@ const QATrainingSyllabus = () => {
             <li>Testing Process Overview</li>
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             Testing Techniques
           </h2>
           <ul className="list-disc ml-8">
@@ -44,7 +46,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             Black Box Testing
           </h2>
           <ul className="list-disc ml-8">
@@ -57,7 +59,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             White Box Testing
           </h2>
           <ul className="list-disc ml-8">
@@ -67,7 +69,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             Verification and Validation
           </h2>
           <ul className="list-disc ml-8">
@@ -79,7 +81,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             Types and Levels of Testing
           </h2>
           <ul className="list-disc ml-8">
@@ -88,7 +90,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             Test Cases and Management
           </h2>
           <ul className="list-disc ml-8">
@@ -98,16 +100,20 @@ const QATrainingSyllabus = () => {
             <li>Incident, Configuration, and Bug Management</li>
             {/* Continue adding other sections similarly */}
           </ul>
-
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <br />
+          <h2 className="text-blue-900 text-2xl font-bold mb-4">
             Automation Testing
           </h2>
-          <h3 className="font-semibold">Introduction to Automation Testing</h3>
+          <h3 className="font-semibold text-xl text-blue-500">
+            Introduction to Automation Testing
+          </h3>
           <ul className="list-disc ml-8">
             <li>Benefits and Drawbacks</li>
             <li>Factors and Tools Selection</li>
           </ul>
-          <h3 className="font-semibold">Selenium WebDriver</h3>
+          <h3 className="font-semibold text-xl text-blue-500">
+            Selenium WebDriver
+          </h3>
           <ul className="list-disc ml-8">
             <li>Components Overview</li>
             <li>Installation and Configuration</li>
@@ -115,7 +121,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             API Testing with Postman
           </h2>
           <ul className="list-disc ml-8">
@@ -126,7 +132,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             Performance Testing with JMeter
           </h2>
           <ul className="list-disc ml-8">
@@ -137,7 +143,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             Mobile App Testing
           </h2>
           <ul className="list-disc ml-8">
@@ -148,7 +154,7 @@ const QATrainingSyllabus = () => {
             {/* Continue adding other sections similarly */}
           </ul>
 
-          <h2 className="text-blue-500 text-2xl font-bold mb-4">
+          <h2 className="text-blue-500 text-xl font-bold mb-4">
             Bug Reporting with JIRA
           </h2>
           <ul className="list-disc ml-8">
