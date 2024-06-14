@@ -118,6 +118,13 @@ courses:
     courseDuration: "2.5 Months"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
+  - imageUrl: "/python.jpg"
+    imageAlt: "Python"
+    title: "Python"
+    courseDuration: "2 Months"
+    syllabusUrl: "/Syllabus/PythonSyllabus"
+    googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
+
   - imageUrl: "/QA.jpg"
     imageAlt: "QA"
     title: "QA Training"

@@ -1,10 +1,8 @@
 import React from "react";
-import NavBar from "../components/Navbar/NavBar";
 
 const PythonSyllabus = () => {
   return (
     <>
-      <NavBar />
       <br />
       <br />
       <br />
