@@ -25,7 +25,7 @@ const TrainersPage = () => {
       imageUrl: '/saurav.jpg',
       imageAlt: 'saurav',
       name: 'Saurav Gautam',
-      description: 'Introducing our Python/Django-Certified trainer, equipped with a decade of invaluable experience in the field. With a solid background in Python and Django, they offer comprehensive training backed by years of practical expertise.',
+      description: 'Introducing our Data Science and Machine Learning trainer, equipped with an invaluable experience in the field. Mr. Gautam holds master degree in information and technology from Chemnitz University of Technology, Germany with a solid background in IT field, he offers comprehensive training backed by years of practical expertise.',
     },
     {
       imageUrl: '/img.png',
