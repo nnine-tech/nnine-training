@@ -38,8 +38,7 @@ const Hero = () => {
               <br />
 
               <p className="text-xl mb-8 text-[#fff]">
-                Develop your skills in a new and unique way learning to make a
-                better tomorrow!
+                Empowering Your Future with Cutting-Edge IT Training
               </p>
               <button
                 onClick={handleEnrollNowClick}
