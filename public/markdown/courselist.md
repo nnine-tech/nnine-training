@@ -44,8 +44,8 @@ courses:
     syllabusPdfUrl: "/Syllabus/Syllabus of ASP NET.pdf"
 
   - imageUrl: "/datascience.jpg"
-    imageAlt: "Data Analytics and ML"
-    title: "Data Analytics and ML"
+    imageAlt: "Data Science and ML"
+    title: "Data Science and ML"
     courseDuration: "2 Months"
     syllabusUrl: "/Syllabus/DataAnalytics"
     syllabusPdfUrl: "/Syllabus/Data Analytics and Machine Learning with Python.pdf"
@@ -130,6 +130,13 @@ courses:
     title: "QA Training"
     courseDuration: "2 Months"
     syllabusUrl: "/Syllabus/QATraining"
+    googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
+
+  - imageUrl: "/WebDevelopment.jpg"
+    imageAlt: "Web Developement"
+    title: "Web Developement"
+    courseDuration: "2 Months"
+    syllabusUrl: "/Syllabus/WebDevelopement"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
   - imageUrl: "/php.png"

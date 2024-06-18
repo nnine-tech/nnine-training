@@ -73,8 +73,7 @@ const Hero = () => {
                   </div>
                   <br />
                   <p className="text-2xl mb-8 text-[#1E4FBC]">
-                    Develop your skills in a new and unique way learning to make
-                    a better tomorrow!
+                    Empowering Your Future with Cutting-Edge IT Training
                   </p>
                   <button
                     onClick={handleEnrollNowClick}
