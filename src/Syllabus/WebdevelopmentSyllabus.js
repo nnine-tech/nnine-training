@@ -1,10 +1,8 @@
 import React from 'react';
-// import NavBar from '../components/Navbar/NavBar';
-// import Footer from '../components/Footer';
 const WebdevelopmentSyllabus = () => {
   return (
     <>
-    {/* <NavBar /> */}
+    <br />
     <br />
     <br />
     <br />
