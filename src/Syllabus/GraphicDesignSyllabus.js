@@ -11,6 +11,9 @@ const GraphicDesignSyllabus = () => {
       <div className="bg-blue-300 min-h-screen p-8">
         <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
           <div>
+            <h1 className="text-blue-500 text-3xl font-bold py-8 text-center">
+              Graphic Designing and Video Editing Syllabus
+            </h1>
             <h1 className="text-blue-500 text-3xl font-bold mb-4 py-8">
               Photoshop Syllabus
             </h1>
