@@ -1,10 +1,10 @@
-import RHCASyllabus from "@/Syllabus/Rhca";
+import RHCA_Updated from "@/Syllabus/RHCA_Updated";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <RHCASyllabus />
+      <RHCA_Updated />
     </div>
   );
 };
