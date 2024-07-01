@@ -72,13 +72,6 @@ courses:
     syllabusPdfUrl: "/Syllabus/.pdf"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
-  - imageUrl: "/rhel.jpg"
-    imageAlt: "RHEL"
-    title: "RHEL"
-    courseDuration: "2 Months"
-    googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
-    syllabusPdfUrl: "/Syllabus/.pdf"
-
   - imageUrl: "/digitalmarketing.jpg"
     imageAlt: "Digital Marketing"
     title: "Digital Marketing"
