@@ -75,7 +75,7 @@ courses:
   - imageUrl: "/digitalmarketing.jpg"
     imageAlt: "Digital Marketing"
     title: "Digital Marketing"
-    courseDuration: "2 Months"
+    courseDuration: "40 Hours"
     syllabusUrl: "/Syllabus/DigitalMarketingSyllabus"
     syllabusPdfUrl: "/Syllabus/Digital Marketing.pdf"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
