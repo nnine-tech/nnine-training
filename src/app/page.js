@@ -1,4 +1,3 @@
-
 "use client"; // This marks the file as a client component
 
 import { useEffect, useState } from "react";
@@ -26,7 +25,6 @@ export default function Home() {
 
   return (
     <div>
-      <br />
       <br />
       <Hero />
       <CourseList courseData={courseData} />
