@@ -1,18 +1,20 @@
-import React from 'react';
-import NavBar from '../components/Navbar/NavBar';
+import React from "react";
+import NavBar from "../components/Navbar/NavBar";
 
 const DevOpsMasterSyllabus = () => {
   return (
     <>
-      <NavBar /> 
-      <br />
+      <NavBar />
+
       <br />
       <br />
       <br />
       <div className="bg-blue-300 min-h-screen p-8">
         <div className="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
           <div>
-            <h1 className="text-blue-500 text-3xl font-bold mb-4">DevOps Syllabus</h1>
+            <h1 className="text-blue-500 text-3xl font-bold mb-4">
+              DevOps Syllabus
+            </h1>
 
             <h2 className="text-blue-500 font-bold mb-4">Linux Fundamentals</h2>
             <ul className="list-disc ml-8">
@@ -26,7 +28,6 @@ const DevOpsMasterSyllabus = () => {
 
             <h2 className="text-blue-500 font-bold mb-4">Platform</h2>
             <h3>Docker</h3>
-
 
             <li>Docker Installation and Configuration</li>
             <ul className="list-disc ml-8">
@@ -96,7 +97,9 @@ const DevOpsMasterSyllabus = () => {
               <li>Docker Security</li>
               <ul className="list-disc ml-8">
                 <li>Understanding how uid and gid work in Docker containers</li>
-                <li>Run the Docker daemon as a non-root user (Rootless mode)</li>
+                <li>
+                  Run the Docker daemon as a non-root user (Rootless mode)
+                </li>
                 <li>Using User Namespaces on Docker</li>
                 <li>Manage Volume Permission</li>
                 <li>Working with Secrets</li>
@@ -104,7 +107,9 @@ const DevOpsMasterSyllabus = () => {
               </ul>
             </ul>
 
-            <h2 className="text-blue-500 font-bold mb-4">Kubernetes - Container Orchestrator</h2>
+            <h2 className="text-blue-500 font-bold mb-4">
+              Kubernetes - Container Orchestrator
+            </h2>
             <ul className="list-disc ml-8">
               <li>Getting Started</li>
               <ul className="list-disc ml-8">
@@ -161,7 +166,6 @@ const DevOpsMasterSyllabus = () => {
                 <li>Cluster Autoscaler</li>
               </ul>
 
-
               <li>Networking</li>
               <ul className="list-disc ml-8">
                 <li>K8s Networking Architectural Overview</li>
@@ -207,7 +211,9 @@ const DevOpsMasterSyllabus = () => {
                 <li>Troubleshooting K8s Networking Issues</li>
               </ul>
             </ul>
-            <h2 className="text-blue-500 font-bold mb-4">Kubernates Security</h2>
+            <h2 className="text-blue-500 font-bold mb-4">
+              Kubernates Security
+            </h2>
             <ul className="list-disc ml-8">
               <li>Cluster Setup</li>
               <ul className="list-disc ml-8">
@@ -269,7 +275,6 @@ const DevOpsMasterSyllabus = () => {
               </ul>
             </ul>
 
-
             <h2>Infrastructure Automation</h2>
 
             <h2 className="text-blue-500 font-bold mb-4">Ansible</h2>
@@ -293,14 +298,21 @@ const DevOpsMasterSyllabus = () => {
               <li>Create Ansible Plays and Playbooks</li>
               <ul className="list-disc ml-8">
                 <li>Introduction to Playbooks and Common Modules</li>
-                <li>Create Playbooks to Configure Systems to a Specified State</li>
+                <li>
+                  Create Playbooks to Configure Systems to a Specified State
+                </li>
                 <li>Basic Playbook Syntax Demonstration</li>
-                <li>Use Variables to Retrieve the Results of Running Commands</li>
+                <li>
+                  Use Variables to Retrieve the Results of Running Commands
+                </li>
                 <li>Use Conditionals to Control Play Execution</li>
                 <li>Configure Error Handling</li>
                 <li>Selectively Run Specific Tasks In Playbooks Using Tags</li>
               </ul>
-              <li>Create and Use Templates to Create Customized Configuration Files</li>
+              <li>
+                Create and Use Templates to Create Customized Configuration
+                Files
+              </li>
               <ul className="list-disc ml-8">
                 <li>Using Ansible Templates</li>
               </ul>
@@ -350,7 +362,9 @@ const DevOpsMasterSyllabus = () => {
                 <li>What is the Terraform Workflow?</li>
                 <li>Terraform Init (Initializing the Working Directory)</li>
                 <li>Terraform Key Concepts: Plan, Apply, and Destroy</li>
-                <li>Resource Addressing in Terraform: Understanding Terraform Code</li>
+                <li>
+                  Resource Addressing in Terraform: Understanding Terraform Code
+                </li>
               </ul>
               <li>Terraform Fundamentals</li>
               <ul className="list-disc ml-8">
@@ -383,7 +397,10 @@ const DevOpsMasterSyllabus = () => {
                 <li>Terraform fmt, taint, and import Commands</li>
                 <li>Terraform Workspaces</li>
                 <li>Debugging Terraform</li>
-                <li>Using Terraform CLI Commands (workspace and state) to Manipulate a Terraform Deployment</li>
+                <li>
+                  Using Terraform CLI Commands (workspace and state) to
+                  Manipulate a Terraform Deployment
+                </li>
               </ul>
             </ul>
             <h2 className="text-blue-500 font-bold mb-4">Ansible</h2>
@@ -501,12 +518,16 @@ const DevOpsMasterSyllabus = () => {
               <li>Extending the Template</li>
               <ul className="list-disc ml-8">
                 <li>Parallel Builds</li>
-                <li>Creating Dev and Production Images with Packer in Parallel</li>
+                <li>
+                  Creating Dev and Production Images with Packer in Parallel
+                </li>
                 <li>HCL "Building Blocks"</li>
               </ul>
               <li>Debugging</li>
               <ul className="list-disc ml-8">
-                <li>The <code>-debug</code> Flag</li>
+                <li>
+                  The <code>-debug</code> Flag
+                </li>
                 <li>The Breakpoint Provisioner</li>
               </ul>
               <li>Cloud</li>
@@ -560,7 +581,10 @@ const DevOpsMasterSyllabus = () => {
               <ul className="list-disc ml-8">
                 <li>Overview of NGINX Modules</li>
                 <li>Adding Functionality to NGINX with Dynamic Modules</li>
-                <li>HANDS-ON LAB Installing and Configuring NGINX as an HTTP Server</li>
+                <li>
+                  HANDS-ON LAB Installing and Configuring NGINX as an HTTP
+                  Server
+                </li>
                 <li>HANDS-ON LAB Forcing HTTPS Traffic with NGINX</li>
               </ul>
               <li>Reverse Proxy</li>
@@ -571,10 +595,15 @@ const DevOpsMasterSyllabus = () => {
                 <li>Setting Up The LEMP Stack</li>
                 <li>FastCGI Proxy for PHP/WordPress with fastcgi_pass</li>
                 <li>Deploying a uWSGI Application</li>
-                <li>Proxying to uWSGI Python Web Application with uwsgi_pass</li>
+                <li>
+                  Proxying to uWSGI Python Web Application with uwsgi_pass
+                </li>
                 <li>Simple Caching for Static Content</li>
                 <li>Microcaching for Non-Personalized Dynamic Content</li>
-                <li>HANDS-ON LAB Using NGINX as a Reverse Proxy for an Application and Blog</li>
+                <li>
+                  HANDS-ON LAB Using NGINX as a Reverse Proxy for an Application
+                  and Blog
+                </li>
               </ul>
               <li>Load Balancing</li>
               <ul className="list-disc ml-8">
@@ -588,7 +617,9 @@ const DevOpsMasterSyllabus = () => {
               <li>Security</li>
               <ul className="list-disc ml-8">
                 <li>Improving SSL Configuration</li>
-                <li>Use Case: Generating SSL Certificates using Let's Encrypt</li>
+                <li>
+                  Use Case: Generating SSL Certificates using Let's Encrypt
+                </li>
               </ul>
               <li>Performance</li>
               <ul className="list-disc ml-8">
@@ -600,7 +631,9 @@ const DevOpsMasterSyllabus = () => {
               </ul>
             </ul>
             <h1>CICD & Software collaboration tools</h1>
-            <h2 className="text-blue-500 font-bold mb-4">Source code management - Git </h2>
+            <h2 className="text-blue-500 font-bold mb-4">
+              Source code management - Git{" "}
+            </h2>
             <ul className="list-disc ml-8">
               <li>The Basics of Using Git</li>
               <li>Tags, Branching, Merging, and Reverting</li>
@@ -618,7 +651,10 @@ const DevOpsMasterSyllabus = () => {
             </ul>
             <h2 className="text-blue-500 font-bold mb-4">Jenkins</h2>
             <ul className="list-disc ml-8">
-              <li>Jenkins and Continuous Integration (CI) / Continuous Delivery (CD)</li>
+              <li>
+                Jenkins and Continuous Integration (CI) / Continuous Delivery
+                (CD)
+              </li>
               <ul className="list-disc ml-8">
                 <li>CI/CD</li>
                 <li>What Is a Job?</li>
@@ -692,7 +728,9 @@ const DevOpsMasterSyllabus = () => {
                 <li>Enhancing Your Workflow</li>
                 <li>Catching Errors Sooner: Code Quality Checks</li>
                 <li>Setting Up Non-Production Environments</li>
-                <li>HANDS-ON LAB Deploying a Static Site with GitHub Actions</li>
+                <li>
+                  HANDS-ON LAB Deploying a Static Site with GitHub Actions
+                </li>
                 <li>Testing Before Production</li>
                 <li>Adding Documentation</li>
                 <li>HANDS-ON LAB Deploying Documentation to GitHub Pages</li>
@@ -706,8 +744,12 @@ const DevOpsMasterSyllabus = () => {
               <li>What is GitOps?</li>
               <ul class="list-disc ml-8">
                 <li>Understanding GitOps Principles</li>
-                <li>Declarative Infrastructure and Infrastructure as Code (IaC)</li>
-                <li>Using a Version Control System as the Foundation of DevOps</li>
+                <li>
+                  Declarative Infrastructure and Infrastructure as Code (IaC)
+                </li>
+                <li>
+                  Using a Version Control System as the Foundation of DevOps
+                </li>
                 <li>Continuous Integration and Git Flow</li>
                 <li>Continuous Delivery vs. Continuous Deployment</li>
                 <li>Synchronizing Target Platforms with Upstream VCS Repos</li>
@@ -715,11 +757,21 @@ const DevOpsMasterSyllabus = () => {
               </ul>
               <li>Hands-On GitOps Labs</li>
               <ul class="list-disc ml-8">
-                <li>HANDS-ON LAB Installing and Configuring Flux with GitHub</li>
-                <li>HANDS-ON LAB Installing and Configuring Flux with GitLab</li>
-                <li>HANDS-ON LAB Operating and Troubleshooting Flux in a Kubernetes Cluster</li>
+                <li>
+                  HANDS-ON LAB Installing and Configuring Flux with GitHub
+                </li>
+                <li>
+                  HANDS-ON LAB Installing and Configuring Flux with GitLab
+                </li>
+                <li>
+                  HANDS-ON LAB Operating and Troubleshooting Flux in a
+                  Kubernetes Cluster
+                </li>
                 <li>HANDS-ON LAB Using Pull Requests For Release Gating</li>
-                <li>HANDS-ON LAB Deploying Applications with GitHub Actions Workflow and Flux</li>
+                <li>
+                  HANDS-ON LAB Deploying Applications with GitHub Actions
+                  Workflow and Flux
+                </li>
               </ul>
               <li>GitOps with ArgoCD</li>
               <ul class="list-disc ml-8">
@@ -812,7 +864,9 @@ const DevOpsMasterSyllabus = () => {
               </ul>
               <li>Using Argo CD in CI/CD pipelines</li>
               <ul class="list-disc ml-8">
-                <li>Preparing our sample application (the currency converter)</li>
+                <li>
+                  Preparing our sample application (the currency converter)
+                </li>
                 <li>Connecting Argo CD to GitHub</li>
                 <li>Setting up the CI pipeline using GitHub Actions</li>
                 <li>Using Argo CD for the Continuous Deployment (CD) part</li>
@@ -822,14 +876,21 @@ const DevOpsMasterSyllabus = () => {
                 <li>What are Argo CD plugins and why we may need them?</li>
                 <li>Creating an Argo CD plugin for envsubst</li>
                 <li>Introducing Terraform and our sample project</li>
-                <li>Using an Argo CD dynamic plugin with Terraform for a zero-touch workflow</li>
+                <li>
+                  Using an Argo CD dynamic plugin with Terraform for a
+                  zero-touch workflow
+                </li>
               </ul>
               <li>Argo CD Resource Hooks</li>
               <ul class="list-disc ml-8">
                 <li>Using PreSync Hook for performing database migrations</li>
                 <li>Using Sync Hook for clearing cache</li>
-                <li>Using PostSync and SyncFail for sending Slack notifications</li>
-                <li>Using the PostDelete hook for database backup and deletion</li>
+                <li>
+                  Using PostSync and SyncFail for sending Slack notifications
+                </li>
+                <li>
+                  Using the PostDelete hook for database backup and deletion
+                </li>
                 <li>Enabling hostPath volumes in KinD clusters</li>
               </ul>
             </ul>
@@ -848,7 +909,9 @@ const DevOpsMasterSyllabus = () => {
                 <li>Configuring Prometheus</li>
                 <li>Configuring an Exporter</li>
                 <li>HANDS-ON LAB Building a Prometheus Server</li>
-                <li>HANDS-ON LAB Collecting Linux Server Metrics with Prometheus</li>
+                <li>
+                  HANDS-ON LAB Collecting Linux Server Metrics with Prometheus
+                </li>
               </ul>
               <li>Prometheus Data Model</li>
               <ul class="list-disc ml-8">
@@ -879,14 +942,20 @@ const DevOpsMasterSyllabus = () => {
                 <li>Console Templates</li>
                 <li>Console Template Graph Library</li>
                 <li>HANDS-ON LAB Building a Prometheus Console Template</li>
-                <li>HANDS-ON LAB Using the Graph Library in a Prometheus Console Template</li>
+                <li>
+                  HANDS-ON LAB Using the Graph Library in a Prometheus Console
+                  Template
+                </li>
               </ul>
               <li>Grafana</li>
               <ul class="list-disc ml-8">
                 <li>What Is Grafana?</li>
                 <li>Installing and Configuring Grafana</li>
                 <li>Building Prometheus Dashboards in Grafana</li>
-                <li>HANDS-ON LAB Building a Grafana Instance to Work with Prometheus Data</li>
+                <li>
+                  HANDS-ON LAB Building a Grafana Instance to Work with
+                  Prometheus Data
+                </li>
                 <li>HANDS-ON LAB Building a Prometheus Dashboard in Grafana</li>
               </ul>
               <li>Exporters</li>
@@ -894,9 +963,13 @@ const DevOpsMasterSyllabus = () => {
                 <li>Introduction to Exporters</li>
                 <li>Application Monitoring</li>
                 <li>Jobs and Instances</li>
-                <li>HANDS-ON LAB Collecting Application Metrics with Prometheus</li>
+                <li>
+                  HANDS-ON LAB Collecting Application Metrics with Prometheus
+                </li>
                 <li>HANDS-ON LAB Docker Daemon Monitoring with Prometheus</li>
-                <li>HANDS-ON LAB Docker Container Monitoring with Prometheus</li>
+                <li>
+                  HANDS-ON LAB Docker Container Monitoring with Prometheus
+                </li>
                 <li>HANDS-ON LAB Kubernetes Monitoring with Prometheus</li>
               </ul>
               <li>Prometheus Pushgateway</li>
@@ -905,7 +978,10 @@ const DevOpsMasterSyllabus = () => {
                 <li>Installing Pushgateway</li>
                 <li>Pushing Data to Pushgateway</li>
                 <li>HANDS-ON LAB Installing Prometheus Pushgateway</li>
-                <li>HANDS-ON LAB Monitoring a Batch Job with Prometheus Pushgateway</li>
+                <li>
+                  HANDS-ON LAB Monitoring a Batch Job with Prometheus
+                  Pushgateway
+                </li>
               </ul>
               <li>Recording Rules</li>
               <ul class="list-disc ml-8">
@@ -921,21 +997,31 @@ const DevOpsMasterSyllabus = () => {
                 <li>High Availability and Alertmanager</li>
                 <li>HANDS-ON LAB Installing Prometheus Alertmanager</li>
                 <li>HANDS-ON LAB Configuring Prometheus Alertmanager</li>
-                <li>HANDS-ON LAB Configuring Prometheus Alertmanager for High Availability</li>
+                <li>
+                  HANDS-ON LAB Configuring Prometheus Alertmanager for High
+                  Availability
+                </li>
               </ul>
               <li>Prometheus Alerts</li>
               <ul class="list-disc ml-8">
                 <li>Alerting Rules</li>
                 <li>Managing Alerts</li>
                 <li>HANDS-ON LAB Configuring Prometheus Alerts</li>
-                <li>HANDS-ON LAB Advanced Configuration for Prometheus Alerts</li>
+                <li>
+                  HANDS-ON LAB Advanced Configuration for Prometheus Alerts
+                </li>
               </ul>
               <li>Using Multiple Prometheus Servers</li>
               <ul class="list-disc ml-8">
                 <li>High Availability</li>
                 <li>Federation</li>
-                <li>HANDS-ON LAB Building a Highly Available Prometheus Setup</li>
-                <li>HANDS-ON LAB Implementing Hierarchical Federation With Prometheus</li>
+                <li>
+                  HANDS-ON LAB Building a Highly Available Prometheus Setup
+                </li>
+                <li>
+                  HANDS-ON LAB Implementing Hierarchical Federation With
+                  Prometheus
+                </li>
               </ul>
               <li>Security</li>
               <ul class="list-disc ml-8">
@@ -945,11 +1031,15 @@ const DevOpsMasterSyllabus = () => {
               <ul class="list-disc ml-8">
                 <li>Introduction to Prometheus Client Libraries</li>
                 <li>Using the Prometheus Java Client Library</li>
-                <li>HANDS-ON LAB Using the Java Client Library for Prometheus</li>
+                <li>
+                  HANDS-ON LAB Using the Java Client Library for Prometheus
+                </li>
               </ul>
             </ul>
             <h1>Scripting and Automation</h1>
-            <h2 className="text-blue-500 font-bold mb-4">Introduction to Javascript</h2>
+            <h2 className="text-blue-500 font-bold mb-4">
+              Introduction to Javascript
+            </h2>
             <ul class="list-disc ml-8">
               <li>The History of JavaScript</li>
               <ul class="list-disc ml-8">
@@ -978,7 +1068,9 @@ const DevOpsMasterSyllabus = () => {
               </ul>
               <li>Build Toolchain and Unit Testing</li>
             </ul>
-            <h2 className="text-blue-500 font-bold mb-4">Introduction to Python Development</h2>
+            <h2 className="text-blue-500 font-bold mb-4">
+              Introduction to Python Development
+            </h2>
             <ul class="list-disc ml-8">
               <li>Environment Setup</li>
               <ul class="list-disc ml-8">
@@ -1013,8 +1105,12 @@ const DevOpsMasterSyllabus = () => {
               <li>Encapsulating Code</li>
               <ul class="list-disc ml-8">
                 <li>Writing Functions</li>
-                <li>HANDS-ON LAB Solving Problems with Built-in Python Types</li>
-                <li>HANDS-ON LAB Utilizing Control Flow Structures in Python</li>
+                <li>
+                  HANDS-ON LAB Solving Problems with Built-in Python Types
+                </li>
+                <li>
+                  HANDS-ON LAB Utilizing Control Flow Structures in Python
+                </li>
               </ul>
               <li>Object-Oriented Programming Basics</li>
               <ul class="list-disc ml-8">
@@ -1058,10 +1154,14 @@ const DevOpsMasterSyllabus = () => {
                 <li>Building User Authentication</li>
                 <li>Implementing Notes CRUD - Creating and Reading</li>
                 <li>Implementing Notes CRUD - Updating and Deleting</li>
-                <li>HANDS-ON LAB Building a Web Application with Python and Flask</li>
+                <li>
+                  HANDS-ON LAB Building a Web Application with Python and Flask
+                </li>
               </ul>
             </ul>
-            <h2 className="text-blue-500 font-bold mb-4">System tooling with go </h2>
+            <h2 className="text-blue-500 font-bold mb-4">
+              System tooling with go{" "}
+            </h2>
             <ul class="list-disc ml-8">
               <li>Introduction to Go</li>
               <ul class="list-disc ml-8">
@@ -1114,7 +1214,9 @@ const DevOpsMasterSyllabus = () => {
                 <li>HANDS-ON LAB Building a Cross-Platform Go Binary</li>
               </ul>
             </ul>
-            <h2 className="text-blue-500 font-bold mb-4">System tooling with go </h2>
+            <h2 className="text-blue-500 font-bold mb-4">
+              System tooling with go{" "}
+            </h2>
           </div>
         </div>
       </div>
