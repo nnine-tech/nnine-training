@@ -3,8 +3,7 @@ const CPlusPlusSyllabus = () => {
   return (
     <>
       <br />
-      <br />
-      <br />
+
       <br />
       <br />
       <div className="bg-blue-300 min-h-screen p-8">
