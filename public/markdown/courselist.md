@@ -172,7 +172,13 @@ courses:
     courseDuration: "1 Month"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
     syllabusUrl: "/Syllabus/BasicComputerCourse"
-    syllabusPdfUrl: "/Syllabus/Computer Basics.pdf"
+
+  - imageUrl: "/Flutter.jpeg"
+    imageAlt: "Flutter"
+    title: "Flutter"
+    courseDuration: "2.5 Month"
+    googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
+    syllabusUrl: "/Syllabus/Flutter"
 
   - imageUrl: "/OpenShift.jpg"
     imageAlt: "OpenShift"
