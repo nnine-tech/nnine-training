@@ -49,7 +49,7 @@ courses:
     imageAlt: "Data Science and ML"
     title: "Data Science and ML"
     courseDuration: "2 Months"
-    syllabusUrl: "/Syllabus/DataAnalytics"
+    syllabusUrl: "/Syllabus/DataScienceML"
     syllabusPdfUrl: "/Syllabus/Data Analytics and Machine Learning with Python.pdf"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
