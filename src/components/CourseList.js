@@ -3,6 +3,7 @@
 
 import React from "react";
 import Card from "./Card";
+import Card2 from "./Card2";
 
 const CourseList = ({ courseData }) => {
   return (
@@ -15,7 +16,7 @@ const CourseList = ({ courseData }) => {
         <br />
       <div className="flex flex-wrap justify-center">
         {courseData.map((card, index) => (
-          <Card key={index} {...card} />
+          <Card2 key={index} {...card} />
         ))}
       </div>
     </>
