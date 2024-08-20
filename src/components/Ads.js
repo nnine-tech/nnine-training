@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import LearnMore from "@/components/Discount";
 
 const Banner = () => {
   return (
