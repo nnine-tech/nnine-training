@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 const blogData = [
@@ -46,9 +49,15 @@ const blogData = [
 
 ];
 
-const Blog2 = ({ title, description, image, link }) => {
+const Blog2 = ({ title, description, image}) => {
+  const router = useRouter();
+
+  const handleReadMore = () => {
+    router.push("/Blog/BlogDetails");
+  };
+
   return (
-    <div className="bg-[#D8E1FA] rounded-3xl gap-[10px] mt-4 shadow-">
+    <div className="bg-[#D8E1FA] rounded-3xl gap-[10px] mt-4 shadow-bottom ">
       <div className="flex items-center justify-center mt-3">
         <img src={image} alt="" className='mt-8' />
       </div>
@@ -59,14 +68,12 @@ const Blog2 = ({ title, description, image, link }) => {
         <h3 className='font-poppins text-sm'>{description}</h3>
       </div>
       <div className='flex items-center justify-center'>
-        <a 
-          href={link} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+      <button 
+          onClick={handleReadMore}
           className="bg-[#0C07F9] text-white font-poppins py-2 px-4 rounded-3xl transition-colors mb-10 font-bold"
         >
           Read More
-        </a>
+        </button>
       </div>
     </div>
   );
@@ -81,7 +88,7 @@ const BlogList = () => {
           title={blog.title} 
           description={blog.description} 
           image={blog.image} 
-          link={blog.link} 
+          id={blog.id} 
         />
       ))}
     </div>

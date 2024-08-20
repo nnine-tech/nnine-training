@@ -1,166 +1,108 @@
-import React from "react";
+"use client";
+
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { useRouter } from "next/navigation";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const router=useRouter();
+
   return (
-    <>
-      <footer>
-        <div className="footer max-w-full mx-auto px-4 sm:px-6 bg-gray-100 border-t border-b py-30">
-          {/* Top area: Blocks */}
-          <div className="grid sm:grid-cols-12 gap-5 py-8 md:py-12 border-t border-gray-200 lg:ml-11">
-            {/* 1st block */}
-            <div className="col-span-12 lg:col-span-4">
-              <div className="box-border border-b-4 border-blue-900 p-8 bg-gray-200 text-gray-600 text-center rounded-lg xl:w-80 mx-auto">
-                <h3 className="font-bold text-4xl mb-4">N9 Solution</h3>
-                <div className="text-md font-medium text-gray-600">
-                  <h5>5th Floor, White House Building</h5>
-                  <p>Chabahil, Kathmandu</p>
-                  <p>Nepal</p>
-                </div>
-              </div>
-            </div>
+    <footer className="bg-[#004AAD]  h-auto w-full shadow-[#08418C] flex flex-col">
+      <div className="max-w-[1252px] mx-auto px-4 py-8">
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-14 mt-8">
+          <div className="flex-1  md:mr-8 ">
+            <h1 className="text-[30px] font-bold text-[#FFFFFF] font-robotoSlab">
+              “Crafting the Future with Technology”
+            </h1>
+          </div>
+          <div className="flex gap-4 mt-5 md:mt-0">
+            <button className="h-[55px] w-[190px] rounded-[5px] p-2.5 text-[#FFFFFF] bg-[#FFFFFF]" >
+              <p className="text-[20px] font-normal font-robotoSlab text-[#004AAD]">GET STARTED</p>
+            </button>
+            <button
+              // onClick={() => router.push("/contact")}
+              className="h-[55px] w-[190px] rounded-[5px] p-2.5  bg-[#2AE327] shadow-[#2F1773] " onClick={()=>{router.push('/Contact')
+              }}
+            >
+              <p className="text-[20px] font-normal font-robotoSlab ">CONTACT US</p>
+            </button>
+          </div>
+        </div>
 
-            {/* 2nd block */}
-            <div className="col-span-6 md:col-span-6 lg:col-span-1 ml-7 mx-auto">
-              <h6 className="text-[#013289] text-xl font-bold mb-4">LINKS</h6>
-              <ul className="text-md">
-                <li className="mb-2">
-                  <Link
-                    href="/about"
-                    className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                  >
-                    About
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    href="/course"
-                    className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                  >
-                    Programs
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    href="/contactus#"
-                    className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                  >
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
+        {/* Divider */}
+        <hr className="border-t-2 border-[#FFFFFF] mb-5" />
 
-            {/* 3rd block */}
-            <div className="col-span-6 md:col-span-6 lg:col-span-4 mx-auto">
-              <h6 className="text-[#013289] text-xl font-bold mb-4">
-                OUR SERVICES
-              </h6>
-              <ul className="text-md">
-                <li className="mb-2">
-                  <Link
-                    href="#services"
-                    className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                  >
-                    DevOps Service
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    href="#services"
-                    className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                  >
-                    Web 3.0 Devops service
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    href="#services"
-                    className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                  >
-                    Cloud Services & Migrations
-                  </Link>
-                </li>
-                <li className="mb-2">
-                  <Link
-                    href="#services"
-                    className="text-[#013289] hover:text-gray-900 hover:tracking-wider transition duration-250 ease-in-out"
-                  >
-                    General IT Consultations
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* 4th block */}
-            <div className="col-span-12 text-center mx-auto lg:col-span-3 font-bold uppercase text-blue-900">
-              <div className="text-xl mb-6">Social Media Links.</div>
-
-              <div className="text-md font-medium mb-6">
-                Follow us on social media.
-              </div>
-              <div className="mx-auto text-center mt-2">
-                <ul className="flex justify-center mb-4 md:mb-0">
-                  <li>
-                    <Link
-                      href="https://www.linkedin.com/company/99439455/admin/feed/posts/#"
-                      target="_blank"
-                      className="flex justify-center items-center text-blue-900 hover:text-gray-500 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
-                    >
-                      <svg
-                        className="w-8 h-8 fill-current text-blue-900"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M21.3 0H2.7C1.2 0 0 1.2 0 2.7v18.6C0 22.8 1.2 24 2.7 24h18.6c1.5 0 2.7-1.2 2.7-2.7V2.7C24 1.2 22.8 0 21.3 0zM7.9 20.4H4.4V9h3.5v11.4h.1zM6.1 7.7a1.9 1.9 0 1 1-.1-3.8c1 0 1.7.7 1.8 1.6v.1c0 .9-.7 2.2-1.7 2.1zM20.4 20.4h-3.4v-5.6c0-1.4-.5-2.3-1.8-2.3-1 0-1.6.7-1.9 1.4-.1.2-.1.5-.1.8v5.8h-3.4s.1-11.4 0-12.5h3.4v1.8c.4-.6 1.1-1.4 2.7-1.4 2 0 3.6 1.3 3.6 4.1v7.9z" />
-                      </svg>
-                    </Link>
-                  </li>
-                  <li className="ml-4">
-                    <Link
-                      href="https://www.facebook.com/nninesolution"
-                      target="_blank"
-                      className="flex justify-center items-center text-blue-900 hover:text-gray-500 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
-                    >
-                      <svg
-                        className="w-8 h-8 fill-current"
-                        viewBox="0 0 32 32"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M14.023 24L14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257z" />
-                      </svg>
-                    </Link>
-                    </li>
-                    <li className="ml-4">
-                    <Link
-                      href="https://www.instagram.com/n9solution/"
-                      target="_blank"
-                      className="flex justify-center items-center transition duration-150 ease-in-out"
-                    >
-                      <FontAwesomeIcon icon={faInstagram} className="w-8 h-8" />
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        {/* Main Content Sections */}
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* N9 Solution */}
+          <div className="flex-1 w-[377px] mb-5 md:mb-0  gap-[10px]">
+            <h1 className="text-[28px] font-bold text-[#FFFFFF] font-robotoSlab mb-[20px]">N9 Solution</h1>
+            <p className="text-[15px] font-poppins text-[#FFFFFF] font-poppins w-[294px]">
+              "Innovative IT solutions for software development, system
+              integration, and digital transformation."
+            </p>
           </div>
 
-          <div className="flex flex-wrap items-center md:justify-between justify-center mx-auto px-4">
-            <div className="w-full md:w-4/12 px-4 mx-auto text-center py-2">
-              <div className="text-sm font-semibold py-1">
-                Copyright &copy; {new Date().getFullYear()}
-                <Link href="/" className=" hover:text-gray-900">
-                  Nnine Solutions
-                </Link>
-                . All rights reserved.
-              </div>
+          {/* Entity Types */}
+          <div className="flex-1 max-w-[163px] mb-5 md:mb-0">
+            <h1 className="text-[20px] font-bold text-[#FFFFFF] font-robotoSlab gap-[10px] p-[10px,10px,10px,0px] mb-[20px]">Entity Types</h1>
+            <ul className="text-[15px] font-normal text-[#FFFFFF] space-y-1">
+              <li className="font-poppins text-[15px] cursor-pointer ">Security</li>
+              <li className="font-poppins text-[15px] cursor-pointer">Privacy Policy</li>
+              <li className="font-poppins text-[15px] cursor-pointer">Partners</li>
+              <li className="font-poppins text-[15px] cursor-pointer">FAQs</li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div className="flex-1 w-[235px] mb-5 md:mb-0">
+            <h1 className="text-[20px] font-bold text-[#FFFFFF] font-robotoSlab mb-[20px]">Services</h1>
+            <ul className="text-[15px] font-normal text-[#FFFFFF] space-y-1 w-[235px]">
+              <li className="font-poppins text-[15px] cursor-pointer">DevOps Service</li>
+              <li className="font-poppins text-[15px] cursor-pointer">Web 3.0 DevOps Service</li>
+              <li className="font-poppins text-[15px] cursor-pointer">Cloud Services & Migrations</li>
+              <li className="font-poppins text-[15px]">General IT Consultations</li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className="flex-1 max-w-[163px] mb-5 md:mb-0">
+            <h1 className="text-[20px] font-bold text-[#FFFFFF] font-robotoSlab mb-[20px]">Resources</h1>
+            <ul className="text-[15px] font-normal text-[#FFFFFF] space-y-1">
+              <li className="font-poppins text-[15px] cursor-pointer">FAQs</li>
+              <li className="font-poppins text-[15px] cursor-pointer">Contact Us</li>
+              <li className="font-poppins text-[15px] cursor-pointer">Privacy Policy</li>
+            </ul>
+          </div>
+
+          {/* Contact Us */}
+          <div className="flex-1 max-w-[222px] mb-5 md:mb-0">
+            <h1 className="text-[20px] font-bold text-[#FFFFFF] font-robotoSlab mb-[20px]">Contact Us</h1>
+            <p className="text-[12px] font-normal text-[#FFFFFF] mb-[10px]">
+              nninesolution@gmail.com
+            </p>
+            <div className="flex h-[28px] w-[118px]  gap-[19px]">
+              <Link href="https://www.facebook.com/nninesolution"><img className="h-[28px] w-[28px] cursor-pointer" src="/ic_baseline-facebook (2).svg" alt="" /></Link>
+            
+            <Link href="https://np.linkedin.com/company/n9-solution?trk=public_profile_topcard-current-company"> <img className="h-[28px] w-[28px] cursor-pointer"  src="/mingcute_linkedin-fill.svg" alt="" /></Link>
+              
+              <Link href="https://www.instagram.com/n9solution/"><img className="h-[28px] w-[28px] cursor-pointer" src="/mdi_instagram.svg" alt="" /></Link>
+              
             </div>
           </div>
         </div>
-      </footer>
-    </>
+
+        {/* Footer Bottom */}
+        <div className="text-center ">
+          <p className="text-[12px] font-normal text-[#FFFFFF] mt-[100px]">
+            Copyright © 2024 Nninesolutions. All rights reserved.
+          </p>
+          
+        </div>
+      </div>
+    </footer>
   );
 };
 

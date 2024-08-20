@@ -70,7 +70,7 @@ const NavBar = () => {
                   href="/Popularcourses"
                   className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
                 >
-                  Popular Courses
+                  Courses
                 </Link>
               </li>
               <li>
