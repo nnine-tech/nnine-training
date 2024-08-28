@@ -4,8 +4,9 @@ import React from "react";
 
 const page = () => {
   return (
-    <div>
-      <DevOpsSyllabus />
+    <div className="p-8">
+      {/* <DevOpsSyllabus /> */}
+      <DevOps2/>
       
     </div>
   );

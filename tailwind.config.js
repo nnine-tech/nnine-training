@@ -8,6 +8,9 @@ module.exports = {
   theme: {
    
     extend: {
+      clipPath: {
+        custom: 'ellipse(100% 50% at 50% 100%)',
+      },
       
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

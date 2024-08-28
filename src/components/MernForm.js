@@ -33,8 +33,8 @@ let courses = [
  console.log(data)
   return (
 
-    <div className="flex gap-12 flex-col">
-      <div className="w-[430px] p-[10px] h-[699px] bg-[#F6F9ED] rounded-xl shadow-bottom flex flex-wrap flex-col ">
+    <div className="flex gap-12 flex-col mr-4 -mt-6">
+      <div className="w-[390px] p-[10px] h-[650px]  bg-[#F6F9ED] rounded-xl shadow-bottom flex flex-wrap flex-col">
         <h1 className="text-xl font-medium font-poppins text-center text-[#000080] mb-[20px]">
           Quick Enquiry
         </h1>
@@ -114,7 +114,7 @@ let courses = [
           </form>
         </div>
       </div>
-      <MernClassType />
+    
     </div>
   );
 };

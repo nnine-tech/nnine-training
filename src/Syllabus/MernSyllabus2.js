@@ -6,7 +6,7 @@ import React from 'react'
 
 const MernSyllabus2 = () => {
   return (
-    <div  className="bg-gradient-to-b from-[#F6FCFF] to-[#ADE2FF] p-8" >
+    <div  className="bg-gradient-to-b from-[#F6FCFF] to-[#ADE2FF] p-4" >
 
    <Introduction/>
 <CourseSyllabus1/>
