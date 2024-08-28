@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import MernSchedule from "./MernSchedule";
 
 const MernClassType = () => {
   let [selectedClass, setSelectedClass] = useState("");
@@ -19,11 +20,12 @@ const MernClassType = () => {
   };
 
   return (
-    <div className="w-[430px] h-[249px] bg-[#F6F9ED] rounded-xl shadow-bottom mb-4 flex justify-center ">
-      <div className="font-poppins text-center]">
-        <h1 className="text-[#000080] p-[20px] text-xl font-medium">Training Option</h1>
+    <div className=" md:mr-2 md:ml-5 mt-6" >
+    <div className="w-[390px] bg-[#F6F9ED] rounded-xl shadow-bottom mb-4 p-4 ">
+      <div className="font-poppins text-center ">
+        <h1 className="text-[#000080]  text-center p-[20px] text-xl font-medium ">Training Option</h1>
         <form className="flex flex-col items-center" onSubmit={handleSubmit}>
-          <div className="flex flex-col items start mt-5  ml-2 font-semibold">
+          <div className="flex flex-col items start mt-2 ml-2 font-semibold">
             {classes.map((item, i) => {
               return (
                 <span key={i} className="mb-2">
@@ -49,6 +51,9 @@ const MernClassType = () => {
           </div>
         </form>
       </div>
+      
+    </div>
+    <MernSchedule/>
     </div>
   );
 };

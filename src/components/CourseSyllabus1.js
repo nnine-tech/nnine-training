@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import MernSchedule from "./MernSchedule";
+import MernClassType from "./MernClassType";
 
 const CourseSyllabus1 = () => {
   // State to manage dropdown visibility for each section
@@ -113,19 +114,149 @@ const CourseSyllabus1 = () => {
       ],
       info: "7 lectures • 1 hours",
     },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    }, {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    }, {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Github And Version Controlling",
+      lectures: [
+        "Introduction to version control and usage Github, Bitbucket and Gitlab",
+        "Initializing and cloning git projects",
+        "Git commit/push",
+        "Branches and Pull Requests",
+        "Standard practices for naming GitHub branches",
+        "Github exercises: Collaborating in the same repo and handling merge conflicts live.",
+      ],
+      info: "7 lectures • 1 hours",
+    },
   ];
 
   return (
-    <div className="w-full  flex flex-col md:flex-row sm:flex-row sm:mt-4">
-      <div className="w-[80%] flex flex-col">
+    <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
+      <div className="w-[80%] flex flex-col mt-14">
       <div className="w-full">
   <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
     Course Syllabus
   </h1>
   {syllabusSections.map((section, index) => (
-    <div key={index} className={`relative mx-auto`}>
+    <div key={index} className={`relative mx-auto w-[400px] md:w-full`}>
       <div
-        className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
+        className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all   ${
           !openDropdowns[section.title] && index !== syllabusSections.length - 1
             ? "border-b-5"
             : ""
@@ -168,7 +299,7 @@ const CourseSyllabus1 = () => {
 </div>
 
       </div>
-      <MernSchedule />
+      <MernClassType />
     </div>
   );
 };
