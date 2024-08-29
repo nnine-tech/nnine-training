@@ -1,10 +1,12 @@
-import RedHatOpenShiftSyllabus from "@/Syllabus/RedHatOpenShiftDevISyllabus";
+import RedHatOpenShift2 from "@/Syllabus/RedHatOpenShift2";
+
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <RedHatOpenShiftSyllabus />
+      {/* <RedHatOpenShiftSyllabus /> */}
+      <RedHatOpenShift2/>
     </div>
   );
 };

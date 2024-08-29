@@ -1,10 +1,12 @@
+import Webdevelopment2 from "@/Syllabus/Webdevelopment2";
 import WebdevelopmentSyllabus from "@/Syllabus/WebdevelopmentSyllabus";
 import React from "react";
 
 const page = () => {
   return (
     <div>
-      <WebdevelopmentSyllabus />
+      {/* <WebdevelopmentSyllabus /> */}
+      <Webdevelopment2/>
     </div>
   );
 };
