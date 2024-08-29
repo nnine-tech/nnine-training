@@ -1,12 +1,26 @@
-import Mern from '@/Syllabus/MernSyllabus'
-import React from 'react'
+import MernSyllabus2 from "@/Syllabus/MernSyllabus2";
+import Head from "next/head";
 
-const page = () => {
+import React from "react";
+
+const Page = () => {
   return (
-    <div>
-      <Mern />
-    </div>
-  )
-}
+    <>
+      <Head>
+        <title>MERN Stack Course Syllabus</title>
+        <meta property="og:title" content="MERN Stack Course Syllabus" />
+        <meta
+          property="og:description"
+          content="Dive deep into the MERN stack with our comprehensive syllabus covering MongoDB, Express.js, React, and Node.js."
+        />
+        <meta property="og:image" content="/mern.jpg" />
+        <meta property="og:type" content="website" />
+      </Head>
+      <div>
+        <MernSyllabus2 />
+      </div>
+    </>
+  );
+};
 
-export default page
+export default Page;
