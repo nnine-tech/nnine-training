@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 const Footer= () => {
   return (
     <>
-      <footer className="bg-[#08418C] w-full lg:h-[520px] lg:w-[1300px] xl:w-auto">
+      <footer className="bg-[#08418C] w-full  lg:h-[520px] lg:w-full xl:w-auto">
         <div className="container mx-auto px-4 py-10 lg:py-20">
           <div className="text-center lg:text-left">
             <h1 className="text-white font-robotoSlab font-bold text-2xl lg:text-[30px]  mb-6 lg:ml-11 leading-[22.5px]">
