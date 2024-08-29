@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import DevopsSchedule from "./DevopsSchedule";
 import DataScienceAndMLClassSchedule from "./DataScienceAndMLClassSchedule";
 
 const DataScienceAndMLClassType = () => {

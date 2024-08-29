@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import DataScienceAndMLClassType from "./DataScienceAndMLClassTYpe";
+import DataScienceAndMLClassType from "./DataScienceAndMLClassType";
 
 
 const DataScienceAndMLSyllabus1 = () => {
