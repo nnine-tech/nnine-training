@@ -18,7 +18,6 @@ const Page = () => {
       </Head>
       <div>
         <MernSyllabus2 />
-        {/* <MERNStackSyllabus/> */}
       </div>
     </>
   );
