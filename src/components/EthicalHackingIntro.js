@@ -40,7 +40,7 @@ const EthicalHackingIntro = () => {
               </div>
               <div className="flex items-center gap-2">
                 <img src="/duration.svg" alt="Duration" />
-                <h2 className="text-[#FFFFFF]">Duration: 2hrs</h2>
+                <h2 className="text-[#FFFFFF]">Duration: 90h</h2>
               </div>
               <div className="flex items-center gap-2">
                 <img src="/career.svg" alt="Career" />
