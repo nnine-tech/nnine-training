@@ -19,7 +19,8 @@ const Introduction = () => {
           {/* Text Section */}
           <div className="md:ml-20 flex flex-col gap-5 items-center md:items-start mt-8 md:mt-10 md:w-[64%]">
             <p className="text-lg md:text-2xl font-semibold font-poppins text-center md:text-left text-[#C1D4FF] mx-4 md:mx-0">
-              Develop your web development skills with Full Stack MERN, which includes MongoDB, Express, Angular, and Node.
+              Develop your web development skills with Full Stack MERN, which
+              includes MongoDB, Express, Angular, and Node.
             </p>
             <div className="flex flex-wrap gap-4 mt-5 justify-center md:justify-start">
               <button className="bg-[#CCCBC8] p-2 text-black font-poppins font-semibold">
@@ -40,7 +41,7 @@ const Introduction = () => {
               </div>
               <div className="flex items-center gap-2">
                 <img src="/duration.svg" alt="Duration" />
-                <h2 className="text-[#FFFFFF]">Duration: 2hrs</h2>
+                <h2 className="text-[#FFFFFF]">Duration: 100h</h2>
               </div>
               <div className="flex items-center gap-2">
                 <img src="/career.svg" alt="Career" />
