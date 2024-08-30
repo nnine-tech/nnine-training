@@ -4,8 +4,8 @@ import EthicalHackingForm from './EthicalHackingForm';
 
 const EthicalHackingSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '22 Sep', time: '4:00 pm - 5:00 pm' },
+    { date: '29 Sep', time: '5:00 pm - 6:00 pm' },
    
  
   ];
@@ -32,7 +32,7 @@ const EthicalHackingSchedule = () => {
           </div>
         ))}
       </div>
-      <EthicalHackingForm/>
+      {/* <EthicalHackingForm/> */}
     </div>
   );
 };

@@ -3,10 +3,9 @@ import UIUXForm from './UIUXForm';
 
 const UIUXSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '13 Sep', time: '10:00 am - 11:30 am' },
+    { date: '25 Sep', time: '3:00 pm - 4:30 pm' },
+    
  
   ];
 
@@ -32,7 +31,7 @@ const UIUXSchedule = () => {
           </div>
         ))}
       </div>
-      <UIUXForm/>
+      {/* <UIUXForm/> */}
     </div>
   );
 };

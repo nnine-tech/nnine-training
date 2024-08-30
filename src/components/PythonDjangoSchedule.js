@@ -4,8 +4,8 @@ import PythonDjangoForm from './PythonDjangoForm';
 
 const PythonDjangoSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '10 Sep', time: '7:00 pm - 8:30 pm' },
+    { date: '15 Sep', time: '5:00 pm - 6:30 pm' },
    
  
   ];
@@ -32,7 +32,7 @@ const PythonDjangoSchedule = () => {
           </div>
         ))}
       </div>
-      <PythonDjangoForm/>
+      {/* <PythonDjangoForm/> */}
     </div>
   );
 };

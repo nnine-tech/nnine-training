@@ -4,8 +4,8 @@ import DevopsForm from './DevopsForm';
 
 const DataScienceAndMLClassSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '8 Sep', time: '1:00 pm - 2:30 pm' },
+    { date: '15 Sep', time: '3:00 pm - 4:30 pm' },
    
  
   ];
@@ -32,7 +32,7 @@ const DataScienceAndMLClassSchedule = () => {
           </div>
         ))}
       </div>
-      <DataScienceAndMLForm/>
+      {/* <DataScienceAndMLForm/> */}
     </div>
   );
 };
