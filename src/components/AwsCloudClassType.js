@@ -55,7 +55,7 @@ const AwsCloudClassType = () => {
       </div>
       
     </div>
-    <AwsCloudSchedule/>
+    {/* <AwsCloudSchedule/> */}
     </div>
   );
 };

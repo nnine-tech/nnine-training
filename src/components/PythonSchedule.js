@@ -4,10 +4,8 @@ import UIUXForm from './UIUXForm';
 
 const PythonSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '8 Sep', time: '12:00 pm - 1:30 pm' },
+    
  
   ];
 
@@ -33,7 +31,7 @@ const PythonSchedule = () => {
           </div>
         ))}
       </div>
-      <PythonForm/>
+      {/* <PythonForm/> */}
     </div>
   );
 };

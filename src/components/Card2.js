@@ -6,7 +6,7 @@ function Card2(props) {
 
   // Function to handle enrollment
   const handleEnrollNow = () => {
-    // Navigate user to the corresponding Google Form URL for enrollment
+  // Navigate user to the corresponding Google Form URL for enrollment
     window.open(props.googleFormUrl, "_blank");
   };
 

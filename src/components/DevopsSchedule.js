@@ -3,8 +3,8 @@ import DevopsForm from './DevopsForm';
 
 const DevopsSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '12 Sep', time: '6:30 am - 8:00 am' },
+    { date: '15 Sep', time: '1:00 pm - 2:30 pm' },
    
  
   ];
@@ -31,7 +31,7 @@ const DevopsSchedule = () => {
           </div>
         ))}
       </div>
-      <DevopsForm />
+      {/* <DevopsForm /> */}
     </div>
   );
 };

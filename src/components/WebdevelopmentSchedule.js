@@ -3,10 +3,9 @@ import WebdevelopmentForm from './WebdevelopmentForm';
 
 const WebdevelopmentSchedule= () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '8 Sep', time: '1:30 pm - 3:00 pm' },
+    { date: '15 Sep', time: '8:00 am - 9:30 pm' },
+    
  
   ];
 
@@ -32,7 +31,7 @@ const WebdevelopmentSchedule= () => {
           </div>
         ))}
       </div>
-      <WebdevelopmentForm/>
+      {/* <WebdevelopmentForm/> */}
     </div>
   );
 };

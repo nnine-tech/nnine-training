@@ -5,8 +5,8 @@ import PythonDjangoForm from './PythonDjangoForm';
 
 const GraphicDesignSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '28 Sep', time: '4:00 pm - 5:00 pm' },
+    { date: '2 Oct', time: '5:00 pm - 6:00 pm' },
    
  
   ];
@@ -33,7 +33,7 @@ const GraphicDesignSchedule = () => {
           </div>
         ))}
       </div>
-      <GraphicDesignForm/>
+      {/* <GraphicDesignForm/> */}
     </div>
   );
 };
