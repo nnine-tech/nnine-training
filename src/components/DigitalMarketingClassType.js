@@ -20,6 +20,12 @@ const DigitalMarketingClassType= () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  const handleEnrollNow = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link",
+      "_blank"
+    );
+  };
 
   return (
     <div className=" md:mr-2 md:ml-5 mt-6" >
@@ -47,7 +53,7 @@ const DigitalMarketingClassType= () => {
           </div>
 
           <div className="mt-6  ml-7 ">
-            <button className="bg-[#000080] w-[170px] font-bold h-[40px] text-white py-2 px-4 rounded-md">
+            <button className="bg-[#000080] w-[170px] font-bold h-[40px] text-white py-2 px-4 rounded-md" onClick={handleEnrollNow}>
               Enroll Now
             </button>
           </div>
