@@ -5,8 +5,8 @@ import EthicalHackingForm from './EthicalHackingForm';
 
 const DigitalMarketingSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '18 Sep', time: '3:00 pm - 4:00 pm' },
+    { date: '22 Sep', time: '4:30 pm - 5:30 pm' },
    
  
   ];
@@ -33,7 +33,7 @@ const DigitalMarketingSchedule = () => {
           </div>
         ))}
       </div>
-      <DigitalMarketingForm/>
+      {/* <DigitalMarketingForm/> */}
     </div>
   );
 };

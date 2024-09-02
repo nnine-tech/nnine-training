@@ -6,8 +6,8 @@ import DevopsForm from './DevopsForm';
 
 const AspNetSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '25 Sep', time: '4:00 pm - 5:00 pm' },
+    { date: '29 Sep', time: '5:00 pm - 6:00 pm' },
    
  
   ];
@@ -34,7 +34,7 @@ const AspNetSchedule = () => {
           </div>
         ))}
       </div>
-      <AspNetForm/>
+      {/* <AspNetForm/> */}
     </div>
   );
 };

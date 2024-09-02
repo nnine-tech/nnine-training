@@ -5,8 +5,8 @@ import OpenShiftForm from './OpenShiftForm';
 
 const OpenShiftSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '28 Sep', time: '4:00 pm - 5:00 pm' },
+    { date: '10 Oct', time: '5:00 pm - 6:00 pm' },
    
  
   ];
@@ -33,7 +33,7 @@ const OpenShiftSchedule = () => {
           </div>
         ))}
       </div>
-      <OpenShiftForm/>
+      {/* <OpenShiftForm/> */}
     </div>
   );
 };

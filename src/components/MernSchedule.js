@@ -1,12 +1,10 @@
-import MernForm from './MernForm';
+import MernForm from "./MernForm";
 
 const MernSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
- 
+    { date: "10 Sep", time: "6:30 am - 8:00 am" },
+    { date: "15 Sep", time: "11:00 am - 1:30 pm" },
+    { date: "2 Sep",  time: "6:30 pm - 8:00 pm" },
   ];
 
   return (
@@ -19,7 +17,10 @@ const MernSchedule = () => {
         </div>
 
         {schedules.map((schedule, index) => (
-          <div key={index} className="flex justify-between mb-[20px] font-semibold">
+          <div
+            key={index}
+            className="flex justify-between mb-[20px] font-semibold"
+          >
             <div className="flex items-center ml-4">
               <img src="/calender.svg" alt="Calendar Icon" className="p-2" />
               <span className="ml-1">{schedule.date}</span>
@@ -31,7 +32,7 @@ const MernSchedule = () => {
           </div>
         ))}
       </div>
-      <MernForm />
+      {/* <MernForm /> */}
     </div>
   );
 };
