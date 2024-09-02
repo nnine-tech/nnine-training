@@ -65,4 +65,4 @@ const AspNetClassType = () => {
   );
 };
 
-export default AspNetClassType;
+export default AspNetClassType
