@@ -6,8 +6,8 @@ import BasicComputerForm from './BasicComputerForm';
 
 const BasicComputerSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '15 Sep', time: '1:00 pm - 2:00 pm' },
+    { date: '21 Sep', time: '2:00 pm - 3:00 pm' },
    
  
   ];
@@ -34,7 +34,7 @@ const BasicComputerSchedule = () => {
           </div>
         ))}
       </div>
-      <BasicComputerForm/>
+      {/* <BasicComputerForm/> */}
     </div>
   );
 };

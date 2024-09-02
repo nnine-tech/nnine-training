@@ -4,8 +4,8 @@ import RedHatAdministratorForm from "./RedHatAdministratorForm";
 
 const RedHatAdministratorSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '2 Oct', time: '3:00 pm - 4:00 pm' },
+    { date: '10 Oct', time: '4:00 pm - 5:00 pm' },
    
  
   ];
@@ -32,7 +32,7 @@ const RedHatAdministratorSchedule = () => {
           </div>
         ))}
       </div>
-      <RedHatAdministratorForm/>
+      {/* <RedHatAdministratorForm/> */}
     </div>
   );
 };

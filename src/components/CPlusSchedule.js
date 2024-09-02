@@ -2,8 +2,8 @@ import CPlusForm from "./CPlusForm";
 
 const CPlusSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '28 Sep', time: '4:00 pm - 5:00 pm' },
+    { date: '5 Oct', time: '5:00 pm - 6:00 pm' },
    
  
   ];
@@ -30,7 +30,7 @@ const CPlusSchedule = () => {
           </div>
         ))}
       </div>
-      <CPlusForm/>
+      {/* <CPlusForm/> */}
     </div>
   );
 };

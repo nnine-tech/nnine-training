@@ -2,11 +2,9 @@ import FlutterForm from './FlutterForm';
 
 const FlutterSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
- 
+    { date: '15 Sep', time: '6:30 pm - 8:00 pm' },
+    { date: '20 Sep', time: '6:30 pm - 8:00 pm' },
+    
   ];
 
   return (
@@ -31,7 +29,7 @@ const FlutterSchedule = () => {
           </div>
         ))}
       </div>
-      <FlutterForm/>
+      {/* <FlutterForm/> */}
     </div>
   );
 };

@@ -4,8 +4,8 @@ import AWSSolutionForm from './AWSSolutionForm';
 
 const AWSSolutionSchedule = () => {
   const schedules = [
-    { date: '28 July', time: '4:00 pm - 5:00 pm' },
-    { date: '29 July', time: '5:00 pm - 6:00 pm' },
+    { date: '21 Sep', time: '10:00 am - 11:00 am' },
+    { date: '26 Sep', time: '11:30 am - 12:30 pm' },
    
  
   ];
@@ -32,7 +32,7 @@ const AWSSolutionSchedule = () => {
           </div>
         ))}
       </div>
-      <AWSSolutionForm/>
+      {/* <AWSSolutionForm/> */}
     </div>
   );
 };
