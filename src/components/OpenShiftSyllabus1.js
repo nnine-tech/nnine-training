@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import PythonDjangoClassType from "./PythonDjangoClassType";
 import OPenShiftClassType from "./OpenShiftClassType";
 const OpenShiftSyllabus1 = () => {
   // State to manage dropdown visibility for each section
@@ -16,9 +15,7 @@ const OpenShiftSyllabus1 = () => {
   const syllabusSections = [
     {
       title: "CHAPTER 1: Course Introduction",
-      lectures: [
-        "Welcome to Hands-on with Podman Containers on Linux",
-      ],
+      lectures: ["Welcome to Hands-on with Podman Containers on Linux"],
       info: "6 lectures • 2 hours",
     },
     {
@@ -105,69 +102,68 @@ const OpenShiftSyllabus1 = () => {
       info: "3 lectures • 4 hours",
     },
     {
-        title: "CHAPTER 10: Conclusion",
-        lectures: [
-          "Hands-on with Podman Containers on Linux - A Review",
-          "Conclusion and What’s Next",
-        ],
-        info: "7 lectures • 3 hours",
-      },
-      
+      title: "CHAPTER 10: Conclusion",
+      lectures: [
+        "Hands-on with Podman Containers on Linux - A Review",
+        "Conclusion and What’s Next",
+      ],
+      info: "7 lectures • 3 hours",
+    },
   ];
-  
+
   return (
     <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
       <div className="w-[80%] flex flex-col mt-14">
-      <div className="w-full">
-  <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
-    Course Syllabus
-  </h1>
-  {syllabusSections.map((section, index) => (
-    <div key={index} className={`relative mx-auto w-[400px] md:w-full`}>
-      <div
-        className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all   ${
-          !openDropdowns[section.title] && index !== syllabusSections.length - 1
-            ? "border-b-5"
-            : ""
-        }`}
-        style={{ width: '100%', maxWidth: '800px', minWidth: '300px' }} // Setting max and min widths
-      >
-        <div
-          className="flex items-center p-[10px]"
-          onClick={() => toggleDropdown(section.title)}
-        >
-          <button className="dropdown-button mr-2">
-            <img
-              src="/dropdown.svg"
-              alt="Toggle Dropdown"
-              className="mr-0 w-[11px] h-[14px]"
-            />
-          </button>
-          <span className="font-semibold font-poppins">
-            {section.title}
-          </span>
-          <span className="hidden md:block text-right ml-auto font-poppins">
-            {section.info}
-          </span>
+        <div className="w-full">
+          <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
+            Course Syllabus
+          </h1>
+          {syllabusSections.map((section, index) => (
+            <div key={index} className={`relative w-full max-w-[800px]`}>
+              <div
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
+                  !openDropdowns[section.title] &&
+                  index !== syllabusSections.length - 1
+                    ? "border-b-5"
+                    : ""
+                }`}
+              >
+                <div
+                  className="flex items-center p-[10px] cursor-pointer"
+                  onClick={() => toggleDropdown(section.title)}
+                >
+                  <button className="dropdown-button mr-2">
+                    <img
+                      src="/dropdown.svg"
+                      alt="Toggle Dropdown"
+                      className="mr-0 w-[11px] h-[14px]"
+                    />
+                  </button>
+                  <span className="font-semibold font-poppins">
+                    {section.title}
+                  </span>
+                  <span className="hidden md:block text-right ml-auto font-poppins">
+                    {section.info}
+                  </span>
+                </div>
+              </div>
+              {openDropdowns[section.title] && (
+                <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
+                  <ul className="p-2">
+                    {section.lectures.map((lecture, idx) => (
+                      <li key={idx} className="py-1">
+                        <span className="mx-1">•</span>
+                        {lecture}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-      {openDropdowns[section.title] && (
-        <div className="relative w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
-          <ul className="p-2">
-            {section.lectures.map((lecture, idx) => (
-              <li key={idx} className="py-1">
-                <span className="mx-1">•</span>
-                {lecture}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  ))}
-</div>
-      </div>
-      <OPenShiftClassType/>
+      <OPenShiftClassType />
     </div>
   );
 };

@@ -33,7 +33,7 @@ const AwsCloudSchedule = () => {
           </div>
         ))}
       </div>
-      <AwsCloudForm/>
+      {/* <AwsCloudForm/> */}
     </div>
   );
 };
