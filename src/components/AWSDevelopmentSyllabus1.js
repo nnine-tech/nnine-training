@@ -282,18 +282,20 @@ const AWSDevelopmentSyllabus1 = () => {
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div key={index} className={`relative mx-auto w-[400px] md:w-full`}>
+            <div
+              key={index}
+              className={`relative w-full max-w-[800px]`}
+            >
               <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all   ${
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
                   !openDropdowns[section.title] &&
                   index !== syllabusSections.length - 1
                     ? "border-b-5"
                     : ""
                 }`}
-                style={{ width: "100%", maxWidth: "800px", minWidth: "300px" }} // Setting max and min widths
               >
                 <div
-                  className="flex items-center p-[10px]"
+                  className="flex items-center p-[10px] cursor-pointer"
                   onClick={() => toggleDropdown(section.title)}
                 >
                   <button className="dropdown-button mr-2">
@@ -312,7 +314,7 @@ const AWSDevelopmentSyllabus1 = () => {
                 </div>
               </div>
               {openDropdowns[section.title] && (
-                <div className="relative w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
+                <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
                   <ul className="p-2">
                     {section.lectures.map((lecture, idx) => (
                       <li key={idx} className="py-1">

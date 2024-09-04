@@ -8,13 +8,8 @@ import Card2 from "./Card2";
 const CourseList = ({ courseData }) => {
   return (
     <>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
-      <br />
-        <br />
-      <div className="flex flex-wrap justify-center">
+      
+      <div className="flex flex-wrap justify-center mt-28">
         {courseData.map((card, index) => (
           <Card2 key={index} {...card} />
         ))}
