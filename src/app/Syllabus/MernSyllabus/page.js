@@ -13,8 +13,9 @@ const Page = () => {
           property="og:description"
           content="Dive deep into the MERN stack with our comprehensive syllabus covering MongoDB, Express.js, React, and Node.js."
         />
-        <meta property="og:image" content="/mern.jpg" />
-        <meta property="og:type" content="website" />
+       <meta property="og:image" content="https://nnine.training/mern.jpg" />
+       <meta property="og:url" content="https://nnine.training/Syllabus/MernSyllabus" />
+
       </Head>
       <div>
         <MernSyllabus2 />
