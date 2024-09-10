@@ -8,7 +8,7 @@ const Introduction = () => {
           THE COMPLETE DEVOPS COURSE
         </h1>
         <div className="flex flex-col md:flex-row-reverse mt-6 w-full">
-          {/* Image Section */}
+        
           <div className="flex justify-center md:w-[36%] mt-4 md:mt-1">
             <img
               src="/deveops1.png"
