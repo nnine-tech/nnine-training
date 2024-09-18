@@ -5,6 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 .footer {
   background: url(/footer.svg) top center no-repeat;
   background-size: cover;
@@ -39,3 +41,7 @@ body {
     text-wrap: balance;
   }
 } */
+
+.slick-slide >div{
+  margin:0 10px;
+}

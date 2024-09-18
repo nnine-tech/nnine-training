@@ -1,112 +1,118 @@
-import React, { useRef, useState } from "react";
-import { Carousel } from "react-responsive-carousel";
-import { useRouter } from "next/navigation"; // Import useRouter for navigation
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import default carousel styles
+import React from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useRouter } from "next/navigation";
+import Slider from "react-slick";
+
+// Custom arrow components for Next and Previous buttons
+const NextArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <button
+      className={`${className} !bg-blue-600 hover:!bg-blue-700 p-2 rounded-full shadow-lg absolute top-1/2 right-2 z-20 text-white transition-colors duration-300`}
+      onClick={onClick}
+      style={{ display: "block" }} // Ensures visibility
+    >
+      &gt; {/* Right arrow symbol (>) */}
+    </button>
+  );
+};
+
+const PrevArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <button
+      className={`${className} !bg-blue-600 hover:!bg-blue-700 p-2 rounded-full shadow-lg absolute top-1/2 left-2 z-20 text-white transition-colors duration-300`}
+      onClick={onClick}
+      style={{ display: "block" }} // Ensures visibility
+    >
+      &lt; {/* Left arrow symbol (<) */}
+    </button>
+  );
+};
 
 const CourseSlide = (props) => {
-  const carouselRef = useRef(null); // Use ref to control carousel programmatically
-  const [currentSlide, setCurrentSlide] = useState(0); // Track current slide
-  const limitedCourses = props.course.slice(0, 16); // Limit the number of courses shown
-  const router = useRouter(); // Use useRouter hook for navigation
-
-  // Function to handle previous slide
-  const handlePrev = () => {
-    if (carouselRef.current) {
-      const prevSlide = currentSlide === 0 ? limitedCourses.length - 1 : currentSlide - 1;
-      carouselRef.current.moveTo(prevSlide); // Move to previous slide
-      setCurrentSlide(prevSlide); // Update current slide index
-    }
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />, // Custom next arrow
+    prevArrow: <PrevArrow />, // Custom previous arrow
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
-  // Function to handle next slide
-  const handleNext = () => {
-    if (carouselRef.current) {
-      const nextSlide = currentSlide === limitedCourses.length - 1 ? 0 : currentSlide + 1;
-      carouselRef.current.moveTo(nextSlide); // Move to next slide
-      setCurrentSlide(nextSlide); // Update current slide index
-    }
-  };
+  const router = useRouter();
 
-  // Function to handle enrollment
   const handleEnrollNow = (googleFormUrl) => {
-    window.open(googleFormUrl, "_blank"); // Open enrollment Google form in a new tab
+    window.open(googleFormUrl, "_blank");
   };
 
-  // Function to handle viewing syllabus
   const handleViewSyllabus = (syllabusUrl) => {
-    router.push(syllabusUrl); // Navigate to the syllabus page
+    router.push(syllabusUrl);
   };
 
   return (
-    <div className="relative p-4">
-      <Carousel
-        ref={carouselRef} // Attach the carousel ref
-        showArrows={false} // Disable default arrows
-        showIndicators={false} // Disable default indicators
-        autoPlay={true}
-        showThumbs={false} // Disable thumbnail navigation
-        showStatus={false} // Disable slide status bar
-        swipeable={true}
-        emulateTouch={true}
-        infiniteLoop={true}
-        selectedItem={currentSlide} // Keep track of current slide
-        className="course-carousel"
-      >
-        {/* Map through courses in a single row */}
-        <div className="flex flex-nowrap overflow-x-auto gap-4 lg:gap-6">
-          {limitedCourses.map((course, index) => (
-            <div
-              key={index}
-              className="relative flex-shrink-0 w-full sm:w-[300px] md:w-[400px] lg:w-[250px] xl:w-[300px] rounded-lg shadow-2xl bg-[#FBF3F3] rounded-bl-[40px] rounded-tr-[40px] rounded-tl-[10px] overflow-hidden mx-3 my-5 transition-transform duration-300 transform hover:scale-110 hover:shadow-2xl"
-            >
-              <img
-                src={course.imageUrl}
-                alt={course.title}
-                className="w-full h-[150px] object-cover shadow-xl"
-              />
-              <div className="px-4 py-4">
-                <h1 className="font-bold font-poppins text-center text-sm sm:text-xl lg:text-lg mb-2">
-                  {course.title}
-                </h1>
-                <h2 className="font-medium text-center font-Montserrat text-xs sm:text-sm lg:text-base">
-                  Duration: {course.courseDuration}
-                </h2>
-              </div>
-              <div className="flex flex-row justify-center gap-3 pb-4 px-4">
+    <div className="relative p-4 max-w-full mx-9">
+    <Slider {...settings}>
+      {props.course.map((course, index) => (
+        <div
+          key={index}
+          className="relative w-full sm:w-[500px] md:w-[350px] lg:w-[300px] rounded-lg shadow-2xl bg-[#FBF3F3] max-w-sm rounded-bl[40px] rounded-bl-[40px] rounded-tr-[40px] rounded-tl-[10px] flex-shrink-0 overflow-hidden mx-3 my-5 transition-transform duration-300 transform hover:scale-110 hover:shadow-2xl"
+        >
+          <div className="rounded-lg shadow-lg bg-white overflow-hidden hover:shadow-2xl transition-transform transform hover:scale-105">
+            <img
+              src={course.imageUrl}
+              alt={course.title}
+              className="w-full h-[150px] sm:h-[200px] object-cover"
+            />
+            <div className="px-4 sm:px-6 py-4">
+              <h1 className="font-bold font-poppins text-center text-base sm:text-lg text-gray-800 mb-2">
+                {course.title}
+              </h1>
+              <h2 className="font-medium text-center text-gray-600 text-xs sm:text-sm mb-4">
+                Duration: {course.courseDuration}
+              </h2>
+              <div className="flex justify-center gap-2 sm:gap-3">
                 <button
-                  onClick={() => handleViewSyllabus(course.syllabusUrl)} // Pass syllabusUrl to handler
-                  className="bg-[#0765BB] rounded-full px-3 py-1 text-[#FFFFFF] font-poppins font-bold shadow-2xl"
+                  onClick={() => handleViewSyllabus(course.syllabusUrl)}
+                  className="bg-blue-600 hover:bg-blue-700 transition-colors rounded-full px-3 py-2 text-xs sm:text-base text-white font-poppins font-bold"
                 >
                   View Syllabus
                 </button>
                 <button
-                  onClick={() => handleEnrollNow(course.googleFormUrl)} // Pass googleFormUrl to handler
-                  className="bg-[#28F455] rounded-full px-3 py-1 text-[#FFFFFF] font-poppins font-bold"
+                  onClick={() => handleEnrollNow(course.googleFormUrl)}
+                  className="bg-green-500 hover:bg-green-600 transition-colors rounded-full px-3 py-2 text-xs sm:text-base text-white font-poppins font-bold"
                 >
                   Enroll Now
                 </button>
               </div>
             </div>
-          ))}
+          </div>
         </div>
-      </Carousel>
-
-      {/* Custom Next and Previous Buttons */}
-      {/* <button
-        onClick={handlePrev}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 hover:bg-blue-400 text-black p-2 rounded-full shadow-lg z-20"
-        aria-label="Previous"
-      >
-        &larr;
-      </button>
-      <button
-        onClick={handleNext}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 hover:bg-blue-400 text-black p-2 rounded-full shadow-lg z-20"
-        aria-label="Next"
-      >
-        &rarr;
-      </button> */}
-    </div>
+      ))}
+    </Slider>
+  </div>
   );
 };
 

@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import CourseList from "../components/CourseList";
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
 import CourseSlide from "@/components/CourseSlide";
+import WhyUs from "@/components/WhyUs";
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
       <Hero />
       {/* <CourseList courseData={courseData} /> */}
       <CourseSlide course={courseData}/>
+      <WhyUs/>
     </div>
   );
 }
