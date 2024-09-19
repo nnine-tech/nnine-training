@@ -28,6 +28,6 @@ export default function Home() {
       <br />
       <Hero />
       <CourseList courseData={courseData} />
-    </div>
+    </div >
   );
 }
