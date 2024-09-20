@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import CourseList from "../components/CourseList";
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
+import ReviewLanding from "@/components/ReviewLanding";
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
       <br />
       <Hero />
       <CourseList courseData={courseData} />
+      <ReviewLanding/>
     </div>
   );
 }
