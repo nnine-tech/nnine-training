@@ -1,10 +1,10 @@
 "use client"; // This marks the file as a client component
 
 import { useEffect, useState } from "react";
-import Hero from "../components/Hero";
 import CourseList from "../components/CourseList";
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
 import ReviewLanding from "@/components/ReviewLanding";
+import Hero2 from "@/components/Hero2";
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div>
       <br />
-      <Hero />
+   <Hero2/>
       <CourseList courseData={courseData} />
       <ReviewLanding/>
     </div>
