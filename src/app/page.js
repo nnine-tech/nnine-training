@@ -23,7 +23,6 @@ export default function Home() {
     fetchData();
   }, []);
 
-  console.log(courseData); // This should now show the data
 
   return (
     <div>
