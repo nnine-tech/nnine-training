@@ -23,14 +23,13 @@ export default function Home() {
     fetchData();
   }, []);
 
-
   return (
     <div>
       <br />
       <Hero />
       {/* <CourseList courseData={courseData} /> */}
-      <CourseSlide course={courseData}/>
-      <WhyUs/>
+      <CourseSlide course={courseData} />
+      <WhyUs />
     </div>
   );
 }

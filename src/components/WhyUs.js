@@ -8,7 +8,9 @@ const WhyUs = () => {
           Why Choose Us
         </h1>
         <h3 className="text-gray-600 text-base md:text-xl font-Quicksand">
-          At N9, we offer industry-relevant courses designed to equip you with the latest skills and knowledge. Our expert trainers ensure you gain practical experience and mastery in cutting-edge technologies.
+          At N9, we offer industry-relevant courses designed to equip you with
+          the latest skills and knowledge. Our expert trainers ensure you gain
+          practical experience and mastery in cutting-edge technologies.
         </h3>
       </div>
 
@@ -25,7 +27,10 @@ const WhyUs = () => {
               Expert Trainers
             </h2>
             <p className="text-black font-Quicksand">
-              We are committed to your success beyond the classroom. Our dedicated placement support team works tirelessly to connect you with top employers, ensuring you secure the right job after completing your training.
+              We are committed to your success beyond the classroom. Our
+              dedicated placement support team works tirelessly to connect you
+              with top employers, ensuring you secure the right job after
+              completing your training.
             </p>
           </div>
 
@@ -40,7 +45,8 @@ const WhyUs = () => {
               Class Videos
             </h2>
             <p className="text-black font-Quicksand">
-              Access recorded videos of all the classes, ensuring that you can learn at your own pace and revisit topics whenever necessary.
+              Access recorded videos of all the classes, ensuring that you can
+              learn at your own pace and revisit topics whenever necessary.
             </p>
           </div>
 
@@ -55,7 +61,8 @@ const WhyUs = () => {
               Lifetime Support
             </h2>
             <p className="text-black font-Quicksand">
-              Enjoy lifetime support from our team, ensuring that no matter where your career takes you, we're here to assist and guide you.
+              Enjoy lifetime support from our team, ensuring that no matter
+              where your career takes you, we're here to assist and guide you.
             </p>
           </div>
         </div>
@@ -63,16 +70,14 @@ const WhyUs = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 md:mt-12">
           {/* Card 4 */}
           <div className="p-4 md:p-6 flex flex-col items-center text-center">
-            <img
-              src="price.svg"
-              className="h-12 w-12 mb-4"
-              alt="Best Price"
-            />
+            <img src="price.svg" className="h-12 w-12 mb-4" alt="Best Price" />
             <h2 className="text-xl font-bold mb-3 font-Quicksand">
               Best Price
             </h2>
             <p className="text-black font-Quicksand">
-              Our courses are competitively priced, ensuring you receive the best value for your investment while gaining high-quality training and resources.
+              Our courses are competitively priced, ensuring you receive the
+              best value for your investment while gaining high-quality training
+              and resources.
             </p>
           </div>
 
@@ -87,7 +92,8 @@ const WhyUs = () => {
               Certificate
             </h2>
             <p className="text-black font-Quicksand">
-              Upon completion of your course, you will receive a professional certificate, validating the skills and knowledge you've acquired.
+              Upon completion of your course, you will receive a professional
+              certificate, validating the skills and knowledge you've acquired.
             </p>
           </div>
 
@@ -102,7 +108,9 @@ const WhyUs = () => {
               Career Placement Support
             </h2>
             <p className="text-black font-Quicksand">
-              We are dedicated to helping you launch your career. Our team will connect you with top employers, providing personalized guidance to help you secure your dream job.
+              We are dedicated to helping you launch your career. Our team will
+              connect you with top employers, providing personalized guidance to
+              help you secure your dream job.
             </p>
           </div>
         </div>

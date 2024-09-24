@@ -36,19 +36,24 @@ const CourseSlide = (props) => {
   const router = useRouter();
 
   const handleViewSyllabus = (syllabusUrl) => {
-    if (typeof syllabusUrl === 'string') {
+    if (typeof syllabusUrl === "string") {
       router.push(syllabusUrl);
     } else {
-      console.error('Invalid URL:', syllabusUrl);
+      console.error("Invalid URL:", syllabusUrl);
     }
   };
 
   return (
     <div className="bg-[#E9E9E9] mx-5 mt-14 rounded-br-3xl rounded-tl-2xl">
       <div className="p-10 w-full max-w-screen-lg mx-auto flex flex-col items-center">
-        <h1 className="text-center text-3xl font-extrabold md:text-5xl font-Quicksand">Popular Courses</h1>
+        <h1 className="text-center text-3xl font-extrabold md:text-5xl font-Quicksand">
+          Popular Courses
+        </h1>
         <p className="text-center text-xl font-Quicksand mt-3">
-          Explore our most sought-after courses designed to help you master in-demand skills. Each program is carefully curated to provide hands-on learning, industry insights, and expert guidance, ensuring you're well-prepared for your next career move.
+          Explore our most sought-after courses designed to help you master
+          in-demand skills. Each program is carefully curated to provide
+          hands-on learning, industry insights, and expert guidance, ensuring
+          you're well-prepared for your next career move.
         </p>
       </div>
       <div className="relative p-4 max-w-full mx-3">
@@ -57,7 +62,7 @@ const CourseSlide = (props) => {
             <div
               key={index}
               className="relative w-full sm:w-[500px] md:w-[350px] lg:w-[300px] rounded-lg shadow-lg hover:shadow-xl max-w-sm rounded-bl-[40px] rounded-tr-[40px] flex-shrink-0 overflow-hidden mx-2 my-5"
-              style={{ height: '400px' }} // Set fixed height for each card
+              style={{ height: "400px" }} // Set fixed height for each card
               onClick={() => handleViewSyllabus(course.syllabusUrl)}
             >
               <img
@@ -69,9 +74,9 @@ const CourseSlide = (props) => {
                 <h1
                   className="font-bold font-poppins text-center text-base sm:text-lg text-gray-800 mb-2"
                   style={{
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   {course.title}
