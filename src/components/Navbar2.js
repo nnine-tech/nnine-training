@@ -69,7 +69,7 @@ const NavBar = () => {
             <li>
               <Link
                 href="/Popularcourses"
-                className="font-bold text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+                className="font-medium font-Quicksand text-[#6175AD] text-xl hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
               >
                 Courses
               </Link>
@@ -77,7 +77,7 @@ const NavBar = () => {
             <li>
               <Link
                 href="/Trainer"
-                className="font-bold text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+                className="font-medium font-Quicksand  text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl text-xl"
               >
                 Trainer
               </Link>
@@ -85,7 +85,7 @@ const NavBar = () => {
             <li>
               <Link
                 href="/Career"
-                className="font-bold text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+                className="font-medium font-Quicksand text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl text-xl"
               >
                 Career
               </Link>
@@ -93,7 +93,7 @@ const NavBar = () => {
             <li>
               <Link
                 href="/About"
-                className="font-bold text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+                className="font-medium font-Quicksand  text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl text-xl"
               >
                 About
               </Link>
@@ -101,15 +101,17 @@ const NavBar = () => {
             <li>
               <Link
                 href="/Contact"
-                className="font-bold text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+                className="font-medium font-Quicksand  text-[#6175AD] hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl text-xl"
               >
                 Contact Us
               </Link>
             </li>
             <li>
-              <button className="flex justify-center border border-[#050599] rounded-full p-2 w-auto font-semibold  text-[#0F0FAE] lg:ml-20 lg:w-[149px]">
-                Get started
-              </button>
+              <Link href="/Popularcourses">
+                <button className="font-medium font-Quicksand inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl border border-[#050599] text-[#0F0FAE] hover:bg-blue-100 ml-4  mr-4 lg:ml-20 lg:w-[149px] text-xl">
+                  Get Started
+                </button>
+                </Link>
             </li>
           </ul>
         </div>
