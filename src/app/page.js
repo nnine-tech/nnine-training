@@ -5,6 +5,8 @@ import CourseList from "../components/CourseList";
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
 import ReviewLanding from "@/components/ReviewLanding";
 import Hero2 from "@/components/Hero2";
+import CourseSlide from "@/components/CourseSlide";
+import WhyUs from "@/components/WhyUs";
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -22,14 +24,15 @@ export default function Home() {
     fetchData();
   }, []);
 
-  console.log(courseData); // This should now show the data
-
   return (
     <div>
       <br />
-   <Hero2/>
+      <Hero2 />
       <CourseList courseData={courseData} />
-      <ReviewLanding/>
+      <ReviewLanding />
+      {/* <CourseList courseData={courseData} /> */}
+      <CourseSlide course={courseData} />
+      <WhyUs />
     </div>
   );
 }
