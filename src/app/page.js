@@ -28,10 +28,10 @@ export default function Home() {
     <div>
       <br />
       <Hero2 />
-      <CourseList courseData={courseData} />
-      <ReviewLanding />
       {/* <CourseList courseData={courseData} /> */}
       <CourseSlide course={courseData} />
+      <ReviewLanding />
+      {/* <CourseList courseData={courseData} /> */}
       <WhyUs />
     </div>
   );
