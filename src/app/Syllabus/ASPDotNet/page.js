@@ -1,10 +1,12 @@
 import ASPDotNet from '@/Syllabus/ASPDotNet'
+import AspNet2 from '@/Syllabus/AspNet2'
 import React from 'react'
 
 const page = () => {
   return (
     <div>
-      <ASPDotNet />
+      {/* <ASPDotNet /> */}
+      <AspNet2/>
     </div>
   )
 }

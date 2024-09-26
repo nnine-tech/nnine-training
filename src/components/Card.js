@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
-import course from "@/app/Popularcourses/page";
 
 const Card = (props) => {
   const router = useRouter(); // Use useRouter hook
