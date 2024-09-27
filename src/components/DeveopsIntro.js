@@ -8,7 +8,7 @@ const Introduction = () => {
           THE COMPLETE DEVOPS COURSE
         </h1>
         <div className="flex flex-col md:flex-row-reverse mt-6 w-full">
-          {/* Image Section */}
+          {/* image section */}
           <div className="flex justify-center md:w-[36%] mt-4 md:mt-1">
             <img
               src="/deveops1.png"
@@ -16,7 +16,7 @@ const Introduction = () => {
               className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20"
             />
           </div>
-          {/* Text Section */}
+
           <div className="md:ml-20 flex flex-col gap-5 items-center md:items-start mt-8 md:mt-10 md:w-[64%]">
             <p className="text-lg md:text-2xl font-semibold font-poppins text-center md:text-left text-[#C1D4FF] mx-4 md:mx-0">
               Develop your DevOps  skills which includes Docker,Azure, Aws, and GitLAb.
