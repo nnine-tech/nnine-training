@@ -4,11 +4,16 @@ import Link from "next/link";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showNav, setShowNav] = useState(false);
+  const [showNav, setShowNav] = useState(true); // Set true initially to show nav by default
+  const [clicked, setClicked] = useState(""); // Track the clicked link
   const topRef = useRef(null);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLinkClick = (link) => {
+    setClicked(link); // Update the clicked link state
   };
 
   useEffect(() => {
@@ -30,7 +35,7 @@ const NavBar = () => {
 
       {showNav && (
         <div className="flex items-center justify-center">
-          <nav className="fixed top-0 left-0 right-0 lg:mx-auto w-full max-w-screen-xl z-30 transition duration-300 ease-in-out mb-16 rounded-full bg-[#E9E9E9] shadow-lg mt-16">
+          <nav className="fixed top-0 left-0 right-0 lg:mx-auto lg:w-[1375px] w-full  z-30 transition duration-300 ease-in-out mb-16 rounded-full bg-[#FFFF] shadow-lg mt-16">
             <div className="flex items-center justify-between py-1 px-6">
               {/* Logo */}
               <Link href="/">
@@ -79,7 +84,12 @@ const NavBar = () => {
                 <li>
                   <Link
                     href="/Popularcourses"
-                    className="font-medium font-Quicksand text-[#6175AD] text-xl hover:text-blue-600 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
+                    className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
+                      clicked === "courses"
+                        ? "text-blue-600" // Active class on click
+                        : "text-[#6175AD] hover:text-blue-600"
+                    }`}
+                    onClick={() => handleLinkClick("courses")}
                   >
                     Courses
                   </Link>
@@ -87,7 +97,12 @@ const NavBar = () => {
                 <li>
                   <Link
                     href="/Trainer"
-                    className="font-medium font-Quicksand text-[#6175AD] hover:text-blue-600 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl text-xl"
+                    className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
+                      clicked === "trainer"
+                        ? "text-blue-600"
+                        : "text-[#6175AD] hover:text-blue-600"
+                    }`}
+                    onClick={() => handleLinkClick("trainer")}
                   >
                     Trainer
                   </Link>
@@ -95,7 +110,12 @@ const NavBar = () => {
                 <li>
                   <Link
                     href="/Career"
-                    className="font-medium font-Quicksand text-[#6175AD] hover:text-blue-600 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl text-xl"
+                    className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
+                      clicked === "career"
+                        ? "text-blue-600"
+                        : "text-[#6175AD] hover:text-blue-600"
+                    }`}
+                    onClick={() => handleLinkClick("career")}
                   >
                     Career
                   </Link>
@@ -103,7 +123,12 @@ const NavBar = () => {
                 <li>
                   <Link
                     href="/About"
-                    className="font-medium font-Quicksand text-[#6175AD] hover:text-blue-600 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl text-xl"
+                    className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
+                      clicked === "about"
+                        ? "text-blue-600"
+                        : "text-[#6175AD] hover:text-blue-600"
+                    }`}
+                    onClick={() => handleLinkClick("about")}
                   >
                     About
                   </Link>
@@ -111,7 +136,12 @@ const NavBar = () => {
                 <li>
                   <Link
                     href="/Contact"
-                    className="font-medium font-Quicksand text-[#6175AD] hover:text-blue-600 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl text-xl"
+                    className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
+                      clicked === "contact"
+                        ? "text-blue-600"
+                        : "text-[#6175AD] hover:text-blue-600"
+                    }`}
+                    onClick={() => handleLinkClick("contact")}
                   >
                     Contact Us
                   </Link>

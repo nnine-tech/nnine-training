@@ -30,9 +30,10 @@ export default function Home() {
       <Hero2 />
       {/* <CourseList courseData={courseData} /> */}
       <CourseSlide course={courseData} />
-      <ReviewLanding />
+
       {/* <CourseList courseData={courseData} /> */}
       <WhyUs />
+      <ReviewLanding />
     </div>
   );
 }

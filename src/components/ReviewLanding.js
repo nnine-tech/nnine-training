@@ -77,11 +77,12 @@ const ReviewLanding = () => {
   };
 
   return (
-    <div className="w-full h-auto mt-10">
+  
+    <div className=" h-auto mt-10">
       <h1 className="flex justify-center  font-Quicksand items-center font-bold text-black text-4xl mb-8 mt-8 text-center">
         What Our Students Say About Us
       </h1>
-      <div className="mx-10 py-4 mb-16">
+      <div className="py-8 mr-8 mb-16">
         <Slider {...settings}>
           {reviews.map((review, index) => (
             <div key={review.id} className="px-2 mb-10">
@@ -126,6 +127,7 @@ const ReviewLanding = () => {
         </Slider>
       </div>
     </div>
+
   );
 };
 
