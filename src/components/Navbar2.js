@@ -16,6 +16,14 @@ const NavBar = () => {
     setClicked(link); // Update the clicked link state
   };
 
+  const handleLogoClick = () => {
+    setClicked(""); // Clear the clicked state when the logo is clicked
+  };
+
+  const handleGetStartedClick = () => {
+    setClicked("getStarted"); // Set clicked to 'getStarted' when the button is clicked
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const isTop = window.scrollY === 0;
@@ -35,10 +43,10 @@ const NavBar = () => {
 
       {showNav && (
         <div className="flex items-center justify-center">
-          <nav className="fixed top-0 left-0 right-0 lg:mx-auto lg:w-[1375px] w-full  z-30 transition duration-300 ease-in-out mb-16 rounded-full bg-[#FFFF] shadow-lg mt-16">
+          <nav className="fixed top-0 left-0 right-0 lg:mx-auto lg:w-[1375px] w-full z-30 transition duration-300 ease-in-out mb-16 rounded-full bg-[#FFFF] shadow-lg mt-16">
             <div className="flex items-center justify-between py-1 px-6">
               {/* Logo */}
-              <Link href="/">
+              <Link href="/" onClick={handleLogoClick}>
                 <div className="flex items-center">
                   <img
                     src="/logo2.svg"
@@ -148,7 +156,12 @@ const NavBar = () => {
                 </li>
                 <li>
                   <Link href="/Popularcourses">
-                    <button className="font-medium font-Quicksand inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl border border-[#050599] text-[#0F0FAE] hover:text-blue-600 ml-4 mr-4 lg:ml-20 lg:w-[149px] text-xl">
+                    <button
+                      className={`font-medium font-Quicksand inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl border border-[#050599] text-[#0F0FAE] hover:text-blue-600 ml-4 mr-4 lg:ml-20 lg:w-[149px] text-xl ${
+                        clicked === "getStarted" && "text-blue-600"
+                      }`}
+                      onClick={handleGetStartedClick}
+                    >
                       Get Started
                     </button>
                   </Link>
