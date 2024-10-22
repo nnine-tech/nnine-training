@@ -26,10 +26,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-[#F6F8FC]">
-      <br />
+    <div className="bg-[#F6F8FC] ">
+    
       <Hero2 />
-      <Gifpage/>
+      <Gifpage />
       {/* <CourseList courseData={courseData} /> */}
       <CourseSlide course={courseData} />
 
