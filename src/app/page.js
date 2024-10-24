@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import CourseList from "../components/CourseList";
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
+import LandingTrainers from "@/components/LandingTrainers";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -28,6 +31,7 @@ export default function Home() {
       <br />
       <Hero />
       <CourseList courseData={courseData} />
+      <LandingTrainers />
     </div>
   );
 }
