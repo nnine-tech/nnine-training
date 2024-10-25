@@ -60,7 +60,7 @@ const RedHatAdministratorClassType = () => {
       </div>
       
     </div>
-    <RedHatAdministratorSchedule/>
+    {/* <RedHatAdministratorSchedule/> */}
     </div>
   );
 };
