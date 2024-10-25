@@ -45,7 +45,7 @@ const LandingTrainers = () => {
   ];
 
   return (
-    <div className="bg-[#F4A623] h-[590px] w-[1350px] mt-[20px] mb-[93px] mr-[40px] ml-[70px] rounded-tl-2xl rounded-tr-sm rounded-bl-sm rounded-br-3xl flex flex-row gap-10">
+    <div className="bg-[#F4A623] h-[590px] w-[1350px] mt-[20px] mb-[93px] mr-[40px] ml-[70px] rounded-tl-xl rounded-tr-sm rounded-bl-sm rounded-br-3xl flex flex-row gap-10">
       <div className="flex justify-center items-center w-[2500px] mt-[26px] mb-[25px] ml-[100px]">
         <div className="h-[200px] w-[500px] justify-center flex flex-col text-left gap-4">
           <h1 className="font-semibold text-3xl ml-[85px]">Our Trainers</h1>
