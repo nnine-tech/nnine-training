@@ -61,7 +61,7 @@ const WebdevelopmentClassType = () => {
       </div>
       
     </div>
-    <WebdevelopmentSchedule/>
+    {/* <WebdevelopmentSchedule/> */}
     </div>
   );
 };
