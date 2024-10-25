@@ -58,7 +58,7 @@ const FlutterClassType = () => {
       </div>
       
     </div>
-    <FlutterSchedule/>
+    {/* <FlutterSchedule/> */}
     </div>
   );
 };
