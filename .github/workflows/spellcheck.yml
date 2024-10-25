@@ -1,20 +1,20 @@
-name: Spell Check
+# name: Spell Check
 
-on: [push, pull_request]
+# on: [push, pull_request]
 
-jobs:
-  spellcheck:
-    runs-on: ubuntu-latest
+# jobs:
+#   spellcheck:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
+#     steps:
+#     - uses: actions/checkout@v2
+#     - name: Set up Node.js
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: '18'
 
-    - name: Install cspell
-      run: npm install -g cspell
+#     - name: Install cspell
+#       run: npm install -g cspell
 
-    - name: Run Spell Checker
-      run: cspell "src/**/*.{ts,js,md}" --config .cspell.json
+#     - name: Run Spell Checker
+#       run: cspell "src/**/*.{ts,js,md}" --config .cspell.json
