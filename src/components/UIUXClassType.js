@@ -60,7 +60,7 @@ const UIUXClassType = () => {
       </div>
       
     </div>
-    <UIUXSchedule/>
+    {/* <UIUXSchedule/> */}
     </div>
   );
 };

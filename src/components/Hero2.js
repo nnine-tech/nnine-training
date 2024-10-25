@@ -1,7 +1,6 @@
 import React from "react";
 import { FaPlayCircle } from "react-icons/fa";
-import Link from "next/link"; 
-
+import Link from "next/link";
 
 const Hero2 = () => {
   return (
@@ -23,7 +22,7 @@ const Hero2 = () => {
           and placement support to drive your career forward.
         </h3>
         <div className="mt-6 md:mt-10 mb-6 md:mb-10 flex flex-col lg:flex-row gap-3 md:gap-5">
-        <Link href="/Popularcourses">
+          <Link href="/Popularcourses">
             <button className="bg-[#FFCF59] w-[140px] p-2 h-[50px] rounded-3xl font-Quicksand font-bold">
               Get Started
             </button>
@@ -48,7 +47,7 @@ const Hero2 = () => {
 
         {/* WhatsApp Icon wrapped in a link */}
         <a
-          href="https://wa.me/9779851359759" 
+          href="https://wa.me/9779851359759"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -77,8 +76,6 @@ const Hero2 = () => {
         }
       `}</style>
     </div>
-    
-    
   );
 };
 
