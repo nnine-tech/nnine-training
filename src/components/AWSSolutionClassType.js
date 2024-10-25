@@ -68,7 +68,7 @@ const AWSSolutionClassType = () => {
           </form>
         </div>
       </div>
-      <AWSSolutionSchedule />
+      {/* <AWSSolutionSchedule /> */}
     </div>
   );
 };

@@ -65,7 +65,7 @@ const EthicalHackingClassType = () => {
           </form>
         </div>
       </div>
-      <EthicalHackingSchedule />
+      {/* <EthicalHackingSchedule /> */}
     </div>
   );
 };
