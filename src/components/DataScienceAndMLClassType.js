@@ -59,7 +59,7 @@ const DataScienceAndMLClassType = () => {
       </div>
       
     </div>
-    <DataScienceAndMLClassSchedule/>
+    {/* <DataScienceAndMLClassSchedule/> */}
     </div>
   );
 };
