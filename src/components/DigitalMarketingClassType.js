@@ -61,7 +61,7 @@ const DigitalMarketingClassType= () => {
       </div>
       
     </div>
-    <DigitalMarketingSchedule/>
+    {/* <DigitalMarketingSchedule/> */}
     </div>
   );
 };
