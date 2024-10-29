@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap,");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,16 +11,8 @@
   background-size: cover;
 }
 
-/*hiding the scrollbar for trainers landing page..*/
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;
-} /* Firefox */
+/* globals.css */
+/* globals.css */
 
 /* :root {
   --foreground-rgb: 0, 0, 0;
@@ -50,3 +43,7 @@ body {
     text-wrap: balance;
   }
 } */
+
+.slick-slide div {
+  margin: 15px;
+}

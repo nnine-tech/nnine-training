@@ -55,7 +55,7 @@ const RedHatOpenShiftDevelopmentClassType = () => {
       </div>
       
     </div>
-    < RedHatOpenShiftDevelopmentSchedule/>
+    {/* < RedHatOpenShiftDevelopmentSchedule/> */}
     </div>
   );
 };

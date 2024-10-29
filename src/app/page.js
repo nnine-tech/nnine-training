@@ -1,12 +1,11 @@
 "use client"; // This marks the file as a client component
 
 import { useEffect, useState } from "react";
-import Hero from "../components/Hero";
-import CourseList from "../components/CourseList";
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
-import LandingTrainers from "@/components/LandingTrainers";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import ReviewLanding from "@/components/ReviewLanding";
+import Hero2 from "@/components/Hero2";
+import CourseSlide from "@/components/CourseSlide";
+import WhyUs from "@/components/WhyUs";
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -24,14 +23,16 @@ export default function Home() {
     fetchData();
   }, []);
 
-  console.log(courseData); // This should now show the data
-
   return (
     <div>
       <br />
-      <Hero />
-      <CourseList courseData={courseData} />
-      <LandingTrainers />
+      <Hero2 />
+      {/* <CourseList courseData={courseData} /> */}
+      <CourseSlide course={courseData} />
+
+      {/* <CourseList courseData={courseData} /> */}
+      <WhyUs />
+      <ReviewLanding />
     </div>
   );
 }

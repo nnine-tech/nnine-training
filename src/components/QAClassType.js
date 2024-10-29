@@ -60,7 +60,7 @@ const  QAClassType = () => {
       </div>
       
     </div>
-    <QASchedule/>
+    {/* <QASchedule/> */}
     </div>
   );
 };
