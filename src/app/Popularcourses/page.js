@@ -110,6 +110,39 @@ export default function Course() {
       <div>
         <CourseList courseData={courseData} />
       </div>
+
+      {/* Second div with WhatsApp Icon */}
+      <div className="">
+        {/* WhatsApp Icon wrapped in a link */}
+        <a
+          href="https://wa.me/9779851359759"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/whatapp.svg"
+            alt="WhatsApp Icon"
+            className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] fixed right-5"
+            style={{
+              top: "50%",
+              transform: "translateY(-50%)", // Keeps the icon centered vertically
+              zIndex: "9999",
+              animation: "spin 4s linear infinite", // Ensures the icon spins
+            }}
+          />
+        </a>
+      </div>
+      {/* Keyframes for spinning animation */}
+      <style jsx>{`
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
     </div>
   );
 }
