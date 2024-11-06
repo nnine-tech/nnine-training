@@ -63,7 +63,7 @@ const  AWSDevelopmentClassType = () => {
       </div>
       
     </div>
-    <AWSDevelopmentSchedule/>
+    {/* <AWSDevelopmentSchedule/> */}
     </div>
   );
 };

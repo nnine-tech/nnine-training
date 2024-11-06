@@ -58,7 +58,7 @@ const CPlusClassType = () => {
       </div>
       
     </div>
-    <CPlusSchedule/>
+    {/* <CPlusSchedule/> */}
     </div>
   );
 };

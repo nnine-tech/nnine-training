@@ -65,7 +65,7 @@ const AwsCloudClassType = () => {
           </form>
         </div>
       </div>
-      <AwsCloudSchedule/>
+      {/* <AwsCloudSchedule/> */}
     </div>
   );
 };
