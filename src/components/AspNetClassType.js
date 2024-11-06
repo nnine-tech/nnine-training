@@ -60,7 +60,7 @@ const AspNetClassType = () => {
       </div>
       
     </div>
-    <AspNetSchedule/>
+    {/* <AspNetSchedule/> */}
     </div>
   );
 };

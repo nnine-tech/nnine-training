@@ -1,13 +1,12 @@
 import React from "react";
 import { FaPlayCircle } from "react-icons/fa";
-import Link from "next/link"; 
-
+import Link from "next/link";
 
 const Hero2 = () => {
   return (
-    <div className="bg-[#004AAD] h-auto flex  flex-col lg:flex-row ">
+    <div className="bg-[#004AAD] h-auto flex  flex-col lg:flex-row">
       <div className="bg-[#004AAD] ml-0 lg:ml-16 w-full lg:w-[1000px] flex flex-col justify-center p-5 lg:p-10 mt-2 lg:mt-32">
-        <h1 className="text-[#FFFFFF] text-5xl md:text-5xl lg:text-6xl font-semibold font-Quicksand mt-2">
+        <h1 className="text-[#FFFFFF] text-5xl md:text-5xl lg:text-6xl font-semibold font-Quicksand mt-24 lg:mt-9">
           Unlocking <span className="text-[#FFCF59] lg:text-6xl">your</span>
         </h1>
         <h1 className="text-[#FFCF59] text-5xl md:text-5xl lg:text-6xl font-semibold font-Quicksand mt-2">
@@ -23,7 +22,7 @@ const Hero2 = () => {
           and placement support to drive your career forward.
         </h3>
         <div className="mt-6 md:mt-10 mb-6 md:mb-10 flex flex-col lg:flex-row gap-3 md:gap-5">
-        <Link href="/Popularcourses">
+          <Link href="/Popularcourses">
             <button className="bg-[#FFCF59] w-[140px] p-2 h-[50px] rounded-3xl font-Quicksand font-bold">
               Get Started
             </button>
@@ -48,7 +47,7 @@ const Hero2 = () => {
 
         {/* WhatsApp Icon wrapped in a link */}
         <a
-          href="https://wa.me/9779851359759" 
+          href="https://wa.me/9779851359759"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -77,8 +76,6 @@ const Hero2 = () => {
         }
       `}</style>
     </div>
-    
-    
   );
 };
 

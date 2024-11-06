@@ -16,4 +16,4 @@ const Flutter2 = () => {
   )
 }
 
-export default Flutter2
+export default Flutter2;
