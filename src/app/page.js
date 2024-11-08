@@ -1,7 +1,9 @@
 "use client"; // This marks the file as a client component
 
 import { useEffect, useState } from "react";
+
 import CourseList from "../components/CourseList";
+
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
 import ReviewLanding from "@/components/ReviewLanding";
 import Hero2 from "@/components/Hero2";
@@ -26,10 +28,12 @@ export default function Home() {
   }, []);
 
   return (
+
     <div className="bg-[#F6F8FC] ">
     
       <Hero2 />
       <Gifpage />
+
       {/* <CourseList courseData={courseData} /> */}
       <CourseSlide course={courseData} />
 
