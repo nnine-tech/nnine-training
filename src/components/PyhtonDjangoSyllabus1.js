@@ -98,20 +98,20 @@ return (
                     className="mr-0 w-[11px] h-[14px]"
                   />
                 </button>
-                <span className="font-semibold font-poppins">
+                <span className="font-semibold font-Lexend">
                   {section.title}
                 </span>
-                <span className="hidden md:block text-right ml-auto font-poppins">
+                <span className="hidden md:block text-right ml-auto font-Lexend">
                   {section.info}
                 </span>
               </div>
             </div>
             {openDropdowns[section.title] && (
               <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
-                <ul className="p-2">
+                <ul className="p-2 font-Lexend">
                   {section.lectures.map((lecture, idx) => (
-                    <li key={idx} className="py-1">
-                      <span className="mx-1">•</span>
+                    <li key={idx} className="py-1 font-Lexend">
+                      <span className="mx-1 font-Lexend">•</span>
                       {lecture}
                     </li>
                   ))}
