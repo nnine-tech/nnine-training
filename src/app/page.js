@@ -1,11 +1,12 @@
 "use client"; // This marks the file as a client component
 
+import ProductManager from "@/components/ProductManager";
+// import { fetchMarkdownFile } from "../utils/fetchMarkdown";
+// import ReviewLanding from "@/components/ReviewLanding";
+// import Hero2 from "@/components/Hero2";
+// import CourseSlide from "@/components/CourseSlide";
+// import WhyUs from "@/components/WhyUs";
 import { useEffect, useState } from "react";
-import { fetchMarkdownFile } from "../utils/fetchMarkdown";
-import ReviewLanding from "@/components/ReviewLanding";
-import Hero2 from "@/components/Hero2";
-import CourseSlide from "@/components/CourseSlide";
-import WhyUs from "@/components/WhyUs";
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -26,13 +27,14 @@ export default function Home() {
   return (
     <div>
       <br />
-      <Hero2 />
+      {/* <Hero2 /> */}
       {/* <CourseList courseData={courseData} /> */}
-      <CourseSlide course={courseData} />
+      {/* <CourseSlide course={courseData} /> */}
 
       {/* <CourseList courseData={courseData} /> */}
-      <WhyUs />
-      <ReviewLanding />
+      {/* <WhyUs />
+      <ReviewLanding /> */}
+      <ProductManager />
     </div>
   );
 }

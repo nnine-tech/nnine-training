@@ -1,8 +1,8 @@
+import Career from '@/components/Career'
 import React from 'react'
-import JobDescription from "@/components/Career";
 const career = () => {
   return (
-    <div><JobDescription /></div>
+    <div><Career /></div>
   )
 }
 
