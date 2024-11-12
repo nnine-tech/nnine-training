@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React from "react";
 
 const ProductManager = () => {
@@ -120,3 +121,5 @@ const ProductManager = () => {
 };
 
 export default ProductManager;
+=======
+>>>>>>> Stashed changes

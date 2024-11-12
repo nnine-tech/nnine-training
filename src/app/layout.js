@@ -16,8 +16,14 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <title>{metadata.title}</title>
       <body className={inter.className}>
+<<<<<<< Updated upstream
       <NavBar />
         {children} 
+=======
+        {/* <NavBar /> */}
+        <Navbar2 />
+        {children}
+>>>>>>> Stashed changes
         <Footer />
       </body>
     </html>

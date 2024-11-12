@@ -1,6 +1,16 @@
+<<<<<<< Updated upstream
 import React from "react";
 
 const LandingTrainers = () => {
+=======
+import React, { useEffect, useRef } from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const LandingTrainers = () => {
+  const trainersContainerRef = useRef(null);
+
+>>>>>>> Stashed changes
   const trainers = [
     {
       id: 1,
@@ -35,7 +45,31 @@ const LandingTrainers = () => {
     {
       id: 4,
       src: "sudan1.jpg",
+<<<<<<< Updated upstream
       alt: "Trainer 3",
+=======
+      alt: "Trainer 4",
+      name: "Sudan",
+      review:
+        "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
+      skills: ["AWS", "Cloud Computing", "Serverless"],
+      rating: 5,
+    },
+    {
+      id: 5,
+      src: "sudan1.jpg",
+      alt: "Trainer 5",
+      name: "Sudan",
+      review:
+        "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
+      skills: ["AWS", "Cloud Computing", "Serverless"],
+      rating: 5,
+    },
+    {
+      id: 6,
+      src: "sudan1.jpg",
+      alt: "Trainer ",
+>>>>>>> Stashed changes
       name: "Sudan",
       review:
         "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
@@ -44,6 +78,7 @@ const LandingTrainers = () => {
     },
   ];
 
+<<<<<<< Updated upstream
   return (
     <div className="bg-[#F4A623] h-[590px] w-[1350px] mt-[20px] mb-[93px] mr-[40px] ml-[70px] rounded-tl-xl rounded-tr-sm rounded-bl-sm rounded-br-3xl flex flex-row gap-10">
       <div className="flex justify-center items-center w-[2500px] mt-[26px] mb-[25px] ml-[100px]">
@@ -61,6 +96,47 @@ const LandingTrainers = () => {
           <div
             key={trainer.id}
             className="bg-[#F6F8FC] h-[300px] flex justify-between p-3 border rounded-lg gap-4"
+=======
+  // Auto-scroll effect
+  useEffect(() => {
+    const container = trainersContainerRef.current;
+    if (!container) return;
+
+    const scrollSpeed = 1;
+    let scrollInterval = setInterval(() => {
+      if (container.scrollTop >= container.scrollHeight - container.clientHeight) {
+        container.scrollTop = 0;
+      } else {
+        container.scrollTop += scrollSpeed;
+      }
+    }, 20);
+
+    return () => clearInterval(scrollInterval);
+  }, []);
+
+  return (
+    <div className="bg-[#FCE4BD] h-[601] w-[90vw] mt-[40px] mb-[93px] mr-[60px] ml-[60px] rounded-tl-xl rounded-tr-sm rounded-bl-sm rounded-br-3xl flex flex-row gap-10 font-['Quicksand']">
+      <div className="flex items-center mb-6 w-[2500px] mt-[26px] mb-[25px] ml-[50px]">
+        <div className="h-[200px] w-[500px]  flex flex-col text-left gap-4">
+        <h1 className="font-bold text-[48px] ml-[20px]">Our Trainers</h1>
+        <p className="ml-[20px] text-[20px] text-[#545252]">
+        Our trainers are dedicated to your success, providing personalized attention and ensuring that each learner leaves with a solid understanding of the subject.
+</p>
+
+        </div>
+      </div>
+
+      {/* Auto-scrolling container */}
+      <div
+        ref={trainersContainerRef}
+        className="flex flex-col w-[1500px] mb-[25px] mt-[26px] mr-[80px] gap-7 overflow-hidden"
+        style={{ maxHeight: '500px' }}
+      >
+        {trainers.map((trainer) => (
+          <div
+            key={trainer.id}
+            className="bg-[#F6F8FC] h-[300px] flex justify-between p-3 border rounded-lg gap-4 animate-fadeIn"
+>>>>>>> Stashed changes
           >
             <img
               src={trainer.src}

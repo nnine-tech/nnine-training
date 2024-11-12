@@ -7,10 +7,12 @@ import Slider from "react-slick";
 const CourseSlide = (props) => {
   const settings = {
     dots: false,
-    infinite: false,
+    infinite:true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    autoplay:true,
+    autoplaySpeed:100,
     responsive: [
       {
         breakpoint: 1024,
