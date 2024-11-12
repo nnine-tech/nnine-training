@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+>>>>>>> abc626b3645c2b0cc23d99fe202830f2ddf35af4
 import React from "react";
 
 const ProductManager = () => {
@@ -93,7 +97,11 @@ const ProductManager = () => {
           <li>Excellent interpersonal and communication skills.</li>
           <li>
             Adaptability and flexibility in adjusting teaching strategies to
+<<<<<<< HEAD
             meet the needs of diverse learners
+=======
+            meet the needs of diverse learners.
+>>>>>>> abc626b3645c2b0cc23d99fe202830f2ddf35af4
           </li>
         </ul>
 
@@ -108,7 +116,13 @@ const ProductManager = () => {
             className="text-[#5B77EC] underline hover:text-[#3a59c9]"
           >
             nninesolution@gmail.com
+<<<<<<< HEAD
           </a>{" "}
+=======
+          </a>
+          {" "}
+
+>>>>>>> abc626b3645c2b0cc23d99fe202830f2ddf35af4
           and join us in empowering aspiring software testers and quality
           assurance specialists!
         </p>
@@ -118,3 +132,8 @@ const ProductManager = () => {
 };
 
 export default ProductManager;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> Stashed changes
+>>>>>>> abc626b3645c2b0cc23d99fe202830f2ddf35af4

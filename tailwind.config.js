@@ -21,12 +21,20 @@ module.exports = {
         "poppins": "Poppins",
         "Montserrat":"Montserrat",
         robotoSlab: ['Roboto Slab', 'serif'],
-        "Quicksand": "Quicksand"
+        "Quicksand": "Quicksand",
+<<<<<<< HEAD
+        "Laila": "Laila",
+        "Lexend": "Lexend"
+=======
+        "Laila": "Laila"
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
       },
       boxShadow: {
         'bottom': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animate"),
+  ],
 };
