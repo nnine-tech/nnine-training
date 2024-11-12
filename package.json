@@ -37,7 +37,8 @@
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.0",
     "shiki": "^1.5.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "postcss": "^8",
