@@ -10,7 +10,11 @@ const reviews = [
     name: 'Nirjala Shrestha',
     role: ' Full Stack Developer',
     review:
+<<<<<<< HEAD
       'Studying at N9 Solution has been a great experience for me. The MERN stack training is hands-on, and Ive gained practical skills that have boosted my confidence in web development. ',
+=======
+      'Studying at N9 Solution has been a great experience for me. The MERN stack training is hands-on, and I’ve gained practical skills that have boosted my confidence in web development. ',
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
     image: '/nirjala.jpg',
     stars: 5,
   },
@@ -47,7 +51,11 @@ const ReviewLanding = () => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const settings = {
+<<<<<<< HEAD
     dots: false,
+=======
+    dots: true,
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
     arrows: false,
     infinite: true,
     speed: 500,
@@ -55,10 +63,13 @@ const ReviewLanding = () => {
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '0px',
+<<<<<<< HEAD
     autoplay:true,
     autoplaySpeed:200,
     pauseOnHover: true,  // Pauses autoplay when hovered (desktop)
     pauseOnFocus: true,  // Pauses autoplay on focus (useful for mobile touch)
+=======
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
     beforeChange: (current, next) => setActiveSlide(next),
     responsive: [
       {
@@ -67,7 +78,11 @@ const ReviewLanding = () => {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
+<<<<<<< HEAD
           dots: false,
+=======
+          dots: true,
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
         },
       },
       {

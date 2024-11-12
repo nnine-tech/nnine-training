@@ -4,7 +4,11 @@ const WebdevelopmentIntro = () => {
   return (
     <div className="flex flex-col md:flex-row w-[400px]   sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
       <div className="flex flex-col w-full mt-32">
+<<<<<<< HEAD
         <h1 className="mt-10 md:mt-24 font-bold font-Quicksand text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
+=======
+        <h1 className="mt-10 md:mt-24 font-bold text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
           THE COMPLETE WEBDEVELOPMENT COURSE
         </h1>
         <div className="flex flex-col md:flex-row-reverse mt-6 w-full">
@@ -46,7 +50,11 @@ const WebdevelopmentIntro = () => {
               </div>
               <div className="flex items-center gap-2">
                 <img src="/career.svg" alt="Career" />
+<<<<<<< HEAD
                 <h2 className="text-[#FFFFFF] font-Quicksand">
+=======
+                <h2 className="text-[#FFFFFF]">
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
                   Career: Web Developer Developer
                 </h2>
               </div>

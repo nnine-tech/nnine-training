@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useRouter } from "next/navigation";
-import Slider from "react-slick";
+import dynamic from "next/dynamic";
+
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 const CourseSlide = (props) => {
+  const [isMounted, setIsMounted] = useState(false);
+  const router = useRouter();
+
   const settings = {
     dots: false,
     infinite:true,
@@ -35,8 +40,6 @@ const CourseSlide = (props) => {
     ],
   };
 
-  const router = useRouter();
-
   const handleViewSyllabus = (syllabusUrl) => {
     if (typeof syllabusUrl === "string") {
       router.push(syllabusUrl);
@@ -44,6 +47,10 @@ const CourseSlide = (props) => {
       console.error("Invalid URL:", syllabusUrl);
     }
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <div className="bg-[#E9E9E9] mx-5 mt-14 rounded-br-3xl rounded-tl-2xl">
@@ -58,49 +65,54 @@ const CourseSlide = (props) => {
           you're well-prepared for your next career move.
         </p>
       </div>
-      <div className="relative p-4 max-w-full mx-3">
-        <Slider {...settings}>
-          {props.course.map((course, index) => (
-            <div
-              key={index}
-              className="relative w-full sm:w-[500px] md:w-[350px] lg:w-[300px] rounded-lg shadow-lg hover:shadow-xl max-w-sm rounded-bl-[40px] rounded-tr-[40px] flex-shrink-0 overflow-hidden mx-2 my-5"
-              style={{ height: "400px" }} // Set fixed height for each card
-              onClick={() => handleViewSyllabus(course.syllabusUrl)}
-            >
-              <img
-                src={course.imageUrl}
-                alt={course.title}
-                className="w-full h-[150px] sm:h-[200px] object-cover"
-              />
-              <div className="px-4 sm:px-6 py-4 overflow-hidden">
-                <h1
-                  className="font-bold font-poppins text-center text-base sm:text-lg text-gray-800 mb-2"
-                  style={{
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
+
+      <div className="relative  pl-4 pr-4 max-w-full mx-auto">
+        {isMounted && (
+          <div className="pr-3 pl-3">
+            <Slider {...settings}>
+              {props.course.map((course, index) => (
+                <div
+                  key={index}
+                  className="relative w-full sm:w-[500px] md:w-[350px] lg:w-[300px] rounded-lg shadow-lg hover:shadow-xl max-w-sm rounded-bl-[40px] rounded-tr-[40px] flex-shrink-0 overflow-hidden my-5 "
+                  style={{ height: "400px" }}
+                  onClick={() => handleViewSyllabus(course.syllabusUrl)}
                 >
-                  {course.title}
-                </h1>
-                <h2 className="font-medium text-center text-gray-600 text-xs sm:text-sm mb-4">
-                  Duration: {course.courseDuration}
-                </h2>
-                <div className="flex items-center justify-center">
-                  <button
-                    className="bg-[#0765BB] text-white w-[100px] h-[30px] rounded-3xl text-xs font-bold"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleViewSyllabus(course.syllabusUrl);
-                    }}
-                  >
-                    Read More
-                  </button>
+                  <img
+                    src={course.imageUrl}
+                    alt={course.title}
+                    className="w-full h-[150px] sm:h-[200px] object-cover"
+                  />
+                  <div className="px-4 sm:px-6 py-4 overflow-hidden">
+                    <h1
+                      className="font-bold font-poppins text-center text-base sm:text-lg text-gray-800 mb-2"
+                      style={{
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
+                      {course.title}
+                    </h1>
+                    <h2 className="font-medium text-center text-gray-600 text-xs sm:text-sm mb-4">
+                      Duration: {course.courseDuration}
+                    </h2>
+                    <div className="flex items-center justify-center">
+                      <button
+                        className="bg-[#0765BB] text-white w-[100px] h-[30px] rounded-3xl text-xs font-bold"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleViewSyllabus(course.syllabusUrl);
+                        }}
+                      >
+                        Read More
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
+              ))}
+            </Slider>
+          </div>
+        )}
       </div>
     </div>
   );

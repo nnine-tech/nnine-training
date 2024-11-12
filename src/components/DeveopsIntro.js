@@ -2,9 +2,15 @@ import React from "react";
 
 const Introduction = () => {
   return (
+<<<<<<< HEAD
     <div className="flex flex-col md:flex-row w-[400px] sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
       <div className="flex flex-col w-full mt-32">
         <h1 className="mt-10 md:mt-24 font-bold font-Quicksand text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
+=======
+    <div className="flex flex-col md:flex-row w-[400px]   sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
+      <div className="flex flex-col w-full mt-32">
+        <h1 className="mt-10 md:mt-24 font-bold text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
           THE COMPLETE DEVOPS COURSE
         </h1>
         <div className="flex flex-col md:flex-row-reverse mt-6 w-full">
@@ -20,10 +26,13 @@ const Introduction = () => {
           <div className="md:ml-20 flex flex-col gap-5 items-center md:items-start mt-8 md:mt-10 md:w-[64%]">
 <<<<<<< Updated upstream
             <p className="text-lg md:text-2xl font-semibold font-poppins text-center md:text-left text-[#C1D4FF] mx-4 md:mx-0">
+<<<<<<< HEAD
 
 =======
             <p className="text-lg md:text-2xl font-semibold font-Quicksand text-center md:text-left text-[#C1D4FF] mx-4 md:mx-0">
 >>>>>>> Stashed changes
+=======
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
               Develop your DevOps  skills which includes Docker,Azure, Aws, and GitLAb.
             </p>
             <div className="flex flex-wrap gap-4 mt-5 justify-center md:justify-start">

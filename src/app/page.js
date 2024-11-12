@@ -1,19 +1,28 @@
 "use client"; // This marks the file as a client component
 
 import { useEffect, useState } from "react";
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 
 import CourseList from "../components/CourseList";
 
 >>>>>>> Stashed changes
+=======
+
+import CourseList from "../components/CourseList";
+
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
 import ReviewLanding from "@/components/ReviewLanding";
 import Hero2 from "@/components/Hero2";
 import CourseSlide from "@/components/CourseSlide";
 import WhyUs from "@/components/WhyUs";
 import Gifpage from "@/components/Gifpage";
+<<<<<<< HEAD
 import LandingTrainers from "@/components/LandingTrainers";
+=======
+>>>>>>> 2250833a24d38114f3c9c958e419f9e80edfc822
 // import Banner from '@/components/Ads';
 
 export default function Home() {
