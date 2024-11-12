@@ -44,7 +44,15 @@
     "tailwindcss": "^3.4.1"
   },
   "main": "index.js",
-  "repository": "https://github.com/Mingtindu/nnine-tech-next.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mingtindu/nnine-tech-next.git"
+  },
   "author": "ngimatendi <ngimatendi12@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "bugs": {
+    "url": "https://github.com/Mingtindu/nnine-tech-next/issues"
+  },
+  "homepage": "https://github.com/Mingtindu/nnine-tech-next#readme"
 }
