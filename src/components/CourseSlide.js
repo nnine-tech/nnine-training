@@ -12,12 +12,12 @@ const CourseSlide = (props) => {
 
   const settings = {
     dots: false,
-    infinite:true,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay:true,
-    autoplaySpeed:100,
+    autoplay: true,
+    autoplaySpeed: 100,
     responsive: [
       {
         breakpoint: 1024,
@@ -66,14 +66,14 @@ const CourseSlide = (props) => {
         </p>
       </div>
 
-      <div className="relative  pl-4 pr-4 max-w-full mx-auto">
+      <div className="relative  pl-4 pr-4 max-w-full mx-auto ">
         {isMounted && (
-          <div className="pr-3 pl-3">
-            <Slider {...settings}>
+          <div className="pr-3 pl-3 ">
+            <Slider {...settings} className="">
               {props.course.map((course, index) => (
                 <div
                   key={index}
-                  className="relative w-full sm:w-[500px] md:w-[350px] lg:w-[300px] rounded-lg shadow-lg hover:shadow-xl max-w-sm rounded-bl-[40px] rounded-tr-[40px] flex-shrink-0 overflow-hidden my-5 "
+                  className="felx  w-full sm:w-[500px] md:w-[350px] lg:w-[300px] rounded-lg shadow-lg hover:shadow-xl max-w-sm rounded-bl-[40px] rounded-tr-[40px] flex-shrink-0 overflow-hidden my-5  "
                   style={{ height: "400px" }}
                   onClick={() => handleViewSyllabus(course.syllabusUrl)}
                 >
