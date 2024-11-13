@@ -106,7 +106,7 @@ return (
   <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
     <div className="w-[80%] flex flex-col mt-14">
       <div className="w-full">
-        <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
+        <h1 className="font-bold text-3xl ml-8 p-[10px] font-Quicksand mb-[37px] text-[#003366]">
           Course Syllabus
         </h1>
         {syllabusSections.map((section, index) => (
@@ -133,10 +133,10 @@ return (
                     className="mr-0 w-[11px] h-[14px]"
                   />
                 </button>
-                <span className="font-semibold font-poppins">
+                <span className="font-semibold font-Quicksand">
                   {section.title}
                 </span>
-                <span className="hidden md:block text-right ml-auto font-poppins">
+                <span className="hidden md:block text-right ml-auto font-Quicksand">
                   {section.info}
                 </span>
               </div>
@@ -145,7 +145,7 @@ return (
               <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
                 <ul className="p-2">
                   {section.lectures.map((lecture, idx) => (
-                    <li key={idx} className="py-1">
+                    <li key={idx} className="py-1 font-Quicksand">
                       <span className="mx-1">•</span>
                       {lecture}
                     </li>

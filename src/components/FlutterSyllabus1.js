@@ -4,10 +4,8 @@ import React, { useState } from "react";
 import FlutterClassType from "./FlutterClassType";
 
 const FlutterSyllabus1 = () => {
-  // State to manage dropdown visibility for each section
   const [openDropdowns, setOpenDropdowns] = useState({});
 
-  // Function to toggle dropdown visibility
   const toggleDropdown = (section) => {
     setOpenDropdowns((prev) => ({
       ...prev,
@@ -15,14 +13,10 @@ const FlutterSyllabus1 = () => {
     }));
   };
 
-  // Array of syllabus sections
   const syllabusSections = [
     {
       title: "Course Information",
       lectures: [
-        "Nature of the Course: Theory + Practical",
-        "Course Duration: 80 Hours",
-        "Course Objectives",
         "The Flutter & Dart course provides a comprehensive introduction to mobile app development using Flutter and Dart. You will learn to build and deploy high-performance, cross-platform mobile applications. This course covers everything from the basics of Dart and Flutter to advanced topics like state management and Firebase integration.",
         "Required Textbooks",
         "Eric Windmill, 'Flutter in Action', Manning Publications",
@@ -176,20 +170,18 @@ const FlutterSyllabus1 = () => {
       info: "1 lecture • 10 hours",
     },
   ];
+
   return (
     <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
       <div className="w-[80%] flex flex-col mt-14">
         <div className="w-full">
-          <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-3xl ml-8 p-[10px] font-Quicksand mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div
-              key={index}
-              className={`relative w-full max-w-[800px]`}
-            >
+            <div key={index} className="relative w-full max-w-[800px]">
               <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
                   !openDropdowns[section.title] &&
                   index !== syllabusSections.length - 1
                     ? "border-b-5"
@@ -207,20 +199,26 @@ const FlutterSyllabus1 = () => {
                       className="mr-0 w-[11px] h-[14px]"
                     />
                   </button>
-                  <span className="font-semibold font-poppins">
+                  <span className="font-semibold font-Quicksand">
                     {section.title}
                   </span>
-                  <span className="hidden md:block text-right ml-auto font-poppins">
+                  <span className="hidden md:block text-right ml-auto font-Quicksand">
                     {section.info}
                   </span>
                 </div>
               </div>
               {openDropdowns[section.title] && (
                 <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
-                  <ul className="p-2">
+                  <ul className="p-2 list-disc list-inside">
                     {section.lectures.map((lecture, idx) => (
-                      <li key={idx} className="py-1">
-                        <span className="mx-1">•</span>
+                      <li
+                        key={idx}
+                        className={`py-1 font-Quicksand ml-14 ${
+                          lecture.startsWith("Lesson")
+                            ? "font-bold list-none"
+                            : ""
+                        }`}
+                      >
                         {lecture}
                       </li>
                     ))}
