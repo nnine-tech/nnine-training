@@ -66,15 +66,14 @@ const CourseSlide = (props) => {
         </p>
       </div>
 
-      <div className="relative  pl-4 pr-4 max-w-full mx-auto ">
+      <div className="relative pl-4 pr-4 max-w-full mx-auto">
         {isMounted && (
-          <div className="pr-3 pl-3 ">
-            <Slider {...settings} className="">
+          <div className="pr-3 pl-3">
+            <Slider {...settings}>
               {props.course.map((course, index) => (
                 <div
                   key={index}
-                  className="felx  w-full sm:w-[500px] md:w-[350px] lg:w-[300px] rounded-lg shadow-lg hover:shadow-xl max-w-sm rounded-bl-[40px] rounded-tr-[40px] flex-shrink-0 overflow-hidden my-5  "
-                  style={{ height: "400px" }}
+                  className="w-full sm:w-[500px] md:w-[350px] lg:w-[300px] rounded-lg shadow-lg hover:shadow-xl max-w-sm rounded-bl-[40px] rounded-tr-[40px] overflow-hidden my-5"
                   onClick={() => handleViewSyllabus(course.syllabusUrl)}
                 >
                   <img
