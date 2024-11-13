@@ -80,7 +80,7 @@ return (
             className={`relative w-full max-w-[800px]`}
           >
             <div
-              className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
+              className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all  mt-1 ${
                 !openDropdowns[section.title] &&
                 index !== syllabusSections.length - 1
                   ? "border-b-5"
@@ -98,20 +98,20 @@ return (
                     className="mr-0 w-[11px] h-[14px]"
                   />
                 </button>
-                <span className="font-semibold font-Lexend">
+                <span className="font-semibold font-Quicksand">
                   {section.title}
                 </span>
-                <span className="hidden md:block text-right ml-auto font-Lexend">
+                <span className="hidden md:block text-right ml-auto font-Quicksand">
                   {section.info}
                 </span>
               </div>
             </div>
             {openDropdowns[section.title] && (
               <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
-                <ul className="p-2 font-Lexend">
+                <ul className="p-2 font-Quicksand">
                   {section.lectures.map((lecture, idx) => (
-                    <li key={idx} className="py-1 font-Lexend">
-                      <span className="mx-1 font-Lexend">•</span>
+                    <li key={idx} className="py-1 font-Quicksand ml-14 ">
+                      <span className="mx-1 font-Quicksand">•</span>
                       {lecture}
                     </li>
                   ))}
