@@ -26,14 +26,7 @@ export default function Course() {
   return (
     <div>
       <div
-        style={{
-          backgroundImage: "url('coursecurve.svg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          width: "100%",
-          height: "900px",
-        }}
-        className="flex flex-col md:flex-row"
+        className="flex flex-col md:flex-row w-full  h-[800px] lg:h-[900px] bg-cover bg-center bg-[url('/coursecurve.svg')]  "
       >
         <div className="w-full md:w-[800px] lg:mt-24 md:mt-0 mt-40 flex flex-col justify-center items-start px-5   lg:ml-10">
           <h1 className="text-white text-4xl md:text-6xl font-Quicksand font-bold">
@@ -46,7 +39,7 @@ export default function Course() {
         </div>
 
         <div className="flex items-start flex-col md:flex-row lg:mt-52">
-          <div className="space-y-1 mt-5 md:mt-0 md:flex md:flex-col">
+          <div className="space-y-1  mt-9 ml-5 lg:mt-5 md:mt-0 md:flex md:flex-col">
             <Link href="/Syllabus/PythonSyllabus">
               <div className="bg-[#FBFEFB] h-[50px] md:h-[79px] w-full md:w-[250px] rounded-full flex items-center justify-between px-5 md:px-8 mb-5 lg:ml-20">
                 <img src="python.svg" alt="Python" className="h-12 md:h-auto" />

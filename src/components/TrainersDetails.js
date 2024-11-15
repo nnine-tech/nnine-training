@@ -133,7 +133,7 @@ const TrainersDetails = ({ trainerId }) => {
           </a>
         </div>
       </div>
-      
+
       <div>
         {/* WhatsApp Icon wrapped in a link */}
         <a
@@ -227,10 +227,12 @@ const TrainersDetails = ({ trainerId }) => {
       </div>
 
       {/* About section */}
-      <div className="w-full border-t border-gray-300 mt-10 "></div>
-      <div className="px-4 sm:px-24 mt-5 text-center sm:text-left w-[1000px]">
-        <h1 className="font-Quicksand text-lg sm:text-xl font-bold">About</h1>
-        <p className="mt-3 font-Quicksand font-semibold text-sm sm:text-base">
+      <div className="w-full border-t border-gray-300 mt-10"></div>
+      <div className="px-4 sm:px-6 md:px-10 lg:px-24 mt-5 text-center sm:text-left max-w-full lg:max-w-[1000px]">
+        <h1 className="font-Quicksand text-lg sm:text-xl lg:text-xl font-bold">
+          About
+        </h1>
+        <p className="mt-3 font-Quicksand font-semibold text-sm sm:text-base lg:text-base">
           {trainer.about}
         </p>
       </div>
