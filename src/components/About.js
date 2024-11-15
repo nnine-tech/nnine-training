@@ -1,14 +1,57 @@
+
+"use client";
 const About = () => {
   return (
-    <div className="w-full max-w-[1440px] bg-slate-100 mx-auto">
+    <div className="w-full  bg-slate-100">
       {/* Contact Us Section */}
-      <div className="w-full h-auto sm:h-[360px] bg-[#014AAC] text-white rounded-t-2xl flex flex-col justify-center items-center p-6">
-        <h1 className="text-3xl sm:text-4xl font-bold mt-10">About us</h1>
-        <p className="text-md sm:text-lg mt-4 text-center">
-          Empowering Your Future with Cutting-Edge IT Training with Nnine
-          Solution
-        </p>
+      <div
+        style={{
+          backgroundImage: "url('coursecurve.svg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          width: "100%",
+          height: "900px",
+        }}
+        className="flex flex-col md:flex-row justify-center items-center"
+      >
+        <div className="w-full md:w-[800px]  md:mt-0 flex flex-col justify-center items-center px-5">
+          <h1 className="text-6xl font-Quicksand font-bold  text-white">About Us</h1>
+          <h1 className="text-xl font-Quicksand font-semibold text-white mt-5 text-center ">Empowering Your Future with Cutting-Edge
+          IT training with Nnine Solution </h1>
+
+        </div>
+        </div>
+        <div className="">
+        {/* WhatsApp Icon wrapped in a link */}
+        <a
+          href="https://wa.me/9779851359759"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/whatapp.svg"
+            alt="WhatsApp Icon"
+            className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] fixed right-5"
+            style={{
+              top: "50%",
+              transform: "translateY(-50%)", // Keeps the icon centered vertically
+              zIndex: "9999",
+              animation: "spin 4s linear infinite", // Ensures the icon spins
+            }}
+          />
+        </a>
       </div>
+      {/* Keyframes for spinning animation */}
+      <style jsx>{`
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
 
       {/* About N9 Solution Section */}
       <div className="p-8 flex flex-col md:flex-row items-center">

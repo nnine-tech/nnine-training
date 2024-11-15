@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showNav, setShowNav] = useState(true); // Set true initially to show nav by default
-  const [clicked, setClicked] = useState(""); // Track the clicked link
+  const [showNav, setShowNav] = useState(true);
+  const [clicked, setClicked] = useState("");
   const topRef = useRef(null);
 
   const handleClick = () => {
@@ -13,15 +13,17 @@ const NavBar = () => {
   };
 
   const handleLinkClick = (link) => {
-    setClicked(link); // Update the clicked link state
+    setClicked(link);
+    setIsOpen(false); // Close the nav menu on mobile after clicking a link
   };
 
   const handleLogoClick = () => {
-    setClicked(""); // Clear the clicked state when the logo is clicked
+    setClicked("");
   };
 
   const handleGetStartedClick = () => {
-    setClicked("getStarted"); // Set clicked to 'getStarted' when the button is clicked
+    setClicked("getStarted");
+    setIsOpen(false); // Close the nav menu on mobile after clicking the 'Get Started' button
   };
 
   useEffect(() => {
@@ -94,7 +96,7 @@ const NavBar = () => {
                     href="/Popularcourses"
                     className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
                       clicked === "courses"
-                        ? "text-blue-600" // Active class on click
+                        ? "text-blue-600"
                         : "text-[#6175AD] hover:text-blue-600"
                     }`}
                     onClick={() => handleLinkClick("courses")}
@@ -143,6 +145,19 @@ const NavBar = () => {
                 </li>
                 <li>
                   <Link
+                    href="/Blog"
+                    className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
+                      clicked === "blogs"
+                        ? "text-blue-600"
+                        : "text-[#6175AD] hover:text-blue-600"
+                    }`}
+                    onClick={() => handleLinkClick("blogs")}
+                  >
+                    Blogs
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/Contact"
                     className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
                       clicked === "contact"
@@ -154,13 +169,12 @@ const NavBar = () => {
                     Contact Us
                   </Link>
                 </li>
-
                 <li>
                   <Link href="/Popularcourses">
                     <button
                       className={`font-medium font-Quicksand inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl border border-[#050599] text-[#0F0FAE] hover:text-blue-600 ml-4 mr-4 lg:ml-20 lg:w-[149px] text-xl ${
                         clicked === "getStarted" && "text-blue-600"
-                      }`}
+                      } mt-2 lg:mt-0`} // Add margin-top for mobile views
                       onClick={handleGetStartedClick}
                     >
                       Get Started
