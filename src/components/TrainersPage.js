@@ -52,53 +52,43 @@ const TrainersPage = () => {
 
   return (
     <>
-      <div
-        style={{
-          backgroundImage: "url('coursecurve.svg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          width: "100%",
-          height: "850px",
-        }}
-        className="flex justify-center items-center"
-      >
+      <div className="flex justify-center items-center w-full bg-cover bg-center bg-[url('/coursecurve.svg')] py-60 h-[400px] lg:h-[900px]">
         <div className="flex items-center w-full text-center">
           {/* Arrowdot image for larger screens only */}
           <div className="hidden sm:block mr-4  ml-32 mt-96 h-[500px]">
             <img src="Arrowdot.svg" className="h-[500px]" alt="Arrow Dot" />
           </div>
           <div>
-        {/* WhatsApp Icon wrapped in a link */}
-        <a
-          href="https://wa.me/9779851359759"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/whatapp.svg"
-            alt="WhatsApp Icon"
-            className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] fixed right-5"
-            style={{
-              top: "50%",
-              transform: "translateY(-50%)", // Keeps the icon centered vertically
-              zIndex: "9999",
-              animation: "spin 4s linear infinite", // Ensures the icon spins
-            }}
-          />
-        </a>
-      </div>
-      {/* Keyframes for spinning animation */}
-      <style jsx>{`
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
-
+            {/* WhatsApp Icon wrapped in a link */}
+            <a
+              href="https://wa.me/9779851359759"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/whatapp.svg"
+                alt="WhatsApp Icon"
+                className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] fixed right-5"
+                style={{
+                  top: "50%",
+                  transform: "translateY(-50%)", // Keeps the icon centered vertically
+                  zIndex: "9999",
+                  animation: "spin 4s linear infinite", // Ensures the icon spins
+                }}
+              />
+            </a>
+          </div>
+          {/* Keyframes for spinning animation */}
+          <style jsx>{`
+            @keyframes spin {
+              0% {
+                transform: rotate(0deg);
+              }
+              100% {
+                transform: rotate(360deg);
+              }
+            }
+          `}</style>
 
           {/* Text content */}
           <div className="sm:mt-0 mt-32 px-5 lg:w-[800px] ">
@@ -113,13 +103,16 @@ const TrainersPage = () => {
           </div>
         </div>
       </div>
-
-      <div className="flex items-center justify-center flex-col mt-10">
-        <h1 className="font-Quicksand font-bold text-3xl text-[#004AAD]">
+      <div className="flex items-center justify-center flex-col mt-10 md:mt-6 text-center md:px-4">
+        <h1 className="font-Quicksand font-bold text-3xl md:text-2xl lg:text-3xl text-[#004AAD]">
           Choose the Best Trainers
         </h1>
-        <img src="/arrow1.svg" alt="Arrow Down" />
-        <h1 className="font-Quicksand font-bold text-3xl text-[#004AAD]">
+        <img
+          src="/arrow1.svg"
+          alt="Arrow Down"
+          className="md:w-[200px] lg:w-[500px] md:my-2"
+        />
+        <h1 className="font-Quicksand font-bold text-3xl md:text-2xl lg:text-3xl text-[#004AAD]">
           For Your Career
         </h1>
       </div>

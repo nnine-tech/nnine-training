@@ -145,6 +145,19 @@ const NavBar = () => {
                 </li>
                 <li>
                   <Link
+                    href="/Blog"
+                    className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
+                      clicked === "blogs"
+                        ? "text-blue-600"
+                        : "text-[#6175AD] hover:text-blue-600"
+                    }`}
+                    onClick={() => handleLinkClick("blogs")}
+                  >
+                    Blogs
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/Contact"
                     className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
                       clicked === "contact"
