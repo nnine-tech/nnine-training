@@ -122,7 +122,7 @@ const TrainersPage = () => {
         {trainersData.map((trainer) => (
           <div
             key={trainer.id}
-            className="w-full sm:w-[350px] md:w-[400px] lg:w-[400px] rounded-2xl flex flex-col items-center shadow-lg bg-white"
+            className="w-full sm:w-[350px] md:w-[400px] lg:w-[400px] rounded-2xl flex flex-col items-center shadow-lg bg-white transform transition-transform duration-300 hover:scale-105"
           >
             <img
               src="trainersbg.svg"
@@ -150,7 +150,7 @@ const TrainersPage = () => {
             </div>
             <button
               onClick={() => handleViewProfile(trainer.id)}
-              className="mt-4 bg-[#004AAD] text-white rounded-2xl px-4 py-2 w-[150px] sm:w-[180px] mb-5"
+              className="mt-4 bg-[#0060FF] text-white rounded-2xl px-4 py-2 w-[150px] sm:w-[180px] mb-5 hover:bg-[#004AAD] transition duration-300"
             >
               View Profile
             </button>
