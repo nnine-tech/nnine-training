@@ -1,182 +1,175 @@
-"use client";
-import { useState } from "react";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import SoftwareQualityAssurance from "@/components/SQA";
-import DigitalMarketing from "@/components/Digitalmarketing";
-import GraphicsDesign from "@/components/graphics";
-import PythonWithDjango from "@/components/Python&django";
-import JobDescription from "@/components/Description";
+import React from "react";
+import Link from "next/link";
 
-const jobData = [
-  {
-    title: "Software Quality Assurance",
-    company: "Nnine Solution Private Limited",
-    jobexpire: "",
-    location: "Chabahil-Kathmandu",
-    jobType: "Part Time",
-    openingDate: "2081-02-30",
-    endDate: "2081-03-10",
-    isExpired: false,
-    position: "Trainer",
-    descriptionComponent: SoftwareQualityAssurance,
-  },
-  {
-    title: "Digital Marketing",
-    company: "Nnine Solution Private Limited",
-    jobexpire: "",
-    location: "Chabahil-Kathmandu",
-    jobType: "Part Time",
-    openingDate: "2081-02-30",
-    endDate: "2081-03-10",
-    isExpired: false,
-    position: "Trainer",
-    descriptionComponent: DigitalMarketing,
-  },
-  {
-    title: "Graphics Design",
-    company: "Nnine Solution Private Limited",
-    jobexpire: "",
-    location: "Chabahil-Kathmandu",
-    jobType: "Part Time",
-    openingDate: "2081-02-30",
-    endDate: "2081-03-10",
-    isExpired: false,
-    position: "Trainer",
-    descriptionComponent: GraphicsDesign,
-  },
-  {
-    title: "Python with Django",
-    company: "Nnine Solution Private Limited",
-    jobexpire: "",
-    location: "Chabahil-Kathmandu",
-    jobType: "Part Time",
-    openingDate: "2081-02-30",
-    endDate: "2081-03-10",
-    isExpired: false,
-    position: "Trainer",
-    descriptionComponent: PythonWithDjango,
-  },
-  {
-    title: "Front Desk Officer",
-    company: "Nnine Solution Private Limited",
-    jobexpire: "Closed",
-    location: "Chabahil-Kathmandu",
-    jobType: "Full Time",
-    openingDate: "2024-06-01",
-    endDate: "2024-06-08",
-    isExpired: true,
-    position: "FronDesk Officer",
-    descriptionComponent: JobDescription,
-  },
-];
-
-const JobTitle = () => {
-  const [openJob, setOpenJob] = useState(null);
-
-  const toggleDescription = (title) => {
-    setOpenJob(openJob === title ? null : title);
-  };
+const Career = () => {
+  const jobPositions = [
+    {
+      title: "Product Designer",
+      description:
+        "We're looking for a mid-level product designer to join our team.",
+      location: "Hybrid",
+      type: "Full-time",
+      applyLink: "/ProductDesigner",
+    },
+    {
+      title: "Product Designer",
+      description:
+        "We're looking for a mid-level product designer to join our team.",
+      location: "Hybrid",
+      type: "Full-time",
+      applyLink: "/product-designer",
+    },
+    {
+      title: "Product Designer",
+      description:
+        "We're looking for a mid-level product designer to join our team.",
+      location: "Hybrid",
+      type: "Full-time",
+      applyLink: "/product-designer",
+    },
+    {
+      title: "Product Designer",
+      description:
+        "We're looking for a mid-level product designer to join our team.",
+      location: "Hybrid",
+      type: "Full-time",
+      applyLink: "/product-designer",
+    },
+    {
+      title: "Product Designer",
+      description:
+        "We're looking for a mid-level product designer to join our team.",
+      location: "Hybrid",
+      type: "Full-time",
+      applyLink: "/product-designer",
+    },
+    {
+      title: "Product Designer",
+      description:
+        "We're looking for a mid-level product designer to join our team.",
+      location: "Hybrid",
+      type: "Full-time",
+      applyLink: "/product-designer",
+    },
+    {
+      title: "Product Designer",
+      description:
+        "We're looking for a mid-level product designer to join our team.",
+      location: "Hybrid",
+      type: "Full-time",
+      applyLink: "/product-designer",
+    },
+  ];
 
   return (
-    <div className="max-w-2xl mx-auto p-4 pt-[150px]">
-      {jobData.map((job) => (
-        <div
-          key={job.title}
-          className={`cursor-pointer border rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300 my-4 ${
-            job.isExpired && job.title !== "Front Desk Officer"
-              ? "bg-red-100"
-              : ""
-          }`}
-          onClick={() => toggleDescription(job.title)}
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <h2
-                className={`text-2xl font-bold ${
-                  job.isExpired ? "text-red-600" : "text-blue-600"
-                }`}
-              >
-                {job.title}
-              </h2>
-              {job.jobexpire && (
-                <p
-                  className={`${
-                    openJob === job.title ? "text-green-600" : "text-red-600"
-                  } font-bold`}
-                >
-                  {job.jobexpire}
-                </p>
-              )}
-              <p
-                className={
-                  job.isExpired && job.title !== "Front Desk Officer"
-                    ? "text-red-600 font-bold"
-                    : ""
-                }
-              >
-                {job.company}, {job.location}
-              </p>
-              <div className="flex space-x-2 mt-2">
-                <span
-                  className={`${
-                    job.isExpired
-                      ? job.title === "Front Desk Officer"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-red-100 text-red-800"
-                      : "bg-blue-100 text-blue-800"
-                  } px-2 py-1 rounded`}
-                >
-                  {job.position}
-                </span>
-                <span
-                  className={`${
-                    job.isExpired
-                      ? job.title === "Front Desk Officer"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-red-100 text-red-800"
-                      : "bg-blue-100 text-blue-800"
-                  } px-2 py-1 rounded`}
-                >
-                  {job.jobType}
-                </span>
-                <span
-                  className={`${
-                    job.isExpired
-                      ? job.title === "Front Desk Officer"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-red-100 text-red-800"
-                      : "bg-blue-100 text-blue-800"
-                  } px-2 py-1 rounded`}
-                >
-                  Opening Date: {job.openingDate}
-                </span>
-                <span
-                  className={`${
-                    job.isExpired
-                      ? job.title === "Front Desk Officer"
-                        ? "bg-blue-100 text-blue-800"
-                        : "bg-red-100 text-red-800"
-                      : "bg-blue-100 text-blue-800"
-                  } px-2 py-1 rounded`}
-                >
-                  End Date: {job.endDate}
-                </span>
+    <div className="relative">
+      <div className="relative">
+        <img
+          src="career.svg"
+          alt=""
+          className="w-full h-[300px] sm:h-[500px] lg:h-[800px] object-cover"
+        />
+        <div className="absolute inset-0 flex flex-col gap-4 sm:gap-6 lg:gap-6 h-auto sm:h-[300px] w-full sm:w-[90%] lg:w-[1000px] justify-center items-center mx-auto mt-56 sm:mt-40 lg:mt-80 text-center px-4">
+          <h1 className="text-white font-Quicksand text-2xl sm:text-4xl lg:text-6xl font-bold mt-20">
+            Join <span className="text-[#FFCF59]">Our</span> Team
+          </h1>
+          <p className="text-white font-Quicksand font-semibold text-sm sm:text-base lg:text-xl text-left">
+            We are looking for passionate people to join us on our mission
+            <br className="hidden sm:block" />
+            We value flat hierarchies, clear communication, and full
+            <br className="hidden sm:block" />
+            ownership and responsibility
+          </p>
+          <div className="flex justify-center w-full px-4 sm:px-0">
+            <div className="bg-white shadow-2xl border-violet-300 lg:ml-60 h-[200px] w-full sm:w-[300px] rounded-lg p-3  flex flex-col justify-between transition-transform duration-300 ease-in-out transform hover:scale-105 ">
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center ">
+                <h1 className="font-Quicksand text-[#000000] text-base sm:text-lg font-bold">
+                  {jobPositions[0].title}
+                </h1>
+                <Link href={jobPositions[0].applyLink}>
+                  <h2 className="font-Quicksand text-[#0060FF] flex items-center font-semibold cursor-pointer">
+                    Apply
+                    <img
+                      src="right-up (1).png"
+                      alt="Apply"
+                      className="w-4 sm:w-[22px] h-4 sm:h-[22px] ml-2"
+                    />
+                  </h2>
+                </Link>
               </div>
-              <div className="flex items-center mt-2">
-                <span className="text-blue-600 font-bold">Details </span>
-                <ChevronDownIcon
-                  className={`w-5 h-5 ml-1 transition-transform duration-300 ${
-                    openJob === job.title ? "transform rotate-180" : ""
-                  }`}
-                />
+              <p className="text-sm font-medium font-Quicksand pt-2">
+                {jobPositions[0].description}
+              </p>
+              <div className="flex flex-wrap gap-2 sm:gap-4 pt-4 mb-40">
+                <span className="h-auto sm:h-[38px] w-auto sm:w-[108px] border border-slate-950 rounded-full text-xs flex items-center gap-2 px-2 sm:p-3">
+                  <img
+                    src="loc.png"
+                    alt={jobPositions[0].location}
+                    className="w-4 sm:w-[22px] h-4 sm:h-[22px]"
+                  />
+                  {jobPositions[0].location}
+                </span>
+                <span className="h-auto sm:h-[38px] w-auto sm:w-[108px] border border-slate-950 rounded-full text-xs flex items-center gap-2 px-2 sm:p-3">
+                  <img
+                    src="clock.png"
+                    alt={jobPositions[0].type}
+                    className="w-4 sm:w-[22px] h-4 sm:h-[22px]"
+                  />
+                  {jobPositions[0].type}
+                </span>
               </div>
             </div>
           </div>
-          {openJob === job.title && <job.descriptionComponent />}
         </div>
-      ))}
+      </div>
+
+      <div className="flex flex-wrap justify-center gap-4 sm:gap-[32px] mx-auto max-w-5xl px-4 mt-[200px] sm:mt-8 pb-28">
+        {jobPositions.slice(1).map((job, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-2xl border-violet-300 h-auto sm:h-[180px] w-full sm:w-[300px] rounded-lg p-3 flex flex-col justify-between transition-transform duration-300 ease-in-out transform hover:scale-105"
+          >
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+              <h1 className="font-Quicksand text-[#000000] text-base sm:text-lg font-bold">
+                {job.title}
+              </h1>
+              <Link href={job.applyLink}>
+                <h2 className="font-Quicksand text-[#0060FF] flex items-center font-semibold cursor-pointer">
+                  Apply
+                  <img
+                    src="right-up (1).png"
+                    alt="Apply"
+                    className="w-4 sm:w-[22px] h-4 sm:h-[22px] ml-2"
+                  />
+                </h2>
+              </Link>
+            </div>
+            <p className="text-sm font-medium font-Quicksand pt-2">
+              {job.description}
+            </p>
+            <div className="flex flex-wrap gap-2 sm:gap-4 pt-4">
+              <span className="h-auto sm:h-[38px] w-auto sm:w-[108px] border border-slate-950 rounded-full text-xs flex items-center gap-2 px-2 sm:p-3">
+                <img
+                  src="loc.png"
+                  alt={job.location}
+                  className="w-4 sm:w-[22px] h-4 sm:h-[22px]"
+                />
+                {job.location}
+              </span>
+              <span className="h-auto sm:h-[38px] w-auto sm:w-[108px] border border-slate-950 rounded-full text-xs flex items-center gap-2 px-2 sm:p-3">
+                <img
+                  src="clock.png"
+                  alt={job.type}
+                  className="w-4 sm:w-[22px] h-4 sm:h-[22px]"
+                />
+                {job.type}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default JobTitle;
+export default Career;

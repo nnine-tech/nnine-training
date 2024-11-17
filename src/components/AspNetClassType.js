@@ -51,7 +51,7 @@ const AspNetClassType = () => {
             })}
           </div>
 
-          <div className="mt-6  ml-7 ">
+          <div className="mt-6  ml-7 mb-6 ">
             <button className="bg-[#000080] w-[170px] font-bold h-[40px] text-white py-2 px-4 rounded-md" onClick={handleEnrollNow}>
               Enroll Now
             </button>
