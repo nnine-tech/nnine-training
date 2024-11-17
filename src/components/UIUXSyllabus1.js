@@ -4,10 +4,8 @@ import React, { useState } from "react";
 import UIUXClassType from "./UIUXClassType";
 
 const UIUXSyllabus1 = () => {
-  // State to manage dropdown visibility for each section
   const [openDropdowns, setOpenDropdowns] = useState({});
 
-  // Function to toggle dropdown visibility
   const toggleDropdown = (section) => {
     setOpenDropdowns((prev) => ({
       ...prev,
@@ -19,9 +17,6 @@ const UIUXSyllabus1 = () => {
     {
       title: "Course Information",
       lectures: [
-        "Nature of the Course: Theory + Practical",
-        "Course Duration: 40 Hours",
-        "Course Objectives",
         "The UI/UX Design course takes a design-centric approach to user interface and user experience design, providing practical, skill-based training focused on visual communications rather than marketing or programming alone. You will learn all aspects of the UI/UX development process, from user research to establishing a project's strategy, scope, and information architecture, to generating sitemaps and wireframes.",
         "Required Textbooks",
         "Joel Marsh, 'UX for Beginners', O’Reilly",
@@ -170,19 +165,21 @@ const UIUXSyllabus1 = () => {
       ],
       info: "1 lecture • 6 hours",
     },
+
+    // Add additional units here...
   ];
 
   return (
     <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
       <div className="w-[80%] flex flex-col mt-14">
         <div className="w-full">
-          <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-3xl ml-8 p-[10px] font-Quicksand mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div key={index} className={`relative w-full max-w-[800px]`}>
+            <div key={index} className="relative w-full max-w-[800px]">
               <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
                   !openDropdowns[section.title] &&
                   index !== syllabusSections.length - 1
                     ? "border-b-5"
@@ -200,20 +197,26 @@ const UIUXSyllabus1 = () => {
                       className="mr-0 w-[11px] h-[14px]"
                     />
                   </button>
-                  <span className="font-semibold font-poppins">
+                  <span className="font-semibold font-Quicksand">
                     {section.title}
                   </span>
-                  <span className="hidden md:block text-right ml-auto font-poppins">
+                  <span className="hidden md:block text-right ml-auto font-Quicksand">
                     {section.info}
                   </span>
                 </div>
               </div>
               {openDropdowns[section.title] && (
                 <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
-                  <ul className="p-2">
+                  <ul className="p-2 list-disc list-inside">
                     {section.lectures.map((lecture, idx) => (
-                      <li key={idx} className="py-1">
-                        <span className="mx-1">•</span>
+                      <li
+                        key={idx}
+                        className={`py-1 font-Quicksand ml-14 ${
+                          lecture.startsWith("Lesson")
+                            ? "font-bold list-none"
+                            : ""
+                        }`}
+                      >
                         {lecture}
                       </li>
                     ))}
