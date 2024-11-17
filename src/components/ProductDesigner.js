@@ -1,15 +1,15 @@
 import React from "react";
 
-const ProductManager = () => {
+const ProductDesigner = () => {
   return (
     <div className="relative">
       <div className="relative">
         <img
           src="career.svg"
-          alt=""
-          className="w-full h-[800px] object-cover"
+          alt="Product Designer"
+          className="w-full lg:h-[800px] h-[500px] object-cover"
         />
-        <div className="absolute inset-0 flex flex-col gap-6 h-[300px] w-[90%] sm:w-[1000px] justify-center items-center mx-auto mt-60 text-center px-4">
+        <div className="absolute inset-0 flex flex-col gap-6 h-[300px] w-[90%] sm:w-[1000px] justify-center items-center mx-auto lg:mt-60 mt-32 text-center px-4">
           <h1 className="text-white font-Quicksand text-4xl sm:text-6xl font-bold">
             Product <span className="text-[#FFCF59]">Designer</span>
           </h1>
@@ -22,7 +22,7 @@ const ProductManager = () => {
         </div>
       </div>
 
-      <div className="max-w-[90%] md:max-w-[800px] lg:max-w-[1000px] mx-auto mt-[25px]">
+      <div className="max-w-[90%] md:max-w-[800px] lg:max-w-[1000px] mx-auto mt-[25px] px-4">
         <h1 className="font-bold text-lg leading-8 font-Quicksand tracking-wider text-[#5B77EC] mb-10 mt-10">
           Job Description
         </h1>
@@ -108,9 +108,7 @@ const ProductManager = () => {
             className="text-[#5B77EC] underline hover:text-[#3a59c9]"
           >
             nninesolution@gmail.com
-          </a>
-          {" "}
-
+          </a>{" "}
           and join us in empowering aspiring software testers and quality
           assurance specialists!
         </p>
@@ -119,4 +117,4 @@ const ProductManager = () => {
   );
 };
 
-export default ProductManager;
+export default ProductDesigner;
