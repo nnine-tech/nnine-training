@@ -1,23 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap,");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&family=Quicksand:wght@300..700&display=swap");
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 .footer {
   background: url(/footer.svg) top center no-repeat;
   background-size: cover;
 }
 
-/* globals.css */
-/* globals.css */
-
-
-staging
-/* :root {
+:root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -41,11 +37,12 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-} */
+}
 
 .slick-slide div {
   margin: 15px;
