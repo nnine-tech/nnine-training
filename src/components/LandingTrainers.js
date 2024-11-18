@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
 const LandingTrainers = () => {
   const trainersContainerRef = useRef(null);
@@ -8,13 +9,14 @@ const LandingTrainers = () => {
   const trainers = [
     {
       id: 1,
-      src: "arjun.jpeg",
+      src: "kumar.jpg",
       alt: "Trainer 1",
-      name: "Arjun",
+      name: "Deepak",
       review:
         "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
       skills: ["DevOps", "AWS", "Kubernetes"],
       rating: 5,
+      linkTo: "/Trainer/1",
     },
     {
       id: 2,
@@ -25,26 +27,29 @@ const LandingTrainers = () => {
         "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
       skills: ["AWS", "Cloud Computing", "Serverless"],
       rating: 5,
+      linkTo: "/Trainer/2",
     },
     {
-      id:3,
-      src: "niresh1.jpg",
-      alt: "Trainer 2",
-      name: "Niresh",
+      id: 3,
+      src: "arjun.jpeg",
+      alt: "Trainer 3",
+      name: "Arjun",
       review:
         "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
       skills: ["AWS", "Cloud Computing", "Serverless"],
       rating: 5,
+      linkTo: "/Trainer/3",
     },
     {
       id: 4,
-      src: "niresh1.jpg",
-      alt: "Trainer 2",
-      name: "Niresh",
+      src: "",
+      alt: "Trainer 4",
+      name: "Jaya",
       review:
         "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
       skills: ["AWS", "Cloud Computing", "Serverless"],
       rating: 5,
+      linkTo: "/Trainer/4",
     },
     // Additional trainers...
   ];
@@ -90,40 +95,42 @@ const LandingTrainers = () => {
         style={{ maxHeight: "500px" }}
       >
         {trainers.map((trainer) => (
-          <div
-            key={trainer.id}
-            className="bg-[#F6F8FC] h-auto md:h-[300px] flex flex-col md:flex-row justify-between p-3 border rounded-lg gap-4"
-          >
-            <img
-              src={trainer.src}
-              alt={trainer.alt}
-              className="h-20 w-20 md:h-16 md:w-16 object-contain rounded-lg mx-auto md:mx-0"
-            />
-            <div className="flex-1">
-              <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-5">
-                <h2 className="text-lg md:text-xl font-semibold hover:underline uppercase">
-                  {trainer.name}
-                </h2>
-                <div className="flex items-center">
-                  <i className="fas fa-star text-blue-500"></i>
-                  <span className="ml-2 text-blue-600 font-semibold">
-                    {trainer.rating}.0
-                  </span>
+          <Link href={trainer.linkTo || "#"} key={trainer.id}>
+            <div
+              key={trainer.id}
+              className="bg-[#F6F8FC] h-auto md:h-[300px] flex flex-col md:flex-row justify-between p-3 border rounded-lg gap-4"
+            >
+              <img
+                src={trainer.src}
+                alt={trainer.alt}
+                className="h-20 w-20 md:h-16 md:w-16 object-contain rounded-lg mx-auto md:mx-0"
+              />
+              <div className="flex-1">
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-5">
+                  <h2 className="text-lg md:text-xl font-semibold hover:underline uppercase">
+                    {trainer.name}
+                  </h2>
+                  <div className="flex items-center">
+                    <i className="fas fa-star text-blue-500"></i>
+                    <span className="ml-2 text-blue-600 font-semibold">
+                      {trainer.rating}.0
+                    </span>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 mt-2">{trainer.review}</p>
+                <div className="flex flex-wrap gap-3 mt-4 md:mt-9">
+                  {trainer.skills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="bg-[#E0E0E0] text-xs md:text-sm py-1 px-2 rounded-full"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
-              <p className="text-sm text-gray-600 mt-2">{trainer.review}</p>
-              <div className="flex flex-wrap gap-3 mt-4 md:mt-9">
-                {trainer.skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    className="bg-[#E0E0E0] text-xs md:text-sm py-1 px-2 rounded-full"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
