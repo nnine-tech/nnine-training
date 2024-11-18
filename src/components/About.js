@@ -1,21 +1,20 @@
-
 "use client";
 const About = () => {
   return (
     <div className="w-full  bg-slate-100 ">
       {/* Contact Us Section */}
-      <div
-       
-        className="flex flex-col md:flex-row justify-center items-center w-full lg:h-[900px] h-[400px] bg-cover bg-center bg-[url('/coursecurve.svg')]"
-      >
+      <div className="flex flex-col md:flex-row justify-center items-center w-full lg:h-[600px] h-[400px] bg-cover bg-center bg-[url('/aboutbg2.svg')]">
         <div className="w-full md:w-[800px]  md:mt-0 flex flex-col justify-center items-center lg:px-5 ">
-          <h1 className="text-6xl font-Quicksand font-bold  text-white">About Us</h1>
-          <h1 className="text-xl font-Quicksand font-semibold text-white mt-5 text-center ">Empowering Your Future with Cutting-Edge
-          IT training with Nnine Solution </h1>
-
+          <h1 className="text-6xl font-Quicksand font-bold  text-white">
+            About Us
+          </h1>
+          <h1 className="text-xl font-Quicksand font-semibold text-white mt-5 text-center ">
+            Empowering Your Future with Cutting-Edge IT training with Nnine
+            Solution{" "}
+          </h1>
         </div>
-        </div>
-        <div className="">
+      </div>
+      <div className="">
         {/* WhatsApp Icon wrapped in a link */}
         <a
           href="https://wa.me/9779851359759"

@@ -10,7 +10,7 @@ function Card2(props) {
   };
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
+    <div className="flex flex-wrap justify-center gap-4 lg:gap-6 ">
       {/* Entire card is wrapped in a div with onClick event */}
       <div
         onClick={handleViewSyllabus}
