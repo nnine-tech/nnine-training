@@ -10,6 +10,7 @@ const app = express();
 app.use(express.json());
 const courseRoute = require("./Routes/courseRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
+const studentRoute = require("./Routes/studentRoute");
 
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
@@ -19,10 +20,8 @@ app.use(express.json());
 //BACKEND ROUTE
 app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/syllabus", courseSyllabusRoute);
-const studentRoute = require("./Routes/studentRoute");
 
 //BACKEND ROUTE
-app.use("/api/v1/courses", courseRoute);
 app.use("/student", studentRoute);
 
 module.exports = app;
