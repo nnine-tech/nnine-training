@@ -12,7 +12,7 @@ const courseRoute = require("./Routes/courseRoute");
 const studentRoute = require("./Routes/studentRoute");
 
 //BACKEND ROUTE
-app.use("/api/v1/courses", courseRoute);
+app.use("/courses", courseRoute);
 app.use("/student", studentRoute);
 
 module.exports = app;
