@@ -1,27 +1,36 @@
 const mongoose = require("mongoose");
 
-const courseSchema = new mongoose.Schema({
+const addPaymentSchema = new mongoose.Schema({
   name: {
     type: String,
-    requied: [true, "A course must have a name"],
-    unique: true,
-    maxlength: [40, "A course name must have less or equal then 40 characters"],
+    required: [true, "Name field is required."],
   },
-  duration: {
+  course: {
+    type: String,
+    required: [true, "Course field is required."],
+  },
+  firstInstallement: {
     type: Number,
-    required: [true, "A course name must have a duration"],
+    required: [true, "1st Installement is required."],
   },
-  category: {
-    type: String,
-    required: [true, "A course should have a category"],
+  duesAmount: {
+    type: Number,
+    required: [true, " Dues amount fiels is required."],
   },
-  coursePhoto: {
-    type: String,
-    required: [true, "A course should have a coursePhoto"],
+  secondInstallement: {
+    type: Number,
+    required: [true, "2nd Installement field is required."],
   },
-  syllabus: { type: mongoose.Schema.ObjectId, ref: "CourseSyllabus" },
+  dateOfPayment: {
+    type: Date,
+    required: [true, "Date of Payment field is required."],
+  },
+  balance: {
+    type: Number,
+    required: [true, "Balance field is required."],
+  },
 });
 
-const Course = mongoose.model("Course", courseSchema);
+const Fees = mongoose.model("Fees", addPaymentSchema);
 
-module.exports = Course;
+module.exports = Fees;

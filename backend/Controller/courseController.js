@@ -1,4 +1,4 @@
-const Course = require("../Model/courseModel");
+const Course = require("../Model/courseModel.js");
 
 exports.getCourse = async (req, res, next) => {
   const course = await Course.find();
