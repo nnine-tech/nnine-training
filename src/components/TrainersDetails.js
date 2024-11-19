@@ -123,7 +123,7 @@ const TrainersDetails = ({ trainerId }) => {
         "Presenting our Java-Certified trainer, bringing a decade of extensive experience to the table. With a strong foundation in Java development and training, they offer unparalleled expertise and guidance to learners at every level",
     },
 
-    6: {
+    7: {
       name: "Anish ",
       surname: "Adhikari",
       image: "/img.png",
