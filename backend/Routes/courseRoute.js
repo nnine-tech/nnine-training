@@ -3,8 +3,8 @@ const courseController = require("./../Controller/courseController");
 const router = express.Router();
 
 router
-  .route("/courses")
+  .route("/")
   .get(courseController.getCourse)
-  .post(courseController.Createcourse);
+  .post(courseController.CreateCourse);
 
 module.exports = router;
