@@ -1,22 +1,58 @@
+"use client";
 const About = () => {
   return (
-    <div className="w-full max-w-[1440px] bg-slate-100 mx-auto">
+    <div className="w-full  bg-slate-100 ">
       {/* Contact Us Section */}
-      <div className="w-full h-auto sm:h-[360px] bg-[#014AAC] text-white rounded-t-2xl flex flex-col justify-center items-center p-6">
-        <h1 className="text-3xl sm:text-4xl font-bold mt-10">About us</h1>
-        <p className="text-md sm:text-lg mt-4 text-center">
-          Empowering Your Future with Cutting-Edge IT Training with Nnine
-          Solution
-        </p>
+      <div className="flex flex-col md:flex-row justify-center items-center w-full lg:h-[600px] h-[400px] bg-cover bg-center bg-[url('/aboutbg2.svg')]">
+        <div className="w-full md:w-[800px]  md:mt-0 flex flex-col justify-center items-center lg:px-5 ">
+          <h1 className="text-6xl font-Quicksand font-bold  text-white">
+            About Us
+          </h1>
+          <h1 className="text-xl font-Quicksand font-semibold text-white mt-5 text-center ">
+            Empowering Your Future with Cutting-Edge IT training with Nnine
+            Solution{" "}
+          </h1>
+        </div>
       </div>
+      <div className="">
+        {/* WhatsApp Icon wrapped in a link */}
+        <a
+          href="https://wa.me/9779851359759"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/whatapp.svg"
+            alt="WhatsApp Icon"
+            className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] fixed right-5"
+            style={{
+              top: "50%",
+              transform: "translateY(-50%)", // Keeps the icon centered vertically
+              zIndex: "9999",
+              animation: "spin 4s linear infinite", // Ensures the icon spins
+            }}
+          />
+        </a>
+      </div>
+      {/* Keyframes for spinning animation */}
+      <style jsx>{`
+        @keyframes spin {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      `}</style>
 
       {/* About N9 Solution Section */}
-      <div className="p-8 flex flex-col md:flex-row items-center">
+      <div className="p-8 flex flex-col md:flex-row items-center pl-24">
         <div className="w-full md:w-1/2">
           <h2 className="text-2xl sm:text-3xl font-bold text-[#031262]">
             About N9 Solution
           </h2>
-          <p className="mt-3 text-justify font-light text-[16px] sm:text-[20px] leading-[24px] sm:leading-[30px]">
+          <p className="mt-3 text-justify font-Quicksand font-semibold text-[16px] sm:text-[20px] leading-[24px] sm:leading-[30px]">
             Welcome to N9 Solution, your premier destination for cutting-edge
             expertise in DevOps, AWS, Blockchain, and game development. At N9
             Solution, we blend passion with proficiency, equipping individuals
@@ -50,11 +86,11 @@ const About = () => {
               src="icon1.png"
               alt="Icon"
             />
-            <h3 className="text-[#001D6E] font-poppins text-[20px] sm:text-[25px] text-center leading-[30px] font-semibold mb-2">
+            <h3 className="text-[#001D6E] font-Quicksand text-[20px] sm:text-[25px] text-center leading-[30px] font-semibold mb-2">
               Our Mission
             </h3>
           </div>
-          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-poppins">
+          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold">
             At N9 Solution, we are driven by a singular mission - to empower
             innovation. We believe in harnessing the power of technology to
             drive positive change and unlock new possibilities. Through our
@@ -69,11 +105,11 @@ const About = () => {
         <div className="flex-1">
           <div className="flex justify-center items-center mb-4">
             <img src="icon2.png" className="mr-3" alt="Icon" />
-            <h3 className="text-[#001D6E] font-poppins text-[20px] sm:text-[24px] leading-[30px] font-semibold">
+            <h3 className="text-[#001D6E] font-Quicksand text-[20px] sm:text-[24px] leading-[30px] font-semibold">
               Our Promise
             </h3>
           </div>
-          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-poppins pl-[20px] md:w-[1150px]">
+          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold pl-[20px] md:w-[1150px]">
             When you choose N9 Solution, you're not just investing in training
             or consultancy services - you're investing in your future. We are
             committed to delivering excellence in everything we do, providing
@@ -114,7 +150,7 @@ const About = () => {
               </div>
             </div>
             {/* Left-Aligned Paragraph */}
-            <p className="text-md sm:text-lg text-left font-poppins">
+            <p className="text-md sm:text-lg text-left font-Quicksand font-semibold">
               Ready to embark on a journey of innovation and growth? Contact N9
               Solution today to learn more about our training programs and
               consultancy services. Together, let's unlock the full potential of

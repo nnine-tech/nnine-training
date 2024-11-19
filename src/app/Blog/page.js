@@ -1,15 +1,14 @@
-import React from 'react'
 
-import Blog2 from '@/components/Blog2'
-import Blog from '@/components/Blog';
+import Blogs from "@/components/Blogs";
+import React from "react";
+
 
 const blog = () => {
   return (
     <div>
-    {/* <div><Blog /></div> */}
-    <Blog2/>
+    <Blogs/>
     </div>
-  )
-}
+  );
+};
 
 export default blog;

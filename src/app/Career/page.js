@@ -1,8 +1,9 @@
 import React from 'react'
-import JobDescription from "@/components/Career";
+
+import Career from '@/components/Career';
 const career = () => {
   return (
-    <div><JobDescription /></div>
+    <div><Career /></div>
   )
 }
 
