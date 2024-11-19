@@ -27,17 +27,17 @@ const TrainersPage = () => {
       imageAlt: "niresh.jpg",
       name: "Niresh Dhakal",
       profession: "Mern Stack Trainer",
-      experience: "15 years",
+      experience: "12 years",
       job: "Mern stack Trainer at N9 Solution",
     },
     {
       id: 3,
-      imageUrl: "/jaya.png",
-      imageAlt: "jaya.jpg",
-      name: "Jaya Kumar Neupane",
-      profession: "Oracle-certified Trainer",
+      imageUrl: "/arjun.jpeg",
+      imageAlt: "arjun.jpeg",
+      name: "Arjun Subedi",
+      profession: "Mern Stack Trainer",
       experience: "15 years",
-      job: "Oracle Trainer at N9 Solution",
+      job: "Mern Stack Trainer at N9 Solution",
     },
     {
       id: 4,
@@ -48,6 +48,34 @@ const TrainersPage = () => {
       experience: "15 years",
       job: "Oracle Trainer at N9 Solution",
     },
+    {
+      id: 5,
+      imageUrl: "/img.png",
+      imageAlt: "img.jpg",
+      name: "Gyan Bahadur Tamang",
+      profession: "Oracle-certified Trainer",
+      experience: "16 years",
+      job: "Oracle Trainer at N9 Solution",
+    },
+    {
+      id: 6,
+      imageUrl: "/kumar.jpg",
+      imageAlt: "img.jpg",
+      name: "Kumar Lamichhane",
+      profession: "Java Expert",
+      experience: "10 years",
+      job: "Java Trainer at N9 Solution",
+    },
+    {
+      id: 7,
+      imageUrl: "/img.png",
+      imageAlt: "img.jpg",
+      name: "Anish Adhikari",
+      profession: "Full Stack Developer",
+      experience: "8 years",
+      job: "Full Stack Developer at N9 Solution",
+    },
+
   ];
 
   return (

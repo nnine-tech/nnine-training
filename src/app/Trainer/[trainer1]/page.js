@@ -9,7 +9,11 @@ export async function generateStaticParams() {
     { id: "1" },
     { id: "2" },
     { id: "3" },
-    { id: "4" }, // Add more IDs as needed
+    { id: "4" },
+    { id: "5" },
+    { id: "6" },
+    {id:"7"},
+    // Add more IDs as needed
   ];
 
   // Map each trainer to a dynamic route
