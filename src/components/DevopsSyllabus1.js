@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import DevopsClassType from "./DevopsClassType";
 
 const DevOpsSyllabus = () => {
   const [openDropdowns, setOpenDropdowns] = useState({});
@@ -735,81 +736,84 @@ const DevOpsSyllabus = () => {
     },
   ];
   return (
-    <div className="w-full flex flex-col sm:mt-4">
-      <div className="w-[90%]  flex flex-col mt-10">
-        <h1 className="font-bold text-3xl p-4 font-Quicksand mb-6 text-[#003366]">
-          Course Syllabus
-        </h1>
-        {syllabusSections.map((section, index) => (
-          <div key={index} className="relative w-full max-w-[800px]">
-            {/* Section Title */}
-            <div
-              className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
-                !openDropdowns[section.title] ? "" : ""
-              }`}
-            >
+    <div className="flex flex-row">
+      <div className="w-full flex flex-col sm:mt-4">
+        <div className="w-[90%]  flex flex-col mt-10">
+          <h1 className="font-bold text-3xl p-4 font-Quicksand mb-6 text-[#003366]">
+            Course Syllabus
+          </h1>
+          {syllabusSections.map((section, index) => (
+            <div key={index} className="relative w-full max-w-[800px]">
+              {/* Section Title */}
               <div
-                className="flex items-center p-3 cursor-pointer font-Quicksand"
-                onClick={() => toggleDropdown(section.title)}
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
+                  !openDropdowns[section.title] ? "" : ""
+                }`}
               >
-                <button className="dropdown-button mr-2">
-                  <img
-                    src="/dropdown.svg"
-                    alt="Toggle Dropdown"
-                    className="w-4 h-4"
-                  />
-                </button>
-                <span className="font-semibold text-lg font-Quicksand">
-                  {section.title}
-                </span>
+                <div
+                  className="flex items-center p-3 cursor-pointer font-Quicksand"
+                  onClick={() => toggleDropdown(section.title)}
+                >
+                  <button className="dropdown-button mr-2">
+                    <img
+                      src="/dropdown.svg"
+                      alt="Toggle Dropdown"
+                      className="w-4 h-4"
+                    />
+                  </button>
+                  <span className="font-semibold text-lg font-Quicksand">
+                    {section.title}
+                  </span>
+                </div>
               </div>
-            </div>
 
-            {/* Dropdown Content */}
-            {openDropdowns[section.title] && (
-              <div className="w-full border border-[#004AAD] border-opacity-20 mt-1">
-                <ul className="p-4">
-                  {section.lectures.map((lecture, idx) => (
-                    <li key={idx} className="py-2 font-bold font-Quicksand">
-                      {lecture.content}
-                      {lecture.subLectures && (
-                        <ul className="ml-6">
-                          {lecture.subLectures.map((subLecture, subIdx) => (
-                            <li
-                              key={subIdx}
-                              className={`py-1 ${
-                                subLecture.type === "bullet"
-                                  ? "font-semibold list-disc"
-                                  : "font-normal list-square"
-                              }`}
-                            >
-                              {subLecture.content}
-                              {subLecture.subPoints && (
-                                <ul className="ml-6">
-                                  {subLecture.subPoints.map(
-                                    (subPoint, pointIdx) => (
-                                      <li
-                                        key={pointIdx}
-                                        className=" list-[square] py-1 font-Quicksand"
-                                      >
-                                        {subPoint.content}
-                                      </li>
-                                    )
-                                  )}
-                                </ul>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        ))}
+              {/* Dropdown Content */}
+              {openDropdowns[section.title] && (
+                <div className="w-full border border-[#004AAD] border-opacity-20 mt-1">
+                  <ul className="p-4">
+                    {section.lectures.map((lecture, idx) => (
+                      <li key={idx} className="py-2 font-bold font-Quicksand">
+                        {lecture.content}
+                        {lecture.subLectures && (
+                          <ul className="ml-6">
+                            {lecture.subLectures.map((subLecture, subIdx) => (
+                              <li
+                                key={subIdx}
+                                className={`py-1 ${
+                                  subLecture.type === "bullet"
+                                    ? "font-semibold list-disc"
+                                    : "font-normal list-square"
+                                }`}
+                              >
+                                {subLecture.content}
+                                {subLecture.subPoints && (
+                                  <ul className="ml-6">
+                                    {subLecture.subPoints.map(
+                                      (subPoint, pointIdx) => (
+                                        <li
+                                          key={pointIdx}
+                                          className=" list-[square] py-1 font-Quicksand"
+                                        >
+                                          {subPoint.content}
+                                        </li>
+                                      )
+                                    )}
+                                  </ul>
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
+      <DevopsClassType />
     </div>
   );
 };
