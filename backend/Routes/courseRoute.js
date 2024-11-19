@@ -10,6 +10,6 @@ router
   .get(courseController.getAllCourse)
   .post(courseController.CreateCourse);
 
-router.route(":id").get(courseController.getCourse);
+router.route("/:id").get(courseController.getCourse);
 
 module.exports = router;
