@@ -9,9 +9,9 @@ const LandingTrainers = () => {
   const trainers = [
     {
       id: 1,
-      src: "kumar.jpg",
+      src: "arjun.jpeg",
       alt: "Trainer 1",
-      name: "Deepak",
+      name: "Arjun",
       review:
         "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
       skills: ["DevOps", "AWS", "Kubernetes"],
@@ -31,9 +31,9 @@ const LandingTrainers = () => {
     },
     {
       id: 3,
-      src: "arjun.jpeg",
+      src: "niresh1.jpg",
       alt: "Trainer 3",
-      name: "Arjun",
+      name: "Niresh",
       review:
         "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
       skills: ["AWS", "Cloud Computing", "Serverless"],
@@ -42,9 +42,9 @@ const LandingTrainers = () => {
     },
     {
       id: 4,
-      src: "",
+      src: "niresh1.jpg",
       alt: "Trainer 4",
-      name: "Jaya",
+      name: "Niresh",
       review:
         "Welcome to N9 Solution, your premier destination for cutting-edge expertise in DevOps, AWS, Blockchain, and game development...",
       skills: ["AWS", "Cloud Computing", "Serverless"],
@@ -95,11 +95,11 @@ const LandingTrainers = () => {
         style={{ maxHeight: "500px" }}
       >
         {trainers.map((trainer) => (
-          <Link href={trainer.linkTo || "#"} key={trainer.id}>
-            <div
-              key={trainer.id}
-              className="bg-[#F6F8FC] h-auto md:h-[300px] flex flex-col md:flex-row justify-between p-3 border rounded-lg gap-4"
-            >
+          <Link
+            href={trainer.linkTo || "#"}
+            key={trainer.id} // Attach `key` to Link
+          >
+            <div className="bg-[#F6F8FC] h-auto md:h-[199px] flex flex-col md:flex-row justify-between p-3 border rounded-lg gap-4">
               <img
                 src={trainer.src}
                 alt={trainer.alt}
