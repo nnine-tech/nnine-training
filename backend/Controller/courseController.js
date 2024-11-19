@@ -34,9 +34,6 @@ exports.getCourse = async (req, res, next) => {
       },
     });
   } catch (error) {
-    res.status(400).json({
-      status: "fail",
-      message: error.message,
-    });
+    console.log(error);
   }
 };
