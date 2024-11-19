@@ -9,8 +9,8 @@ const {
 
 const router = express.Router()
 
-router.route('/').post(createAttendenceController);
-router.route('/').get(readAllStudentsAttendence);
+router.route('/create').post(createAttendenceController);
+router.route('/readAll').get(readAllStudentsAttendence);
 router.route('/:id').patch(updateAttendence)
 router.route('/:id').get(readSpecificAttendence)
 

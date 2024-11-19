@@ -1,6 +1,6 @@
-const Course = require("../Model/courseModel");
+const Course = require("../Model/courseModel.js");
 
-exports.getCourse = async (req, res, next) => {
+exports.getAllCourse = async (req, res, next) => {
   const course = await Course.find();
   res.status(200).json({
     status: "success",
@@ -10,12 +10,30 @@ exports.getCourse = async (req, res, next) => {
   });
 };
 
-exports.Createcourse = async (req, res, next) => {
-  const course = await Course.create(req.body);
-  res.status(200).json({
-    status: "success",
-    data: {
-      data: course,
-    },
-  });
+exports.CreateCourse = async (req, res, next) => {
+  try {
+    const course = await Course.create(req.body);
+    res.status(200).json({
+      status: "success",
+      data: {
+        data: course,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+exports.getCourse = async (req, res, next) => {
+  try {
+    const course = await Course.findById(req.params.id).populate("syllabus");
+    res.status(200).json({
+      status: "success",
+      data: {
+        data: course,
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
