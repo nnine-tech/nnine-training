@@ -4,7 +4,7 @@ exports.addStudentController = async (req, res, next) => {
   try {
     const result = await Student.create(req.body);
     res.status(201).json({
-      message: "Student added successfully",
+      message: "Students added successfully",
       data: result,
     });
   } catch (error) {
