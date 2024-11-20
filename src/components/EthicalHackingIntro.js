@@ -43,7 +43,7 @@ const EthicalHackingIntro = () => {
                 <h2 className="text-[#FFFFFF] font-Quicksand">Duration: 90h</h2>
               </div>
               <div className="flex items-center gap-2">
-                <img src="/career.svg" alt="Career" />
+                <img src="/careerlogo.svg" alt="Career" />
                 <h2 className="text-[#FFFFFF] font-Quicksand">Career: ETHICAL HACKER</h2>
               </div>
             </div>

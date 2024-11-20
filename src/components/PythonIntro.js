@@ -1,6 +1,6 @@
 import React from "react";
 
-const  PythonIntro = () => {
+const PythonIntro = () => {
   return (
     <div className="flex flex-col md:flex-row w-[400px]   sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
       <div className="flex flex-col w-full mt-32">
@@ -40,11 +40,15 @@ const  PythonIntro = () => {
               </div>
               <div className="flex items-center gap-2">
                 <img src="/duration.svg" alt="Duration" />
-                <h2 className="text-[#FFFFFF] font-Quicksand">Duration: 100h</h2>
+                <h2 className="text-[#FFFFFF] font-Quicksand">
+                  Duration: 100h
+                </h2>
               </div>
-              <div className="flex items-center gap-2">
-                <img src="/career.svg" alt="Career" />
-                <h2 className="text-[#FFFFFF] font-Quicksand">Career: MERN Stack Developer</h2>
+              <div className="flex items-center gap-2 ">
+                <img src="/careerlogo.svg" alt="Career" />
+                <h2 className="text-[#FFFFFF] font-Quicksand">
+                  Career: MERN Stack Developer
+                </h2>
               </div>
             </div>
           </div>

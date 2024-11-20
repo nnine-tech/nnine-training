@@ -1,0 +1,148 @@
+export const trainersdata = () =>  [
+  
+    {
+      id: 1,
+      name: "Deepak",
+      surname: "Bomjan",
+      image: "/img.png",
+      imagealt: "kuram.jpg",
+      profession:
+        "Certified DevOps Trainer & System Engineer at CAS & Logpoint",
+      experience: "15 years",
+      location: "Sundarijal, Kathmandu",
+      star: "5.0 (100)",
+      skill1: "verilog",
+      skill2: "UVM",
+      skill3: "VLSI",
+      skill4: "RTL Design",
+      skill5: "System Verilog",
+      linkedln: "https://www.linkedin.com/in/deepakbomjan64050/",
+      about:
+        "Mr. Bomjan is a highly regarded Certified DevOps trainer, boasting over 15 years of invaluable industry experience. His expertise stems from years of hands-on work as a system engineer at prestigious firms such as CAS and Logpoint. Renowned for his adeptness in enterprise training, Mr. Bomjan brings a wealth of practical knowledge and real-world insights to his teaching.",
+    },
+    {
+      id: 2,
+      name: "Niresh",
+      surname: "Dhakal",
+      image: "/niresh1.jpg",
+      imagealt: "niresh.jpg",
+      profession:
+        "Certified Mern stack Trainer & System Engineer at CAS & Logpoint",
+      experience: "12 years",
+      location: "Makalbari, Kathmandu",
+      star: "5.0 (100)",
+      skill1: "verilog",
+      skill2: "UVM",
+      skill3: "VLSI",
+      skill4: "RTL Design",
+      skill5: "System Verilog",
+      linkedln: "https://www.linkedin.com/in/niresh-dhakal-b39a0192/",
+      about:
+        "I am a DevOps-Certified Trainer, boasting over 15 years of invaluable industry experience. Renowned for adeptness in enterprise training, Mr. Bomjan brings a wealth of practical knowledge and real-world insights to his teaching.",
+    },
+    {
+      id: 3,
+      name: "Arjun",
+      surname: "Subedi",
+      image: "/arjun.jpeg",
+      imagealt: "kumar.jpg",
+      profession: "Certified FullStack Trainer",
+      experience: "15 years",
+      location: "Mulpani, Kathmandu",
+      star: "5.0 (100)",
+      skill1: "node.js",
+      skill2: "javascript",
+      skill3: "Java",
+      skill4: "Database",
+      skill5: "React",
+      skill6: "html/css",
+      linkedln: "https://www.linkedin.com/in/arjunsubedi1/",
+      about:
+        "Meet our Full Stack Certified trainer, boasting over ten years of immersive industry experience spanning the entire stack. With a solid history of delivering results, they provide invaluable insights and expertise to empower learners on their journey to mastering a diverse array of technologies.",
+    },
+    {
+      id: 4,
+      name: "JayaKumar",
+      surname: "Neupane",
+      image: "/Jaya.png",
+      imagealt: "kuram.jpg",
+      profession: "Certified Oracle Trainer",
+      experience: "15 years",
+      location: "Sundarijal, Kathmandu",
+      star: "5.0 (100)",
+      skill1: "Java Programming",
+      skill2: "Database Model",
+      skill3: "Mathmatical skill",
+      skill4: "Problem Solving skill",
+      skill5: "Adaptability",
+      linkedln: "https://www.linkedin.com/in/jay-neupane-9684011b7/",
+
+      about:
+        "Meet our Oracle-Certified trainer, boasting an impressive 15-year tenure in the field. With a wealth of experience under their belt, they bring unparalleled expertise and insight to every session.",
+    },
+    {
+      id: 5,
+      name: "Gyan Bahadur ",
+      surname: "Tamang",
+      image: "/img.png",
+      imagealt: "tamang.jpg",
+      profession: "Certified Oracle Trainer",
+      experience: "16 years",
+      location: " Kathmandu",
+      star: "5.0 (100)",
+      skill1: "Java Programming",
+      skill2: "Database Model",
+      skill3: "Mathmatical skill",
+      skill4: "Problem Solving skill",
+      skill5: "Adaptability",
+      linkedln: "https://www.linkedin.com/in/jay-neupane-9684011b7/",
+
+      about:
+        "Meet our Oracle Certified trainer, equipped with over a decade of comprehensive industry experience. With a proven track record of success, they offer invaluable insights and expertise to guide learners towards mastery in Oracle technologies.",
+    },
+    {
+      id: 6,
+      name: "Kumar ",
+      surname: "Lamichhane",
+      image: "/kumar.jpg",
+      imagealt: "kumar.jpg",
+      profession: "Certified Java Trainer",
+      experience: "10 years",
+      location: " Mulpani, Kathmandu",
+      star: "5.0 (100)",
+      skill1: "Java Programming",
+      skill2: "Database Model",
+      skill3: "Mathmatical skill",
+      skill4: "Problem Solving skill",
+      skill5: "Adaptability",
+      linkedln:
+        "https://www.linkedin.com/in/kumar-lamichhane-%F0%9F%87%B3%F0%9F%87%B5-58b0a766/",
+
+      about:
+        "Presenting our Java-Certified trainer, bringing a decade of extensive experience to the table. With a strong foundation in Java development and training, they offer unparalleled expertise and guidance to learners at every level",
+    },
+
+    {
+      id: 7,
+      name: "Anish ",
+      surname: "Adhikari",
+      image: "/img.png",
+      imagealt: "img.jpg",
+      profession: "Certified Full Stack Developer",
+      experience: "8 years",
+      location: " Koteshwor, Kathmandu",
+      star: "5.0 (100)",
+      skill1: "node.js",
+      skill2: "Database Model",
+      skill3: "React",
+      skill4: "Express",
+      skill5: "problem solving skill",
+      linkedln: "https://www.linkedin.com/in/anish-adhikari-2083002ba/",
+
+      about:
+        "Meet our Full Stack Certified trainer, boasting over ten years of immersive industry experience spanning the entire stack. With a solid history of delivering results, they provide invaluable insights and expertise to empower learners on their journey to mastering a diverse array of technologies.",
+    },
+  
+ ]
+
+
