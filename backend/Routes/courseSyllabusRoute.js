@@ -9,6 +9,12 @@ router
     courseSyllabusController.setCourseId,
     courseSyllabusController.createSyllabus
   )
-  .get(courseSyllabusController.getSyllabus);
+  .get(courseSyllabusController.getAllSyllabus);
+
+router
+  .route("/:id")
+  .delete(courseSyllabusController.deleteSyllabus)
+  .get(courseSyllabusController.getSyllabus)
+  .patch(courseSyllabusController.updateSyllabus);
 
 module.exports = router;

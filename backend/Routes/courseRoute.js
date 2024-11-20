@@ -11,6 +11,10 @@ router
   .get(courseController.getAllCourse)
   .post(courseController.CreateCourse);
 
-router.route("/:id").get(courseController.getCourse);
+router
+  .route("/:id")
+  .get(courseController.getCourse)
+  .delete(courseController.deleteCourse)
+  .patch(courseController.updateCourse);
 
 module.exports = router;
