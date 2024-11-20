@@ -22,7 +22,7 @@ app.use("/api/v1/syllabus", courseSyllabusRoute);
 const studentRoute = require("./Routes/studentRoute");
 
 //BACKEND ROUTE
-app.use("/courses", courseRoute);
+
 app.use("/student", studentRoute);
 
 module.exports = app;

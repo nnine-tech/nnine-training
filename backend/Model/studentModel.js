@@ -10,6 +10,7 @@ const studentSchema = new mongoose.Schema({
     required: [true, "FullName field is required"],
   },
   email: {
+    unique: true,
     type: String,
     required: [true, "Email field is required"],
   },
