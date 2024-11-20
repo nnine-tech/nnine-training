@@ -17,7 +17,6 @@ app.use("/api/v1/courses", courseRoute);
 app.use("/attendees", attendenceRouter);
 
 app.use(express.json());
-const courseRoute = require("./Routes/courseRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
