@@ -43,7 +43,7 @@ const RedHatOpenShiftDevelopmentIntro = () => {
                 <h2 className="text-[#FFFFFF] font- Quicksand">Duration: 30h</h2>
               </div>
               <div className="flex items-center gap-2">
-                <img src="/career.svg" alt="Career" />
+                <img src="/careerlogo.svg" alt="Career" />
                 <h2 className="text-[#FFFFFF] font-Quicksand">Career: RED HAT OPENSHIFT DEVELOPER</h2>
               </div>
             </div>
