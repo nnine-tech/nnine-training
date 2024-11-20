@@ -44,7 +44,9 @@ const DigitalMarketingIntro = () => {
               </div>
               <div className="flex items-center gap-2">
                 <img src="/careerlogo.svg" alt="Career" />
-                <h2 className="text-[#FFFFFF] font-Quicksand">Career: DIGITAL MARKETING</h2>
+                <h2 className="text-[#FFFFFF] font-Quicksand">
+                  Career: Digital Marketer
+                </h2>
               </div>
             </div>
           </div>
