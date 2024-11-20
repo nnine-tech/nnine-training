@@ -5,6 +5,7 @@ http://localhost:3000/student/readAll => get all students
 http://localhost:3000/student/update/:id => Update
 http://localhost:3000/student/search?item=aaryan => Search in table
 http://localhost:3000/student/delete/:id => delete student
+ttp://localhost:8000/student/total-student => Total student
 
   
   Add Student :
@@ -29,9 +30,12 @@ http://localhost:3000/student/delete/:id => delete student
   PATCH => http://localhost:8000/student/673c1c6d6706a5bba0df7bba
 
   Search Student:  
-  GET => http:localhost:8000/student?item:Aaryan  
+  GET => http://localhost:8000/student?item:Aaryan  
 
   Delete Student:  
-  DELETE => http:localhost:8000/student/673c1c6d6706a5bba0df7bba
+  DELETE => http://localhost:8000/student/673c1c6d6706a5bba0df7bba
+
+  Total Student :
+  GET => http://localhost:8000/student/total-student
 
 
