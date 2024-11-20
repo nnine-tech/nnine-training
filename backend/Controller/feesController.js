@@ -6,13 +6,13 @@ exports.addPaymentController = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: "Fees payment added successfully.",
+      message: "Payment has been successfully recorded.",
       data: result,
     });
   } catch (error) {
     res.status(400).json({
       success: false,
-      message: error.message,
+      message: "Failed to add payment." + error.message,
     });
   }
 };
@@ -23,13 +23,13 @@ exports.getAllController = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: "Get all data successfully.",
+      message: "Successfully retrieved all payment records.",
       data: result,
     });
   } catch (error) {
     res.status(400).json({
       success: false,
-      message: error.message,
+      message: "Failed to retrieve data." + error.message,
     });
   }
 };
@@ -41,13 +41,13 @@ exports.updatePaymentController = async (req, res, next) => {
     });
     res.status(201).json({
       success: true,
-      message: "Payment data updated successfully.",
+      message: "Payment details have been updated updated successfully.",
       data: result,
     });
   } catch (error) {
     res.status(400).json({
       success: false,
-      message: error.message,
+      message: "Failed to update payment details." + error.message,
     });
   }
 };
@@ -71,13 +71,13 @@ exports.searchController = async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      message: "Search result found.",
+      message: "Search completed successfully.",
       data: result,
     });
   } catch (error) {
     res.status(200).json({
       success: false,
-      message: error.message,
+      message: "Search failed." + error.message,
     });
   }
 };
