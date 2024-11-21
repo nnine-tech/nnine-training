@@ -12,6 +12,7 @@ const courseRoute = require("./Routes/courseRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const studentRoute = require("./Routes/studentRoute");
 const eventRoute = require("./Routes/eventRoute");
+const notificationRouter = require("./Routes/notificationRoute");
 
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
@@ -25,5 +26,6 @@ app.use("/api/v1/syllabus", courseSyllabusRoute);
 //BACKEND ROUTE
 app.use("/student", studentRoute);
 app.use("/event", eventRoute);
+app.use("/notifications", notificationRouter);
 
 module.exports = app;
