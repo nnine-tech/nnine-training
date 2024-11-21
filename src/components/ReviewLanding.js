@@ -50,13 +50,13 @@ const ReviewLanding = () => {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 500,
+    speed: 900,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '0px',
     autoplay:true,
-    autoplaySpeed:200,
+    autoplaySpeed:300,
     pauseOnHover: true,  // Pauses autoplay when hovered (desktop)
     pauseOnFocus: true,  // Pauses autoplay on focus (useful for mobile touch)
     beforeChange: (current, next) => setActiveSlide(next),

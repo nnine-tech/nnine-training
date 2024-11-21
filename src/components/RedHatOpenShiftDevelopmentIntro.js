@@ -5,7 +5,7 @@ const RedHatOpenShiftDevelopmentIntro = () => {
     <div className="flex flex-col md:flex-row w-[400px]   sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
       <div className="flex flex-col w-full mt-32">
         <h1 className="mt-10 md:mt-24 font-bold font-Quicksand text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
-          THE COMPLETE RED HAT OPENSHIFT DEVELOPMENT  COURSE
+          THE COMPLETE RED HAT OPENSHIFT DEVELOPMENT COURSE
         </h1>
         <div className="flex flex-col md:flex-row-reverse mt-6 w-full">
           {/* Image Section */}
@@ -19,7 +19,7 @@ const RedHatOpenShiftDevelopmentIntro = () => {
           {/* Text Section */}
           <div className="md:ml-20 flex flex-col gap-5 items-center md:items-start mt-8 md:mt-10 md:w-[64%]">
             <p className="text-lg md:text-2xl font-semibold font-Quicksand text-center md:text-left text-[#C1D4FF] mx-4 md:mx-0">
-              Develop your  Red Hat OpenShift Development skill
+              Develop your Red Hat OpenShift Development skill
             </p>
             <div className="flex flex-wrap gap-4 mt-5 justify-center md:justify-start">
               <button className="bg-[#CCCBC8] p-2 text-black font-Quicksand font-semibold">
@@ -40,11 +40,15 @@ const RedHatOpenShiftDevelopmentIntro = () => {
               </div>
               <div className="flex items-center gap-2">
                 <img src="/duration.svg" alt="Duration" />
-                <h2 className="text-[#FFFFFF] font- Quicksand">Duration: 30h</h2>
+                <h2 className="text-[#FFFFFF] font- Quicksand">
+                  Duration: 30h
+                </h2>
               </div>
               <div className="flex items-center gap-2">
-                <img src="/career.svg" alt="Career" />
-                <h2 className="text-[#FFFFFF] font-Quicksand">Career: RED HAT OPENSHIFT DEVELOPER</h2>
+                <img src="/careerlogo.svg" alt="Career" />
+                <h2 className="text-[#FFFFFF] font-Quicksand">
+                  Career: Linux Engineer
+                </h2>
               </div>
             </div>
           </div>
