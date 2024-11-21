@@ -1,6 +1,7 @@
 const Course = require("../Model/courseModel.js");
 
 const Course = require("../Model/newCourseModel.js");
+
 const APIFeatures = require("./../Utils/apiFeatures.js");
 exports.getAllCourse = async (req, res, next) => {
   try {
