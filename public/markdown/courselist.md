@@ -143,12 +143,12 @@ courses:
   #   courseDuration: "2 Months"
   #   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
-  - imageUrl: "/aws.jpg"
-    imageAlt: "Amazon AWS"
-    title: "AWS"
-    courseDuration: "1.5 Months"
-    syllabusUrl: "/Syllabus/Aws"
-    googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
+  # - imageUrl: "/aws.jpg"
+  #   imageAlt: "Amazon AWS"
+  #   title: "AWS"
+  #   courseDuration: "1.5 Months"
+  #   syllabusUrl: "/Syllabus/Aws"
+  #   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
   - imageUrl: "/AWS-Developer-Associate-Courses.png"
     imageAlt: "AWS-Developer Associate"

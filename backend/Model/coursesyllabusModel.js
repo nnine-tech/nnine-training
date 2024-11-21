@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
+const Course = require("./newCourseModel");
 
-const coursesyllabusSchema = new mongoose.Schema({
+const CourseSyllabusSchema = new mongoose.Schema({
   name: {
     type: String,
+    unique: true,
     required: [true, "A course syllabus must have a name"],
   },
   content: {
@@ -13,12 +15,20 @@ const coursesyllabusSchema = new mongoose.Schema({
     type: Number,
     requierd: [true, "A course syllabus must have a duration"],
   },
-  letures: {
+  lectures: {
     type: Number,
     required: [true, "A course syllabus must have the number of lectures"],
   },
+  course: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Course",
+    required: [true, "A syllabus must have a course"],
+  },
 });
 
-const CourseSyllabus = mongoose.model("CourseSyllabus", coursesyllabusSchema);
+const CourseSyllabus = mongoose.model(
+  "newCourseSyllabus",
+  CourseSyllabusSchema
+);
 
 module.exports = CourseSyllabus;

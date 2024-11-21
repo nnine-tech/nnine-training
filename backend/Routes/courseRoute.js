@@ -1,10 +1,20 @@
 const express = require("express");
-const courseController = require("./../Controller/courseController");
+const courseController = require("./../Controller/courseController.js");
+const courseSyllabusRoute = require("./../Routes/courseSyllabusRoute.js");
 const router = express.Router();
 
+//NESTED ROUTE
+router.use("/:courseId/syllabus", courseSyllabusRoute);
+
 router
-  .route("/courses")
+  .route("/")
+  .get(courseController.getAllCourse)
+  .post(courseController.CreateCourse);
+
+router
+  .route("/:id")
   .get(courseController.getCourse)
-  .post(courseController.Createcourse);
+  .delete(courseController.deleteCourse)
+  .patch(courseController.updateCourse);
 
 module.exports = router;
