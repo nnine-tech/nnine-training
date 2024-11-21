@@ -1,5 +1,4 @@
 const Fees = require("../Model/fee.model.js");
-
 exports.addPaymentController = async (req, res, next) => {
   try {
     const result = await Fees.create(req.body);
