@@ -6,10 +6,13 @@ process.on("uncaughtException", (err) => {
 });
 
 const express = require("express");
+const trainerRouter = require("./Routes/trainerRoute");
+const trainerReviewRouter = require("./Routes/trainerReviewRoute");
 const app = express();
-const courseRoute = require("./Routes/courseRoute");
-
+app.use(express.json());
 //BACKEND ROUTE
-app.use("/api/v1/courses", courseRoute);
 
+app.use("/api/v1/trainers", trainerRouter);
+
+app.use("/api/reviews", trainerReviewRouter);
 module.exports = app;

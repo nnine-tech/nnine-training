@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "supervisor server.js",
+    "dev": "nodemon server.js",
     "start:prod": "set NODE_ENV=production&& supervisor server.js"
   },
   "author": "",
@@ -12,8 +13,9 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
-    "mongoose": "^8.8.1",
+    "mongoose": "^8.8.2",
     "morgan": "^1.10.0",
+    "nodemon": "^3.1.7",
     "supervisor": "^0.12.0"
   }
 }
