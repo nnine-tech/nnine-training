@@ -8,8 +8,23 @@ process.on("uncaughtException", (err) => {
 const express = require("express");
 const app = express();
 app.use(express.json());
+
+
+app.use(express.static("./public/"));
+
 const courseRoute = require("./Routes/courseRoute");
+const feesRoute = require("./Routes/feesRoute");
+const userRoute = require("./Routes/userRoute");
+const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
+
+//BACKEND ROUTE
+app.use("/api/v1/courses", courseRoute);
+app.use("/fees", feesRoute);
+app.use("/users", userRoute);
+app.use("/file", fileRouter);
+
+
 const studentRoute = require("./Routes/studentRoute");
 const eventRoute = require("./Routes/eventRoute");
 const notificationRouter = require("./Routes/notificationRoute");
@@ -21,11 +36,12 @@ app.use(express.json());
 
 //BACKEND ROUTE
 app.use("/api/v1/courses", courseRoute);
-app.use("/api/v1/syllabus", courseSyllabusRoute);
+
 
 //BACKEND ROUTE
 app.use("/student", studentRoute);
-app.use("/event", eventRoute);
-app.use("/notifications", notificationRouter);
+
+
+
 
 module.exports = app;
