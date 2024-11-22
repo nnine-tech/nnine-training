@@ -10,15 +10,16 @@ const app = express();
 
 app.use(express.json())
 const courseRoute = require("./Routes/courseRoute");
-const attendenceRouter = require("./Routes/attendenceRouter")
+const attendanceRouter = require("./Routes/attendanceRouter")
 
-const configurationRouter = require("./Routes/configurationRouter");
+
+const conversationRouter = require("./Routes/conversation")
 
 
 //BACKEND ROUTE
 app.use("/api/v1/courses", courseRoute);
-app.use("/attendees", attendenceRouter);
-app.use("/configuration", configurationRouter);
+app.use("/attendance", attendanceRouter,);
+app.use("/conversation", conversationRouter)
 
 
 app.use(express.json());
@@ -36,7 +37,7 @@ app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/syllabus", courseSyllabusRoute);
 
 //BACKEND ROUTE
-app.use("/student", studentRoute);
+app.use("/api/v1/student", studentRoute);
 app.use("/event", eventRoute);
 
 module.exports = app;

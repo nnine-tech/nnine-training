@@ -1,10 +1,10 @@
 
-const Attendance = require("../Model/attendenceSchema.js");
+const Attendance = require("../Model/attendanceSchema.js");
 
 
 
 
-exports.createAttendenceController = async (req, res, next) => {
+exports.createAttendanceController = async (req, res, next) => {
 
     try {
         let result = await Attendance.create(req.body)
@@ -26,13 +26,13 @@ exports.createAttendenceController = async (req, res, next) => {
 }
 
 
-exports.readAllStudentsAttendence = async (req, res, next) => {
+exports.readAllStudentsAttendance = async (req, res, next) => {
     try {
 
         let result = await Attendance.find({})
         res.status(200).json({
             success: true,
-            mesage: "All Attendence fetched successfully",
+            mesage: "All Attendance fetched successfully",
             data: result,
         })
 
@@ -48,7 +48,7 @@ exports.readAllStudentsAttendence = async (req, res, next) => {
 }
 
 
-exports.readSpecificAttendence = async (req, res, next) => {
+exports.readSpecificAttendance = async (req, res, next) => {
     try {
         let result = await Attendance.findById(req.params.id);
         res.status(200).json({
@@ -67,12 +67,12 @@ exports.readSpecificAttendence = async (req, res, next) => {
     }
 }
 
-exports.updateAttendence = async (req, res, next) => {
+exports.updateAttendance = async (req, res, next) => {
     try {
         let result = await Attendance.findByIdAndUpdate(req.params.id, req.body, { new: true })
         res.status(201).json({
             success: true,
-            mesage: "Attendence updated successfully",
+            mesage: "Attendance updated successfully",
             data: result,
         })
 

@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
-const attendenceSchema = new mongoose.Schema({
+const attendanceSchema = new mongoose.Schema({
 
-    studentsName: {
+
+    students_id: {
         type: String,
         required: [true, "studentsName is required"],
 
@@ -29,7 +30,7 @@ const attendenceSchema = new mongoose.Schema({
 
 });
 
-let Attendance = mongoose.model('Attendance', attendenceSchema);
+let Attendance = mongoose.model('Attendance', attendanceSchema);
 
 
 
