@@ -57,7 +57,7 @@ app.use("/api/v1/n9-reviews", n9reviewRouter);
 app.use("*", (req, res, next) => {
   //ORIGINAL METHOD
 
-  // res.status(404).json({
+  // re
   //   status: "fail",
   //   message: `Can't find ${req.originalUrl} on this server!`,
   // });
