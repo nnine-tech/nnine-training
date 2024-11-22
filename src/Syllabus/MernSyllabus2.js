@@ -4,7 +4,7 @@ import React from "react";
 
 const MernSyllabus2 = () => {
   return (
-    <div className="p-4">
+    <div>
       <Introduction />
       <CourseSyllabus1 />
       {/* <MernSchedule/> */}

@@ -736,19 +736,21 @@ const DevOpsSyllabus = () => {
     },
   ];
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-col lg:flex-row ml-5">
+      {/* Syllabus Section */}
       <div className="w-full flex flex-col sm:mt-4">
-        <div className="w-[90%]  flex flex-col mt-10">
+        <div className="w-[90%] mx-auto lg:w-full lg:mx-0 flex flex-col mt-10">
           <h1 className="font-bold text-3xl p-4 font-Quicksand mb-6 text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div key={index} className="relative w-full max-w-[800px]">
+            <div
+              key={index}
+              className="relative w-full max-w-[800px] mx-auto lg:mx-0"
+            >
               {/* Section Title */}
               <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
-                  !openDropdowns[section.title] ? "" : ""
-                }`}
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all`}
               >
                 <div
                   className="flex items-center p-3 cursor-pointer font-Quicksand"
@@ -792,7 +794,7 @@ const DevOpsSyllabus = () => {
                                       (subPoint, pointIdx) => (
                                         <li
                                           key={pointIdx}
-                                          className=" list-[square] py-1 font-Quicksand"
+                                          className="list-[square] py-1 font-Quicksand"
                                         >
                                           {subPoint.content}
                                         </li>
@@ -813,7 +815,11 @@ const DevOpsSyllabus = () => {
           ))}
         </div>
       </div>
-      <DevopsClassType />
+
+      {/* DevopsClassType Section */}
+      <div className="mt-10 lg:mt-0 flex justify-center">
+        <DevopsClassType />
+      </div>
     </div>
   );
 };

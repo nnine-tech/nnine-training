@@ -29,7 +29,7 @@ const Contact2 = () => {
           alt=""
           className="w-full h-[800px] object-cover"
         />
-        <div className="absolute inset-0 flex flex-col gap-6 h-[300px] w-[90%] sm:w-[1000px] justify-center items-center mx-auto mt-44 text-center px-4">
+        <div className="absolute inset-0 flex flex-col gap-6 h-[300px] w-[90%] sm:w-[1000px] justify-center items-center mx-auto mt-44 text-center px-4  md:w-[500px]">
           <h1 className="text-white font-Quicksand text-4xl sm:text-6xl font-bold">
             Contact Us
           </h1>
