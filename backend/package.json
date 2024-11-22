@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "supervisor server.js",
-    "start:prod": "set NODE_ENV=production&& supervisor server.js"
+    "start:prod": "set NODE_ENV=production&& supervisor server.js",
+    "debug": "ndb server.js"
   },
   "author": "",
   "license": "ISC",

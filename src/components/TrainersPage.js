@@ -26,9 +26,9 @@ const TrainersPage = () => {
       imageUrl: "/niresh1.jpg",
       imageAlt: "niresh.jpg",
       name: "Niresh Dhakal",
-      profession: "Mern Stack Trainer",
+      profession: "Machine Learning Trainer",
       experience: "12 years",
-      job: "Mern stack Trainer at N9 Solution",
+      job: "Machine Learning Trainer",
     },
     {
       id: 3,
@@ -75,7 +75,6 @@ const TrainersPage = () => {
       experience: "8 years",
       job: "Full Stack Developer at N9 Solution",
     },
-
   ];
 
   return (

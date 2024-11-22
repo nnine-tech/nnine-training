@@ -24,6 +24,7 @@ app.use("/configuration", configurationRouter);
 app.use(express.json());
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const studentRoute = require("./Routes/studentRoute");
+const eventRoute = require("./Routes/eventRoute");
 
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
@@ -35,7 +36,7 @@ app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/syllabus", courseSyllabusRoute);
 
 //BACKEND ROUTE
-app.use("/api/v1/courses", courseRoute);
-app.use("/api/v1/student", studentRoute);
+app.use("/student", studentRoute);
+app.use("/event", eventRoute);
 
 module.exports = app;
