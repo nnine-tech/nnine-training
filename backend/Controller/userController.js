@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+const User = require("../Model/UserModel");
+const catchAsync = require("../Utils/catchAsync");
+
+exports.createUser = catchAsync(async (req, res, next) => {
+  const user = await User.create(req.body);
+  res.status(200).json({
+    status: "success",
+    data: {
+      data: user,
+    },
+  });
+});
+=======
 const AddUser = require("../Model/userModel");
 
 exports.addUserController = async (req, res, next) => {
@@ -100,3 +114,4 @@ exports.deleteUserController = async (req, res, next) => {
     });
   }
 };
+>>>>>>> 353225028f4421e1ed0bc7e9165a23747b588f24

@@ -15,7 +15,12 @@
     "express": "^4.21.1",
     "mongoose": "^8.8.2",
     "morgan": "^1.10.0",
+<<<<<<< HEAD
+    "supervisor": "^0.12.0",
+    "validator": "^13.12.0"
+=======
     "multer": "^1.4.5-lts.1",
     "supervisor": "^0.12.0"
+>>>>>>> 353225028f4421e1ed0bc7e9165a23747b588f24
   }
 }
