@@ -45,7 +45,7 @@ const NavBar = () => {
 
       {showNav && (
         <div className="flex items-center justify-center">
-          <nav className="fixed top-0 left-0 right-0 lg:mx-auto lg:w-[1375px] w-full z-30 transition duration-300 ease-in-out mb-16 rounded-full bg-[#FFFF] shadow-lg mt-16">
+          <nav className="fixed top-0 left-0 right-0 lg:mx-auto  lg:w-screen xl:w-[1300px] md:w-screen w-full z-30 transition duration-300 ease-in-out mb-16 rounded-full bg-[#FFFF] shadow-lg mt-16">
             <div className="flex items-center justify-between py-1 px-6">
               {/* Logo */}
               <Link href="/" onClick={handleLogoClick}>

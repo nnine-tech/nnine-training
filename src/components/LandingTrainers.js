@@ -47,20 +47,20 @@ const LandingTrainers = () => {
       {/* Auto-scrolling container */}
       <div
         ref={trainersContainerRef}
-        className="flex flex-col w-full md:w-[60%] px-4 md:px-0 gap-5 overflow-hidden lg:mr-11"
+        className="flex flex-col w-full md:w-[80%] px-4 md:px-6 gap-5 overflow-hidden lg:mr-11"
         style={{ maxHeight: "500px" }}
       >
         {trainer.map((trainer) => (
           <Link href={`/Trainer/${trainer.id}`} key={trainer.id}>
-            <div className="bg-[#F6F8FC] h-auto md:h-[199px] flex flex-col md:flex-row justify-between p-3 border rounded-lg gap-4">
+            <div className="bg-[#F6F8FC] h-auto md:h-[199px] lg:flex lg:flex-row lg:gap-5  md:flex-col justify-between p-3 border rounded-lg md:flex md:gap-0 ">
               <img
                 src={trainer.image}
                 alt={trainer.imagealt}
                 className="h-20 w-20 md:h-16 md:w-16 object-contain rounded-lg mx-auto md:mx-0"
               />
               <div className="flex-1">
-                <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-5">
-                  <h2 className="text-lg md:text-xl font-semibold hover:underline uppercase">
+                <div className="flex flex-col md:flex-col items-center md:items-start gap-2 ">
+                  <h2 className="text-lg lg:text-lg font-semibold hover:underline uppercase md:text-xs">
                     {trainer.name} {trainer.surname}
                   </h2>
                   <div className="flex items-center">
@@ -70,7 +70,7 @@ const LandingTrainers = () => {
                     </span>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 mt-2">{trainer.about}</p>
+                <p className="text-sm text-gray-600 mt-2 line-clamp-3 md:line-clamp-2 lg:line-clamp-3">{trainer.about}</p>
               </div>
             </div>
           </Link>

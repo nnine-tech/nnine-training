@@ -43,7 +43,7 @@ export default function Course() {
         </div>
       </div>
 
-      <div>
+      <div className="">
         <CourseList courseData={courseData} />
       </div>
 
