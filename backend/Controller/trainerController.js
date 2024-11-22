@@ -8,7 +8,7 @@ exports.createTrainer = catchAsync(async (req, res, next) => {
     name,
     email,
     expertise,
-  });
+  })
 
   res.status(200).json({
     result: { trainerdata },

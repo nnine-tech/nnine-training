@@ -83,7 +83,7 @@ exports.updateN9review = catchAsync(async (req, res, next) => {
     });
   }
 
-  const updates = {};
+  const updates = {}
   if (rating !== undefined) updates.rating = rating;
   if (description !== undefined) updates.description = description;
   if (created_at !== undefined) updates.created_at = new Date(created_at);
