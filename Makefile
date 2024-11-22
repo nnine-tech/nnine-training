@@ -10,7 +10,7 @@ FRONTEND_CONTAINER = $(PROJECT_NAME)-frontend
 # Build the frontend project using Docker
 build:
 	@echo "Building the frontend project..."
-	@docker run --rm -v $(CURDIR):/app -w /app $(NODE_IMAGE) npm install
+	@docker run --rm -v $(CURDIR):/app -w /app $(NODE_IMAGE) npm install`
 	@docker run --rm -v $(CURDIR):/app -w /app $(NODE_IMAGE) npx webpack --config webpack.config.js
 
 # Start the frontend project using Docker
