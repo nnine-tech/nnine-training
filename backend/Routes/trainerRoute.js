@@ -9,7 +9,6 @@ const {
 
 const trainerRouter = Router();
 
-// Routes for base `/`
 trainerRouter
   .route("/")
   .post(createTrainer) // Create trainer

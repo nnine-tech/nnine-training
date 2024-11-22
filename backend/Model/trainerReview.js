@@ -20,15 +20,14 @@ const trainerReviewSchema = new mongoose.Schema({
 
   reviewDate: {
     type: Date,
-    default: Date.now, // Defaults to current date if no value is provided
+    default: Date.now,
   },
 
-  // Uncomment and use this if you want to track the student/user who created the review
-  //  studentId: {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: "Student",  // Replace with your actual user or student model reference
-  //     required: true,
-  //   },
+  student_id: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Student",
+    required: true,
+  },
 });
 
 const trainerReview = mongoose.model("trainerReview", trainerReviewSchema);

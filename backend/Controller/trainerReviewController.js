@@ -1,16 +1,18 @@
 const { default: mongoose } = require("mongoose");
-const trainer = require("../Model/trainerModel");
 const trainerReview = require("../Model/trainerReview");
 
-const createTrainerReview = async (req, res, next) => {
+exports.createTrainerReview = async (req, res, next) => {
   try {
-    const { trainer, rating, description, reviewDate } = req.body;
+    const { trainer, rating, description, reviewDate, Student } = req.body;
     console.log("Request Body:", req.body);
 
-    if (!trainer) {
-      return res.status(400).json({
-        message: "Trainer ID is required",
-      });
+    if (!trainer || !mongoose.Types.ObjectId.isValid(trainer)) {
+      return res.status(400).json({ message: "Invalid or missing trainer ID" });
+    }
+
+    // Validate student ID
+    if (!Student) {
+      return res.status(400).json({ message: "Invalid or missing student ID" });
     }
 
     if (typeof rating !== "number" || rating < 1 || rating > 5) {
@@ -24,6 +26,7 @@ const createTrainerReview = async (req, res, next) => {
       rating,
       description,
       reviewDate,
+      student_id: Student,
     });
 
     console.log("Creating review:", review);
@@ -43,7 +46,7 @@ const createTrainerReview = async (req, res, next) => {
   }
 };
 
-const getTrainerReview = async (req, res, next) => {
+exports.getTrainerReview = async (req, res, next) => {
   try {
     const data = await trainerReview.find({});
     if (!data) {
@@ -63,7 +66,7 @@ const getTrainerReview = async (req, res, next) => {
   }
 };
 
-const getSpecificTrainerReview = async (req, res, next) => {
+exports.getSpecificTrainerReview = async (req, res, next) => {
   try {
     const { trainerId } = req.params;
 
@@ -83,14 +86,12 @@ const getSpecificTrainerReview = async (req, res, next) => {
 
     const reviews = await trainerReview
       .find({ trainer_id: trainerId }) // Filter by trainer_id
-      .populate("trainer_id", "name email");
-
-    if (reviews.length === 0) {
-      return res.status(404).json({
-        message: "No reviews found for this trainer",
-      });
-    }
-
+      .populate("trainer_id", "name email")
+      .populate(
+        "student_id",
+        "firstName lastName email  department, courseTaken"
+      );
+    console.log(reviews);
     return res.status(200).json({
       result: reviews,
       message: "Reviews fetched successfully",
@@ -103,7 +104,7 @@ const getSpecificTrainerReview = async (req, res, next) => {
   }
 };
 
-const updateTrainerReview = async (req, res, next) => {
+exports.updateTrainerReview = async (req, res, next) => {
   try {
     const { reviewId } = req.params;
 
@@ -120,6 +121,12 @@ const updateTrainerReview = async (req, res, next) => {
       return res.status(400).json({
         message: "Rating must be number between 1 to 5 ",
       });
+    }
+
+    if (req.body.trainer_id || req.body.student_id) {
+      return res
+        .status(400)
+        .json({ message: "Trainer and Student IDs cannot be updated" });
     }
 
     const updates = {};
@@ -152,7 +159,7 @@ const updateTrainerReview = async (req, res, next) => {
   }
 };
 
-const deleteTrainerReview = async (req, res, next) => {
+exports.deleteTrainerReview = async (req, res, next) => {
   try {
     const { reviewId } = req.params;
 
@@ -179,10 +186,4 @@ const deleteTrainerReview = async (req, res, next) => {
     });
   }
 };
-module.exports = {
-  createTrainerReview,
-  getTrainerReview,
-  getSpecificTrainerReview,
-  updateTrainerReview,
-  deleteTrainerReview,
-};
+

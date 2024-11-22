@@ -26,18 +26,18 @@ const TrainersPage = () => {
       imageUrl: "/niresh1.jpg",
       imageAlt: "niresh.jpg",
       name: "Niresh Dhakal",
-      profession: "Mern Stack Trainer",
-      experience: "15 years",
-      job: "Mern stack Trainer at N9 Solution",
+      profession: "Machine Learning Trainer",
+      experience: "12 years",
+      job: "Machine Learning Trainer",
     },
     {
       id: 3,
-      imageUrl: "/jaya.png",
-      imageAlt: "jaya.jpg",
-      name: "Jaya Kumar Neupane",
-      profession: "Oracle-certified Trainer",
+      imageUrl: "/arjun.jpeg",
+      imageAlt: "arjun.jpeg",
+      name: "Arjun Subedi",
+      profession: "Mern Stack Trainer",
       experience: "15 years",
-      job: "Oracle Trainer at N9 Solution",
+      job: "Mern Stack Trainer at N9 Solution",
     },
     {
       id: 4,
@@ -47,6 +47,33 @@ const TrainersPage = () => {
       profession: "Oracle-certified Trainer",
       experience: "15 years",
       job: "Oracle Trainer at N9 Solution",
+    },
+    {
+      id: 5,
+      imageUrl: "/img.png",
+      imageAlt: "img.jpg",
+      name: "Gyan Bahadur Tamang",
+      profession: "Oracle-certified Trainer",
+      experience: "16 years",
+      job: "Oracle Trainer at N9 Solution",
+    },
+    {
+      id: 6,
+      imageUrl: "/kumar.jpg",
+      imageAlt: "img.jpg",
+      name: "Kumar Lamichhane",
+      profession: "Java Expert",
+      experience: "10 years",
+      job: "Java Trainer at N9 Solution",
+    },
+    {
+      id: 7,
+      imageUrl: "/img.png",
+      imageAlt: "img.jpg",
+      name: "Anish Adhikari",
+      profession: "Full Stack Developer",
+      experience: "8 years",
+      job: "Full Stack Developer at N9 Solution",
     },
   ];
 
@@ -122,7 +149,7 @@ const TrainersPage = () => {
         {trainersData.map((trainer) => (
           <div
             key={trainer.id}
-            className="w-full sm:w-[350px] md:w-[400px] lg:w-[400px] rounded-2xl flex flex-col items-center shadow-lg bg-white"
+            className="w-full sm:w-[350px] md:w-[400px] lg:w-[400px] rounded-2xl flex flex-col items-center shadow-lg bg-white transform transition-transform duration-300 hover:scale-105"
           >
             <img
               src="trainersbg.svg"
@@ -150,7 +177,7 @@ const TrainersPage = () => {
             </div>
             <button
               onClick={() => handleViewProfile(trainer.id)}
-              className="mt-4 bg-[#004AAD] text-white rounded-2xl px-4 py-2 w-[150px] sm:w-[180px] mb-5"
+              className="mt-4 bg-[#0060FF] text-white rounded-2xl px-4 py-2 w-[150px] sm:w-[180px] mb-5 hover:bg-[#004AAD] transition duration-300"
             >
               View Profile
             </button>

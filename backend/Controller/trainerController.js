@@ -1,6 +1,6 @@
 const trainer = require("../Model/trainerModel");
 
-const createTrainer = async (req, res, next) => {
+exports.createTrainer = async (req, res, next) => {
   console.log(req);
   const { name, email, expertise } = req.body;
 
@@ -24,7 +24,7 @@ const createTrainer = async (req, res, next) => {
   }
 };
 
-const getAllTrainer = async (req, res, next) => {
+exports.getAllTrainer = async (req, res, next) => {
   try {
     let data = await trainer.find({});
     res.status(200).json({
@@ -38,7 +38,7 @@ const getAllTrainer = async (req, res, next) => {
   }
 };
 
-const getSpecificTrainer = async (req, res, next) => {
+exports.getSpecificTrainer = async (req, res, next) => {
   try {
     let data = await trainer.findById(req.params.id.trim());
     console.log(data);
@@ -54,7 +54,7 @@ const getSpecificTrainer = async (req, res, next) => {
   }
 };
 
-const updateTrainer = async (req, res, next) => {
+exports.updateTrainer = async (req, res, next) => {
   try {
     let trainerData = await trainer.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -71,7 +71,7 @@ const updateTrainer = async (req, res, next) => {
   }
 };
 
-const deleteTrainer = async (req, res, next) => {
+exports.deleteTrainer = async (req, res, next) => {
   try {
     let trainerData = await trainer.findByIdAndDelete(req.params.id);
     res.status(200).json({
@@ -83,12 +83,4 @@ const deleteTrainer = async (req, res, next) => {
       message: "An error occurred while deleting the Trainer",
     });
   }
-};
-
-module.exports = {
-  createTrainer,
-  getAllTrainer,
-  getSpecificTrainer,
-  updateTrainer,
-  deleteTrainer,
 };
