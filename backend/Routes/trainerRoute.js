@@ -14,7 +14,7 @@ trainerRouter
   .post(createTrainer) // Create trainer
   .get(getAllTrainer); // Get all trainers
 
-// Routes for `/id`
+// Routes for `/id` 
 trainerRouter
   .route("/:id")
   .get(getSpecificTrainer) // Get specific trainer
