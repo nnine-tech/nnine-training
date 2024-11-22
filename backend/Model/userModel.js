@@ -1,36 +1,64 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
-const addUsers = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: [true, "Please provide your name."],
+    required: [true, "Please tell us your name"],
   },
-  phoneNo: {
+  position: {
+    type: String,
+    required: [true, "Position is required"],
+  },
+  //KATHMANDU,NEPAL
+  address: {
+    type: String,
+    required: [true, "Address is required"],
+  },
+  phone: {
     type: Number,
-    require: [true, "A phone number is required."],
+    required: [true, "Phone number is required"],
+    match: [/^\d{10}$/, "Phone number must be exactly 10 digits"],
   },
   email: {
     type: String,
-    require: [true, "An email address is requried."],
+    required: [true, "Please tell us your email"],
+    unique: true,
+    lowercase: true,
+    validate: [validator.isEmail, "Please provide a valid email"],
   },
-  dateOfJoining: {
-    type: Date,
-    require: [true, "Date of joining is required."],
-  },
-  coursePosition: {
+  photo: String,
+  password: {
     type: String,
-    require: [true, "Please specify your course or position."],
+    required: [true, "Please provide a password"],
+    minlength: 8,
   },
-  projects: {
+  passwordConfirm: {
+    type: String,
+    required: [true, "Please confirm your password"],
+
+    //NOTE:: ONLY WORKS FOR CREATE AND SAVE
+    validate: {
+      validator: function (el) {
+        return el === this.password;
+      },
+      message: "Passwords are not the same",
+    },
+  },
+  bio: {
+    type: String,
+    maxLength: 1000,
+  },
+
+  taxId: {
     type: Number,
-    require: [true, "Please enter the number of projects."],
   },
-  image: {
+  role: {
     type: String,
-    require: [true, "Choose a file."],
+    enum: ["super-admin", "admin"],
+    default: "admin",
   },
 });
 
-const AddUser = mongoose.model("AddUser", addUsers);
-
-module.exports = AddUser;
+const User = mongoose.model("User", userSchema);
+module.exports = User;
