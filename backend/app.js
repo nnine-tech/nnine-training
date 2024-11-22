@@ -7,28 +7,32 @@ process.on("uncaughtException", (err) => {
 
 //IMPORTING
 const express = require("express");
+
+const trainerRouter = require("./Routes/trainerRoute");
+const trainerReviewRouter = require("./Routes/trainerReviewRoute");
+const n9reviewRouter = require("./Routes/n9reviewRoute");
+
 const app = express();
-const courseRoute = require("./Routes/courseRoute");
 const feesRoute = require("./Routes/feesRoute");
 
 const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 
 //BACKEND ROUTE
-app.use("/api/v1/courses", courseRoute);
+app.use("/api/v1/courses", courseSyllabusRoute);
 app.use("/fees", feesRoute);
-app.use("/users", userRoute);
+// app.use("/users", userRoute);
 app.use("/file", fileRouter);
 
-
 const studentRoute = require("./Routes/studentRoute");
-const eventRoute = require("./Routes/eventRoute");
-const userRoute = require("./Routes/userroute");
+
+// const eventRoute = require("./Routes/eventRoute");
+// const userRoute = require("./Routes/userroute");
 const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const notificationRouter = require("./Routes/notificationRoute");
+// const notificationRouter = require("./Routes/notificationRoute");
 
 dotenv.config({
   path: "./config.env",
@@ -40,15 +44,14 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 //MIDDLEWARES
 app.use(express.json());
-
 //BACKEND ROUTE
-app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/syllabus", courseSyllabusRoute);
-app.use("/api/v1/users", userRoute);
+// app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
 
-
-
+app.use("/api/v1/trainers", trainerRouter);
+app.use("/api/v1/trainers-reviews", trainerReviewRouter);
+app.use("/api/v1/n9-reviews", n9reviewRouter);
 
 //UNHANDLED ROUTE
 app.use("*", (req, res, next) => {
