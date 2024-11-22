@@ -9,6 +9,7 @@ mongoose
   .connect(process.env.DATABASE_LOCAL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    autoIndex: true,
   })
   .then(() => {
     console.log("DB connection successful!");
