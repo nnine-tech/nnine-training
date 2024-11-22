@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-const User = require("../Model/UserModel");
+const AddUser = require("../Model/userModel");
 const catchAsync = require("../Utils/catchAsync");
 
 exports.createUser = catchAsync(async (req, res, next) => {
-  const user = await User.create(req.body);
+  const user = await AddUser.create(req.body);
   res.status(200).json({
     status: "success",
     data: {
@@ -11,8 +10,6 @@ exports.createUser = catchAsync(async (req, res, next) => {
     },
   });
 });
-=======
-const AddUser = require("../Model/userModel");
 
 exports.addUserController = async (req, res, next) => {
   try {
@@ -114,4 +111,3 @@ exports.deleteUserController = async (req, res, next) => {
     });
   }
 };
->>>>>>> 353225028f4421e1ed0bc7e9165a23747b588f24
