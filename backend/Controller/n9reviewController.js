@@ -48,7 +48,7 @@ exports.getSpecificN9review = catchAsync(async (req, res, next) => {
   if (!studentId) {
     return res.status(400).json({
       message: "Student Id is required",
-    });
+    })
   }
   if (!mongoose.Types.ObjectId.isValid(studentId)) {
     return res.status(400).json({
