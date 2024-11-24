@@ -64,7 +64,7 @@ const DevopsClassType = () => {
           </form>
         </div>
       </div>
-      {/* <DevopsSchedule /> */}
+      <DevopsSchedule />
     </div>
   );
 };

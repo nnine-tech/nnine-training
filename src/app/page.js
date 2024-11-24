@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import CourseList from "../components/CourseList";
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
-import CourseSlide from "@/components/CourseSlide";
-import WhyUs from "@/components/WhyUs";
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -23,13 +21,13 @@ export default function Home() {
     fetchData();
   }, []);
 
+  console.log(courseData); // This should now show the data
+
   return (
     <div>
       <br />
       <Hero />
-      {/* <CourseList courseData={courseData} /> */}
-      <CourseSlide course={courseData} />
-      <WhyUs />
+      <CourseList courseData={courseData} />
     </div>
   );
 }

@@ -60,7 +60,7 @@ const PythonDjangoClassType = () => {
       </div>
       
     </div>
-    {/* <PythonDjangoSchedule/> */}
+    <PythonDjangoSchedule/>
     </div>
   );
 };

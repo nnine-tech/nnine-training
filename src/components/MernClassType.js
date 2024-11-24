@@ -65,7 +65,7 @@ const MernClassType = () => {
           </form>
         </div>
       </div>
-      {/* <MernSchedule /> */}
+      <MernSchedule />
     </div>
   );
 };

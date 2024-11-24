@@ -59,7 +59,7 @@ const PythonClassType = () => {
       </div>
       
     </div>
-    {/* <PythonSchedule/> */}
+    <PythonSchedule/>
     </div>
   );
 };
