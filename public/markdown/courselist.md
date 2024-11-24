@@ -1,6 +1,6 @@
 ---
 courses:
-  - imageUrl: "/mern.jpg"
+  - imageUrl: "/mernstack.png"
     imageAlt: "Full Stack MERN"
     title: "Full Stack MERN"
     courseDuration: "2.5 Months"
