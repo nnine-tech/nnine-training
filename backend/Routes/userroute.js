@@ -20,3 +20,5 @@ userRouter.route("/update/:id").patch(updateUserController);
 userRouter.route("/delete/:id").delete(deleteUserController);
 
   module.exports = {userRouter};
+
+  
