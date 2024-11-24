@@ -38,7 +38,7 @@ const Hero2 = () => {
       </div>
 
       {/* Second div with WhatsApp Icon */}
-      <div className="bg-[#004AAD] w-full lg:w-[700px] justify-center  items-center p-5 hidden md:hidden lg:block lg:relative lg:p-10  ">
+      <div className="bg-[#004AAD] h-[550px] w-full lg:w-[700px] justify-center  items-center p-5 hidden md:hidden lg:block lg:relative lg:p-10  ">
         <img
           src="/image 7.png"
           alt="Illustration"
