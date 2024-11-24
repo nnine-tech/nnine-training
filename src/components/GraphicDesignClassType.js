@@ -60,7 +60,7 @@ const  GraphicDesignClassType = () => {
       </div>
       
     </div>
-    {/* <GraphicDesignSchedule/> */}
+    <GraphicDesignSchedule/>
     </div>
   );
 };

@@ -61,7 +61,7 @@ const OPenShiftClassType= () => {
       </div>
       
     </div>
-    {/* <OpenShiftSchedule/> */}
+    <OpenShiftSchedule/>
     </div>
   );
 };
