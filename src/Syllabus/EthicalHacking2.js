@@ -5,7 +5,7 @@ import EthicalHackingSyllabus1 from '@/components/EthicalHackingSyllabus1'
 
 const EthicalHacking2 = () => {
   return (
-    <div className='p-4'>
+    <div>
      <EthicalHackingIntro/>
      <EthicalHackingSyllabus1/>
      </div>

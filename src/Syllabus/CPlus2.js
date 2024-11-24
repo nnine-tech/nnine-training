@@ -5,7 +5,7 @@ import React from 'react'
 
 const Cplus2 = () => {
   return (
-    <div  className="p-4" >
+    <div  >
 
    <CPlusIntro/>
 <CPlusSyllabus1/>
