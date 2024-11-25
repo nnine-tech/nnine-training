@@ -1,36 +1,39 @@
-const Message = require("../Model/MessageModel");
+const Message = require("../Model/messageModel");
 
-exports.messageController = async (req, res, next) => {
-  let newMessage = new Message(req.body);
-  res.status(201).json({
-    message: "Message sent successfully",
-    data: newMessage,
-  });
+exports.createMessage = async (req, res, next) => {
+  const { senderId, receiverId, content } = req.body;
   try {
-    let result = await newMessage.save();
+    const result = await Message.create({
+      sender: senderId,
+      receiver: receiverId,
+      content: content,
+    });
     res.status(201).json({
+      success: true,
       message: "Message sent successfully",
       data: result,
     });
   } catch (error) {
-    res.status(500).json({
+    res.statu(400).json({
+      success: false,
       message: error.message,
     });
   }
 };
 
-exports.getMessageController = async (req, res, next) => {
+exports.fetchMessages = async (req, res) => {
+  const { userId1, userId2 } = req.query;
+
   try {
-    let result = await Message.findById(req.params.id);
-    res.status(200).json({
-      success: true,
-      message: "Messages retrieved successfully",
-      data: result,
+    const messages = await Message.find({
+      $or: [
+        { sender: userId1, receiver: userId2 },
+        { sender: userId2, receiver: userId1 },
+      ],
     });
+    console.log(req.query);
+    res.status(300).json({ success: true, data: messages });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: error.message,
-    });
+    res.status(400).json({ success: false, error: error.message });
   }
 };

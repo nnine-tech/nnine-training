@@ -1,15 +1,15 @@
 const { default: mongoose } = require("mongoose");
 
 const messageSchema = new mongoose.Schema({
-  senderId: {
+  sender: {
     type: String,
     required: [true, "Sender Id is required"],
   },
-  conversationId: {
+  receiver: {
     type: String,
     required: [true, "Conversation Id is required"],
   },
-  text: {
+  content: {
     type: String,
     required: [true, "Text is required"],
   },
