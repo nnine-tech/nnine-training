@@ -24,14 +24,14 @@ courses:
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
     syllabusUrl: "/Syllabus/Flutter"
 
-  - imageUrl: "/UIUX.jpg"
+  - imageUrl: "/UiUX.jpg"
     imageAlt: "UI UX"
     title: "UI/UX Design"
     courseDuration: "2 Months"
     syllabusUrl: "/Syllabus/UIUXDesignSyllabus"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
-  - imageUrl: "/python.jpg"
+  - imageUrl: "/python.png"
     imageAlt: "Python"
     title: "Python"
     courseDuration: "2 Months"
@@ -61,7 +61,7 @@ courses:
     syllabusPdfUrl: "/Syllabus/Python Programming Language.pdf"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
-  - imageUrl: "/AWSCloudPractitioner.jpeg"
+  - imageUrl: "/Aws cloud practitior.png"
     imageAlt: "AWS-Cloud-Practitioner"
     title: "AWS Cloud Practitioner"
     price: "Rs 5000"
@@ -78,7 +78,7 @@ courses:
     syllabusPdfUrl: "/Syllabus/Ethical Hacking Syllabus.pdf"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
-  - imageUrl: "/digitalmarketing.jpg"
+  - imageUrl: "/digital marketing.jpg"
     imageAlt: "Digital Marketing"
     title: "Digital Marketing"
     courseDuration: "40 Hours"
@@ -94,7 +94,7 @@ courses:
     syllabusUrl: "/Syllabus/ASPDotNet"
     syllabusPdfUrl: "/Syllabus/Syllabus of ASP NET.pdf"
 
-  - imageUrl: "/GraphicDesign.jpg"
+  - imageUrl: "/graphics.png"
     imageAlt: "Graphics Design"
     title: "Graphic Design and Video Editing"
     courseDuration: "2 Months"
@@ -130,7 +130,7 @@ courses:
   #   courseDuration: "2.5 Months"
   #   googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
-  - imageUrl: "/QA.jpg"
+  - imageUrl: "/QA.png"
     imageAlt: "QA"
     title: "QA Training"
     courseDuration: "2 Months"
@@ -173,7 +173,7 @@ courses:
     syllabusUrl: "/Syllabus/RHCA"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
-  - imageUrl: "/BasicComputerCourse.jpg"
+  - imageUrl: "/computercourse.png"
     imageAlt: "Basic Computer Course"
     title: "Basic Computer Course"
     courseDuration: "1 Month"
