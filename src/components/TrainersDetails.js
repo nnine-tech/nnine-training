@@ -10,7 +10,7 @@ const TrainersDetails = ({ trainerId }) => {
     1: {
       name: "Deepak",
       surname: "Bomjan",
-      image: "/kumar.jpg",
+      image: "/img.png",
       imagealt: "kuram.jpg",
       profession:
         "Certified DevOps Trainer & System Engineer at CAS & Logpoint",
@@ -22,62 +22,124 @@ const TrainersDetails = ({ trainerId }) => {
       skill3: "VLSI",
       skill4: "RTL Design",
       skill5: "System Verilog",
+      linkedln: "https://www.linkedin.com/in/deepakbomjan64050/",
       about:
-        "I am a DevOps-Certified Trainer, boasting over 15 years of invaluable industry experience. Renowned for adeptness in enterprise training, Mr. Bomjan brings a wealth of practical knowledge and real-world insights to his teaching.",
+        "Mr. Bomjan is a highly regarded Certified DevOps trainer, boasting over 15 years of invaluable industry experience. His expertise stems from years of hands-on work as a system engineer at prestigious firms such as CAS and Logpoint. Renowned for his adeptness in enterprise training, Mr. Bomjan brings a wealth of practical knowledge and real-world insights to his teaching.",
     },
     2: {
       name: "Niresh",
       surname: "Dhakal",
       image: "/niresh1.jpg",
       imagealt: "niresh.jpg",
-      profession:
-        "Certified Mern stack Trainer & System Engineer at CAS & Logpoint",
-      experience: "15 years",
-      location: "Sundarijal, Kathmandu",
+      profession: "Certified Machine Learning Trainer ",
+      experience: "12 years",
+      location: "Makalbari, Kathmandu",
       star: "5.0 (100)",
-      skill1: "verilog",
-      skill2: "UVM",
-      skill3: "VLSI",
-      skill4: "RTL Design",
-      skill5: "System Verilog",
+      skill1: "Python",
+      skill2: "Data Structure and algorithm",
+      skill3: "Docker",
+      skill4: "Git ",
+      skill5: "Cloud Platform",
+      linkedln: "https://www.linkedin.com/in/niresh-dhakal-b39a0192/",
       about:
-        "I am a DevOps-Certified Trainer, boasting over 15 years of invaluable industry experience. Renowned for adeptness in enterprise training, Mr. Bomjan brings a wealth of practical knowledge and real-world insights to his teaching.",
+        "Introducing our Data Science and Machine Learning trainer, equipped with an invaluable experience in the field. Mr. Niresh holds master degree in information and technology from Chemnitz University of Technology, Germany with a solid background in IT field, he offers comprehensive training backed by years of practical expertise.",
     },
     3: {
-      name: "Jaya",
-      surname: "Kumar",
-      image: "/Jaya.png",
+      name: "Arjun",
+      surname: "Subedi",
+      image: "/arjun.jpeg",
       imagealt: "kumar.jpg",
-      profession:
-        "Certified DevOps Trainer & System Engineer at CAS & Logpoint",
+      profession: "Certified FullStack Trainer",
       experience: "15 years",
-      location: "Sundarijal, Kathmandu",
+      location: "Mulpani, Kathmandu",
       star: "5.0 (100)",
-      skill1: "verilog",
-      skill2: "UVM",
-      skill3: "VLSI",
-      skill4: "RTL Design",
-      skill5: "System Verilog",
+      skill1: "node.js",
+      skill2: "javascript",
+      skill3: "Java",
+      skill4: "Database",
+      skill5: "React",
+      skill6: "html/css",
+      linkedln: "https://www.linkedin.com/in/arjunsubedi1/",
       about:
-        "I am a DevOps-Certified Trainer, boasting over 15 years of invaluable industry experience. Renowned for adeptness in enterprise training, Mr. Bomjan brings a wealth of practical knowledge and real-world insights to his teaching.",
+        "Meet our Full Stack Certified trainer, boasting over ten years of immersive industry experience spanning the entire stack. With a solid history of delivering results, they provide invaluable insights and expertise to empower learners on their journey to mastering a diverse array of technologies.",
     },
     4: {
-      name: "Jaya",
-      surname: "Kumar",
+      name: "JayaKumar",
+      surname: "Neupane",
       image: "/Jaya.png",
       imagealt: "kuram.jpg",
-      profession:
-        "Certified DevOps Trainer & System Engineer at CAS & Logpoint",
+      profession: "Certified Oracle Trainer",
       experience: "15 years",
       location: "Sundarijal, Kathmandu",
       star: "5.0 (100)",
-      skill1: "verilog",
-      skill2: "UVM",
-      skill3: "VLSI",
-      skill4: "RTL Design",
-      skill5: "System Verilog",
+      skill1: "Java Programming",
+      skill2: "Database Model",
+      skill3: "Mathmatical skill",
+      skill4: "Problem Solving skill",
+      skill5: "Adaptability",
+      linkedln: "https://www.linkedin.com/in/jay-neupane-9684011b7/",
+
       about:
-        "I am a DevOps-Certified Trainer, boasting over 15 years of invaluable industry experience. Renowned for adeptness in enterprise training, Mr. Bomjan brings a wealth of practical knowledge and real-world insights to his teaching.",
+        "Meet our Oracle-Certified trainer, boasting an impressive 15-year tenure in the field. With a wealth of experience under their belt, they bring unparalleled expertise and insight to every session.",
+    },
+    5: {
+      name: "Gyan Bahadur ",
+      surname: "Tamang",
+      image: "/img.png",
+      imagealt: "tamang.jpg",
+      profession: "Certified Oracle Trainer",
+      experience: "16 years",
+      location: " Kathmandu",
+      star: "5.0 (100)",
+      skill1: "Java Programming",
+      skill2: "Database Model",
+      skill3: "Mathmatical skill",
+      skill4: "Problem Solving skill",
+      skill5: "Adaptability",
+      linkedln: "https://www.linkedin.com/in/jay-neupane-9684011b7/",
+
+      about:
+        "Meet our Oracle Certified trainer, equipped with over a decade of comprehensive industry experience. With a proven track record of success, they offer invaluable insights and expertise to guide learners towards mastery in Oracle technologies.",
+    },
+    6: {
+      name: "Kumar ",
+      surname: "Lamichhane",
+      image: "/kumar.jpg",
+      imagealt: "kumar.jpg",
+      profession: "Certified Java Trainer",
+      experience: "10 years",
+      location: " Mulpani, Kathmandu",
+      star: "5.0 (100)",
+      skill1: "Java Programming",
+      skill2: "Database Model",
+      skill3: "Mathmatical skill",
+      skill4: "Problem Solving skill",
+      skill5: "Adaptability",
+      linkedln:
+        "https://www.linkedin.com/in/kumar-lamichhane-%F0%9F%87%B3%F0%9F%87%B5-58b0a766/",
+
+      about:
+        "Presenting our Java-Certified trainer, bringing a decade of extensive experience to the table. With a strong foundation in Java development and training, they offer unparalleled expertise and guidance to learners at every level",
+    },
+
+    7: {
+      name: "Anish ",
+      surname: "Adhikari",
+      image: "/img.png",
+      imagealt: "img.jpg",
+      profession: "Certified Full Stack Developer",
+      experience: "8 years",
+      location: " Koteshwor, Kathmandu",
+      star: "5.0 (100)",
+      skill1: "node.js",
+      skill2: "Database Model",
+      skill3: "React",
+      skill4: "Express",
+      skill5: "problem solving skill",
+      linkedln: "https://www.linkedin.com/in/anish-adhikari-2083002ba/",
+
+      about:
+        "Meet our Full Stack Certified trainer, boasting over ten years of immersive industry experience spanning the entire stack. With a solid history of delivering results, they provide invaluable insights and expertise to empower learners on their journey to mastering a diverse array of technologies.",
     },
   };
 
@@ -102,7 +164,7 @@ const TrainersDetails = ({ trainerId }) => {
         </div>
         <div className="flex flex-col sm:flex-row mt-4 sm:mt-96 sm:ml-56 gap-2 sm:gap-4">
           <a
-            href="https://www.linkedin.com"
+            href={trainer.linkedln}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white rounded-lg flex items-center p-3 shadow-md hover:shadow-lg transition-shadow w-full sm:w-auto"
@@ -114,21 +176,6 @@ const TrainersDetails = ({ trainerId }) => {
             />
             <h1 className="ml-2 sm:ml-3 font-Quicksand font-bold text-sm sm:text-base">
               LinkedIn
-            </h1>
-          </a>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white rounded-lg flex items-center p-3 shadow-md hover:shadow-lg transition-shadow w-full sm:w-auto"
-          >
-            <img
-              src="/facebook.svg"
-              alt="Facebook"
-              className="h-5 w-5 sm:h-6 sm:w-6"
-            />
-            <h1 className="ml-2 sm:ml-3 font-Quicksand font-bold text-sm sm:text-base">
-              Facebook
             </h1>
           </a>
         </div>
@@ -227,8 +274,8 @@ const TrainersDetails = ({ trainerId }) => {
       </div>
 
       {/* About section */}
-      <div className="w-full border-t border-gray-300 mt-10"></div>
-      <div className="px-4 sm:px-6 md:px-10 lg:px-24 mt-5 text-center sm:text-left max-w-full lg:max-w-[1000px]">
+      <div className="w-full border-t border-gray-300 mt-10 "></div>
+      <div className="px-4 sm:px-6 md:px-10 lg:px-24 mt-5 text-center sm:text-left max-w-full lg:max-w-[1000px] mb-9">
         <h1 className="font-Quicksand text-lg sm:text-xl lg:text-xl font-bold">
           About
         </h1>
@@ -237,7 +284,7 @@ const TrainersDetails = ({ trainerId }) => {
         </p>
       </div>
 
-      {/* Student feedback section */}
+      {/* Student feedback section
       <div className="w-full border-t border-gray-300 mt-10"></div>
       <div className="px-4 sm:px-24 mt-5 text-center sm:text-left  lg:w-[700px]">
         <h1 className="font-Quicksand text-lg sm:text-xl font-bold">
@@ -268,7 +315,7 @@ const TrainersDetails = ({ trainerId }) => {
           uhfinlajefrhfmrelkfer fiufndkf gfiufefniuds oufo nhiuarhf jfiudhfi
           hfiuhf
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

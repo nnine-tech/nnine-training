@@ -1,8 +1,8 @@
-  import React from "react";
+import React from "react";
 
 const Introduction = () => {
   return (
-    <div className="flex flex-col md:flex-row w-[400px]   sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
+    <div className="flex flex-col md:flex-row w-full sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
       <div className="flex flex-col w-full mt-32">
         <h1 className="mt-10 md:mt-24 font-bold font-Quicksand text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
           THE COMPLETE FULL STACK MERN COURSE
@@ -11,7 +11,7 @@ const Introduction = () => {
           {/* Image Section */}
           <div className="flex justify-center md:w-[36%] mt-4 md:mt-1">
             <img
-              src="/mern3.png"
+              src="/mernstack.png"
               alt="MERN Stack"
               className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20"
             />
@@ -41,11 +41,15 @@ const Introduction = () => {
               </div>
               <div className="flex items-center gap-2">
                 <img src="/duration.svg" alt="Duration" />
-                <h2 className="text-[#FFFFFF] font-Quicksand">Duration: 100h</h2>
+                <h2 className="text-[#FFFFFF] font-Quicksand">
+                  Duration: 100h
+                </h2>
               </div>
               <div className="flex items-center gap-2">
-                <img src="/career.svg" alt="Career" />
-                <h2 className="text-[#FFFFFF] font-Quicksand">Career: MERN Stack Developer</h2>
+                <img src="/careerlogo.svg" alt="Career" />
+                <h2 className="text-[#FFFFFF] font-Quicksand">
+                  Career: MERN Stack Developer
+                </h2>
               </div>
             </div>
           </div>

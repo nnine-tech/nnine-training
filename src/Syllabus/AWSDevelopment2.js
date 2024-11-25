@@ -6,7 +6,7 @@ import React from 'react'
 
 const AWSDevelopment2 = () => {
   return (
-    <div  className="p-4" >
+    <div >
 
    <AWSDeveloperIntro/>
 <AWSDevelopmentSyllabus1/>

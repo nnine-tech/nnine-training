@@ -2,23 +2,20 @@ const mongoose = require("mongoose");
 
 const courseSchema = new mongoose.Schema(
   {
-    name: {
+    coursename: {
       type: String,
-      required: [true, "A course must have a name"],
       unique: true,
-      maxlength: [
-        40,
-        "A course name must have less or equal then 40 characters",
-      ],
+      required: [true, "A course must have a name"],
     },
     duration: {
       type: Number,
-      required: [true, "A course name must have a duration"],
+      required: [true, "A course must have a duration"],
     },
     category: {
       type: String,
       required: [true, "A course should have a category"],
     },
+
     coursePhoto: {
       type: String,
       default: "default.jpeg",
@@ -35,7 +32,5 @@ courseSchema.virtual("syllabus", {
   foreignField: "course",
   localField: "_id",
 });
-
 const Course = mongoose.model("Course", courseSchema);
-
 module.exports = Course;

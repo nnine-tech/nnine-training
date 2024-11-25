@@ -26,18 +26,18 @@ const TrainersPage = () => {
       imageUrl: "/niresh1.jpg",
       imageAlt: "niresh.jpg",
       name: "Niresh Dhakal",
-      profession: "Mern Stack Trainer",
-      experience: "15 years",
-      job: "Mern stack Trainer at N9 Solution",
+      profession: "Machine Learning Trainer",
+      experience: "12 years",
+      job: "Machine Learning Trainer",
     },
     {
       id: 3,
-      imageUrl: "/jaya.png",
-      imageAlt: "jaya.jpg",
-      name: "Jaya Kumar Neupane",
-      profession: "Oracle-certified Trainer",
+      imageUrl: "/arjun.jpeg",
+      imageAlt: "arjun.jpeg",
+      name: "Arjun Subedi",
+      profession: "Mern Stack Trainer",
       experience: "15 years",
-      job: "Oracle Trainer at N9 Solution",
+      job: "Mern Stack Trainer at N9 Solution",
     },
     {
       id: 4,
@@ -48,15 +48,46 @@ const TrainersPage = () => {
       experience: "15 years",
       job: "Oracle Trainer at N9 Solution",
     },
+    {
+      id: 5,
+      imageUrl: "/img.png",
+      imageAlt: "img.jpg",
+      name: "Gyan Bahadur Tamang",
+      profession: "Oracle-certified Trainer",
+      experience: "16 years",
+      job: "Oracle Trainer at N9 Solution",
+    },
+    {
+      id: 6,
+      imageUrl: "/kumar.jpg",
+      imageAlt: "img.jpg",
+      name: "Kumar Lamichhane",
+      profession: "Java Expert",
+      experience: "10 years",
+      job: "Java Trainer at N9 Solution",
+    },
+    {
+      id: 7,
+      imageUrl: "/img.png",
+      imageAlt: "img.jpg",
+      name: "Anish Adhikari",
+      profession: "Full Stack Developer",
+      experience: "8 years",
+      job: "Full Stack Developer at N9 Solution",
+    },
   ];
 
   return (
     <>
-      <div className="flex justify-center items-center w-full bg-cover bg-center bg-[url('/coursecurve.svg')] py-60 h-[400px] lg:h-[900px]">
+      <div className="flex justify-center items-center w-full bg-cover bg-center bg-[url('/coursecurve.svg')] py-60 h-[400px] lg:h-[900px] xl:w-full">
         <div className="flex items-center w-full text-center">
           {/* Arrowdot image for larger screens only */}
-          <div className="hidden sm:block mr-4  ml-32 mt-96 h-[500px]">
-            <img src="Arrowdot.svg" className="h-[500px]" alt="Arrow Dot" />
+          <div className="hidden sm:block mr-4 xl:absolute xl:left-[200px] lg:left-[300px]  lg:ml-7 mt-96 h-[500px]">
+            <img
+              src="Arrowdot.svg"
+              className="h-[500px]  md:hidden lg:block  "
+              alt="Arrow Dot"
+            />
           </div>
           <div>
             {/* WhatsApp Icon wrapped in a link */}
@@ -91,15 +122,17 @@ const TrainersPage = () => {
           `}</style>
 
           {/* Text content */}
-          <div className="sm:mt-0 mt-32 px-5 lg:w-[800px] ">
-            <h1 className="font-Quicksand text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-              Meet Our <strong className="text-[#FFCF59]">Trainers</strong>
-            </h1>
-            <h2 className="font-Quicksand text-lg sm:text-xl font-semibold text-white mt-4">
-              Our trainers are dedicated to your success, providing personalized
-              attention and ensuring that each learner leaves with a solid
-              understanding of the subject.
-            </h2>
+          <div className="sm:mt-0 mt-32 px-5 lg:w-[800px] md:w-[500px] lg:absolute lg:left-[150px] md:mx-auto xl:absolute xl:left-[350px]">
+            <div className="">
+              <h1 className="font-Quicksand text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+                Meet Our <strong className="text-[#FFCF59]">Trainers</strong>
+              </h1>
+              <h2 className="font-Quicksand text-lg sm:text-xl font-semibold text-white mt-4">
+                Our trainers are dedicated to your success, providing
+                personalized attention and ensuring that each learner leaves
+                with a solid understanding of the subject.
+              </h2>
+            </div>
           </div>
         </div>
       </div>
