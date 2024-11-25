@@ -1,12 +1,9 @@
-// const Course = require("../Model/courseModel.js");
-// const Course = require("../Model/newCourseModel.js");
-// <<<<<<< HEAD
-// const AppError = require("../Utils/appError.js");
-// =======
+const Course = require("../Model/courseModel.js");
+const Course = require("../Model/newCourseModel.js");
+const AppError = require("../Utils/appError.js");
 
-// >>>>>>> 353225028f4421e1ed0bc7e9165a23747b588f24
-// const APIFeatures = require("./../Utils/apiFeatures.js");
-// const catchAsync = require("./../Utils/catchAsync.js");
+const APIFeatures = require("./../Utils/apiFeatures.js");
+const catchAsync = require("./../Utils/catchAsync.js");
 
 // exports.CreateCourse = catchAsync(async (req, res, next) => {
 //   const course = await Course.create(req.body);

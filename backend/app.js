@@ -35,7 +35,7 @@ const morgan = require("morgan");
 const { createServer } = require("vite");
 const { Server } = require("socket.io");
 const messageRouter = require("./Routes/messageRoute");
-// const notificationRouter = require("./Routes/notificationRoute");
+// const notificationzRouter = require("./Routes/notificationRoute");
 
 dotenv.config({
   path: "./config.env",

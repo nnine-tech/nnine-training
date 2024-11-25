@@ -6,7 +6,7 @@ import React from 'react'
 
 const  BasicComputer2 = () => {
   return (
-    <div  className="p-4" >
+    <div >
 
    <BasicComputerIntro/>
 <BasicComputerSyllabus1/>
