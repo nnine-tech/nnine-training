@@ -31,8 +31,7 @@ const TrainersDetails = ({ trainerId }) => {
       surname: "Dhakal",
       image: "/niresh1.jpg",
       imagealt: "niresh.jpg",
-      profession:
-        "Certified Machine Learning Trainer ",
+      profession: "Certified Machine Learning Trainer ",
       experience: "12 years",
       location: "Makalbari, Kathmandu",
       star: "5.0 (100)",
@@ -43,7 +42,7 @@ const TrainersDetails = ({ trainerId }) => {
       skill5: "Cloud Platform",
       linkedln: "https://www.linkedin.com/in/niresh-dhakal-b39a0192/",
       about:
-        "Introducing our Data Science and Machine Learning trainer, equipped with an invaluable experience in the field. Mr. Gautam holds master degree in information and technology from Chemnitz University of Technology, Germany with a solid background in IT field, he offers comprehensive training backed by years of practical expertise.",
+        "Introducing our Data Science and Machine Learning trainer, equipped with an invaluable experience in the field. Mr. Niresh holds master degree in information and technology from Chemnitz University of Technology, Germany with a solid background in IT field, he offers comprehensive training backed by years of practical expertise.",
     },
     3: {
       name: "Arjun",

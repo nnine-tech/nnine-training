@@ -6,7 +6,7 @@ import React from 'react'
 
 const AspNet2 = () => {
   return (
-    <div  className="p-4" >
+    <div  >
 
    <AspNetIntro/>
 <AspNetSyllabus1/>
