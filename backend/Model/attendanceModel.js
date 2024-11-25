@@ -7,24 +7,20 @@ const attendanceSchema = new mongoose.Schema({
         required: [true, "studentsName is required"],
 
     },
-    checkedIn: {
+    courseId: {
         type: String,
         required: [true, "checkedIn is required"],
     },
-    checkout: {
-        type: String,
-        required: [true, "checkout is required"],
-    },
 
-    status: {
-        type: Boolean,
-        required: [true, "status is required"]
-
-    },
     date: {
         type: Date,
         default: Date.now()
-    }
+    },
+    status: {
+        type: Boolean,
+        required: [true, "status is required"]
+    },
+
 
 
 });
