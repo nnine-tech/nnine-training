@@ -11,7 +11,7 @@ const DigitalMarketingIntro = () => {
           {/* Image Section */}
           <div className="flex justify-center md:w-[36%] mt-4 md:mt-1">
             <img
-              src="/digitalmarketing.jpg"
+              src="/digital marketing.jpg"
               alt="digitalmarketing"
               className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20"
             />
