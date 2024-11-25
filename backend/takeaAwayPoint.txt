@@ -1,0 +1,60 @@
+
+
+for testing: 
+install following package => 
+-npm i jest
+-npm i superjest
+npm i mongodb-memory-server
+
+
+const request = require("supertest");
+const app = require("../app"); // Import your app
+const { connect, clear, close } = require("./setupTestDB");
+const trainerReview = require("../models/trainerReview"); // Import your model
+
+describe("Trainer Review API Tests", () => {
+  beforeAll(async () => {
+    await connect(); // Connect to in-memory database
+  });
+
+  afterEach(async () => {
+    await clear(); // Clear database after each test
+  });
+
+  afterAll(async () => {
+    await close(); // Close database connection
+  });
+
+  test("Should create a trainer review", async () => {
+    const reviewData = {
+      trainer: "64b7d3c2f8c98765e4321abc", // Mock valid ObjectId
+      Student: "64b7d3c2f8c98765e4321def", // Mock valid ObjectId
+      rating: 5,
+      description: "Great trainer!",
+      reviewDate: "2024-11-21",
+    };
+
+    const response = await request(app).post("/reviews").send(reviewData);
+
+    // Verify response
+    expect(response.statusCode).toBe(201);
+    expect(response.body.message).toBe("Review created successfully");
+
+    // Verify data in the database
+    const savedReview = await trainerReview.findOne({ trainer_id: reviewData.trainer });
+    expect(savedReview).not.toBeNull();
+    expect(savedReview.rating).toBe(5);
+  });
+
+  test("Should return 400 if required fields are missing", async () => {
+    const reviewData = {
+      rating: 5, // Missing `trainer` and `Student` fields
+    };
+
+    const response = await request(app).post("/reviews").send(reviewData);
+
+    // Verify response
+    expect(response.statusCode).toBe(400);
+    expect(response.body.message).toBe("Trainer ID is required");
+  });
+});
