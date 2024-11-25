@@ -4,8 +4,8 @@ const courseSyllabusRoute = require("./../Routes/courseSyllabusRoute.js");
 const authController = require("./../Controller/authenticationController.js");
 const router = express.Router();
 
-//NESTED ROUTE
-router.use("/:courseId/syllabus", courseSyllabusRoute);
+// //NESTED ROUTE
+// router.use("/:courseId/syllabus", courseSyllabusRoute);
 
 router
   .route("/")
@@ -18,4 +18,4 @@ router
   .delete(authController.protect, courseController.deleteCourse)
   .patch(authController.protect, courseController.updateCourse);
 
-module.exports = router;
+// module.exports = router;
