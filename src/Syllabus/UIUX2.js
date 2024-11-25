@@ -5,7 +5,7 @@ import React from 'react'
 
 const UIUX2 = () => {
   return (
-    <div  className="p-4" >
+    <div  >
 
    <UIUXintro/>
 <UIUXSyllabus1/>
