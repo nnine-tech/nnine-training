@@ -5,7 +5,7 @@ import React from 'react'
 
 const OpenShift2 = () => {
   return (
-    <div  className="p-4" >
+    <div >
 
    <OpenShiftIntro/>
 <OpenShiftSyllabus1/>
