@@ -104,7 +104,7 @@ const NavBar = () => {
                     Courses
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="/Trainer"
                     className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
@@ -116,7 +116,7 @@ const NavBar = () => {
                   >
                     Trainer
                   </Link>
-                </li>
+                </li> */}
                 {/* <li>
                   <Link
                     href="/Career"
