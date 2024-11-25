@@ -69,7 +69,7 @@ const BasicComputerClassType = () => {
           </form>
         </div>
       </div>
-      {/* <BasicComputerSchedule /> */}
+      <BasicComputerSchedule />
     </div>
   );
 };
