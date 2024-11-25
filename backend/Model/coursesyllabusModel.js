@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
-const Course = require("./courseModel");
+const Course = require("./newCourseModel");
 
 const CourseSyllabusSchema = new mongoose.Schema({
   name: {
     type: String,
+    unique: true,
     required: [true, "A course syllabus must have a name"],
   },
   content: {
@@ -25,6 +26,9 @@ const CourseSyllabusSchema = new mongoose.Schema({
   },
 });
 
-const CourseSyllabus = mongoose.model("CourseSyllabus", CourseSyllabusSchema);
+const CourseSyllabus = mongoose.model(
+  "newCourseSyllabus",
+  CourseSyllabusSchema
+);
 
 module.exports = CourseSyllabus;

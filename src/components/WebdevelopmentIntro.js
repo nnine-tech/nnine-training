@@ -2,7 +2,7 @@ import React from "react";
 
 const WebdevelopmentIntro = () => {
   return (
-    <div className="flex flex-col md:flex-row w-[400px]   sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
+    <div className="flex flex-col md:flex-row w-full sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
       <div className="flex flex-col w-full mt-32">
         <h1 className="mt-10 md:mt-24 font-bold font-Quicksand text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
           THE COMPLETE WEBDEVELOPMENT COURSE
@@ -45,9 +45,9 @@ const WebdevelopmentIntro = () => {
                 </h2>
               </div>
               <div className="flex items-center gap-2">
-                <img src="/career.svg" alt="Career" />
+                <img src="/careerlogo.svg" alt="Career" />
                 <h2 className="text-[#FFFFFF] font-Quicksand">
-                  Career: Web Developer Developer
+                  Career: Web Developer
                 </h2>
               </div>
             </div>

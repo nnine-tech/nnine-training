@@ -4,7 +4,7 @@ import React from 'react'
 
 const AwsCloud2 = () => {
   return (
-    <div  className="p-4" >
+    <div  >
 
    <AwsCloudIntro/>
 <AwsCloudSyllabus1/>
