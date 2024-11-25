@@ -14,23 +14,28 @@ const n9reviewRouter = require("./Routes/n9reviewRoute");
 
 const app = express();
 const courseRoute = require("./Routes/courseRoute");
+app.use(express.json());
 const feesRoute = require("./Routes/feesRoute");
 
 const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const attendanceRoute = require("./Routes/attendanceRoute")
 
+const userSettingRouter = require("./Routes/userSettingRoute");
 
 //BACKEND ROUTE
 app.use("/api/v1/courses", courseSyllabusRoute);
 app.use("/fees", feesRoute);
+app.use("/users-setting", userSettingRouter);
 // app.use("/users", userRoute);
 app.use("/file", fileRouter);
 
 
 const studentRoute = require("./Routes/studentRoute");
-const eventRoute = require("./Routes/eventRoute");
-const AppError = require("./Utils/appError");
+
+// const eventRoute = require("./Routes/eventRoute");
+// const userRoute = require("./Routes/userroute");
+// const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
@@ -70,6 +75,7 @@ io.on("connection", (socket) => {
 });
 
 //BACKEND ROUTE
+
 app.use("/api/v1/syllabus", courseSyllabusRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
