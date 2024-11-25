@@ -1,4 +1,3 @@
-const Course = require("../Model/courseModel.js");
 const Course = require("../Model/newCourseModel.js");
 const AppError = require("../Utils/appError.js");
 
