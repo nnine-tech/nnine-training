@@ -1,16 +1,18 @@
-// const User = require("../Model/UserModel");
-// const catchAsync = require("../Utils/catchAsync");
+<<<<<<< HEAD
+const User = require("../Model/UserModel");
+const catchAsync = require("../Utils/catchAsync");
 
-// exports.createUser = catchAsync(async (req, res, next) => {
-//   const user = await User.create(req.body);
-//   res.status(200).json({
-//     status: "success",
-//     data: {
-//       data: user,
-//     },
-//   });
-// });
-// const AddUser = require("../Model/userModel");
+exports.createUser = catchAsync(async (req, res, next) => {
+  const user = await User.create(req.body);
+  res.status(200).json({
+    status: "success",
+    data: {
+      data: user,
+    },
+  });
+});
+=======
+const AddUser = require("../Model/userModel");
 
 // exports.addUserController = async (req, res, next) => {
 //   try {
@@ -100,15 +102,16 @@
 //   try {
 //     let result = await AddUser.findByIdAndDelete(req.params.id);
 
-//     res.status(200).json({
-//       success: true,
-//       message: "User has been deleted successfully.",
-//       data: result,
-//     });
-//   } catch (error) {
-//     res.status(400).json({
-//       success: false,
-//       message: "Failed to delete user." + error.message,
-//     });
-//   }
-// };
+    res.status(200).json({
+      success: true,
+      message: "User has been deleted successfully.",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Failed to delete user." + error.message,
+    });
+  }
+};
+>>>>>>> 353225028f4421e1ed0bc7e9165a23747b588f24
