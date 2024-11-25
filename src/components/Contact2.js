@@ -1,8 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact2 = () => {
+  const notify = () => toast("form submitted successfully!!");
+
   let [fullName, setFullName] = useState("");
   let [phoneNumber, setPhoneNumber] = useState("");
   let [email, setEmail] = useState("");
@@ -11,6 +15,8 @@ const Contact2 = () => {
   let handleSubmit = (e) => {
     e.preventDefault();
   };
+ 
+
 
   let data = {
     fullName: fullName,
@@ -19,6 +25,13 @@ const Contact2 = () => {
     message: message,
   };
   console.log(data);
+
+  // setFullName("");
+  // setPhoneNumber("");
+  // setEmail("");
+  // setMessage("");
+ 
+
 
   return (
     <div className="relative">
@@ -89,10 +102,12 @@ const Contact2 = () => {
               <div className="flex justify-end">
                 <button
                   type="submit"
+                  onClick={notify}
                   className="bg-[#004AAD] h-[44px] w-[96px] rounded-xl p-2 text-white font-semibold text-xl"
                 >
                   Submit
                 </button>
+                <ToastContainer/>
               </div>
             </form>
           </div>
@@ -121,7 +136,7 @@ const Contact2 = () => {
             Email
           </h1>
           <h2 className="mt-5 font-Quicksand font-bold text-xl">
-            nninesolution@gmail.com
+            nninesolutions@gmail.com
           </h2>
         </div>
         <div className="border border-[#CDC2C2] w-full sm:w-[430px] flex justify-center items-center flex-col p-6 sm:p-0">
@@ -130,7 +145,7 @@ const Contact2 = () => {
             Location
           </h1>
           <h2 className="mt-5 font-Quicksand font-bold text-xl">
-            Chabhil Ganesthan
+            Chabhil Ganesthan, Kathmandu
           </h2>
         </div>
       </div>

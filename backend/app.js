@@ -13,11 +13,14 @@ const trainerReviewRouter = require("./Routes/trainerReviewRoute");
 const n9reviewRouter = require("./Routes/n9reviewRoute");
 
 const app = express();
+const courseRoute = require("./Routes/courseRoute");
 app.use(express.json());
 const feesRoute = require("./Routes/feesRoute");
 
 const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
+const attendanceRoute = require("./Routes/attendanceRoute")
+
 const userSettingRouter = require("./Routes/userSettingRoute");
 
 //BACKEND ROUTE
@@ -27,6 +30,7 @@ app.use("/users-setting", userSettingRouter);
 // app.use("/users", userRoute);
 app.use("/file", fileRouter);
 
+
 const studentRoute = require("./Routes/studentRoute");
 
 // const eventRoute = require("./Routes/eventRoute");
@@ -35,7 +39,10 @@ const studentRoute = require("./Routes/studentRoute");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-// const notificationRouter = require("./Routes/notificationRoute");
+const { createServer } = require("vite");
+const { Server } = require("socket.io");
+const messageRouter = require("./Routes/messageRoute");
+// const notificationzRouter = require("./Routes/notificationRoute");
 
 dotenv.config({
   path: "./config.env",
@@ -46,15 +53,39 @@ console.log(`--------${process.env.NODE_ENV}---------`);
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 //MIDDLEWARES
+app.use(express.json());
+
+const httpServer = createServer(app);
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
+
+io.on("connection", (socket) => {
+  socket.on("sendMessage", (message) => {
+    socket.broadcast.emit("receiveMessage", message);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
+  });
+});
+
 //BACKEND ROUTE
 
 app.use("/api/v1/syllabus", courseSyllabusRoute);
-// app.use("/api/v1/users", userRoute);
+app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
+
+
+
 
 app.use("/api/v1/trainers", trainerRouter);
 app.use("/api/v1/trainers-reviews", trainerReviewRouter);
-app.use("/api/v1/n9-reviews", n9reviewRouter);
+app.use("/api/v1/message", messageRouter);
 
 //UNHANDLED ROUTE
 app.use("*", (req, res, next) => {
