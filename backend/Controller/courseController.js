@@ -1,169 +1,159 @@
-const Course = require("../Model/newCourseModel.js");
-const APIFeatures = require("./../Utils/apiFeatures.js");
-exports.getAllCourse = async (req, res, next) => {
-  try {
-    //BUILDING QUERY
-    //FILTERING
+// const Course = require("../Model/courseModel.js");
+// const Course = require("../Model/newCourseModel.js");
+// <<<<<<< HEAD
+// const AppError = require("../Utils/appError.js");
+// =======
 
-    //////////////////////////////////////////////////////////
-    // const queryObj = { ...req.query };
-    // const excludedFields = ["page", "sort", "limit", "fields"];
-    // excludedFields.forEach((el) => delete queryObj[el]);
-    // console.log(req.query);
+// >>>>>>> 353225028f4421e1ed0bc7e9165a23747b588f24
+// const APIFeatures = require("./../Utils/apiFeatures.js");
+// const catchAsync = require("./../Utils/catchAsync.js");
 
-    // //ADVANCE FILTERING
-    // //////////////////
-    // //////////////////
-    // // {difficulty:'easy',duration:{$gte:5}} FILTER OBJECT
-    // // {difficulty:'easy',duration:{gte:5}}  QUERY OBJECT
+// exports.CreateCourse = catchAsync(async (req, res, next) => {
+//   const course = await Course.create(req.body);
 
-    // //CONVERTING TO STRING
-    // let queryStr = JSON.stringify(queryObj);
+//   res.status(200).json({
+//     status: "success",
+//     data: {
+//       data: course,
+//     },
+//   });
+//   // try {
+//   // } catch (error) {
+//   //   res.status(400).json({
+//   //     status: "failure",
+//   //     data: error,
+//   //   });
+//   // }
+// });
 
-    // //CONVERTING TO FILTER OBJECT
-    // queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
-    // // console.log(JSON.parse(queryStr));
+// exports.getAllCourse = catchAsync(async (req, res, next) => {
+//   //BUILDING QUERY
+//   //FILTERING
 
-    // //WORKS FOR QUERY STIRNG WHICH HAS OPERATORS
-    // let query = Course.find(JSON.parse(queryStr));
-    //////////////////////////////////////////////////////
+//   //////////////////////////////////////////////////////////
+//   // const queryObj = { ...req.query };
+//   // const excludedFields = ["page", "sort", "limit", "fields"];
+//   // excludedFields.forEach((el) => delete queryObj[el]);
+//   // console.log(req.query);
 
-    //SORTING
-    //////////////////
-    //////////////////
-    //////////////////
-    // if (req.query.sort) {
-    //   // console.log(sort);
-    //   const sortBy = req.query.sort.split(",").join(" ");
-    //   query=query.sort(sortBy);
-    // } else {
-    //   query = query.sort("coursename");
-    // }
+//   // //ADVANCE FILTERING
+//   // //////////////////
+//   // //////////////////
+//   // // {difficulty:'easy',duration:{$gte:5}} FILTER OBJECT
+//   // // {difficulty:'easy',duration:{gte:5}}  QUERY OBJECT
 
-    //////////////////////
-    //////////////////////
-    //////////////////////
-    //////////////////////
-    //Field limiting
-    // if (req.query.fields) {
-    //   const fields = req.query.fields.split(",").join(" ");
-    //   query = query.select(fields);
-    // } else {
-    //   query = query.select("-__v");
-    // }
+//   // //CONVERTING TO STRING
+//   // let queryStr = JSON.stringify(queryObj);
 
-    //////////////////////
-    //////////////////////
-    //////////////////////
-    //////////////////////
-    //PAGINATION
-    // const page = req.query.page * 1 || 1;
-    // const limit = req.query.limit * 1 || 100;
-    // const skip = (page - 1) * limit;
-    // query = query.skip(skip).limit(limit);
+//   // //CONVERTING TO FILTER OBJECT
+//   // queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
+//   // // console.log(JSON.parse(queryStr));
 
-    // if (req.query.page) {
-    //   const numCourse = await Course.countDocuments();
-    //   if (skip > numCourse)
-    //     throw new Error(
-    //       "This page doesn't exist. You are skipping more document than you have in database"
-    //     );
-    // }
+//   // //WORKS FOR QUERY STIRNG WHICH HAS OPERATORS
+//   // let query = Course.find(JSON.parse(queryStr));
+//   //////////////////////////////////////////////////////
 
-    //EXECUTE QUERY
-    const features = new APIFeatures(Course.find(), req.query)
-      .filter()
-      .sort()
-      .limitFields()
-      .paginate();
-    const course = await features.query;
+//   //SORTING
+//   //////////////////
+//   //////////////////
+//   //////////////////
+//   // if (req.query.sort) {
+//   //   // console.log(sort);
+//   //   const sortBy = req.query.sort.split(",").join(" ");
+//   //   query=query.sort(sortBy);
+//   // } else {
+//   //   query = query.sort("coursename");
+//   // }
 
-    // const course = await Course.find(req.query);
-    res.status(200).json({
-      result: course.length,
-      status: "success",
-      data: {
-        data: course,
-      },
-    });
-  } catch (error) {
-    res.status(400).json({
-      status: "failure",
-      error: error,
-    });
-  }
-};
+//   //////////////////////
+//   //////////////////////
+//   //////////////////////
+//   //////////////////////
+//   //Field limiting
+//   // if (req.query.fields) {
+//   //   const fields = req.query.fields.split(",").join(" ");
+//   //   query = query.select(fields);
+//   // } else {
+//   //   query = query.select("-__v");
+//   // }
 
-exports.CreateCourse = async (req, res, next) => {
-  try {
-    const course = await Course.create(req.body);
+//   //////////////////////
+//   //////////////////////
+//   //////////////////////
+//   //////////////////////
+//   //PAGINATION
+//   // const page = req.query.page * 1 || 1;
+//   // const limit = req.query.limit * 1 || 100;
+//   // const skip = (page - 1) * limit;
+//   // query = query.skip(skip).limit(limit);
 
-    res.status(200).json({
-      status: "success",
-      data: {
-        data: course,
-      },
-    });
-  } catch (error) {
-    res.status(400).json({
-      status: "failure",
-      data: error,
-    });
-  }
-};
+//   // if (req.query.page) {
+//   //   const numCourse = await Course.countDocuments();
+//   //   if (skip > numCourse)
+//   //     throw new Error(
+//   //       "This page doesn't exist. You are skipping more document than you have in database"
+//   //     );
+//   // }
 
-exports.getCourse = async (req, res, next) => {
-  try {
-    console.log(req.params.id);
-    const course = await Course.findById(req.params.id).populate("syllabus");
-    res.status(200).json({
-      status: "success",
-      data: {
-        data: course,
-      },
-    });
-  } catch (error) {
-    res.status(400).json({
-      status: "failure",
-      data: error,
-    });
-  }
-};
+//   //EXECUTE QUERY
+//   const features = new APIFeatures(Course.find(), req.query)
+//     .filter()
+//     .sort()
+//     .limitFields()
+//     .paginate();
+//   const course = await features.query;
 
-exports.deleteCourse = async (req, res, next) => {
-  try {
-    const course = await Course.findByIdAndDelete(req.params.id);
-    res.status(200).json({
-      status: "success",
-      data: {
-        data: course,
-      },
-    });
-  } catch (error) {
-    res.status(400).json({
-      status: "failure",
-      data: error,
-    });
-  }
-};
+//   // const course = await Course.find(req.query);
+//   res.status(200).json({
+//     result: course.length,
+//     status: "success",
+//     data: {
+//       data: course,
+//     },
+//   });
+// });
 
-exports.updateCourse = async (req, res, next) => {
-  try {
-    const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      //RUN VALIDATOR IS TURNED OFF FOR NOW BUT MAY REQUIRE TO BE TURNED OFF LATER
-      // runValidators: true,
-    });
-    res.status(200).json({
-      status: "success",
-      data: {
-        data: course,
-      },
-    });
-  } catch (error) {
-    res.status(400).json({
-      status: "failure",
-      data: error,
-    });
-  }
-};
+// exports.getCourse = catchAsync(async (req, res, next) => {
+//   console.log(req.params.id);
+//   const course = await Course.findById(req.params.id).populate("syllabus");
+
+//   if (!course) {
+//     return next(new AppError("No course found with that ID", 404));
+//   }
+//   res.status(200).json({
+//     status: "success",
+//     data: {
+//       data: course,
+//     },
+//   });
+// });
+
+// exports.deleteCourse = catchAsync(async (req, res, next) => {
+//   const course = await Course.findByIdAndDelete(req.params.id);
+//   if (!course) {
+//     return next(new AppError("No course found with that ID", 404));
+//   }
+//   res.status(200).json({
+//     status: "success",
+//     data: {
+//       data: course,
+//     },
+//   });
+// });
+
+// exports.updateCourse = catchAsync(async (req, res, next) => {
+//   const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
+//     new: true,
+//     //RUN VALIDATOR IS TURNED OFF FOR NOW BUT MAY REQUIRE TO BE TURNED OFF LATER
+//     // runValidators: true,
+//   });
+//   if (!course) {
+//     return next(new AppError("No course found with that ID", 404));
+//   }
+//   res.status(200).json({
+//     status: "success",
+//     data: {
+//       data: course,
+//     },
+//   });
+// });
