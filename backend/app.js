@@ -32,6 +32,7 @@ const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const { contactRouter } = require("./Routes/contactRoute");
 // const notificationRouter = require("./Routes/notificationRoute");
 
 dotenv.config({
@@ -52,6 +53,7 @@ app.use("/student", studentRoute);
 app.use("/api/v1/trainers", trainerRouter);
 app.use("/api/v1/trainers-reviews", trainerReviewRouter);
 app.use("/api/v1/n9-reviews", n9reviewRouter);
+app.use("/api/v1/contact-form", contactRouter);
 
 //UNHANDLED ROUTE
 app.use("*", (req, res, next) => {
