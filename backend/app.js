@@ -13,14 +13,20 @@ const trainerReviewRouter = require("./Routes/trainerReviewRoute");
 const n9reviewRouter = require("./Routes/n9reviewRoute");
 
 const app = express();
+const courseRoute = require("./Routes/courseRoute");
+app.use(express.json());
 const feesRoute = require("./Routes/feesRoute");
 
 const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
+const attendanceRoute = require("./Routes/attendanceRoute")
+
+const userSettingRouter = require("./Routes/userSettingRoute");
 
 //BACKEND ROUTE
 app.use("/api/v1/courses", courseSyllabusRoute);
 app.use("/fees", feesRoute);
+app.use("/users-setting", userSettingRouter);
 // app.use("/users", userRoute);
 app.use("/file", fileRouter);
 
@@ -28,11 +34,38 @@ const studentRoute = require("./Routes/studentRoute");
 
 // const eventRoute = require("./Routes/eventRoute");
 // const userRoute = require("./Routes/userroute");
-const AppError = require("./Utils/appError");
+// const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-// const notificationRouter = require("./Routes/notificationRoute");
+const notificationRouter = require("./Routes/notificationRoute");
+const courseRoute = require("./Routes/courseRoute");
+const eventRoute = require("./Routes/eventRoute");
+const adminRoute = require("./Routes/adminRoute");
+const http = require("http");
+
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  // console.log("From app line no 28", req.headers);
+  console.log(req.body);
+
+  next();
+});
+
+//BACKEND ROUTE
+app.use("/api/v1/courses", courseRoute);
+app.use("/api/v1/syllabus", courseSyllabusRoute);
+app.use("/api/v1/admin", adminRoute);
+
+app.use("/fees", feesRoute);
+// app.use("/users", userRoute);
+app.use("/file", fileRouter);
+// app.use("/api/v1/users", userRoute);
+app.use("/student", studentRoute);
+
+const { Server } = require("socket.io");
+const messageRouter = require("./Routes/messageRoute");
+// const notificationzRouter = require("./Routes/notificationRoute");
 
 dotenv.config({
   path: "./config.env",
@@ -43,15 +76,38 @@ console.log(`--------${process.env.NODE_ENV}---------`);
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 //MIDDLEWARES
-app.use(express.json());
+
+const httpServer = http.createServer(app);
+
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
+
+io.on("connection", (socket) => {
+  socket.on("sendMessage", (message) => {
+    socket.broadcast.emit("receiveMessage", message);
+  });
+
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
+  });
+});
+
 //BACKEND ROUTE
+
 app.use("/api/v1/syllabus", courseSyllabusRoute);
-// app.use("/api/v1/users", userRoute);
+app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
+
+
+
 
 app.use("/api/v1/trainers", trainerRouter);
 app.use("/api/v1/trainers-reviews", trainerReviewRouter);
-app.use("/api/v1/n9-reviews", n9reviewRouter);
+app.use("/api/v1/message", messageRouter);
 
 //UNHANDLED ROUTE
 app.use("*", (req, res, next) => {
@@ -70,10 +126,11 @@ app.use("*", (req, res, next) => {
   // err.status = "fail";
   // err.statusCode = 404;
 
-  //AFTER IMPLEMENTING APPERROR
+  //AFTER IMPLEMENTING APP ERROR
 
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
+app.use(express.static(`${__dirname}/public`));
 
 //GLOBAL ERROR HANDLER
 app.use(globalErrorHandler);
