@@ -30,7 +30,6 @@ app.use("/users-setting", userSettingRouter);
 // app.use("/users", userRoute);
 app.use("/file", fileRouter);
 
-
 const studentRoute = require("./Routes/studentRoute");
 
 // const eventRoute = require("./Routes/eventRoute");

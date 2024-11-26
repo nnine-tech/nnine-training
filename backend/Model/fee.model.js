@@ -1,33 +1,29 @@
 const mongoose = require("mongoose");
 
 const addPaymentSchema = new mongoose.Schema({
-  name: {
+  studentId: {
     type: String,
-    required: [true, "Please provide the name."],
+    required: [true, "Please provide the student id."],
   },
-  course: {
+  courseId: {
     type: String,
-    required: [true, "Please specify the course."],
+    required: [true, "Please specify the course id."],
   },
-  firstInstallement: {
+  totalFee: {
     type: Number,
-    required: [true, "1st installement amount is required."],
+    required: [true, "Please provide the total fee amount."],
   },
-  duesAmount: {
+  amountPaid: {
     type: Number,
-    required: [true, "Please provide the due amount."],
+    required: [true, "Please provide the paid amount."],
   },
-  secondInstallement: {
+  outstandingBalance: {
     type: Number,
-    required: [true, "2nd installement amount is required."],
+    required: [true, "Please provide the outstanding balance."],
   },
-  dateOfPayment: {
+  dueDate: {
     type: Date,
     required: [true, "Date of payment is required."],
-  },
-  balance: {
-    type: Number,
-    required: [true, "Balance amount is required."],
   },
 });
 
