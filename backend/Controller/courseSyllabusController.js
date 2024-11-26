@@ -1,4 +1,5 @@
 const CourseSyllabus = require("../Model/coursesyllabusModel");
+const catchAsync = require("./../Utils/catchAsync");
 
 exports.setCourseId = (req, res, next) => {
   //allow nested routes
@@ -42,22 +43,15 @@ exports.getAllSyllabus = async (req, res, next) => {
   }
 };
 
-exports.getSyllabus = async (req, res, next) => {
-  try {
-    const syllabus = await CourseSyllabus.findById(req.params.id);
-    res.status(200).json({
-      status: "success",
-      data: {
-        data: syllabus,
-      },
-    });
-  } catch (error) {
-    res.status(400).json({
-      status: "failure",
-      error: error,
-    });
-  }
-};
+exports.getSyllabus = catchAsync(async (req, res, next) => {
+  const syllabus = await CourseSyllabus.findById(req.params.id);
+  res.status(200).json({
+    status: "success",
+    data: {
+      data: syllabus,
+    },
+  });
+});
 
 exports.updateSyllabus = async (req, res, next) => {
   try {

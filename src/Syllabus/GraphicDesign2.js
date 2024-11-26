@@ -6,7 +6,7 @@ import React from 'react'
 
 const GraphicDesign2 = () => {
   return (
-    <div  className="p-4" >
+    <div >
 
    <GraphicDesignIntro/>
 <GraphicDesignSyllabus1/>
