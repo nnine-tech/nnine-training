@@ -9,7 +9,6 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-
 app.use(express.static("./public/"));
 
 const courseRoute = require("./Routes/courseRoute");
@@ -21,9 +20,7 @@ const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 //BACKEND ROUTE
 app.use("/api/v1/courses", courseRoute);
 app.use("/fees", feesRoute);
-app.use("/users", userRoute);
 app.use("/file", fileRouter);
-
 
 const studentRoute = require("./Routes/studentRoute");
 const eventRoute = require("./Routes/eventRoute");
@@ -37,11 +34,7 @@ app.use(express.json());
 //BACKEND ROUTE
 app.use("/api/v1/courses", courseRoute);
 
-
 //BACKEND ROUTE
 app.use("/student", studentRoute);
-
-
-
 
 module.exports = app;
