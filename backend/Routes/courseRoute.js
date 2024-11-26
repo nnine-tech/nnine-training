@@ -18,4 +18,4 @@ router
   .delete(authController.protect, courseController.deleteCourse)
   .patch(authController.protect, courseController.updateCourse);
 
-// module.exports = router;
+module.exports = router;

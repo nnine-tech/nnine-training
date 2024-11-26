@@ -13,13 +13,13 @@ const tokenGeneration = (id) => {
 };
 
 const createSendToken = (admin, statusCode, res) => {
-  const token = signToken(admin._id);
+  const token = tokenGeneration(admin._id);
 
   res.status(statusCode).json({
     status: "success",
     token,
     data: {
-      data: newAdmin,
+      data: admin,
     },
   });
 };
@@ -38,17 +38,23 @@ exports.createAdmin = catchAsync(async (req, res, next) => {
     taxId: req.body.taxId,
   });
 
-  //THIS LINE OF CODE COULD BE ERASED IN FUTURE
-  const token = tokenGeneration(newAdmin.id);
 
-  res.status(201).json({
-    status: "success",
-    //TOKEN FIELD COULD BE ERASED IN FUTURE
-    token,
-    data: {
-      data: newAdmin,
-    },
-  });
+
+
+  createSendToken(newAdmin,201,res);
+
+  
+  // //THIS LINE OF CODE COULD BE ERASED IN FUTURE
+  // const token = tokenGeneration(newAdmin.id);
+
+  // res.status(201).json({
+  //   status: "success",
+  //   //TOKEN FIELD COULD BE ERASED IN FUTURE
+  //   token,
+  //   data: {
+  //     data: newAdmin,
+  //   },
+  // });
 });
 
 exports.login = catchAsync(async (req, res, next) => {
@@ -202,7 +208,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   const admin = Admin.findById(req.user.id).select("+password");
 
   //CHECK IF POSTED CURRENT PASSWORD IS CORRECT
-  if (!user.correctPassword(req.body.passwordConfirm, userPassword))
+  if (!(await admin.correctPassword(req.body.passwordConfirm, admin.password)))
     return next(new AppError("Your current password is wrong", 401));
 
   //IF SO ,UPDATE PASSWORD
