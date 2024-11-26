@@ -35,13 +35,9 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const notificationRouter = require("./Routes/notificationRoute");
 const courseRoute = require("./Routes/courseRoute");
-const feesRoute = require("./Routes/feesRoute");
-const fileRouter = require("./Routes/fileRoute");
-const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
-const studentRoute = require("./Routes/studentRoute");
 const eventRoute = require("./Routes/eventRoute");
-const userRoute = require("./Routes/userroute");
 const adminRoute = require("./Routes/adminRoute");
+const http = require("http");
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
@@ -57,11 +53,11 @@ app.use("/api/v1/syllabus", courseSyllabusRoute);
 app.use("/api/v1/admin", adminRoute);
 
 app.use("/fees", feesRoute);
-app.use("/users", userRoute);
+// app.use("/users", userRoute);
 app.use("/file", fileRouter);
-app.use("/api/v1/users", userRoute);
+// app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
-const { createServer } = require("vite");
+
 const { Server } = require("socket.io");
 const messageRouter = require("./Routes/messageRoute");
 // const notificationzRouter = require("./Routes/notificationRoute");
@@ -76,7 +72,7 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 //MIDDLEWARES
 
-const httpServer = createServer(app);
+const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
