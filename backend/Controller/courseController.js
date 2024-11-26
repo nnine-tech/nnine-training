@@ -90,6 +90,7 @@ exports.getAllCourse = catchAsync(async (req, res, next) => {
   //     );
   // }
 
+  console.log("test-------------------===============================");
   //EXECUTE QUERY
   const features = new APIFeatures(Course.find(), req.query)
     .filter()
@@ -139,7 +140,7 @@ exports.deleteCourse = catchAsync(async (req, res, next) => {
 exports.updateCourse = catchAsync(async (req, res, next) => {
   const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    //RUN VALIDATOR IS TURNED OFF FOR NOW BUT MAY REQUIRE TO BE TURNED OFF LATER
+    //RUN VALIDATOR IS TURNED OFF FOR NOW BUT MAY REQUIRE TO BE TURNED ON LATER
     // runValidators: true,
   });
   if (!course) {
