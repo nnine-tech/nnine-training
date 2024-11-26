@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "supervisor server.js",
+    "dev": "nodemon server.js",
     "start:prod": "set NODE_ENV=production&& supervisor server.js",
     "debug": "ndb server.js"
   },
@@ -15,7 +16,14 @@
     "express": "^4.21.1",
     "mongoose": "^8.8.2",
     "morgan": "^1.10.0",
+<<<<<<< HEAD
+    "supervisor": "^0.12.0",
+    "validator": "^13.12.0",
+    "multer": "^1.4.5-lts.1"
+=======
     "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.7",
     "supervisor": "^0.12.0"
+>>>>>>> 85f8ff27e99dbfd9b980526775f3dde49b98291c
   }
 }
