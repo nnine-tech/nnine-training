@@ -1,37 +1,26 @@
 const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
-  firstName: {
+  name: {
     type: String,
-    required: [true, "FullName field is required"],
-  },
-  lastName: {
-    type: String,
-    required: [true, "FullName field is required"],
+    required: [true, "Name field is required"],
   },
   email: {
+    unique: true,
     type: String,
     required: [true, "Email field is required"],
   },
-  department: {
-    type: String,
-    required: [true, "Department field is required"],
-  },
-  fees: {
+  phone: {
     type: Number,
-    required: [true, "Fees field is required"],
+    required: [true, "Phone field is required"],
   },
-  courseTaken: {
+  address: {
     type: String,
-    required: [true, "CourseToken field is required"],
+    required: [true, "Address field is required"],
   },
-  starting: {
-    type: String,
-    required: [true, "Starting field is required"],
-  },
-  ending: {
-    type: String,
-    required: [true, "Ending field is required"],
+  enrollmentDate: {
+    type: Date,
+    default: Date.now,
   },
 });
 
