@@ -31,7 +31,6 @@ exports.fetchMessages = async (req, res) => {
         { sender: userId2, receiver: userId1 },
       ],
     });
-    console.log(req.query);
     res.status(300).json({ success: true, data: messages });
   } catch (error) {
     res.status(400).json({ success: false, error: error.message });
