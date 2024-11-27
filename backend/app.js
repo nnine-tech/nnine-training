@@ -1,55 +1,47 @@
 process.on("uncaughtException", (err) => {
   console.log(err);
   console.log(`UNCAUGHT EXCEPTION.......SHUTTING DOWN`);
-
   process.exit(1);
 });
 
-//IMPORTING
+// Importing necessary modules
+const http = require("http"); // Import the http module
 const express = require("express");
+const { Server } = require("socket.io");
+const dotenv = require("dotenv");
+const morgan = require("morgan");
 
+// Importing routes
 const trainerRouter = require("./Routes/trainerRoute");
 const trainerReviewRouter = require("./Routes/trainerReviewRoute");
 const n9reviewRouter = require("./Routes/n9reviewRoute");
-
-const app = express();
-app.use(express.json());
-const feesRoute = require("./Routes/feesRoute");
-
-const fileRouter = require("./Routes/fileRoute");
+const enrollRouter = require("./Routes/enrollRoute");
+// const feesRoute = require("./Routes/feesRoute");
+// const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
-const attendanceRoute = require("./Routes/attendanceRoute");
-
-const userSettingRouter = require("./Routes/userSettingRoute");
-
-//BACKEND ROUTE
-app.use("/api/v1/courses", courseSyllabusRoute);
-app.use("/fees", feesRoute);
-app.use("/users-setting", userSettingRouter);
-// app.use("/users", userRoute);
-app.use("/file", fileRouter);
-
+// const attendanceRoute = require("./Routes/attendanceRoute");
+// const userSettingRouter = require("./Routes/userSettingRoute");
 const studentRoute = require("./Routes/studentRoute");
-
-// const eventRoute = require("./Routes/eventRoute");
-// const userRoute = require("./Routes/userroute");
-// const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
-const dotenv = require("dotenv");
-const morgan = require("morgan");// const notificationRouter = require("./Routes/notificationRoute");
+const AppError = require("./Utils/appError");
+const contactRouter = require("./Routes/contactRoute");
 
 dotenv.config({
   path: "./config.env",
 });
 
-// console.log(process.env);
+const app = express();
+app.use(express.json());
 console.log(`--------${process.env.NODE_ENV}---------`);
-if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
-//MIDDLEWARES
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
+// Create the HTTP server
 const httpServer = http.createServer(app);
 
+// Set up socket.io
 const io = new Server(httpServer, {
   cors: {
     origin: "*",
@@ -67,38 +59,20 @@ io.on("connection", (socket) => {
   });
 });
 
-//BACKEND ROUTE
-
+// Routes
 app.use("/api/v1/syllabus", courseSyllabusRoute);
 app.use("/student", studentRoute);
-
 app.use("/api/v1/trainers", trainerRouter);
-app.use("/api/v1/trainers-reviews", trainerReviewRouter);app.use("/api/v1/n9-reviews", n9reviewRouter);
-
-//UNHANDLED ROUTE
+app.use("/api/v1/trainers-reviews", trainerReviewRouter);
+app.use("/api/v1/n9-reviews", n9reviewRouter);
+app.use("/api/v1/enroll-now", enrollRouter);
+app.use("/api/v1/contact-us", contactRouter);
+// Unhandled routes
 app.use("*", (req, res, next) => {
-  //ORIGINAL METHOD
-
-  // res.status(404).json({
-  //   status: "fail",
-  //   message: `Can't find ${req.originalUrl} on this server!`,
-  // });
-
-  // GLOBAL ERROR HANDLING IMPLEMENTATION
-
-  //BEFORE IMPLEMENTING APPERROR
-
-  // const err = new Error(`Can't find ${req.originalUrl} on this server!`);
-  // err.status = "fail";
-  // err.statusCode = 404;
-
-  //AFTER IMPLEMENTING APP ERROR
-
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
-app.use(express.static(`${__dirname}/public`));
 
-//GLOBAL ERROR HANDLER
 app.use(globalErrorHandler);
 
+// Export the app
 module.exports = app;
