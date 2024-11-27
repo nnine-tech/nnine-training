@@ -119,3 +119,23 @@ exports.filterpayment = async (req, res, next) => {
     });
   }
 };
+
+exports.paymentStatus = async (req, res, next) => {
+  try {
+    let test = await Fees.countDocuments();
+    let result = await Fees.find({ outstandingBalance: 0 });
+
+    let status = result.length;
+    res.status(200).json({
+      success: true,
+      message: "Payment status has been retrieved successfully.",
+      paid: status,
+      unpaid: test - result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
