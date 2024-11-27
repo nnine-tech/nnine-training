@@ -13,7 +13,6 @@ const trainerReviewRouter = require("./Routes/trainerReviewRoute");
 const n9reviewRouter = require("./Routes/n9reviewRoute");
 
 const app = express();
-const courseRoute = require("./Routes/courseRoute");
 app.use(express.json());
 const feesRoute = require("./Routes/feesRoute");
 
@@ -99,7 +98,6 @@ io.on("connection", (socket) => {
 //BACKEND ROUTE
 
 app.use("/api/v1/syllabus", courseSyllabusRoute);
-app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
 
 app.use("/api/v1/trainers", trainerRouter);

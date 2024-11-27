@@ -1,5 +1,4 @@
-
-const User = require("../Model/UserModel");
+// const User = require("../Model/UserModel");
 const catchAsync = require("../Utils/catchAsync");
 
 exports.createUser = catchAsync(async (req, res, next) => {
@@ -12,7 +11,7 @@ exports.createUser = catchAsync(async (req, res, next) => {
   });
 });
 
-const AddUser = require("../Model/userModel");
+// const AddUser = require("../Model/userModel");
 
 // exports.addUserController = async (req, res, next) => {
 //   try {

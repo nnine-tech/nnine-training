@@ -6,6 +6,7 @@ const {
   searchController,
   totalRevenue,
   filterpayment,
+  paymentStatus,
 } = require("../Controller/feesController.js");
 const router = express.Router();
 
