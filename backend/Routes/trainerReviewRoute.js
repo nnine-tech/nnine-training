@@ -1,4 +1,5 @@
-const { Router } = require("express");
+const express = require("express");
+
 const {
   createTrainerReview,
   getTrainerReview,
@@ -7,7 +8,7 @@ const {
   deleteTrainerReview,
 } = require("../Controller/trainerReviewController");
 
-const trainerReviewRouter = Router();
+const trainerReviewRouter = express.Router();
 trainerReviewRouter.route("/").post(createTrainerReview);
 trainerReviewRouter.route("/").get(getTrainerReview);
 
