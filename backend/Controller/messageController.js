@@ -14,7 +14,7 @@ exports.createMessage = async (req, res, next) => {
       data: result,
     });
   } catch (error) {
-    res.statu(400).json({
+    res.status(400).json({
       success: false,
       message: error.message,
     });
