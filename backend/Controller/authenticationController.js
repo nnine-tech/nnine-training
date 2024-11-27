@@ -46,7 +46,6 @@ exports.createAdmin = catchAsync(async (req, res, next) => {
     email: req.body.email,
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm,
-    passwordChangedAt: req.body.passwordChangedAt,
     bio: req.body.bio,
     taxId: req.body.taxId,
   });
@@ -80,7 +79,7 @@ exports.login = catchAsync(async (req, res, next) => {
 
   // console.log(admin);
 
-  if (!admin || !admin.correctPassword(password, admin.password)) {
+  if (!admin || !(await admin.correctPassword(password, admin.password))) {
     return next(new AppError("Incorrect email or password", 401));
   }
 
@@ -111,7 +110,8 @@ exports.protect = catchAsync(async (req, res, next) => {
 
   //VERIFY THE TOKEN
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  // console.log(decoded);
+  if (!decoded) next(new AppError("problem with token", 400));
+  console.log(decoded.iat * 1000);
 
   //CHECK IF ADMIN STILL EXITS
   const currentAdmin = await Admin.findById(decoded.id);
@@ -120,8 +120,9 @@ exports.protect = catchAsync(async (req, res, next) => {
       new AppError("The Admin belonging to this token does not exist.", 401)
     );
 
+  console.log(Date.now("pct-------------", currentAdmin.passwordChangedAt));
   //CHECK IF ADMIN CHANGED PASSWORD AFTER THE JWT WAS ISSUED
-  if (currentAdmin.changedPasswordAfter(decoded.iat)) {
+  if (currentAdmin.changedPasswordAfter(decoded.iat * 1000)) {
     return next(
       new AppError("Admin recently changed password! Please login again", 401)
     );
