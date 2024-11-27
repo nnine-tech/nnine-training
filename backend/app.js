@@ -38,6 +38,31 @@ const studentRoute = require("./Routes/studentRoute");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const notificationRouter = require("./Routes/notificationRoute");
+const courseRoute = require("./Routes/courseRoute");
+const eventRoute = require("./Routes/eventRoute");
+const adminRoute = require("./Routes/adminRoute");
+const http = require("http");
+
+app.use((req, res, next) => {
+  req.requestTime = new Date().toISOString();
+  // console.log("From app line no 28", req.headers);
+  console.log(req.body);
+
+  next();
+});
+
+//BACKEND ROUTE
+app.use("/api/v1/courses", courseRoute);
+app.use("/api/v1/syllabus", courseSyllabusRoute);
+app.use("/api/v1/admin", adminRoute);
+
+app.use("/fees", feesRoute);
+// app.use("/users", userRoute);
+app.use("/file", fileRouter);
+// app.use("/api/v1/users", userRoute);
+app.use("/student", studentRoute);
+
 const http = require("http");
 const { Server } = require("socket.io");
 const messageRouter = require("./Routes/messageRoute");
@@ -52,7 +77,6 @@ console.log(`--------${process.env.NODE_ENV}---------`);
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 
 //MIDDLEWARES
-app.use(express.json());
 
 const httpServer = http.createServer(app);
 
@@ -99,10 +123,11 @@ app.use("*", (req, res, next) => {
   // err.status = "fail";
   // err.statusCode = 404;
 
-  //AFTER IMPLEMENTING APPERROR
+  //AFTER IMPLEMENTING APP ERROR
 
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
+app.use(express.static(`${__dirname}/public`));
 
 //GLOBAL ERROR HANDLER
 app.use(globalErrorHandler);
