@@ -10,7 +10,7 @@ import Hero2 from "@/components/Hero2";
 import CourseSlide from "@/components/CourseSlide";
 import WhyUs from "@/components/WhyUs";
 import Gifpage from "@/components/Gifpage";
-import LandingTrainers from "@/components/LandingTrainers";
+// import LandingTrainers from "@/components/LandingTrainers";
 // import Banner from '@/components/Ads';
 
 export default function Home() {
@@ -41,7 +41,7 @@ export default function Home() {
 
       {/* <CourseList courseData={courseData} /> */}
       <WhyUs />
-      <LandingTrainers />
+      {/* <LandingTrainers /> */}
       <ReviewLanding />
     </div>
   );
