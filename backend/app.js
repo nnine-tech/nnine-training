@@ -63,7 +63,6 @@ app.use("/file", fileRouter);
 // app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
 
-const http = require("http");
 const { Server } = require("socket.io");
 const messageRouter = require("./Routes/messageRoute");
 // const notificationzRouter = require("./Routes/notificationRoute");
@@ -100,6 +99,7 @@ io.on("connection", (socket) => {
 //BACKEND ROUTE
 
 app.use("/api/v1/syllabus", courseSyllabusRoute);
+app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
 
 app.use("/api/v1/trainers", trainerRouter);
