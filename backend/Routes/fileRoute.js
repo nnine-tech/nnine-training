@@ -1,6 +1,7 @@
 const express = require("express");
-const upload = require("../utils/sendFile");
+// const upload = require("../utils/sendFile");
 const { sendFileController } = require("../Controller/sendFileController");
+const upload = require("../Utils/sendFile");
 
 const fileRouter = express.Router();
 

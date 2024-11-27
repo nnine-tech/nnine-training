@@ -1,4 +1,4 @@
-const Message = require("../Model/messageModel");
+const Message = require("../Model/MessageModel");
 
 exports.createMessage = async (req, res, next) => {
   const { senderId, receiverId, content } = req.body;
@@ -14,7 +14,7 @@ exports.createMessage = async (req, res, next) => {
       data: result,
     });
   } catch (error) {
-    res.statu(400).json({
+    res.status(400).json({
       success: false,
       message: error.message,
     });
@@ -31,7 +31,6 @@ exports.fetchMessages = async (req, res) => {
         { sender: userId2, receiver: userId1 },
       ],
     });
-    console.log(req.query);
     res.status(300).json({ success: true, data: messages });
   } catch (error) {
     res.status(400).json({ success: false, error: error.message });

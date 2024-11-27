@@ -22,8 +22,8 @@ const addPaymentSchema = new mongoose.Schema({
     required: [true, "Please provide the outstanding balance."],
   },
   dueDate: {
-    type: Date,
-    required: [true, "Date of payment is required."],
+    type: String,
+    default: new Date().toDateString(),
   },
 });
 

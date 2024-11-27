@@ -1,10 +1,11 @@
 process.on("uncaughtException", (err) => {
   console.log(err);
   console.log(`UNCAUGHT EXCEPTION.......SHUTTING DOWN`);
-
   process.exit(1);
 });
 
+// Importing necessary modules
+const http = require("http");
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
@@ -14,12 +15,9 @@ const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
+const { Server } = require("socket.io");
 
-//IMPORTING
-const courseRoute = require("./Routes/courseRoute");
-const adminRoute = require("./Routes/adminRoute");
-const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
-
+// Importing routes
 const trainerRouter = require("./Routes/trainerRoute");
 const trainerReviewRouter = require("./Routes/trainerReviewRoute");
 const n9reviewRouter = require("./Routes/n9reviewRoute");
@@ -67,38 +65,18 @@ app.use(express.static(`${__dirname}/public`));
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
-  // console.log("From app line no 28", req.headers);
-  // console.log(req.body);
-
   next();
 });
 
-//BACKEND ROUTE
-app.use("/fees", feesRoute);
-app.use("/users-setting", userSettingRouter);
-app.use("/file", fileRouter);
-app.use("/api/v1/courses", courseRoute);
-app.use("/api/v1/syllabus", courseSyllabusRoute);
-app.use("/api/v1/admin", adminRoute);
-app.use("/fees", feesRoute);
-app.use("/file", fileRouter);
-app.use("/student", studentRoute);
-app.use("/student", studentRoute);
-app.use("/api/v1/trainers", trainerRouter);
-app.use("/api/v1/trainers-reviews", trainerReviewRouter);
-app.use("/api/v1/message", messageRouter);
-const { Server } = require("socket.io");
+// Log requests in development
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
 
-dotenv.config({
-  path: "./config.env",
-});
-
-// console.log(process.env);
-console.log(`--------${process.env.NODE_ENV}---------`);
-if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
-
+// Create the HTTP server
 const httpServer = http.createServer(app);
 
+// Set up socket.io
 const io = new Server(httpServer, {
   cors: {
     origin: "*",
@@ -116,29 +94,27 @@ io.on("connection", (socket) => {
   });
 });
 
-//UNHANDLED ROUTE
+// Backend Routes
+app.use("/api/v1/courses", courseRoute);
+app.use("/api/v1/syllabus", courseSyllabusRoute);
+app.use("/api/v1/admin", adminRoute);
+app.use("/fees", feesRoute);
+app.use("/file", fileRouter);
+app.use("/student", studentRoute);
+app.use("/api/v1/trainers", trainerRouter);
+app.use("/api/v1/trainers-reviews", trainerReviewRouter);
+app.use("/api/v1/n9-reviews", n9reviewRouter);
+app.use("/api/v1/enroll-now", enrollRouter);
+app.use("/api/v1/contact-us", contactRouter);
+app.use("/api/v1/message", messageRouter);
+
+// Handle unhandled routes
 app.use("*", (req, res, next) => {
-  //ORIGINAL METHOD
-
-  // res.status(404).json({
-  //   status: "fail",
-  //   message: `Can't find ${req.originalUrl} on this server!`,
-  // });
-
-  // GLOBAL ERROR HANDLING IMPLEMENTATION
-
-  //BEFORE IMPLEMENTING APPERROR
-
-  // const err = new Error(`Can't find ${req.originalUrl} on this server!`);
-  // err.status = "fail";
-  // err.statusCode = 404;
-
-  //AFTER IMPLEMENTING APP ERROR
-
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
 
-//GLOBAL ERROR HANDLER
+// Global Error Handler
 app.use(globalErrorHandler);
 
+// Export the app
 module.exports = app;
