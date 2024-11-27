@@ -19,7 +19,7 @@ const feesRoute = require("./Routes/feesRoute");
 
 const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
-const attendanceRoute = require("./Routes/attendanceRoute")
+const attendanceRoute = require("./Routes/attendanceRoute");
 
 const userSettingRouter = require("./Routes/userSettingRoute");
 
@@ -101,9 +101,6 @@ io.on("connection", (socket) => {
 app.use("/api/v1/syllabus", courseSyllabusRoute);
 app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
-
-
-
 
 app.use("/api/v1/trainers", trainerRouter);
 app.use("/api/v1/trainers-reviews", trainerReviewRouter);
