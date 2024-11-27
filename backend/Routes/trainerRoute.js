@@ -1,4 +1,5 @@
-const { Router } = require("express");
+const express = require("express");
+
 const {
   createTrainer,
   getAllTrainer,
@@ -7,14 +8,14 @@ const {
   deleteTrainer,
 } = require("../Controller/trainerController");
 
-const trainerRouter = Router();
+const trainerRouter = express.Router();
 
 trainerRouter
   .route("/")
   .post(createTrainer) // Create trainer
   .get(getAllTrainer); // Get all trainers
 
-// Routes for `/id` 
+// Routes for `/id`
 trainerRouter
   .route("/:id")
   .get(getSpecificTrainer) // Get specific trainer
