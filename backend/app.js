@@ -14,6 +14,8 @@ const n9reviewRouter = require("./Routes/n9reviewRoute");
 
 const app = express();
 app.use(express.json());
+const http = require("http");
+const { Server } = require("socket.io");
 const feesRoute = require("./Routes/feesRoute");
 
 const fileRouter = require("./Routes/fileRoute");
@@ -36,7 +38,7 @@ const studentRoute = require("./Routes/studentRoute");
 // const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
-const morgan = require("morgan");// const notificationRouter = require("./Routes/notificationRoute");
+const morgan = require("morgan"); // const notificationRouter = require("./Routes/notificationRoute");
 
 dotenv.config({
   path: "./config.env",
@@ -73,7 +75,8 @@ app.use("/api/v1/syllabus", courseSyllabusRoute);
 app.use("/student", studentRoute);
 
 app.use("/api/v1/trainers", trainerRouter);
-app.use("/api/v1/trainers-reviews", trainerReviewRouter);app.use("/api/v1/n9-reviews", n9reviewRouter);
+app.use("/api/v1/trainers-reviews", trainerReviewRouter);
+app.use("/api/v1/n9-reviews", n9reviewRouter);
 
 //UNHANDLED ROUTE
 app.use("*", (req, res, next) => {
