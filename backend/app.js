@@ -19,7 +19,7 @@ const feesRoute = require("./Routes/feesRoute");
 
 const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
-const attendanceRoute = require("./Routes/attendanceRoute")
+const attendanceRoute = require("./Routes/attendanceRoute");
 
 const userSettingRouter = require("./Routes/userSettingRoute");
 
@@ -38,7 +38,7 @@ const studentRoute = require("./Routes/studentRoute");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const { createServer } = require("vite");
+const http = require("http");
 const { Server } = require("socket.io");
 const messageRouter = require("./Routes/messageRoute");
 // const notificationzRouter = require("./Routes/notificationRoute");
@@ -54,7 +54,7 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 //MIDDLEWARES
 app.use(express.json());
 
-const httpServer = createServer(app);
+const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
@@ -76,11 +76,7 @@ io.on("connection", (socket) => {
 //BACKEND ROUTE
 
 app.use("/api/v1/syllabus", courseSyllabusRoute);
-app.use("/api/v1/users", userRoute);
 app.use("/student", studentRoute);
-
-
-
 
 app.use("/api/v1/trainers", trainerRouter);
 app.use("/api/v1/trainers-reviews", trainerReviewRouter);

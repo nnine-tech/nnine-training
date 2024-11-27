@@ -80,3 +80,42 @@ exports.searchController = async (req, res, next) => {
     });
   }
 };
+
+exports.totalRevenue = async (req, res, next) => {
+  try {
+    let result = await Fees.aggregate([
+      {
+        $group: {
+          _id: null,
+          totalRevenue: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+    res.status(200).json({
+      success: true,
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+exports.filterpayment = async (req, res, next) => {
+  try {
+    let result = await Fees.find({}, { dueDate: 1, amountPaid: 1 });
+
+    res.status(201).json({
+      success: true,
+      message: "Total revenue has been calculated successfully.",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
