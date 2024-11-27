@@ -71,6 +71,20 @@ exports.searchStudent = async (req, res, next) => {
   }
 };
 
+exports.totalStudents = async (req, res, next) => {
+  try {
+    let result = await Student.countDocuments();
+    res.status(200).json({
+      message: "Total number of students",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
+  }
+};
+
 exports.deleteStudent = async (req, res, next) => {
   try {
     const result = await Student.findByIdAndDelete(req.params.id);
