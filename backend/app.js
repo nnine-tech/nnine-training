@@ -16,6 +16,11 @@ const trainerRouter = require("./Routes/trainerRoute");
 const trainerReviewRouter = require("./Routes/trainerReviewRoute");
 const n9reviewRouter = require("./Routes/n9reviewRoute");
 const enrollRouter = require("./Routes/enrollRoute");
+
+const app = express();
+app.use(express.json());
+const http = require("http");
+const { Server } = require("socket.io");
 const feesRoute = require("./Routes/feesRoute");
 const fileRouter = require("./Routes/fileRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
@@ -31,6 +36,8 @@ const messageRouter = require("./Routes/messageRoute");
 
 const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
+const dotenv = require("dotenv");
+const morgan = require("morgan"); // const notificationRouter = require("./Routes/notificationRoute");
 
 // Configure environment variables
 dotenv.config({ path: "./config.env" });
