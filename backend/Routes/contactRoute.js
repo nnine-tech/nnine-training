@@ -1,4 +1,5 @@
-const { Router } = require("express");
+const express = require("express");
+
 const {
   createContactForm,
   getContactForm,
@@ -6,9 +7,9 @@ const {
   updateContactForm,
 } = require("../Controller/contactController");
 
-const contactRouter = Router();
+const contactRouter = express.Router();
 contactRouter.route("/").post(createContactForm).get(getContactForm);
 
 contactRouter.route("/:id").get(getSpecificContactForm).put(updateContactForm);
 
-module.exports = { contactRouter };
+module.exports = contactRouter;
