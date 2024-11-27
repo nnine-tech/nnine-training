@@ -32,7 +32,8 @@ const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const { createServer } = require("vite");
+
+const http = require("http");
 const { Server } = require("socket.io");
 const messageRouter = require("./Routes/messageRoute");
 // const notificationzRouter = require("./Routes/notificationRoute");
@@ -48,7 +49,7 @@ if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 //MIDDLEWARES
 app.use(express.json());
 
-const httpServer = createServer(app);
+const httpServer = http.createServer(app);
 
 const io = new Server(httpServer, {
   cors: {
