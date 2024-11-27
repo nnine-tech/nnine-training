@@ -36,35 +36,7 @@ const studentRoute = require("./Routes/studentRoute");
 // const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
-const morgan = require("morgan");
-const notificationRouter = require("./Routes/notificationRoute");
-const courseRoute = require("./Routes/courseRoute");
-const eventRoute = require("./Routes/eventRoute");
-const adminRoute = require("./Routes/adminRoute");
-const http = require("http");
-
-app.use((req, res, next) => {
-  req.requestTime = new Date().toISOString();
-  // console.log("From app line no 28", req.headers);
-  console.log(req.body);
-
-  next();
-});
-
-//BACKEND ROUTE
-app.use("/api/v1/courses", courseRoute);
-app.use("/api/v1/syllabus", courseSyllabusRoute);
-app.use("/api/v1/admin", adminRoute);
-
-app.use("/fees", feesRoute);
-// app.use("/users", userRoute);
-app.use("/file", fileRouter);
-// app.use("/api/v1/users", userRoute);
-app.use("/student", studentRoute);
-
-const { Server } = require("socket.io");
-const messageRouter = require("./Routes/messageRoute");
-// const notificationzRouter = require("./Routes/notificationRoute");
+const morgan = require("morgan");// const notificationRouter = require("./Routes/notificationRoute");
 
 dotenv.config({
   path: "./config.env",
@@ -101,8 +73,7 @@ app.use("/api/v1/syllabus", courseSyllabusRoute);
 app.use("/student", studentRoute);
 
 app.use("/api/v1/trainers", trainerRouter);
-app.use("/api/v1/trainers-reviews", trainerReviewRouter);
-app.use("/api/v1/message", messageRouter);
+app.use("/api/v1/trainers-reviews", trainerReviewRouter);app.use("/api/v1/n9-reviews", n9reviewRouter);
 
 //UNHANDLED ROUTE
 app.use("*", (req, res, next) => {
