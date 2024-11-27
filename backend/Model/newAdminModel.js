@@ -66,6 +66,11 @@ const adminSchema = new mongoose.Schema({
   },
   passwordResetToken: String,
   passwordResetExpires: Date,
+  active: {
+    type: Boolean,
+    default: true,
+    select: false,
+  },
 });
 
 //PRE HOOKS TO HASH THE NEWLY CREATED OR UPDATED PASSWORD
@@ -84,7 +89,12 @@ adminSchema.pre("save", function (next) {
   //IF PASSWORD IS CHANGED OR NEW DOCUMENT IS CREATED
   if (!this.isModified("password") || this.isNew) return next();
 
-  this.passwordChangedAt = Date.now() - 1000;
+  this.passwordChangedAt = Date.now() - 3000;
+  next();
+});
+
+adminSchema.pre(/^find/, function (next) {
+  this.find({ active: { $ne: false } });
   next();
 });
 
@@ -103,7 +113,7 @@ adminSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
       this.passwordChangedAt.getTime() / 1000,
       10
     );
-    // console.log(JWTTimestamp, changedTimestamp);
+    console.log(JWTTimestamp, changedTimestamp);
     return JWTTimestamp < changedTimestamp;
   }
 };
