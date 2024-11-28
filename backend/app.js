@@ -35,8 +35,10 @@ const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
 
 const notificationRouter = require("./Routes/notificationRoute");
-const eventRoute = require("./Routes/eventRoute");
 const messageRouter = require("./Routes/messageRoute");
+const eventRouter = require("./Routes/eventRoute");
+const enrollRouter = require("./Routes/enrollRoute");
+const contactRouter = require("./Routes/contactRoute");
 
 const app = express();
 app.use(
@@ -101,23 +103,15 @@ io.on("connection", (socket) => {
 });
 
 // Backend Routes
-app.use("/api/v1/courses", courseRoute);
-app.use("/api/v1/syllabus", courseSyllabusRoute);
-
 app.use("/api/v1/student", studentRoute);
-app.use("api/v1/message", messageRouter);
+app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/events", eventRouter);
-
-app.use("/api/v1/admin", adminRoute);
-app.use("/fees", feesRoute);
-app.use("/file", fileRouter);
-app.use("/api/v1/student", studentRoute);
 app.use("/api/v1/trainers", trainerRouter);
 app.use("/api/v1/trainers-reviews", trainerReviewRouter);
 app.use("/api/v1/n9-reviews", n9reviewRouter);
 app.use("/api/v1/enroll-now", enrollRouter);
 app.use("/api/v1/contact-us", contactRouter);
-app.use("/api/v1/message", messageRouter);
+app.use("/api/v1/fees", feesRoute);
 
 // Handle unhandled routes
 app.use("*", (req, res, next) => {
