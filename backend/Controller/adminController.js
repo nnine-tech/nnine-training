@@ -1,6 +1,33 @@
 const Admin = require("../Model/newAdminModel");
 const AppError = require("../Utils/appError");
 const catchAsync = require("../Utils/catchAsync");
+const multer = require("multer");
+
+const multerStorage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "public/img/admins");
+  },
+  filename: (req, file, cb) => {
+    //user-sdfgfdsgfdg-234543543543.jpeg
+    const ext = file.mimetype.split("/")[1];
+    cb(null, `admin-${req.admin.id}-${Date.now()}.${ext}`);
+  },
+});
+
+const multerFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith("image")) {
+    cb(null, true);
+  } else {
+    cb(new AppError("Not an image!.Please upload only images", 400), false);
+  }
+};
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter,
+});
+
+exports.uploadUserPhoto = upload.single("photo");
 
 //FILTER FUNCTION
 const filterObj = (obj, ...allowedFields) => {
@@ -13,8 +40,10 @@ const filterObj = (obj, ...allowedFields) => {
 
 //FOR LOGGED IN ADMIN
 exports.updateMe = async (req, res, next) => {
-  //CREATE ERROR IF USER POSTS PASSWORD DATA
+  console.log(req.file);
+  console.log(req.body);
 
+  //CREATE ERROR IF USER POSTS PASSWORD DATA
   if (req.body.password || req.body.passwordConfirm)
     return next(
       new AppError(
@@ -32,6 +61,7 @@ exports.updateMe = async (req, res, next) => {
     "taxId",
     "email"
   );
+  if (req.file) filteredBody.photo = req.file.filename;
   const updatedAdmin = await Admin.findByIdAndUpdate(
     req.admin.id,
     filteredBody,

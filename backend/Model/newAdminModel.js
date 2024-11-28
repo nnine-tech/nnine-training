@@ -29,7 +29,10 @@ const adminSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, "Please provide a valid email"],
   },
-  photo: String,
+  photo: {
+    type: String,
+    default: "default.jpg",
+  },
   password: {
     type: String,
     required: [true, "Please provide a password"],
@@ -90,6 +93,7 @@ adminSchema.pre("save", function (next) {
   if (!this.isModified("password") || this.isNew) return next();
 
   this.passwordChangedAt = Date.now() - 3000;
+
   next();
 });
 
@@ -109,10 +113,7 @@ adminSchema.methods.correctPassword = async function (
 //INSTANCE METHOD TO CHECK WHETHER PASSWORD HAS BEEN CHANGED AFTER BEING LOGGED IN
 adminSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
   if (this.passwordChangedAt) {
-    const changedTimestamp = parseInt(
-      this.passwordChangedAt.getTime() / 1000,
-      10
-    );
+    const changedTimestamp = parseInt(this.passwordChangedAt.getTime(), 10);
     console.log(JWTTimestamp, changedTimestamp);
     return JWTTimestamp < changedTimestamp;
   }
