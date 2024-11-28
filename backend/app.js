@@ -39,6 +39,8 @@ const studentRoute = require("./Routes/studentRoute");
 const globalErrorHandler = require("./Controller/errorController");
 const dotenv = require("dotenv");
 const morgan = require("morgan"); // const notificationRouter = require("./Routes/notificationRoute");
+const messageRouter = require("./Routes/messageRoute");
+const eventRouter = require("./Routes/eventRoute");
 
 dotenv.config({
   path: "./config.env",
@@ -72,7 +74,9 @@ io.on("connection", (socket) => {
 //BACKEND ROUTE
 
 app.use("/api/v1/syllabus", courseSyllabusRoute);
-app.use("/student", studentRoute);
+app.use("/api/v1/student", studentRoute);
+app.use("api/v1/message", messageRouter);
+app.use("/api/v1/events", eventRouter);
 
 app.use("/api/v1/trainers", trainerRouter);
 app.use("/api/v1/trainers-reviews", trainerReviewRouter);
