@@ -19,8 +19,8 @@ const studentSchema = new mongoose.Schema({
     required: [true, "Address field is required"],
   },
   enrollmentDate: {
-    type: Date,
-    default: Date.now,
+    type: String,
+    default: new Date().toDateString(),
   },
 });
 
