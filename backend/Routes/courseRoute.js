@@ -1,11 +1,11 @@
 const express = require("express");
 const courseController = require("./../Controller/courseController.js");
 const courseSyllabusRoute = require("./../Routes/courseSyllabusRoute.js");
-const authController = require("./../Controller/authenticationController.js");
+const authController = require("./../Controller/authenticationController");
 const router = express.Router();
 
-// //NESTED ROUTE
-// router.use("/:courseId/syllabus", courseSyllabusRoute);
+//NESTED ROUTE
+router.use("/:courseId/syllabus", courseSyllabusRoute);
 
 router
   .route("/")
@@ -14,7 +14,7 @@ router
 
 router
   .route("/:id")
-  .get(courseController.getCourse)
+  .get(authController.protect, courseController.getCourse)
   .delete(authController.protect, courseController.deleteCourse)
   .patch(authController.protect, courseController.updateCourse);
 
