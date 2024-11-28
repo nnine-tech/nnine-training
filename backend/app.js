@@ -28,9 +28,15 @@ const userSettingRouter = require("./Routes/userSettingRoute");
 const studentRoute = require("./Routes/studentRoute");
 const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
+
+const dotenv = require("dotenv");
+const morgan = require("morgan"); // const notificationRouter = require("./Routes/notificationRoute");
+const messageRouter = require("./Routes/messageRoute");
+const eventRouter = require("./Routes/eventRouter");
 const notificationRouter = require("./Routes/notificationRoute");
 const eventRoute = require("./Routes/eventRoute");
 const messageRouter = require("./Routes/messageRoute");
+
 
 const app = express();
 app.use(
@@ -97,10 +103,15 @@ io.on("connection", (socket) => {
 // Backend Routes
 app.use("/api/v1/courses", courseRoute);
 app.use("/api/v1/syllabus", courseSyllabusRoute);
+
+app.use("/api/v1/student", studentRoute);
+app.use("api/v1/message", messageRouter);
+app.use("/api/v1/events", eventRouter);
+
 app.use("/api/v1/admin", adminRoute);
 app.use("/fees", feesRoute);
 app.use("/file", fileRouter);
-app.use("/student", studentRoute);
+app.use("/api/v1/student", studentRoute);
 app.use("/api/v1/trainers", trainerRouter);
 app.use("/api/v1/trainers-reviews", trainerReviewRouter);
 app.use("/api/v1/n9-reviews", n9reviewRouter);
