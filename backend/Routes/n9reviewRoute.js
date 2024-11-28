@@ -1,4 +1,6 @@
-const { Router } = require("express");
+
+const express = require("express");
+
 const {
   getSpecificN9review,
   createN9review,
@@ -7,7 +9,7 @@ const {
   deleteN9review,
 } = require("../Controller/n9reviewController");
 
-const n9reviewRouter = Router();
+const n9reviewRouter = express.Router();
 
 n9reviewRouter.route("/").post(createN9review).get(getN9reviews);
 n9reviewRouter.route("/:studentId").get(getSpecificN9review);

@@ -15,6 +15,19 @@ const tokenGeneration = (id) => {
 const createSendToken = (admin, statusCode, res) => {
   const token = tokenGeneration(admin._id);
 
+  const cookieOptions = {
+    expires: new Date(
+      Date.now() +
+        Number(process.env.JWT_COOKIE_EXPIRES_IN) * 24 * 60 * 60 * 1000
+    ),
+    httpOnly: true,
+  };
+
+  if (process.env.NODE_ENV === "production") cookieOptions.secure = true;
+
+  admin.password = undefined;
+
+  res.cookie("jwt", token, cookieOptions);
   res.status(statusCode).json({
     status: "success",
     token,
@@ -33,17 +46,12 @@ exports.createAdmin = catchAsync(async (req, res, next) => {
     email: req.body.email,
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm,
-    passwordChangedAt: req.body.passwordChangedAt,
     bio: req.body.bio,
     taxId: req.body.taxId,
   });
 
+  createSendToken(newAdmin, 201, res);
 
-
-
-  createSendToken(newAdmin,201,res);
-
-  
   // //THIS LINE OF CODE COULD BE ERASED IN FUTURE
   // const token = tokenGeneration(newAdmin.id);
 
@@ -68,19 +76,20 @@ exports.login = catchAsync(async (req, res, next) => {
 
   //CHECK IF ADMIN EXIST AND PASSWORD IS CORRECT
   const admin = await Admin.findOne({ email }).select("+password");
-  const correct = await admin.correctPassword(password, admin.password);
+
   // console.log(admin);
 
-  if (!admin || !correct) {
+  if (!admin || !(await admin.correctPassword(password, admin.password))) {
     return next(new AppError("Incorrect email or password", 401));
   }
 
   //IF EVERYTHING IS OK,SEND TOKEN TO CLIENT
-  const token = tokenGeneration(admin._id);
-  res.status(200).json({
-    status: "success",
-    token,
-  });
+  // const token = tokenGeneration(admin._id);
+  // res.status(200).json({
+  //   status: "success",
+  //   token,
+  // });
+  createSendToken(admin, 200, res);
 });
 
 exports.protect = catchAsync(async (req, res, next) => {
@@ -101,7 +110,8 @@ exports.protect = catchAsync(async (req, res, next) => {
 
   //VERIFY THE TOKEN
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  // console.log(decoded);
+  if (!decoded) next(new AppError("problem with token", 400));
+  console.log(decoded.iat * 1000);
 
   //CHECK IF ADMIN STILL EXITS
   const currentAdmin = await Admin.findById(decoded.id);
@@ -110,8 +120,9 @@ exports.protect = catchAsync(async (req, res, next) => {
       new AppError("The Admin belonging to this token does not exist.", 401)
     );
 
+  console.log(Date.now("pct-------------", currentAdmin.passwordChangedAt));
   //CHECK IF ADMIN CHANGED PASSWORD AFTER THE JWT WAS ISSUED
-  if (currentAdmin.changedPasswordAfter(decoded.iat)) {
+  if (currentAdmin.changedPasswordAfter(decoded.iat * 1000)) {
     return next(
       new AppError("Admin recently changed password! Please login again", 401)
     );
@@ -195,26 +206,29 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   //UPDATE CHANGEDPASSWORDAT PROPERTY FOR ADMIN
 
   //LOG THE ADMIN IN SEND JWT
-  const token = tokenGeneration(admin._id);
+  // const token = tokenGeneration(admin._id);
 
-  res.status(200).json({
-    status: "success",
-    token,
-  });
+  // res.status(200).json({
+  //   status: "success",
+  //   token,
+  // });
+  createSendToken(admin, 200, res);
 });
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
   //GET USER FROM COLLECTION
-  const admin = Admin.findById(req.user.id).select("+password");
+  console.log(req);
+  const admin = await Admin.findById(req.admin.id).select("+password");
 
   //CHECK IF POSTED CURRENT PASSWORD IS CORRECT
-  if (!(await admin.correctPassword(req.body.passwordConfirm, admin.password)))
+  if (!(await admin.correctPassword(req.body.passwordCurrent, admin.password)))
     return next(new AppError("Your current password is wrong", 401));
 
   //IF SO ,UPDATE PASSWORD
-  user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
+  admin.password = req.body.password;
+  admin.passwordConfirm = req.body.passwordConfirm;
 
-  await user.save();
+  await admin.save();
   //LOG IN USER IN,SEND JWT
+  createSendToken(admin, 200, res);
 });
