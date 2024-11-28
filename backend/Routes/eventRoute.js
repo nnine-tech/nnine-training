@@ -6,11 +6,11 @@ const {
   deleteEventController,
   readSpecificEventController,
 } = require("../Controller/eventController");
-const router = express.Router();
+const eventRouter = express.Router();
 
-router.route("/add").post(addEventController);
-router.route("/readAll").get(getEventController);
-router.route("/update/:id").patch(updateEventController);
-router.route("/delete/:id").delete(deleteEventController);
+eventRouter.route("/add").post(addEventController);
+eventRouter.route("/readAll").get(getEventController);
+eventRouter.route("/update/:id").patch(updateEventController);
+eventRouter.route("/delete/:id").delete(deleteEventController);
 
-module.exports = router;
+module.exports = eventRouter;
