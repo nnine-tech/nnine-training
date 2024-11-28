@@ -23,22 +23,19 @@ const n9reviewRouter = require("./Routes/n9reviewRoute");
 const feesRoute = require("./Routes/feesRoute");
 const fileRouter = require("./Routes/fileRoute");
 const attendanceRoute = require("./Routes/attendanceRoute");
-const eventRouter = require("./Routes/eventRoute");
 const userSettingRouter = require("./Routes/userSettingRoute");
 const studentRoute = require("./Routes/studentRoute");
 const courseRoute = require("./Routes/courseRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const adminRoute = require("./Routes/adminRoute");
-const enrollRouter = require("./Routes/enrollRoute");
-const contactRouter = require("./Routes/contactRoute");
-const AppError = require("./Utils/appError");
-const globalErrorHandler = require("./Controller/errorController");
+// const AppError = require("./Utils/appError");
+// const globalErrorHandler = require("./Controller/errorController");
 
 const notificationRouter = require("./Routes/notificationRoute");
 const messageRouter = require("./Routes/messageRoute");
-const eventRouter = require("./Routes/eventRoute");
-const enrollRouter = require("./Routes/enrollRoute");
 const contactRouter = require("./Routes/contactRoute");
+const enrollRouter = require("./Routes/enrollRoute");
+const eventRouter = require("./Routes/eventRoute");
 
 const app = express();
 app.use(
@@ -112,14 +109,14 @@ app.use("/api/v1/n9-reviews", n9reviewRouter);
 app.use("/api/v1/enroll-now", enrollRouter);
 app.use("/api/v1/contact-us", contactRouter);
 app.use("/api/v1/fees", feesRoute);
-
+app.use("/api/v1/file", fileRouter);
 // Handle unhandled routes
-app.use("*", (req, res, next) => {
-  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-});
+// app.use("*", (req, res, next) => {
+//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+// });
 
 // Global Error Handler
-app.use(globalErrorHandler);
+// app.use(globalErrorHandler);
 
 // Export the app
 module.exports = app;
