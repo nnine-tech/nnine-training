@@ -23,10 +23,17 @@ const n9reviewRouter = require("./Routes/n9reviewRoute");
 const feesRoute = require("./Routes/feesRoute");
 const fileRouter = require("./Routes/fileRoute");
 const attendanceRoute = require("./Routes/attendanceRoute");
+const eventRouter = require("./Routes/eventRoute");
 const userSettingRouter = require("./Routes/userSettingRoute");
 const studentRoute = require("./Routes/studentRoute");
+const courseRoute = require("./Routes/courseRoute");
+const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
+const adminRoute = require("./Routes/adminRoute");
+const enrollRouter = require("./Routes/enrollRoute");
+const contactRouter = require("./Routes/contactRoute");
 const AppError = require("./Utils/appError");
 const globalErrorHandler = require("./Controller/errorController");
+
 const notificationRouter = require("./Routes/notificationRoute");
 const messageRouter = require("./Routes/messageRoute");
 const eventRouter = require("./Routes/eventRoute");
