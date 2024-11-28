@@ -18,7 +18,7 @@ exports.getStudentController = async (req, res, next) => {
   try {
     const result = await Student.find();
     res.status(200).json({
-      message: "Fee details fetched successfully",
+      message: "Student details fetched successfully",
       data: result,
     });
   } catch (error) {
@@ -51,11 +51,9 @@ exports.searchStudent = async (req, res, next) => {
     pipeline.push({
       $match: {
         $or: [
-          { firstName: { $regex: item, $options: "i" } },
-          { lastName: { $regex: item, $options: "i" } },
-          { department: { $regex: item, $options: "i" } },
+          { name: { $regex: item, $options: "i" } },
+          { phone: { $regex: item, $options: "i" } },
           { email: { $regex: item, $options: "i" } },
-          { courseTaken: { $regex: item, $options: "i" } },
         ],
       },
     });
