@@ -9,7 +9,6 @@ const http = require("http");
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const http = require("http");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
@@ -31,6 +30,11 @@ const globalErrorHandler = require("./Controller/errorController");
 const notificationRouter = require("./Routes/notificationRoute");
 const eventRoute = require("./Routes/eventRoute");
 const messageRouter = require("./Routes/messageRoute");
+const courseRoute = require("./Routes/courseRoute");
+const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
+const adminRoute = require("./Routes/adminRoute");
+const enrollRouter = require("./Routes/enrollRoute");
+const contactRouter = require("./Routes/contactRoute");
 
 const app = express();
 app.use(
