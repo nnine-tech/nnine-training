@@ -120,7 +120,7 @@ exports.protect = catchAsync(async (req, res, next) => {
       new AppError("The Admin belonging to this token does not exist.", 401)
     );
 
-  console.log(Date.now("pct-------------", currentAdmin.passwordChangedAt));
+  // console.log(Date.now("pct-------------", currentAdmin.passwordChangedAt));
   //CHECK IF ADMIN CHANGED PASSWORD AFTER THE JWT WAS ISSUED
   if (currentAdmin.changedPasswordAfter(decoded.iat * 1000)) {
     return next(
