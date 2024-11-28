@@ -1,32 +1,39 @@
 const multer = require("multer");
 const path = require("path");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const dotenv = require("dotenv");
+
+dotenv.config({
+  path: "./config.env",
+});
 
 let limits = {
   fileSize: 1024 * 1024 * 2,
 };
 
-let storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    let staticFolder = "./public";
-    cb(null, staticFolder);
-  },
-  filename: (req, file, cb) => {
-    let fileName = Date.now() + "-" + file.originalname;
-    cb(null, fileName);
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: "uploads",
+    public_id: (req, file) => Date.now() + "-" + file.originalname,
   },
 });
 
-let fileFilter = (req, file, cb) => {
-  let validExtensions = [".png", ".PNG", ".jpg", ".JPG", ".jpeg", ".JPEG"];
-  let originalName = file.originalname;
-  let originalExtensions = path.extname(originalName);
+const fileFilter = (req, file, cb) => {
+  const allowedExtensions = [".jpg", ".jpeg", ".png", ".webp"];
+  const fileExtension = path.extname(file.originalname).toLowerCase();
 
-  let isValidExtension = validExtensions.includes(originalExtensions);
-
-  if (isValidExtension) {
+  if (allowedExtensions.includes(fileExtension)) {
     cb(null, true);
   } else {
-    cb(new Error("File is not supported"));
+    cb(new Error("Unsupported file format"));
   }
 };
 
