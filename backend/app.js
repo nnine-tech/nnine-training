@@ -32,17 +32,9 @@ const adminRoute = require("./Routes/adminRoute");
 
 const notificationRouter = require("./Routes/notificationRoute");
 const messageRouter = require("./Routes/messageRoute");
-<<<<<<< HEAD
-const courseRoute = require("./Routes/courseRoute");
-const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
-const adminRoute = require("./Routes/adminRoute");
-const enrollRouter = require("./Routes/enrollRoute");
-const contactRouter = require("./Routes/contactRoute");
-=======
 const contactRouter = require("./Routes/contactRoute");
 const enrollRouter = require("./Routes/enrollRoute");
 const eventRouter = require("./Routes/eventRoute");
->>>>>>> 7aad4aa9f2e860b39b54a3d9d70851cfc5ad606f
 
 const app = express();
 app.use(
