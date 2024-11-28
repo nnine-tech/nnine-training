@@ -39,12 +39,10 @@ exports.getSpecificContactForm = catchAsync(async (req, res, next) => {
   }
 });
 
-exports.updateContactForm = catchAsync(async (req, res, next) => {
-  let contactData = await contact.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-  });
+exports.deleteContactForm = catchAsync(async (req, res, next) => {
+  const form = await contact.findByIdAndDelete(req.params.id);
   return res.status(201).json({
-    message: "Contact updated successfully",
-    result: contactData,
+    message: "EnrollNow deleted successfully",
+    result: form,
   });
 });

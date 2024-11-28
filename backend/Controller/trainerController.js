@@ -1,17 +1,18 @@
 const trainer = require("../Model/trainerModel");
 const catchAsync = require("../Utils/catchAsync");
 
-exports.createTrainer = catchAsync(async (req, res, next) => {
+exports.createTrainer = catchAsync(async (req, res) => {
   const { name, email, expertise } = req.body;
+  console.log(name);
 
-  const trainerdata = await trainer.create({
+  const trainerData = await trainer.create({
     name,
     email,
     expertise,
-  })
+  });
 
   res.status(200).json({
-    result: { trainerdata },
+    result: { trainerData },
     success: true,
     message: "trainer created successfully",
   });
