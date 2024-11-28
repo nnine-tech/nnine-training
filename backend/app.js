@@ -7,46 +7,62 @@ process.on("uncaughtException", (err) => {
 // Importing necessary modules
 const http = require("http");
 const express = require("express");
-const { Server } = require("socket.io");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const http = require("http");
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
+const mongoSanitize = require("express-mongo-sanitize");
+const xss = require("xss-clean");
+const hpp = require("hpp");
+const { Server } = require("socket.io");
 
 // Importing routes
 const trainerRouter = require("./Routes/trainerRoute");
 const trainerReviewRouter = require("./Routes/trainerReviewRoute");
 const n9reviewRouter = require("./Routes/n9reviewRoute");
-const enrollRouter = require("./Routes/enrollRoute");
-
-const app = express();
-app.use(express.json());
-const http = require("http");
-const { Server } = require("socket.io");
 const feesRoute = require("./Routes/feesRoute");
 const fileRouter = require("./Routes/fileRoute");
-const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const attendanceRoute = require("./Routes/attendanceRoute");
 const userSettingRouter = require("./Routes/userSettingRoute");
 const studentRoute = require("./Routes/studentRoute");
-const contactRouter = require("./Routes/contactRoute");
-const courseRoute = require("./Routes/courseRoute");
-const adminRoute = require("./Routes/adminRoute");
+const AppError = require("./Utils/appError");
+const globalErrorHandler = require("./Controller/errorController");
 const notificationRouter = require("./Routes/notificationRoute");
 const eventRoute = require("./Routes/eventRoute");
 const messageRouter = require("./Routes/messageRoute");
 
-const AppError = require("./Utils/appError");
-const globalErrorHandler = require("./Controller/errorController");
-const dotenv = require("dotenv");
-const morgan = require("morgan"); // const notificationRouter = require("./Routes/notificationRoute");
-
-// Configure environment variables
-dotenv.config({ path: "./config.env" });
-
-// Initialize the app
 const app = express();
-app.use(express.json());
+app.use(
+  express.json({
+    limit: "10kb",
+  })
+);
 
-// Debugging Middleware
+//DEBUGGING PURPOSE//MIDDLEWARES
+app.use(helmet());
+
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: "Too many request from this IP,please try again in an hour!",
+});
+
+app.use("/api", limiter);
+
+app.use(mongoSanitize());
+
+app.use(xss());
+
+//PREVENT PARAMETER POLLUTION
+app.use(
+  hpp({
+    whitelist: ["duration", "category", "lectures"],
+  })
+);
+
+app.use(express.static(`${__dirname}/public`));
+
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
   next();

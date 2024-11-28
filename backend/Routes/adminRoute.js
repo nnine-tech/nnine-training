@@ -10,7 +10,12 @@ router.patch(
   authController.protect,
   authController.updatePassword
 );
-router.patch("/updateMe", authController.protect, adminController.updateMe);
+router.patch(
+  "/updateMe",
+  authController.protect,
+  adminController.uploadUserPhoto,
+  adminController.updateMe
+);
 router.delete("/deleteMe", authController.protect, adminController.deleteMe);
 router.get(
   "/getAllAdmins",
