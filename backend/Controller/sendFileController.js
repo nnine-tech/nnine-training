@@ -1,9 +1,9 @@
 exports.sendFileController = async (req, res, next) => {
   try {
-    let link = `http://localhost:8000/${req.file.filename}`;
+    let link = `https://admin/example`;
     res.status(200).json({
       success: true,
-      message: "File has been uploaded successfully",
+      message: "File uploads successfully",
       result: link,
     });
   } catch (error) {
