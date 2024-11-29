@@ -18,9 +18,7 @@ const RedHatOpenShiftSyllabus1 = () => {
   const syllabusSections = [
     {
       title: "Course Introduction",
-      lectures: [
-        "Welcome to Hands-on with Podman Containers on Linux",
-      ],
+      lectures: ["Welcome to Hands-on with Podman Containers on Linux"],
       info: "1 lecture",
     },
     {
@@ -115,21 +113,16 @@ const RedHatOpenShiftSyllabus1 = () => {
       info: "2 lectures",
     },
   ];
-  
-  
-  
+
   return (
     <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
       <div className="w-[80%] flex flex-col mt-14">
         <div className="w-full">
-          <h1 className="font-bold text-3xl ml-8 p-[10px] font-Quicksand mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-3xl p-[10px] font-Quicksand mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div
-              key={index}
-              className={`relative w-full max-w-[800px]`}
-            >
+            <div key={index} className={`relative w-full max-w-[800px]`}>
               <div
                 className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
                   !openDropdowns[section.title] &&
@@ -173,7 +166,7 @@ const RedHatOpenShiftSyllabus1 = () => {
           ))}
         </div>
       </div>
-      <GraphicDesignClassType/>
+      <GraphicDesignClassType />
     </div>
   );
 };

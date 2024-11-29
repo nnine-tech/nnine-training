@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 import DigitalMarketingClassType from "./DigitalMarketingClassType";
 
-const  DigitalMarketingSyllabus1= () => {
+const DigitalMarketingSyllabus1 = () => {
   // State to manage dropdown visibility for each section
   const [openDropdowns, setOpenDropdowns] = useState({});
 
@@ -61,7 +61,8 @@ const  DigitalMarketingSyllabus1= () => {
       info: "19 lectures",
     },
     {
-      title: "Google My Business (Local SEO) & Developing a Social Media Strategy",
+      title:
+        "Google My Business (Local SEO) & Developing a Social Media Strategy",
       lectures: [
         "Google My Business",
         "Importance of Google My Business",
@@ -128,19 +129,16 @@ const  DigitalMarketingSyllabus1= () => {
       info: "5 lectures",
     },
   ];
-  
+
   return (
     <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
       <div className="w-[80%] flex flex-col mt-14">
         <div className="w-full">
-          <h1 className="font-bold text-3xl ml-8 p-[10px] font-Quicksand mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-3xl p-[10px] font-Quicksand mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div
-              key={index}
-              className={`relative w-full max-w-[800px]`}
-            >
+            <div key={index} className={`relative w-full max-w-[800px]`}>
               <div
                 className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
                   !openDropdowns[section.title] &&
@@ -187,7 +185,6 @@ const  DigitalMarketingSyllabus1= () => {
       <DigitalMarketingClassType />
     </div>
   );
-  
 };
 
 export default DigitalMarketingSyllabus1;
