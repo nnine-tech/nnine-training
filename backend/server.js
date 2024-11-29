@@ -13,13 +13,9 @@ const DB = process.env.DATABASE.replace(
 
 console.log(DB);
 mongoose
-<<<<<<< HEAD
-  .connect(DB, {
+  .connect("mongodb://localhost:27017/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-=======
-  .connect(process.env.DATABASE_LOCAL, {
->>>>>>> 7aad4aa9f2e860b39b54a3d9d70851cfc5ad606f
     autoIndex: true,
   })
   .then(() => {
