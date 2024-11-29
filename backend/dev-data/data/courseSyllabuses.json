@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Introduction to Cloud Computing",
+    "content": ["Overview of Cloud", "Cloud Models", "Deployment Models"],
+    "duration": 4,
+    "lectures": 6,
+    "course": "67481d8bab3b463422e9b303"
+  },
+  {
+    "name": "Cloud Storage and Management",
+    "content": ["Storage Solutions", "Virtualization", "Data Security"],
+    "duration": 5,
+    "lectures": 7,
+    "course": "67481d8bab3b463422e9b303"
+  },
+  {
+    "name": "AI Fundamentals",
+    "content": ["Introduction to AI", "Applications", "History of AI"],
+    "duration": 6,
+    "lectures": 8,
+    "course": "67481d8bab3b463422e9b304"
+  },
+  {
+    "name": "AI Algorithms",
+    "content": [
+      "Search Algorithms",
+      "Logic and Planning",
+      "Constraint Satisfaction"
+    ],
+    "duration": 6,
+    "lectures": 8,
+    "course": "67481d8bab3b463422e9b304"
+  },
+  {
+    "name": "Machine Learning Basics",
+    "content": [
+      "Introduction to ML",
+      "Supervised Learning",
+      "Unsupervised Learning"
+    ],
+    "duration": 5,
+    "lectures": 6,
+    "course": "67481d8bab3b463422e9b305"
+  },
+  {
+    "name": "Deep Learning",
+    "content": ["Neural Networks", "Activation Functions", "Backpropagation"],
+    "duration": 5,
+    "lectures": 7,
+    "course": "67481d8bab3b463422e9b305"
+  },
+  {
+    "name": "Mobile App Design Principles",
+    "content": ["UI/UX Basics", "Mobile Navigation", "Prototyping"],
+    "duration": 3,
+    "lectures": 5,
+    "course": "67481d8bab3b463422e9b306"
+  },
+  {
+    "name": "Mobile App Development Frameworks",
+    "content": ["React Native", "Flutter", "Kotlin Basics"],
+    "duration": 4,
+    "lectures": 6,
+    "course": "67481d8bab3b463422e9b306"
+  },
+  {
+    "name": "Blockchain Basics",
+    "content": [
+      "Introduction to Blockchain",
+      "Decentralization",
+      "Consensus Mechanisms"
+    ],
+    "duration": 5,
+    "lectures": 7,
+    "course": "67481d8bab3b463422e9b307"
+  },
+  {
+    "name": "Cryptocurrency and Blockchain Applications",
+    "content": ["Bitcoin Basics", "Smart Contracts", "Ethereum Overview"],
+    "duration": 5,
+    "lectures": 7,
+    "course": "67481d8bab3b463422e9b307"
+  },
+  {
+    "name": "Cloud Deployment Models",
+    "content": ["Public Cloud", "Private Cloud", "Hybrid Cloud"],
+    "duration": 4,
+    "lectures": 5,
+    "course": "67481d8bab3b463422e9b303"
+  },
+  {
+    "name": "Security in Cloud Computing",
+    "content": ["Data Encryption", "Access Management", "Security Standards"],
+    "duration": 4,
+    "lectures": 5,
+    "course": "67481d8bab3b463422e9b303"
+  },
+  {
+    "name": "AI in Everyday Applications",
+    "content": ["AI in Healthcare", "AI in Retail", "AI in Education"],
+    "duration": 4,
+    "lectures": 6,
+    "course": "67481d8bab3b463422e9b304"
+  },
+  {
+    "name": "AI Ethics and Challenges",
+    "content": ["Bias in AI", "Transparency", "Future of AI"],
+    "duration": 4,
+    "lectures": 6,
+    "course": "67481d8bab3b463422e9b304"
+  },
+  {
+    "name": "Supervised Learning Algorithms",
+    "content": ["Linear Regression", "Logistic Regression", "Decision Trees"],
+    "duration": 5,
+    "lectures": 7,
+    "course": "67481d8bab3b463422e9b305"
+  },
+  {
+    "name": "Unsupervised Learning Techniques",
+    "content": ["Clustering", "Dimensionality Reduction", "Anomaly Detection"],
+    "duration": 4,
+    "lectures": 6,
+    "course": "67481d8bab3b463422e9b305"
+  },
+  {
+    "name": "Advanced Mobile App Features",
+    "content": ["Offline Functionality", "Push Notifications", "App Analytics"],
+    "duration": 4,
+    "lectures": 6,
+    "course": "67481d8bab3b463422e9b306"
+  },
+  {
+    "name": "Mobile App Testing",
+    "content": ["Unit Testing", "Integration Testing", "Performance Testing"],
+    "duration": 4,
+    "lectures": 5,
+    "course": "67481d8bab3b463422e9b306"
+  },
+  {
+    "name": "Blockchain Development Tools",
+    "content": ["Truffle Suite", "Ganache", "Web3.js"],
+    "duration": 5,
+    "lectures": 7,
+    "course": "67481d8bab3b463422e9b307"
+  },
+  {
+    "name": "Future of Blockchain",
+    "content": ["Scalability Challenges", "Cross-Chain Technology", "NFTs"],
+    "duration": 4,
+    "lectures": 5,
+    "course": "67481d8bab3b463422e9b307"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "name": "John Doe",
+    "position": "Super Admin",
+    "address": "Kathmandu, Nepal",
+    "phone": 9876543210,
+    "email": "admin@1.com",
+    "password": "test1234",
+    "passwordConfirm": "test1234",
+    "bio": "Dedicated administrator with over 10 years of experience.",
+    "taxId": 123456789
+  },
+  {
+    "name": "Jane Smith",
+    "position": "Admin",
+    "address": "Lalitpur, Nepal",
+    "phone": 9812345678,
+    "email": "admin@2.com",
+    "password": "test1234",
+    "passwordConfirm": "test1234",
+    "bio": "Passionate about streamlining administrative processes.",
+    "taxId": 987654321
+  },
+  {
+    "name": "Samuel Lee",
+    "position": "Admin",
+    "address": "Bhaktapur, Nepal",
+    "phone": 9807654321,
+    "email": "admin@3.com",
+    "password": "test1234",
+    "passwordConfirm": "test1234",
+    "bio": "Experienced in managing large-scale projects.",
+    "taxId": 112233445
+  },
+  {
+    "name": "Emily Johnson",
+    "position": "Admin",
+    "address": "Pokhara, Nepal",
+    "phone": 9823456789,
+    "email": "admin@4.com",
+    "password": "test1234",
+    "passwordConfirm": "test1234",
+    "bio": "Creative thinker with a passion for improving team efficiency.",
+    "taxId": 334455667
+  },
+  {
+    "name": "Michael Brown",
+    "position": "Super Admin",
+    "address": "Chitwan, Nepal",
+    "phone": 9845678901,
+    "email": "admin@5.com",
+    "password": "test1234",
+    "passwordConfirm": "test1234",
+    "bio": "Leader with expertise in implementing robust security protocols.",
+    "taxId": 556677889
+  }
+]

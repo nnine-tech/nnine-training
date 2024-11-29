@@ -1,0 +1,52 @@
+[
+  {
+    "coursename": "Introduction to Programming",
+    "duration": 10,
+    "category": "IT"
+  },
+  {
+    "coursename": "Web Development Basics",
+    "duration": 12,
+    "category": "IT"
+  },
+  {
+    "coursename": "Database Management Systems",
+    "duration": 15,
+    "category": "IT"
+  },
+  {
+    "coursename": "Cybersecurity Fundamentals",
+    "duration": 8,
+    "category": "IT"
+  },
+  {
+    "coursename": "Data Structures and Algorithms",
+    "duration": 20,
+    "category": "IT"
+  },
+  {
+    "coursename": "Cloud Computing Essentials",
+    "duration": 14,
+    "category": "IT"
+  },
+  {
+    "coursename": "Artificial Intelligence Basics",
+    "duration": 18,
+    "category": "IT"
+  },
+  {
+    "coursename": "Machine Learning Concepts",
+    "duration": 16,
+    "category": "IT"
+  },
+  {
+    "coursename": "Mobile App Development",
+    "duration": 10,
+    "category": "IT"
+  },
+  {
+    "coursename": "Blockchain and Cryptocurrency",
+    "duration": 12,
+    "category": "IT"
+  }
+]
