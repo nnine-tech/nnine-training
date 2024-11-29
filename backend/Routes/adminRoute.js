@@ -37,11 +37,7 @@ router.post(
 
 router
   .route("/:id")
-  .get(
-    authController.protect,
-    authController.restrictTo("super-admin"),
-    adminController.getAdmin
-  )
+  .get(authController.protect, adminController.getAdmin)
   .delete(
     authController.protect,
     authController.restrictTo("super-admin"),
@@ -50,7 +46,9 @@ router
   .patch(
     authController.protect,
     authController.restrictTo("super-admin"),
-
+    upload.uploadSinglePhoto("photo"),
+    upload.imageNameSelector("admin"),
+    upload.resizePhoto,
     adminController.updateAdmin
   );
 

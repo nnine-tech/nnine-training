@@ -13,7 +13,9 @@ const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
+const http = require("http");
 const { Server } = require("socket.io");
+const globalErrorHandler = require("./Controller/errorController");
 
 // Importing routes
 const trainerRouter = require("./Routes/trainerRoute");
@@ -24,25 +26,15 @@ const fileRouter = require("./Routes/fileRoute");
 const attendanceRoute = require("./Routes/attendanceRoute");
 const userSettingRouter = require("./Routes/userSettingRoute");
 const studentRoute = require("./Routes/studentRoute");
-const courseRoute = require("./Routes/courseRoute");
-const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
-const adminRoute = require("./Routes/adminRoute");
-// const AppError = require("./Utils/appError");
-// const globalErrorHandler = require("./Controller/errorController");
-
 const notificationRouter = require("./Routes/notificationRoute");
 const messageRouter = require("./Routes/messageRoute");
-<<<<<<< HEAD
 const courseRoute = require("./Routes/courseRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const adminRoute = require("./Routes/adminRoute");
-const enrollRouter = require("./Routes/enrollRoute");
-const contactRouter = require("./Routes/contactRoute");
-=======
 const contactRouter = require("./Routes/contactRoute");
 const enrollRouter = require("./Routes/enrollRoute");
 const eventRouter = require("./Routes/eventRoute");
->>>>>>> 7aad4aa9f2e860b39b54a3d9d70851cfc5ad606f
+const AppError = require("./Utils/appError");
 
 const app = express();
 app.use(
@@ -107,7 +99,10 @@ io.on("connection", (socket) => {
 });
 
 // Backend Routes
-app.use("/api/v1/student", studentRoute);
+
+app.use("/api/v1/course", courseRoute);
+app.use("/api/v1/admin", adminRoute);
+app.use("/api/v1/syllabus", courseSyllabusRoute);
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/events", eventRouter);
 app.use("/api/v1/trainers", trainerRouter);
@@ -117,13 +112,14 @@ app.use("/api/v1/enroll-now", enrollRouter);
 app.use("/api/v1/contact-us", contactRouter);
 app.use("/api/v1/fees", feesRoute);
 app.use("/api/v1/file", fileRouter);
+
 // Handle unhandled routes
-// app.use("*", (req, res, next) => {
-//   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
-// });
+app.use("*", (req, res, next) => {
+  next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
 
 // Global Error Handler
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 // Export the app
 module.exports = app;
