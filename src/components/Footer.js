@@ -1,11 +1,9 @@
-
 "use client";
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-
-const Footer= () => {
+const Footer = () => {
   return (
     <>
       <footer className="bg-[#08418C] w-full  lg:h-[520px] lg:w-full xl:w-auto">
@@ -70,33 +68,38 @@ const Footer= () => {
                 FOLLOW US ON SOCIAL MEDIA.
               </p>
               <div className="flex justify-center lg:justify-center gap-4 cursor-pointer">
-                <Link href="https://www.facebook.com/nninesolution " target="_black">
+                <Link
+                  href="https://www.facebook.com/nninesolution "
+                  target="_black"
+                >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] mt-0.5 cursor-pointer"
-                    src="ic_baseline-facebook (2).svg"
+                    src="/facebook12.svg"
                     alt="Facebook"
                   />
                 </Link>
 
-                <Link href="https://np.linkedin.com/company/n9-solution" target="_blank">
-                
+                <Link
+                  href="https://np.linkedin.com/company/n9-solution"
+                  target="_blank"
+                >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] cursor-pointer"
-                    src="mingcute_linkedin-fill.svg"
+                    src="/linkedin12.svg"
                     alt="LinkedIn"
-                    
                   />
                 </Link>
 
-                <Link href="https://www.instagram.com/n9solution/" target="_blank">
+                <Link
+                  href="https://www.instagram.com/n9solution/"
+                  target="_blank"
+                >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] cursor-pointer mt-0.5"
-                    src="mdi_instagram.svg"
+                    src="/instagram12.svg"
                     alt="Instagram"
                   />
                 </Link>
-
-              
               </div>
             </div>
           </div>

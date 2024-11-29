@@ -86,12 +86,12 @@ const ReviewLanding = () => {
       <h1 className="flex justify-center  font-Quicksand items-center font-bold text-black text-4xl mb-8 mt-8 text-center">
         What Our Students Say About Us
       </h1>
-      <div className="py-8 mr-8 mb-16 ">
-        <Slider {...settings} className="flex justify-center items-center">
+      <div className="py-8 mb-16  w-[85vw] mx-auto ">
+        <Slider {...settings} className="flex justify-center items-center ">
           {reviews.map((review, index) => (
-            <div key={review.id} className="px-2 mb-10 flex justify-center">
+            <div key={review.id} className="px-2 mb-10 flex justify-center ">
               <div
-                className={`bg-white w-full sm:w-[90%] md:w-[70%] lg:w-[447px] min-h-[350px] h-auto rounded-2xl shadow-lg p-5 flex flex-col justify-between mx-2 transition-transform duration-300 md:ml-[200px]  md:flex md:items-center md:justify-center md:left-[300px] ${
+                className={`bg-white w-full sm:w-[90%] md:w-[300px] lg:w-[300px]  xl:w-[370px]   min-h-[350px] h-auto rounded-2xl shadow-lg p-5 flex flex-col justify-between  transition-transform duration-300  md:flex md:items-center md:justify-center lg:h-[360px]  ${
                   activeSlide === index
                     ? "transform scale-110 shadow-3xl opacity-200" // Increased scale and added shadow
                     : "opacity-75" // Slightly reduce opacity of non-active cards

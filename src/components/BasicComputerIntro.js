@@ -13,7 +13,7 @@ const  BasicComputerIntro= () => {
             <img
               src="/computercourse.png"
               alt="computerbasics"
-              className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20"
+              className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20 lg:mr-24"
             />
           </div>
           {/* Text Section */}

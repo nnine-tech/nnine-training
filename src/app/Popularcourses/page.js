@@ -26,7 +26,7 @@ export default function Course() {
   return (
     <div>
       <div className="flex flex-col md:flex-row w-full justify-center  h-[800px] lg:h-[600px] bg-cover bg-center bg-[url('/coursesbg1.svg')]  ">
-        <div className="w-full md:w-[800px] lg:mt-20 md:mt-0  flex flex-col justify-center items-start px-5 h-[500px]  lg:ml-10">
+        <div className="w-full md:w-[800px] lg:mt-9 md:mt-0  flex flex-col justify-center items-start px-5 h-[500px]  lg:ml-10">
           <h1 className="text-white  text-4xl md:text-6xl font-Quicksand font-bold">
             Explore Our Courses
           </h1>
