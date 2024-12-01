@@ -5,7 +5,7 @@ import React from 'react'
 
 const QA2 = () => {
   return (
-    <div  className="p-4" >
+    <div>
 
    <QAIntro/>
 <QASyllabus1/>

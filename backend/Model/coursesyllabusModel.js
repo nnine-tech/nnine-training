@@ -26,6 +26,9 @@ const CourseSyllabusSchema = new mongoose.Schema({
   },
 });
 
-const CourseSyllabus = mongoose.model("CourseSyllabus", CourseSyllabusSchema);
+const CourseSyllabus = mongoose.model(
+  "newCourseSyllabus",
+  CourseSyllabusSchema
+);
 
 module.exports = CourseSyllabus;

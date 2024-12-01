@@ -1,0 +1,41 @@
+STUDENT API
+
+http://localhost:8000/student/add => Add a student
+http://localhost:3000/student/readAll => get all students
+http://localhost:3000/student/update/:id => Update
+http://localhost:3000/student/search?item=aaryan => Search in table
+http://localhost:3000/student/delete/:id => delete student
+ttp://localhost:8000/student/total-student => Total student
+
+  
+  Add Student :
+  POST => http://localhost:8000/student/add
+
+  data = {
+    firstName: "Aaryan,
+    lastName: "Sharma",
+    email: "lazyfox916@gmail.com",
+    department: "CS",
+    fees: 10000,
+    courseTaken: "MERN",
+    starting: "2024-12-12",
+    ending: "2024-12-12",
+  }
+
+
+  Read All Student :  
+  GET => http://localhost:8000/student/readAll  
+
+  Update Student:  
+  PATCH => http://localhost:8000/student/673c1c6d6706a5bba0df7bba
+
+  Search Student:  
+  GET => http://localhost:8000/student?item:Aaryan  
+
+  Delete Student:  
+  DELETE => http://localhost:8000/student/673c1c6d6706a5bba0df7bba
+
+  Total Student :
+  GET => http://localhost:8000/student/total-student
+
+
