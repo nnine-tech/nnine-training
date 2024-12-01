@@ -1,0 +1,11 @@
+*Admin Dashboard*
+
+Total Student: 
+url => http://localhost:8000/student/total-student
+
+Total  revenue:
+url => http://localhost:8000/fees/total-revenue
+
+weekly revenue overview:
+url => http://localhost:8000/fees/total
+

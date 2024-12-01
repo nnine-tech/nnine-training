@@ -74,7 +74,7 @@ const Footer = () => {
                 >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] mt-0.5 cursor-pointer"
-                    src="/facebook12.svg"
+                    src="/ic_baseline-facebook (2).svg"
                     alt="Facebook"
                   />
                 </Link>
@@ -85,7 +85,7 @@ const Footer = () => {
                 >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] cursor-pointer"
-                    src="/linkedin12.svg"
+                    src="/mingcute_linkedin-fill.svg"
                     alt="LinkedIn"
                   />
                 </Link>
@@ -96,7 +96,7 @@ const Footer = () => {
                 >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] cursor-pointer mt-0.5"
-                    src="/instagram12.svg"
+                    src="/mdi_instagram.svg"
                     alt="Instagram"
                   />
                 </Link>

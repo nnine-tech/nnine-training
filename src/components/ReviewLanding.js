@@ -50,7 +50,7 @@ const ReviewLanding = () => {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 900,
+    speed: 1500,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
