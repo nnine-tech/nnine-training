@@ -1,10 +1,15 @@
 const Course = require("../Model/newCourseModel.js");
+const AppError = require("../Utils/appError.js");
+const filter = require("../Utils/filter.js");
 const APIFeatures = require("./../Utils/apiFeatures.js");
 const catchAsync = require("./../Utils/catchAsync.js");
 
 exports.CreateCourse = catchAsync(async (req, res, next) => {
-  console.log(req);
-  const course = await Course.create(req.body);
+  console.log(req.body);
+
+  const filteredBody = filter(req.body, "coursename", "category", "duration");
+  if (req.file) filteredBody.coursePhoto = req.file.filename;
+  const course = await Course.create(filteredBody);
 
   res.status(200).json({
     status: "success",
