@@ -59,8 +59,10 @@ exports.recoveryVerification = catchAsync(async (req, res, next) => {
 exports.verifyEmail = catchAsync(async (req, res, next) => {
   const { token } = req.query;
 
-  console.log(token);
-  const admin = Admin.findOne({ "emailVerificationStatus.emailCode": token });
+  console.log(typeof token);
+  const admin = await Admin.findOne({
+    "emailVerificationStatus.emailCode": token,
+  });
 
   if (!admin) {
     return res.status(400).json({
@@ -68,9 +70,9 @@ exports.verifyEmail = catchAsync(async (req, res, next) => {
       message: "Invalid or expired token",
     });
   }
-  admin.emailVerificationStatus.emailCode = true;
+  admin.emailVerificationStatus.verified = true;
 
-  await admin.save();
+  await admin.save({ validateBeforeSave: false });
 
   res.status(200).json({
     status: "succcess",

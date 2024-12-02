@@ -33,11 +33,9 @@ const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const adminRoute = require("./Routes/adminRoute");
 const verificationRoute = require("./Routes/verificationRoute");
 const AppError = require("./Utils/appError");
-const globalErrorHandler = require("./Controller/errorController");
 const contactRouter = require("./Routes/contactRoute");
 const enrollRouter = require("./Routes/enrollRoute");
 const eventRouter = require("./Routes/eventRoute");
-const AppError = require("./Utils/appError");
 
 const app = express();
 app.use(express.json());
