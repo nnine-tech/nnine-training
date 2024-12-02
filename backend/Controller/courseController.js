@@ -158,3 +158,11 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+exports.totalCourse = catchAsync(async (req, res, next) => {
+  const course = await Course.countDocuments();
+  res.status(200).json({
+    message: "Total number of courses",
+    data: course,
+  });
+});
