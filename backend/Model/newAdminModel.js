@@ -3,6 +3,12 @@ const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
 
+const recoverySchema = new mongoose.Schema({
+  emailCode: { type: String },
+  verified: { type: Boolean, default: false },
+  type: { type: String },
+});
+
 const adminSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -74,6 +80,26 @@ const adminSchema = new mongoose.Schema({
     default: true,
     select: false,
   },
+
+  recoveryEmail: { type: [String], select: false },
+  recoveryPhone: {
+    type: [Number],
+    select: false,
+  },
+  // emailVerificationStatus: {},
+
+  emailVerificationStatus: recoverySchema,
+  // emailCode: {
+  //   type: String,
+  //   select: false,
+  // },
+  // verified: {
+  //   type: Boolean,
+  //   default: false,
+  // },
+  // verificationType: {
+  //   type: String,
+  // },
 });
 
 //PRE HOOKS TO HASH THE NEWLY CREATED OR UPDATED PASSWORD

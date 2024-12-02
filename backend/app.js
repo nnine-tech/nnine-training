@@ -31,6 +31,7 @@ const messageRouter = require("./Routes/messageRoute");
 const courseRoute = require("./Routes/courseRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const adminRoute = require("./Routes/adminRoute");
+const verificationRoute = require("./Routes/verificationRoute");
 const contactRouter = require("./Routes/contactRoute");
 const enrollRouter = require("./Routes/enrollRoute");
 const eventRouter = require("./Routes/eventRoute");
@@ -54,6 +55,8 @@ app.use("/api", limiter);
 app.use(mongoSanitize());
 
 app.use(xss());
+
+console.log(`----------${process.env.NODE_ENV}------------`);
 
 //PREVENT PARAMETER POLLUTION
 app.use(
@@ -100,6 +103,7 @@ io.on("connection", (socket) => {
 app.use("/api/v1/course", courseRoute);
 app.use("/api/v1/admin", adminRoute);
 app.use("/api/v1/syllabus", courseSyllabusRoute);
+app.use("/api/v1/verification", verificationRoute);
 app.use("/api/v1/message", messageRouter);
 app.use("/api/v1/events", eventRouter);
 app.use("/api/v1/trainers", trainerRouter);
