@@ -156,3 +156,40 @@ exports.studentEnrollment = async (req, res, next) => {
     });
   }
 };
+
+exports.topCourse = async (req, res, next) => {
+  try {
+    let mernStack = await Student.find({
+      enrolledCourse: { $regex: "Mern", $options: "i" },
+    });
+    let flutter = await Student.find({
+      enrolledCourse: { $regex: "flutter", $options: "i" },
+    });
+    let digitalMarketing = await Student.find({
+      enrolledCourse: { $regex: "Digital Marketing", $options: "i" },
+    });
+    let uiux = await Student.find({
+      enrolledCourse: { $regex: "ui/ux", $options: "i" },
+    });
+
+    let result = {
+      MERN: mernStack.length,
+      Flutter: flutter.length,
+      DigitalMarketing: digitalMarketing.length,
+      UiUX: uiux.length,
+    };
+
+    let sortedCourses = Object.entries(result)
+      .sort((a, b) => b[1] - a[1])
+      .map(([course, length]) => ({ course, length }));
+
+    res.status(200).json({
+      message: "Top courses sorted by length",
+      sortedCourses,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
+  }
+};

@@ -62,6 +62,7 @@ module.exports = (err, req, res, next) => {
   // console.log(err.stack);
   //SETTING UP DEFAULT STATUS CODE.
   //THERE COULD BE ERROR THAT ARE CREATE BY US WITHOUT STATUS CODE
+  console.log("================================");
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
 

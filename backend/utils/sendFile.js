@@ -4,9 +4,7 @@ const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const dotenv = require("dotenv");
 
-dotenv.config({
-  path: "./config.env",
-});
+dotenv.config({});
 
 let limits = {
   fileSize: 1024 * 1024 * 2,
