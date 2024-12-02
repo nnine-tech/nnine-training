@@ -5,6 +5,7 @@ const AppError = require("./../Utils/appError");
 const { promisify } = require("util");
 const sendEmail = require("./../Utils/email");
 const crypto = require("crypto");
+const filter = require("../Utils/filter.js");
 
 const tokenGeneration = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -38,17 +39,23 @@ const createSendToken = (admin, statusCode, res) => {
 };
 
 exports.createAdmin = catchAsync(async (req, res, next) => {
-  const newAdmin = await Admin.create({
-    name: req.body.name,
-    position: req.body.position,
-    address: req.body.address,
-    phone: req.body.phone,
-    email: req.body.email,
-    password: req.body.password,
-    passwordConfirm: req.body.passwordConfirm,
-    bio: req.body.bio,
-    taxId: req.body.taxId,
-  });
+  if (req.file) req.body.photo = req.file.filename;
+
+  const filteredBody = filter(
+    req.body,
+    "name",
+    "position",
+    "address",
+    "phone",
+    "email",
+    "password",
+    "passwordConfirm",
+    "bio",
+    "taxId"
+  );
+  if (req.file) filteredBody.photo = req.file.filename;
+
+  const newAdmin = await Admin.create(filteredBody);
 
   createSendToken(newAdmin, 201, res);
 
