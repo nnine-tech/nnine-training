@@ -1,7 +1,8 @@
 const express = require("express");
-const adminController = require("./../Controller/adminController");
+const upload = require("./../Utils/FileUpload");
 const authController = require("./../Controller/authenticationController");
 const router = express.Router();
+const adminController = require("./../Controller/adminController");
 
 router.post("/forgotPassword", authController.forgotPassword);
 router.patch("/resetPassword/:token", authController.resetPassword);
@@ -13,7 +14,9 @@ router.patch(
 router.patch(
   "/updateMe",
   authController.protect,
-  adminController.uploadUserPhoto,
+  upload.uploadSinglePhoto("photo"),
+  upload.imageNameSelector("admin"),
+  upload.resizePhoto,
   adminController.updateMe
 );
 router.delete("/deleteMe", authController.protect, adminController.deleteMe);
@@ -29,16 +32,15 @@ router.post(
   "/create-admin",
   authController.protect,
   authController.restrictTo("super-admin"),
+  upload.uploadSinglePhoto("photo"),
+  upload.imageNameSelector("admin"),
+  upload.resizePhoto,
   authController.createAdmin
 );
 
 router
   .route("/:id")
-  .get(
-    authController.protect,
-    authController.restrictTo("super-admin"),
-    adminController.getAdmin
-  )
+  .get(authController.protect, adminController.getAdmin)
   .delete(
     authController.protect,
     authController.restrictTo("super-admin"),
@@ -47,6 +49,9 @@ router
   .patch(
     authController.protect,
     authController.restrictTo("super-admin"),
+    upload.uploadSinglePhoto("photo"),
+    upload.imageNameSelector("admin"),
+    upload.resizePhoto,
     adminController.updateAdmin
   );
 

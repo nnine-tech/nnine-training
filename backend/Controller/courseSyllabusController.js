@@ -1,5 +1,6 @@
 const CourseSyllabus = require("../Model/coursesyllabusModel");
 const catchAsync = require("./../Utils/catchAsync");
+const filter = require("../Utils/filter");
 
 exports.setCourseId = (req, res, next) => {
   //allow nested routes
@@ -8,23 +9,26 @@ exports.setCourseId = (req, res, next) => {
   next();
 };
 
-exports.createSyllabus = async (req, res, next) => {
-  try {
-    const syllabus = await CourseSyllabus.create(req.body);
-    console.log(syllabus);
-    res.status(200).json({
-      status: "success",
-      data: {
-        data: syllabus,
-      },
-    });
-  } catch (error) {
-    res.status(400).json({
-      status: "failure",
-      error: error,
-    });
-  }
-};
+exports.createSyllabus = catchAsync(async (req, res, next) => {
+  const filteredBody = filter(
+    req.body,
+    "name",
+    "content",
+    "duration",
+    "lectures"
+  );
+
+  if (req.file) filteredBody.photo = req.file.filename;
+
+  const syllabus = await CourseSyllabus.create(req.body);
+  console.log(syllabus);
+  res.status(200).json({
+    status: "success",
+    data: {
+      data: syllabus,
+    },
+  });
+});
 
 exports.getAllSyllabus = async (req, res, next) => {
   try {
