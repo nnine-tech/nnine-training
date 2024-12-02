@@ -10,7 +10,10 @@ router.use("/:courseId/syllabus", courseSyllabusRoute);
 router
   .route("/")
   .get(authController.protect, courseController.getAllCourse)
-  .post(authController.protect, courseController.CreateCourse);
+  // .post(authController.protect, courseController.CreateCourse);
+  .post(courseController.CreateCourse);
+
+router.route("/total-course").get(courseController.totalCourse);
 
 router
   .route("/:id")
