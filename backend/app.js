@@ -31,6 +31,11 @@ const messageRouter = require("./Routes/messageRoute");
 const courseRoute = require("./Routes/courseRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const adminRoute = require("./Routes/adminRoute");
+const AppError = require("./Utils/appError");
+const globalErrorHandler = require("./Controller/errorController");
+
+const notificationRouter = require("./Routes/notificationRoute");
+const messageRouter = require("./Routes/messageRoute");
 const contactRouter = require("./Routes/contactRoute");
 const enrollRouter = require("./Routes/enrollRoute");
 const eventRouter = require("./Routes/eventRoute");

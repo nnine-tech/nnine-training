@@ -232,7 +232,51 @@ exports.paymentStatus = async (req, res, next) => {
       success: true,
       message: "Payment status has been retrieved successfully.",
       paid: status,
-      unpaid: test - result,
+      unpaid: test - result.length,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+exports.monthlyRevenue = async (req, res, next) => {
+  try {
+    let months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    let presentMonth = new Date().getMonth();
+    let monthlyRevenue = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: months[presentMonth] },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          Revenue: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      success: true,
+      message: "Monthly Revenue Overview",
+      Revenue: monthlyRevenue[0].Revenue,
     });
   } catch (error) {
     res.status(400).json({
