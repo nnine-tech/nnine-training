@@ -37,11 +37,8 @@ const eventRouter = require("./Routes/eventRoute");
 const AppError = require("./Utils/appError");
 
 const app = express();
-app.use(
-  express.json({
-    limit: "10kb",
-  })
-);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //DEBUGGING PURPOSE//MIDDLEWARES
 app.use(helmet());
