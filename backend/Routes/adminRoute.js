@@ -32,6 +32,9 @@ router.post(
   "/create-admin",
   authController.protect,
   authController.restrictTo("super-admin"),
+  upload.uploadSinglePhoto("photo"),
+  upload.imageNameSelector("admin"),
+  upload.resizePhoto,
   authController.createAdmin
 );
 
