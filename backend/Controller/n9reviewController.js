@@ -48,7 +48,7 @@ exports.getSpecificN9review = catchAsync(async (req, res, next) => {
   if (!studentId) {
     return res.status(400).json({
       message: "Student Id is required",
-    })
+    });
   }
   if (!mongoose.Types.ObjectId.isValid(studentId)) {
     return res.status(400).json({
@@ -83,7 +83,7 @@ exports.updateN9review = catchAsync(async (req, res, next) => {
     });
   }
 
-  const updates = {}
+  const updates = {};
   if (rating !== undefined) updates.rating = rating;
   if (description !== undefined) updates.description = description;
   if (created_at !== undefined) updates.created_at = new Date(created_at);
