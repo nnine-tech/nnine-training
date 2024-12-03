@@ -736,17 +736,17 @@ const DevOpsSyllabus = () => {
     },
   ];
   return (
-    <div className="flex flex-col lg:flex-row ml-5">
+    <div className="flex flex-col lg:flex-row lg:ml-20 ml-5 mb-5">
       {/* Syllabus Section */}
-      <div className="w-full flex flex-col sm:mt-4">
-        <div className="w-[90%] mx-auto lg:w-full lg:mx-0 flex flex-col mt-10">
+      <div className="md:w-[650px] w-full flex flex-col sm:mt-4">
+        <div className="w-[65%] mx-auto lg:w-full lg:mx-0 flex flex-col mt-10">
           <h1 className="font-bold text-3xl p-4 font-Quicksand mb-6 text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
             <div
               key={index}
-              className="relative w-full max-w-[800px] mx-auto lg:mx-0"
+              className="relative lg:w-full w-[250px] max-w-[800px] mx-auto lg:mx-0"
             >
               {/* Section Title */}
               <div
@@ -817,7 +817,7 @@ const DevOpsSyllabus = () => {
       </div>
 
       {/* DevopsClassType Section */}
-      <div className="mt-10 lg:mt-0 flex justify-center">
+      <div className="mt-10 lg:mt-0 flex justify-center lg:ml-[300px] mr-[20px]">
         <DevopsClassType />
       </div>
     </div>

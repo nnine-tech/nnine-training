@@ -131,14 +131,14 @@ const CPlusSyllabus1 = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
-      <div className="w-[80%] flex flex-col mt-14">
+    <div className=" flex flex-col md:flex-row sm:flex-row sm:mt-4 ml-20 mb-5">
+      <div className="w-[65%] flex flex-col mt-14">
         <div className="w-full">
           <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div key={index} className={`relative w-full max-w-[800px]`}>
+            <div key={index} className={`relative lg:w-full w-[250px] max-w-[800px]`}>
               <div
                 className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
                   !openDropdowns[section.title] &&
@@ -182,7 +182,9 @@ const CPlusSyllabus1 = () => {
           ))}
         </div>
       </div>
+      <div className="ml-[-65px] md:ml-[20px]">
       <CPlusClassType />
+      </div>
     </div>
   );
 };

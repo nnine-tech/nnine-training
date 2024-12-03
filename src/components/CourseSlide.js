@@ -13,7 +13,7 @@ const CourseSlide = (props) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 900,
+    speed: 1300,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,

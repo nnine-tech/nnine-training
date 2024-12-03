@@ -9,11 +9,11 @@ const AspNetIntro = () => {
         </h1>
         <div className="flex flex-col md:flex-row-reverse mt-6 w-full">
           {/* Image Section */}
-          <div className="flex justify-center md:w-[36%] mt-4 md:mt-1">
+          <div className="flex justify-center md:w-[36%] mt-4 md:mt-1 ">
             <img
               src="/AspNet.jpeg"
               alt="AspNet"
-              className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20"
+              className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20 lg:mr-24"
             />
           </div>
           {/* Text Section */}
