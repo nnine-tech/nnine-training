@@ -1,3 +1,4 @@
+const Payment = require("../Model/paymentModel");
 const Product = require("../Model/productModel");
 const PurchasedProduct = require("../Model/purchasedProductModel");
 const { sendEmail } = require("../Utils/sendMail");
@@ -8,7 +9,7 @@ const {
 
 exports.initializeKhaltiPaymentController = async (req, res, next) => {
   try {
-    const { productId, quantity, price, productName } = req.body;
+    const { productId, quantity, price, productName, website_url } = req.body;
     const totalPrice = quantity * price;
 
     const productData = await Product.find({
@@ -38,7 +39,7 @@ exports.initializeKhaltiPaymentController = async (req, res, next) => {
     res.status(200).json({
       message: "Purchase successful",
       paymentInitiate: paymentInitiate,
-      purchasedData,
+      createPurchasedProduct,
     });
   } catch (error) {
     res.status(400).json({
