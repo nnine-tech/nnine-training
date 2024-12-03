@@ -6,14 +6,14 @@ dotenv.config({
   path: "./config.env",
 });
 
-const DB = process.env.DATABASE.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
-);
+// const DB = process.env.DATABASE.replace(
+//   "<PASSWORD>",
+//   process.env.DATABASE_PASSWORD
+// );
 
-console.log(DB);
+// console.log(DB);
 mongoose
-  .connect("mongodb://localhost:27017/", {
+  .connect(process.env.DATABASE_LOCAL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     autoIndex: true,
