@@ -3,11 +3,8 @@ const router = express.Router();
 const verificationController = require("./../Controller/verificationController");
 const authController = require("./../Controller/authenticationController");
 router
-  .route("/email-verification")
-  .post(
-    authController.protect,
-    verificationController.recoveryEmailVerification
-  );
+  .route("/")
+  .post(authController.protect, verificationController.recoveryVerification);
 
 router
   .route("/verify-email")
