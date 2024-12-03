@@ -31,15 +31,14 @@ const messageRouter = require("./Routes/messageRoute");
 const courseRoute = require("./Routes/courseRoute");
 const courseSyllabusRoute = require("./Routes/courseSyllabusRoute");
 const adminRoute = require("./Routes/adminRoute");
-const AppError = require("./Utils/appError");
-const globalErrorHandler = require("./Controller/errorController");
-
-const notificationRouter = require("./Routes/notificationRoute");
-const messageRouter = require("./Routes/messageRoute");
 const contactRouter = require("./Routes/contactRoute");
 const enrollRouter = require("./Routes/enrollRoute");
 const eventRouter = require("./Routes/eventRoute");
 const AppError = require("./Utils/appError");
+const khaltiPaymentRouter = require("./Routes/khaltiPaymentRoute");
+const {
+  completeKhaltiPaymentController,
+} = require("./Controller/khaltiPaymentController");
 
 const app = express();
 app.use(express.json());
@@ -114,6 +113,9 @@ app.use("/api/v1/enroll-now", enrollRouter);
 app.use("/api/v1/contact-us", contactRouter);
 app.use("/api/v1/fees", feesRoute);
 app.use("/api/v1/file", fileRouter);
+app.use("/api/v1/", khaltiPaymentRouter);
+app.use("/", completeKhaltiPaymentController);
+app.use("/api/v1/student", studentRoute);
 
 // Handle unhandled routes
 app.use("*", (req, res, next) => {
