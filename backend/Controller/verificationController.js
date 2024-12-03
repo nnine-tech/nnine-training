@@ -3,11 +3,11 @@ const catchAsync = require("../Utils/catchAsync");
 const crypto = require("crypto");
 const sendMailVerification = require("./../Utils/email");
 const Admin = require("./../Model/newAdminModel");
-const twilio = require("twilio");
-const client = twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
+// const twilio = require("twilio");
+// const client = twilio(
+//   process.env.TWILIO_ACCOUNT_SID,
+//   process.env.TWILIO_AUTH_TOKEN
+// );
 
 exports.recoveryEmailVerification = catchAsync(async (req, res, next) => {
   const user = req.admin;
