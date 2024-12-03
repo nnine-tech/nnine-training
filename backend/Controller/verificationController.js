@@ -3,20 +3,24 @@ const catchAsync = require("../Utils/catchAsync");
 const crypto = require("crypto");
 const sendMailVerification = require("./../Utils/email");
 const Admin = require("./../Model/newAdminModel");
+const twilio = require("twilio");
+const client = twilio(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
 
-exports.recoveryVerification = catchAsync(async (req, res, next) => {
+exports.recoveryEmailVerification = catchAsync(async (req, res, next) => {
   const user = req.admin;
   console.log(user);
-  if (!req.body.email && !req.body.phone)
+  if (!req.body.email)
     return next(new AppError("No recovery email or phone number."));
-  const { email, phoneNumber } = req.body;
+  const { email } = req.body;
 
   //VERIFICATION CODE GENERATION
   const emailCode = crypto.randomBytes(16).toString("hex");
   // console.log("----------------");
 
-  console.log(emailCode);
-  const phoneCode = crypto.randomInt(100000, 999999);
+  // console.log(emailCode);
 
   // admin = { emailCode, verified: false, type: "email" };
   // tempStore[phoneNumber] = { phoneCode, verified: false, type: "phone" };
@@ -33,7 +37,7 @@ exports.recoveryVerification = catchAsync(async (req, res, next) => {
 
   const verificationLink = `${req.protocol}://${req.get(
     "host"
-  )}/api/v1/verification/verify-email?token=${emailCode}`;
+  )}/api/v1/verification/verify-email?token=${emailCode}&email=${email}`;
 
   // res.json({
   //   message: "success",
@@ -51,13 +55,15 @@ exports.recoveryVerification = catchAsync(async (req, res, next) => {
     });
   } catch (error) {
     user.emailVerificationStatus = undefined;
-    user.save({ validateBeforeSave: false });
-    next(new AppError("Something went wrong while sending mail", 400));
+    await user.save({ validateBeforeSave: false });
+    next(
+      new AppError("Something went wrong while sending verification token", 400)
+    );
   }
 });
 
 exports.verifyEmail = catchAsync(async (req, res, next) => {
-  const { token } = req.query;
+  const { token, email } = req.query;
 
   console.log(typeof token);
   const admin = await Admin.findOne({
@@ -71,7 +77,8 @@ exports.verifyEmail = catchAsync(async (req, res, next) => {
     });
   }
   admin.emailVerificationStatus.verified = true;
-
+  admin.emailVerificationStatus.emailCode = undefined;
+  admin.recoveryEmail = email;
   await admin.save({ validateBeforeSave: false });
 
   res.status(200).json({
@@ -79,3 +86,39 @@ exports.verifyEmail = catchAsync(async (req, res, next) => {
     message: "Email verified successfully",
   });
 });
+
+// exports.recoveryPhoneVerification = catchAsync(async (req, res, next) => {
+//   const user = req.admin;
+
+//   const { phone } = req.body;
+//   const phoneCode = crypto.randomInt(100000, 999999);
+
+//   console.log(phone);
+//   user.phoneVerificationStatus = {
+//     phoneCode: phoneCode,
+//     verified: false,
+//     type: "phone",
+//   };
+//   await user.save({ validateBeforeSave: false });
+
+//   try {
+//     await client.messages.create({
+//       body: `Your verification code is ${phoneCode}`,
+//       from: "+9779813199661",
+//       to: `+977${phone}`,
+//     });
+//     res.status(200).json({
+//       status: "success",
+//       message: "Verification sent to number",
+//     });
+//   } catch (error) {
+//     user.phoneVerificationStatus = undefined;
+//     await user.save({ validateBeforeSave: false });
+//     console.log(error);
+//     res.status(400).json({
+//       status: "failure",
+//       message:
+//         "Something went wrong while sending Verification token sent to number",
+//     });
+//   }
+// });
