@@ -38,11 +38,11 @@ const Contact2 = () => {
       {/* Contact Image Section */}
       <div className="relative">
         <img
-          src="contactcurve.svg"
+          src="contactpage1.svg"
           alt=""
-          className="w-full h-[800px] object-cover"
+          className="w-full h-[500px] object-cover"
         />
-        <div className="absolute inset-0 flex flex-col gap-6 h-[300px] w-[90%] sm:w-[1000px] justify-center items-center mx-auto mt-44 text-center px-4  md:w-[500px]">
+        <div className="absolute inset-0  flex flex-col gap-6 h-[300px] sm:w-[1000px]  w-[90%] justify-center items-center mx-auto mt-32 text-center px-4  md:w-[900px]">
           <h1 className="text-white font-Quicksand text-4xl sm:text-6xl font-bold">
             Contact Us
           </h1>
@@ -54,7 +54,7 @@ const Contact2 = () => {
         </div>
 
         {/* Form Container */}
-        <div className="absolute inset-0 top-[600px] md:top-0 sm:h-[1500px] flex justify-center md:justify-end pr-0 md:pr-10 lg:pr-20 items-center">
+        <div className="absolute inset-0  top-[700px] sm:h-[1500px] flex justify-center md:justify-end pr-0 md:pr-10 lg:pr-20 items-center  lg:-top-24">
           <div className="flex flex-col gap-5 p-4 w-[90%] md:w-[550px] lg:w-[450px] bg-white rounded-xl shadow-lg">
             <form
               onSubmit={handleSubmit}
@@ -120,8 +120,8 @@ const Contact2 = () => {
       </div>
 
       {/* Info Section */}
-      <div className="flex flex-col sm:flex-row justify-center h-auto sm:h-[280px] lg:mt-11 mt-40">
-        <div className="border border-[#CDC2C2] w-full sm:w-[430px] flex justify-center items-center flex-col p-6 sm:p-0">
+      <div className="flex flex-col sm:flex-row justify-center h-auto sm:h-[280px] lg:mt-11 mt-[500px]">
+        <div className="border border-[#CDC2C2] w-full sm:w-[430px] flex justify-center items-center  flex-col p-6 sm:p-0">
           <img src="Phone1.svg" alt="Phone" />
           <h1 className="font-Quicksand font-bold text-2xl text-[#004AAD]">
             Phone
