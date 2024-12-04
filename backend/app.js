@@ -37,6 +37,12 @@ const contactRouter = require("./Routes/contactRoute");
 const enrollRouter = require("./Routes/enrollRoute");
 const eventRouter = require("./Routes/eventRoute");
 
+const bodyParser = require("body-parser");
+
+//Payment gateway api
+const esewaRouter = require("./PaymentGateway/Routes/esewaRoute");
+const itemRouter = require("./PaymentGateway/Routes/itemRoute");
+
 const app = express();
 app.use(
   express.json({
@@ -46,6 +52,8 @@ app.use(
 
 //DEBUGGING PURPOSE//MIDDLEWARES
 app.use(helmet());
+app.use(bodyParser.json());
+// dotenv.config();
 
 const limiter = rateLimit({
   max: 100,
@@ -89,6 +97,14 @@ const io = new Server(httpServer, {
   },
 });
 
+//For Payment gateway..
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+app.get("/test", function (req, res) {
+  res.sendFile(__dirname + "/test.html");
+});
+
 io.on("connection", (socket) => {
   socket.on("sendMessage", (message) => {
     socket.broadcast.emit("receiveMessage", message);
@@ -98,6 +114,12 @@ io.on("connection", (socket) => {
     console.log("User disconnected");
   });
 });
+
+app.use(bodyParser.json());
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 
 // Backend Routes
 app.use("/api/v1/student", studentRoute);
@@ -110,6 +132,9 @@ app.use("/api/v1/enroll-now", enrollRouter);
 app.use("/api/v1/contact-us", contactRouter);
 app.use("/api/v1/fees", feesRoute);
 app.use("/api/v1/file", fileRouter);
+//payment gateway
+app.use("/", itemRouter);
+app.use("/", esewaRouter);
 // Handle unhandled routes
 // app.use("*", (req, res, next) => {
 //   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

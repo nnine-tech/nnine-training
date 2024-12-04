@@ -22,6 +22,7 @@ mongoose.connection.on("error", (err) => {
   console.error("Mongoose connection error:", err.message);
 });
 
+
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => {
   console.log(`APP IS RUNNING AT PORT ${port}`);
