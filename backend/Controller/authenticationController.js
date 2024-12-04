@@ -306,6 +306,7 @@ exports.verifyRecoveryCode = catchAsync(async (req, res, next) => {
       message: "Invalid or expired recovery code.",
     });
   }
+  // console.log('test')
 
   res.status(200).json({
     status: "success",
