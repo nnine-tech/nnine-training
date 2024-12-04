@@ -2,7 +2,7 @@ import React from "react";
 
 const AwsCloudIntro = () => {
   return (
-    <div className="flex flex-col md:flex-row w-full   sm:w-screen lg:w-full md:w-full  bg-[#014AAC]  md:p-7">
+    <div className="flex flex-col md:flex-row w-full sm:w-screen lg:w-full md:w-full  bg-[#014AAC] md:p-7 ">
       <div className="flex flex-col w-full mt-32">
         <h1 className="mt-10 md:mt-24 font-bold font-Quicksand text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
           THE COMPLETE AWS CLOUD AND PRACTITIONER COURSE
@@ -13,7 +13,7 @@ const AwsCloudIntro = () => {
             <img
               src="/Aws cloud practitior.png"
               alt="Aws cloud"
-              className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20"
+              className="w-full max-w-[300px] md:max-w-[389px] h-auto md:h-[217px] mb-4 md:mb-20 lg:mr-24"
             />
           </div>
           {/* Text Section */}

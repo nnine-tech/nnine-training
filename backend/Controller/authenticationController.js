@@ -6,7 +6,6 @@ const { promisify } = require("util");
 const sendEmail = require("./../Utils/email");
 const crypto = require("crypto");
 const filter = require("../Utils/filter.js");
-const sendMailVerification = require("./../Utils/email.js");
 
 const tokenGeneration = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -173,7 +172,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     await sendEmail({
       email: admin.email,
       subject: "Your password reset token valid for 10 min",
-      text: message,
+      message,
     });
 
     res.status(200).json({
@@ -184,7 +183,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
     admin.passwordResetToken = undefined;
     admin.passwordResetExpires = undefined;
     await admin.save({ validateBeforeSave: false });
-    return next(
+    next(
       new AppError("There was an error sending the mail.Try again later!", 500)
     );
   }
