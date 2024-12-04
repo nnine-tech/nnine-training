@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import PythonClassType from "./PythonClassType";
 
-
 const PythonSyllabus1 = () => {
   // State to manage dropdown visibility for each section
   const [openDropdowns, setOpenDropdowns] = useState({});
@@ -93,6 +92,62 @@ const PythonSyllabus1 = () => {
       info: "5 lectures • 2 hours",
     },
     {
+      title: "Installing MySQL Server and MySQL Connector/Python",
+      lectures: [
+        "Installing MySQL Server",
+        "Installing MySQL Connector/Python",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+
+    {
+      title: "Establishing a Connection With MySQL Server",
+      lectures: [
+        "Establishing a Connection",
+        "Creating a New Databas",
+        "Connecting to an Existing Database",
+      ],
+      info: "7 lectures • 1 hours",
+    },
+    {
+      title: "Creating, Altering, and Dropping a Table",
+      lectures: [
+        "Defining the Database Schema",
+        "Creating Tables Using the CREATE TABLE Statement",
+        "Creating Tables Using the CREATE TABLE Statement",
+        "Showing a Table Schema Using the DESCRIBE Statement",
+        "Modifying a Table Schema Using the ALTER Statement",
+        "Deleting Tables Using the DROP Statement",
+      ],
+      info: "5 lectures • 2 hours",
+    },
+    {
+      title: "Inserting Records in Tables",
+      lectures: ["Using .execute()", "Using .executemany()"],
+      info: "5 lectures • 2 hours",
+    },
+    {
+      title: "Inserting Records in Tables",
+      lectures: ["Using .execute()", "Using .executemany()"],
+      info: "5 lectures • 2 hours",
+    },
+
+    {
+      title: "Reading Records From the Database",
+      lectures: [
+        "Reading Records Using the SELECT Statement",
+        "Filtering Results Using the WHERE Clause",
+      ],
+      info: "3 lectures • 2 hours",
+    },
+
+    {
+      title: "Updating and Deleting Records From the Database",
+      lectures: ["UPDATE Command", "UPDATE Command"],
+      info: "1 lectures • 1 hours",
+    },
+
+    {
       title: "Project Work",
       lectures: [
         "Apply learned concepts to real-world projects:",
@@ -104,20 +159,16 @@ const PythonSyllabus1 = () => {
       info: "4 lectures • 3 hours",
     },
   ];
-  
 
   return (
-    <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
-      <div className="w-[80%] flex flex-col mt-14">
+    <div className=" flex flex-col md:flex-row sm:flex-row sm:mt-4 ml-20">
+      <div className="w-[65%] flex flex-col mt-14">
         <div className="w-full">
-          <h1 className="font-bold text-3xl ml-8 p-[10px] font-Quicksand mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-3xl p-[10px] font-Quicksand mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div
-              key={index}
-              className={`relative w-full max-w-[800px]`}
-            >
+            <div key={index} className={`relative lg:w-full max-w-[800px] w-[250px]`}>
               <div
                 className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
                   !openDropdowns[section.title] &&
@@ -161,7 +212,9 @@ const PythonSyllabus1 = () => {
           ))}
         </div>
       </div>
-      <PythonClassType/>
+      <div className="ml-[-65px] md:ml-[20px] ">
+      <PythonClassType />
+      </div>
     </div>
   );
 };

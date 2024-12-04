@@ -7,7 +7,7 @@ import DigitalMarketingSyllabus1 from '@/components/DigitalMarketingSyllabus1'
 
 const DigitalMarketing2 = () => {
   return (
-    <div className='p-4'>
+    <div>
      <DigitalMarketingIntro/>
      <DigitalMarketingSyllabus1/>
      </div>

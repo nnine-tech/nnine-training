@@ -25,11 +25,9 @@ export default function Course() {
 
   return (
     <div>
-      <div
-        className="flex flex-col md:flex-row w-full justify-center  h-[800px] lg:h-[900px] bg-cover bg-center bg-[url('/coursecurve.svg')]  "
-      >
-        <div className="w-full md:w-[800px] lg:mt-20 md:mt-0  flex flex-col justify-center items-start px-5 h-[500px]  lg:ml-10">
-          <h1 className="text-white  text-4xl md:text-6xl font-Quicksand font-bold">
+      <div className="flex flex-col md:flex-row w-full justify-center  h-[500px] lg:h-[600px] bg-cover bg-center bg-[url('/coursesbg1.svg')]  ">
+        <div className="w-full md:w-[800px]  lg:mt-9 md:mt-0  flex flex-col justify-center items-start px-5 h-[400px]  lg:ml-10">
+          <h1 className="text-white  text-4xl md:text-6xl  font-Quicksand font-bold">
             Explore Our Courses
           </h1>
           <h3 className="text-white font-Quicksand font-semibold mt-4 text-lg md:text-xl">
@@ -38,12 +36,10 @@ export default function Course() {
           </h3>
         </div>
 
-        <div className="flex items-start flex-col md:flex-row lg:mt-52">
-         
-        </div>
+        <div className="flex items-start flex-col md:flex-row lg:mt-52"></div>
       </div>
 
-      <div>
+      <div className="">
         <CourseList courseData={courseData} />
       </div>
 

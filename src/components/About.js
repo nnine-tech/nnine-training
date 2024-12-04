@@ -3,7 +3,7 @@ const About = () => {
   return (
     <div className="w-full  bg-slate-100 ">
       {/* Contact Us Section */}
-      <div className="flex flex-col md:flex-row justify-center items-center w-full lg:h-[600px] h-[400px] bg-cover bg-center bg-[url('/aboutbg2.svg')]">
+      <div className="flex flex-col md:flex-row justify-center items-center w-full lg:h-[500px] h-[400px] bg-cover bg-center bg-[url('/contactpage1.svg')]">
         <div className="w-full md:w-[800px]  md:mt-0 flex flex-col justify-center items-center lg:px-5 ">
           <h1 className="text-6xl font-Quicksand font-bold  text-white">
             About Us
@@ -64,7 +64,7 @@ const About = () => {
           </div>
         </div>
         <img
-          className="w-full md:w-auto md:ml-5 mt-6 md:mt-0"
+          className="w-full md:w-auto md:ml-5 mt-6 md:mt-0 lg:-mt-56"
           src="image.png"
           alt="N9 Solution"
         />

@@ -27,8 +27,8 @@ const Gifpage = () => {
 
   return (
     <div>
-      <div>
-  <div className="flex justify-center items-center lg:h-[200px] lg:bg-[url('/bg1.png')] bg-cover bg-center">
+      <div className=" lg:-mt-24">
+  <div className="flex justify-center items-center  lg:h-[200px] ] bg-cover bg-center">
     <div className="grid grid-cols-2 gap-5 lg:flex lg:flex-row lg:gap-9 justify-center">
       {items.map((item, index) => (
         <div

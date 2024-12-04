@@ -80,3 +80,208 @@ exports.searchController = async (req, res, next) => {
     });
   }
 };
+
+exports.totalRevenue = async (req, res, next) => {
+  try {
+    let result = await Fees.aggregate([
+      {
+        $group: {
+          _id: null,
+          totalRevenue: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+    res.status(200).json({
+      success: true,
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+exports.filterpayment = async (req, res, next) => {
+  try {
+    let Sunday = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: "Sun" }, // Match documents where dueDate contains "Sun"
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalAmountPaid: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    let Monday = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: "Mon" },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalAmountPaid: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    let Tuesday = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: "Tue" },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalAmountPaid: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    let Wednesday = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: "Wed" },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalAmountPaid: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    let Thursday = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: "Thu" },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalAmountPaid: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    let Friday = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: "Fri" },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalAmountPaid: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    let Saturday = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: "Sat" },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          totalAmountPaid: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      success: true,
+      message: "Weekly Revenue Overview",
+      Sun: Sunday,
+      Mon: Monday,
+      Tue: Tuesday,
+      Wed: Wednesday,
+      Thu: Thursday,
+      Fri: Friday,
+      Sat: Saturday,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+exports.paymentStatus = async (req, res, next) => {
+  try {
+    let test = await Fees.countDocuments();
+    let result = await Fees.find({ outstandingBalance: 0 });
+
+    let status = result.length;
+    res.status(200).json({
+      success: true,
+      message: "Payment status has been retrieved successfully.",
+      paid: status,
+      unpaid: test - result.length,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+exports.monthlyRevenue = async (req, res, next) => {
+  try {
+    let months = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
+    let presentMonth = new Date().getMonth();
+    let monthlyRevenue = await Fees.aggregate([
+      {
+        $match: {
+          dueDate: { $regex: months[presentMonth] },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          Revenue: { $sum: "$amountPaid" },
+        },
+      },
+    ]);
+
+    res.status(200).json({
+      success: true,
+      message: "Monthly Revenue Overview",
+      Revenue: monthlyRevenue[0].Revenue,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};

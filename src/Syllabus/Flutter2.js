@@ -6,7 +6,7 @@ import FlutterSyllabus1 from '@/components/FlutterSyllabus1'
 
 const Flutter2 = () => {
   return (
-    <div  className="bg-gradient-to-b from-[#F6FCFF] to-[#ADE2FF] p-4" >
+    <div  className="bg-gradient-to-b from-[#F6FCFF] to-[#ADE2FF] " >
 
    <Flutterintro/>
 <FlutterSyllabus1/>

@@ -24,10 +24,7 @@ const AWSSolutionSyllabus1 = () => {
     },
     {
       title: "Compute Services",
-      lectures: [
-        "Amazon EC2 (Elastic Compute Cloud)",
-        "AWS Lambda",
-      ],
+      lectures: ["Amazon EC2 (Elastic Compute Cloud)", "AWS Lambda"],
       info: "5 lectures • 1.5 hours",
     },
     {
@@ -40,53 +37,35 @@ const AWSSolutionSyllabus1 = () => {
     },
     {
       title: "Database Services",
-      lectures: [
-        "Amazon RDS (Relational Database Service)",
-        "Amazon DynamoDB",
-      ],
+      lectures: ["Amazon RDS (Relational Database Service)", "Amazon DynamoDB"],
       info: "8 lectures • 2.5 hours",
     },
     {
       title: "Networking Services",
-      lectures: [
-        "Amazon VPC (Virtual Private Cloud)",
-        "AWS Direct Connect",
-      ],
+      lectures: ["Amazon VPC (Virtual Private Cloud)", "AWS Direct Connect"],
       info: "4 lectures • 1.5 hours",
     },
     {
       title: "Application Integration Services",
-      lectures: [
-        "Amazon API Gateway",
-        "Amazon SQS (Simple Queue Service)",
-      ],
+      lectures: ["Amazon API Gateway", "Amazon SQS (Simple Queue Service)"],
       info: "3 lectures • 1.5 hours",
     },
     {
       title: "Monitoring and Management Services",
-      lectures: [
-        "Amazon CloudWatch",
-        "AWS CloudFormation",
-      ],
+      lectures: ["Amazon CloudWatch", "AWS CloudFormation"],
       info: "8 lectures • 3 hours",
     },
-    
-     
-    
   ];
-  
+
   return (
-    <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
-      <div className="w-[80%] flex flex-col mt-14">
+    <div className=" flex flex-col md:flex-row sm:flex-row ml-20 mb-4 sm:mt-4">
+      <div className="w-[65%] flex flex-col mt-14">
         <div className="w-full">
-          <h1 className="font-bold text-3xl ml-8 p-[10px] font-Quicksand mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-3xl p-[10px] font-Quicksand mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div
-              key={index}
-              className={`relative w-full max-w-[800px]`}
-            >
+            <div key={index} className={`relative lg:w-full max-w-[800px] w-[250px]`}>
               <div
                 className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
                   !openDropdowns[section.title] &&
@@ -130,7 +109,9 @@ const AWSSolutionSyllabus1 = () => {
           ))}
         </div>
       </div>
-      <AWSSolutionClassType/>
+      <div className="ml-[-65px] md:ml-12">
+        <AWSSolutionClassType />
+      </div>
     </div>
   );
 };

@@ -1,15 +1,15 @@
-const Course = require("../Model/courseModel.js");
 const Course = require("../Model/newCourseModel.js");
-<<<<<<< HEAD
 const AppError = require("../Utils/appError.js");
-=======
-
->>>>>>> 353225028f4421e1ed0bc7e9165a23747b588f24
+const filter = require("../Utils/filter.js");
 const APIFeatures = require("./../Utils/apiFeatures.js");
 const catchAsync = require("./../Utils/catchAsync.js");
 
 exports.CreateCourse = catchAsync(async (req, res, next) => {
-  const course = await Course.create(req.body);
+  console.log(req.body);
+
+  const filteredBody = filter(req.body, "coursename", "category", "duration");
+  if (req.file) filteredBody.coursePhoto = req.file.filename;
+  const course = await Course.create(filteredBody);
 
   res.status(200).json({
     status: "success",
@@ -95,6 +95,7 @@ exports.getAllCourse = catchAsync(async (req, res, next) => {
   //     );
   // }
 
+  console.log("test-------------------===============================");
   //EXECUTE QUERY
   const features = new APIFeatures(Course.find(), req.query)
     .filter()
@@ -144,7 +145,7 @@ exports.deleteCourse = catchAsync(async (req, res, next) => {
 exports.updateCourse = catchAsync(async (req, res, next) => {
   const course = await Course.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    //RUN VALIDATOR IS TURNED OFF FOR NOW BUT MAY REQUIRE TO BE TURNED OFF LATER
+    //RUN VALIDATOR IS TURNED OFF FOR NOW BUT MAY REQUIRE TO BE TURNED ON LATER
     // runValidators: true,
   });
   if (!course) {
@@ -155,5 +156,13 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
     data: {
       data: course,
     },
+  });
+});
+
+exports.totalCourse = catchAsync(async (req, res, next) => {
+  const course = await Course.countDocuments();
+  res.status(200).json({
+    message: "Total number of courses",
+    data: course,
   });
 });

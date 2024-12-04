@@ -1,4 +1,4 @@
-const User = require("../Model/UserModel");
+// const User = require("../Model/UserModel");
 const catchAsync = require("../Utils/catchAsync");
 
 exports.createUser = catchAsync(async (req, res, next) => {
@@ -10,105 +10,106 @@ exports.createUser = catchAsync(async (req, res, next) => {
     },
   });
 });
-const AddUser = require("../Model/userModel");
 
-exports.addUserController = async (req, res, next) => {
-  try {
-    let result = await AddUser.create(req.body);
-    res.status(201).json({
-      success: true,
-      message: "User has been added successfully.",
-      data: result,
-    });
-  } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: "Failed to add user." + error.message,
-    });
-  }
-};
+// const AddUser = require("../Model/userModel");
 
-exports.getAllUserController = async (req, res, next) => {
-  try {
-    let result = await AddUser.find({});
+// exports.addUserController = async (req, res, next) => {
+//   try {
+//     let result = await AddUser.create(req.body);
+//     res.status(201).json({
+//       success: true,
+//       message: "User has been added successfully.",
+//       data: result,
+//     });
+//   } catch (error) {
+//     res.status(400).json({
+//       success: false,
+//       message: "Failed to add user." + error.message,
+//     });
+//   }
+// };
 
-    res.status(200).json({
-      success: true,
-      message: "All users have been retrieved successfully.",
-      data: result,
-    });
-  } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: "Failed t retrieve users." + error.message,
-    });
-  }
-};
+// exports.getAllUserController = async (req, res, next) => {
+//   try {
+//     let result = await AddUser.find({});
 
-exports.searchUsersController = async (req, res, next) => {
-  try {
-    let item = req.query.item;
-    let search = [];
+//     res.status(200).json({
+//       success: true,
+//       message: "All users have been retrieved successfully.",
+//       data: result,
+//     });
+//   } catch (error) {
+//     res.status(400).json({
+//       success: false,
+//       message: "Failed t retrieve users." + error.message,
+//     });
+//   }
+// };
 
-    let matchCondition = {
-      $match: {
-        $or: [
-          { name: { $regex: item, $options: "i" } },
-          { email: { $regex: item, $options: "i" } },
-          { pnoneNo: { $regex: item, $options: "i" } },
-        ],
-      },
-    };
+// exports.searchUsersController = async (req, res, next) => {
+//   try {
+//     let item = req.query.item;
+//     let search = [];
 
-    search.push(matchCondition);
+//     let matchCondition = {
+//       $match: {
+//         $or: [
+//           { name: { $regex: item, $options: "i" } },
+//           { email: { $regex: item, $options: "i" } },
+//           { pnoneNo: { $regex: item, $options: "i" } },
+//         ],
+//       },
+//     };
 
-    let result = await AddUser.aggregate(search);
+//     search.push(matchCondition);
 
-    res.status(200).json({
-      success: true,
-      message: "Search completed successfully.",
-      data: result,
-    });
-  } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: "Search failed." + error.message,
-    });
-  }
-};
+//     let result = await AddUser.aggregate(search);
 
-exports.updateUserController = async (req, res, next) => {
-  try {
-    let result = await AddUser.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-    });
+//     res.status(200).json({
+//       success: true,
+//       message: "Search completed successfully.",
+//       data: result,
+//     });
+//   } catch (error) {
+//     res.status(400).json({
+//       success: false,
+//       message: "Search failed." + error.message,
+//     });
+//   }
+// };
 
-    res.status(201).json({
-      success: true,
-      message: "User has been updated successfully.",
-      data: result,
-    });
-  } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: "Failed to update user." + error.message,
-    });
-  }
-};
+// exports.updateUserController = async (req, res, next) => {
+//   try {
+//     let result = await AddUser.findByIdAndUpdate(req.params.id, req.body, {
+//       new: true,
+//     });
 
-exports.deleteUserController = async (req, res, next) => {
-  try {
-    let result = await AddUser.findByIdAndDelete(req.params.id);
+//     res.status(201).json({
+//       success: true,
+//       message: "User has been updated successfully.",
+//       data: result,
+//     });
+//   } catch (error) {
+//     res.status(400).json({
+//       success: false,
+//       message: "Failed to update user." + error.message,
+//     });
+//   }
+// };
 
-    res.status(200).json({
-      success: true,
-      message: "User has been deleted successfully.",
-      data: result,
-    });
-  } catch (error) {
-    res.status(400).json({
-      success: false,
-      message: "Failed to delete user." + error.message,
-    });
-  }
-};
+// exports.deleteUserController = async (req, res, next) => {
+//   try {
+//     let result = await AddUser.findByIdAndDelete(req.params.id);
+
+//     res.status(200).json({
+//       success: true,
+//       message: "User has been deleted successfully.",
+//       data: result,
+//     });
+//   } catch (error) {
+//     res.status(400).json({
+//       success: false,
+//       message: "Failed to delete user." + error.message,
+//     });
+//   }
+// };

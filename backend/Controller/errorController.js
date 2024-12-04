@@ -1,5 +1,15 @@
 const AppError = require("../Utils/appError");
 
+const handleJWTExpired = (err) => {
+  const message = `Your token has expired.Please login again!`;
+  return new AppError(message, 401);
+};
+
+const handleJWTError = (err) => {
+  const message = `Invalid JSON web token.Please login again!`;
+  return new AppError(message, 401);
+};
+
 const handleValidationErrorDB = (err) => {
   const message = `Invalid input data`;
   return new AppError(message, 400);
@@ -52,6 +62,7 @@ module.exports = (err, req, res, next) => {
   // console.log(err.stack);
   //SETTING UP DEFAULT STATUS CODE.
   //THERE COULD BE ERROR THAT ARE CREATE BY US WITHOUT STATUS CODE
+  console.log("================================");
   err.statusCode = err.statusCode || 500;
   err.status = err.status || "error";
 
@@ -65,6 +76,8 @@ module.exports = (err, req, res, next) => {
     if (error.code === 11000) error = handleDuplicateFieldsDB(error);
     if (error.name === "ValidationError")
       error = handleValidationErrorDB(error);
+    if (error.name === "JsonWebTokenError") error = handleJWTError(error);
+    if (error.name === "TokenExpiredError") error = handleJWTExpired(error);
     sendErrorProd(error, res);
   }
 };
