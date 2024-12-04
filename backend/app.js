@@ -117,8 +117,8 @@ app.use("/api/v1/enroll-now", enrollRouter);
 app.use("/api/v1/contact-us", contactRouter);
 app.use("/api/v1/fees", feesRoute);
 app.use("/api/v1/file", fileRouter);
-app.use("/api/v1/", khaltiPaymentRouter);
-app.use("/", completeKhaltiPaymentController);
+// app.use("/api/v1/", khaltiPaymentRouter);
+// app.use("/", completeKhaltiPaymentController);
 app.use("/api/v1/student", studentRoute);
 
 // Handle unhandled routes

@@ -6,6 +6,7 @@ const { promisify } = require("util");
 const sendEmail = require("./../Utils/email");
 const crypto = require("crypto");
 const filter = require("../Utils/filter.js");
+const sendMailVerification = require("./../Utils/email.js");
 
 const tokenGeneration = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -305,7 +306,10 @@ exports.verifyRecoveryCode = catchAsync(async (req, res, next) => {
       message: "Invalid or expired recovery code.",
     });
   }
-  // console.log('test')
+
+  admin.recoveryCode = undefined;
+  admin.recoveryCodeExpires = undefined;
+  await admin.save({ validateBeforeSave: false });
 
   res.status(200).json({
     status: "success",

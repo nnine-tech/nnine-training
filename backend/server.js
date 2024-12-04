@@ -13,7 +13,7 @@ dotenv.config({
 
 // console.log(DB);
 mongoose
-  .connect(process.env.DATABASE_LOCAL, {
+  .connect("mongodb://localhost:27017/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     autoIndex: true,
