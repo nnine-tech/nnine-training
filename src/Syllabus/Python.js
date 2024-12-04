@@ -5,7 +5,7 @@ import PythonIntro from '@/components/PythonIntro'
 
 const Python = () => {
   return (
-    <div  className="p-4" >
+    <div  >
 
    <PythonIntro/>
 <PythonSyllabus1/>

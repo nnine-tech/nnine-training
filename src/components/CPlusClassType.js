@@ -24,7 +24,7 @@ const CPlusClassType = () => {
 
   return (
     <div className=" md:mr-2 md:ml-5 mt-6" >
-    <div className="w-[390px] bg-[#F6F9ED] rounded-xl shadow-bottom mb-4 p-4 ">
+    <div className="lg:w-[390px] w-[350px] bg-[#F6F9ED] rounded-xl shadow-bottom mb-4 p-4 ">
       <div className="font-poppins text-center ">
         <h1 className="text-[#000080]  text-center p-[20px] text-xl font-medium ">Training Available</h1>
         <form className="flex flex-col items-center" onSubmit={handleSubmit}>
@@ -47,7 +47,7 @@ const CPlusClassType = () => {
             })}
           </div>
 
-          <div className="mt-6  ml-7 ">
+          <div className="mt-6  ml-7  mb-6">
             <button className="bg-[#000080] w-[170px] font-bold h-[40px] text-white py-2 px-4 rounded-md"
             onClick = {handleEnrollNow}
             >

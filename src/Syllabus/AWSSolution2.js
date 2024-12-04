@@ -5,7 +5,7 @@ import React from 'react'
 
 const  AWSSolution2 = () => {
   return (
-    <div  className="p-4" >
+    <div   >
 
    <AWSSolutionIntro/>
 <AWSSolutionSyllabus1/>

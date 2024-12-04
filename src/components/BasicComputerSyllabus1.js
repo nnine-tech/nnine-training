@@ -78,7 +78,7 @@ const BasicComputerSyllabus1 = () => {
       lectures: [
         "Setting PowerPoint 2021 file environment",
         "Building your own slides",
-       "Creating Design and Text in attractive Formats",
+        "Creating Design and Text in attractive Formats",
         "Searching New online templates and themes",
         "Inserting Tables, Symbols, Pictures, Charts and Graphic Smart Arts",
         "Inserting Video, Audio and Screen Recording",
@@ -118,27 +118,20 @@ const BasicComputerSyllabus1 = () => {
     },
     {
       title: "Nepali Typing",
-      lectures: [
-        "Tradition and Romanized Unicode",
-        "Preeti and others",
-      ],
+      lectures: ["Tradition and Romanized Unicode", "Preeti and others"],
       info: "8 lectures • 3 hours",
     },
-    
   ];
-  
+
   return (
-    <div className="w-full flex flex-col md:flex-row sm:flex-row sm:mt-4">
-      <div className="w-[80%] flex flex-col mt-14">
+    <div className=" flex flex-col md:flex-row sm:flex-row ml-20 mb-4 sm:mt-4">
+      <div className="w-[65%] flex flex-col mt-14">
         <div className="w-full">
-          <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-3xl ml-[-10px] p-[10px] font-Quicksand mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
-            <div
-              key={index}
-              className={`relative w-full max-w-[800px]`}
-            >
+            <div key={index} className={`relative lg:w-full max-w-[800px] w-[250px] `}>
               <div
                 className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
                   !openDropdowns[section.title] &&
@@ -158,10 +151,10 @@ const BasicComputerSyllabus1 = () => {
                       className="mr-0 w-[11px] h-[14px]"
                     />
                   </button>
-                  <span className="font-semibold font-poppins">
+                  <span className="font-semibold font-Quicksand">
                     {section.title}
                   </span>
-                  <span className="hidden md:block text-right ml-auto font-poppins">
+                  <span className="hidden md:block text-right ml-auto font-Quicksand">
                     {section.info}
                   </span>
                 </div>
@@ -170,7 +163,7 @@ const BasicComputerSyllabus1 = () => {
                 <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
                   <ul className="p-2">
                     {section.lectures.map((lecture, idx) => (
-                      <li key={idx} className="py-1">
+                      <li key={idx} className="py-1 font-Quicksand">
                         <span className="mx-1">•</span>
                         {lecture}
                       </li>
@@ -182,7 +175,9 @@ const BasicComputerSyllabus1 = () => {
           ))}
         </div>
       </div>
-      <BasicComputerClassType/>
+      <div className="ml-[-65px] md:ml-[-22px]">
+        <BasicComputerClassType />
+      </div>
     </div>
   );
 };

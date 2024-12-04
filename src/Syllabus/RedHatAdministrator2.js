@@ -5,7 +5,7 @@ import React from 'react'
 
 const RedHatAdministrator2 = () => {
   return (
-    <div  className="p-4" >
+    <div >
 
    <RedHatAdministratorIntro/>
 <RedHatAdministratorSyllabus1/>

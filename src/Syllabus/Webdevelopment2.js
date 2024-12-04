@@ -6,7 +6,7 @@ import React from 'react'
 
 const  Webdevelopment2 = () => {
   return (
-    <div  className="p-4" >
+    <div >
 
    <WebdevelopmentIntro/>
 <WebdevelopmentSyllabus1/>

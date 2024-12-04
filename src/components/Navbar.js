@@ -73,22 +73,22 @@ const NavBar = () => {
                   Courses
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/Trainer"
                   className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
                 >
                   Trainer
                 </Link>
-              </li>
-              {/* <li>
+              </li> */}
+              <li>
                 <Link
                   href="Blog"
                   className="font-bold text-blue-900 hover:bg-blue-100 inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl"
                 >
                   Blogs
                 </Link>
-              </li> */}
+              </li>
               <li>
                 <Link
                   href="Career"
