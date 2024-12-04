@@ -27,8 +27,8 @@ const AwsCloudClassType = () => {
     );
   };
   return (
-    <div className=" md:mr-2 md:ml-5 mt-6">
-      <div className="w-[390px] bg-[#F6F9ED] rounded-xl shadow-bottom mb-4 p-4 ">
+    <div className=" md:mr-2 md:ml-5 mt-6 ">
+      <div className="md:w-[390px] bg-[#F6F9ED] rounded-xl shadow-bottom mb-4 w-[350px]">
         <div className="font-poppins text-center ">
           <h1 className="text-[#000080]  text-center p-[20px] text-xl font-medium ">
             Training Available
@@ -65,7 +65,7 @@ const AwsCloudClassType = () => {
           </form>
         </div>
       </div>
-      <AwsCloudSchedule/>
+      {/* <AwsCloudSchedule/> */}
     </div>
   );
 };
