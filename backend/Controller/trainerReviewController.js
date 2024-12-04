@@ -17,7 +17,7 @@ exports.createTrainerReview = catchAsync(async (req, res, next) => {
   if (typeof rating !== "number" || rating < 1 || rating > 5) {
     return res.status(400).json({
       message: "Rating must be a number between 1 and 5",
-    })
+    });
   }
 
   const review = new trainerReview({
@@ -66,12 +66,9 @@ exports.getSpecificTrainerReview = catchAsync(async (req, res, next) => {
   }
 
   const reviews = await trainerReview
-    .find({ trainer_id: trainerId })
-    .populate("trainer_id", "name email")
-    .populate(
-      "student_id",
-      "firstName lastName email  department, courseTaken"
-    );
+    .findById({ trainer_id: trainerId })
+    .populate("trainer_id", "name email expertise")
+    .populate("student_id", "name email phone address enrollmentDate");
   console.log(reviews);
   return res.status(200).json({
     result: reviews,

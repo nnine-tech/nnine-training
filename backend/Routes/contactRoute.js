@@ -4,12 +4,15 @@ const {
   createContactForm,
   getContactForm,
   getSpecificContactForm,
-  updateContactForm,
+  deleteContactForm,
 } = require("../Controller/contactController");
 
 const contactRouter = express.Router();
 contactRouter.route("/").post(createContactForm).get(getContactForm);
 
-contactRouter.route("/:id").get(getSpecificContactForm).put(updateContactForm);
+contactRouter
+  .route("/:id")
+  .get(getSpecificContactForm)
+  .delete(deleteContactForm);
 
 module.exports = contactRouter;
