@@ -736,7 +736,7 @@ const DevOpsSyllabus = () => {
     },
   ];
   return (
-    <div className="flex flex-col lg:flex-row lg:ml-20 ml-5 mb-5">
+    <div className="flex flex-col lg:flex-row lg:ml-20 ml-5 mb-10">
       {/* Syllabus Section */}
       <div className="md:w-[650px] w-full flex flex-col sm:mt-4">
         <div className="w-[65%] mx-auto lg:w-full lg:mx-0 flex flex-col mt-10">

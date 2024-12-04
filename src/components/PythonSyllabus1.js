@@ -161,7 +161,7 @@ const PythonSyllabus1 = () => {
   ];
 
   return (
-    <div className=" flex flex-col md:flex-row sm:flex-row sm:mt-4 ml-20">
+    <div className=" flex flex-col md:flex-row sm:flex-row sm:mt-4 mb-10 ml-20">
       <div className="w-[65%] flex flex-col mt-14">
         <div className="w-full">
           <h1 className="font-bold text-3xl p-[10px] font-Quicksand mb-[37px] text-[#003366]">

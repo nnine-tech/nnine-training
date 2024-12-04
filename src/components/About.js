@@ -5,7 +5,7 @@ const About = () => {
       {/* Contact Us Section */}
       <div className="flex flex-col md:flex-row justify-center items-center w-full lg:h-[500px] h-[400px] bg-cover bg-center bg-[url('/contactpage1.svg')]">
         <div className="w-full md:w-[800px]  md:mt-0 flex flex-col justify-center items-center lg:px-5 ">
-          <h1 className="text-6xl font-Quicksand font-bold  text-white">
+          <h1 className="lg:text-6xl text-4xl font-Quicksand font-bold  text-white">
             About Us
           </h1>
           <h1 className="text-xl font-Quicksand font-semibold text-white mt-5 text-center ">
