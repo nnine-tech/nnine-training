@@ -1,28 +1,26 @@
 const express = require("express");
 const router = express.Router();
+const passportController = require("./../Controller/passportController");
 const passport = require("passport");
+require("./../services/passportConfig");
 
-router.get("/", (req, res, next) => {
-  res.send("<a href='/api/v1/auth/google'>Login with Google</a>");
-});
+router.use(passport.initialize());
+router.use(passport.session());
 
+router.get("/", passportController.loadAuth);
 router.get(
-  "/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
+  "/api/v1/auth/google",
+  passport.authenticate("google", { scope: ["email", "profile"] })
+);
+router.get(
+  "/api/v1/auth/google/callback",
+  passport.authenticate("google", {
+    successRedirect: "/success",
+    failureRedirect: "/failure",
+  })
 );
 
-router.get(
-  "/google/callback",
-  passport.authenticate("google", { failureRedirect: "/" }),
-  (req, res) => res.redirect("/profile")
-);
-router.get("/profile", (req, res, next) => {
-  res.send(`Welcome ${req.user.displayName}`);
-});
-
-router.get("/logout", (req, res) => {
-  req.logOut();
-  res.redirect("/");
-});
+router.get("/success", passportController.successGoogleLogin);
+router.get("/failure", passportController.failureGoogleLogin);
 
 module.exports = router;

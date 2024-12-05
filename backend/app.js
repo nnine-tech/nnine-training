@@ -17,9 +17,9 @@ const http = require("http");
 const { Server } = require("socket.io");
 const globalErrorHandler = require("./Controller/errorController");
 
-const passport = require("passport");
+const passport = require("./services/passportConfig");
 const session = require("express-session");
-const GoogleStrategy = require("passport-google-oauth20");
+const GoogleStrategy = require("passport-google-oauth2").Strategy;
 
 // Importing routes
 const trainerRouter = require("./Routes/trainerRoute");
@@ -125,7 +125,6 @@ app.use("/api/v1/file", fileRouter);
 // app.use("/api/v1/", khaltiPaymentRouter);
 // app.use("/", completeKhaltiPaymentController);
 app.use("/api/v1/student", studentRoute);
-app.use("/api/v1/auth", passportRoute);
 
 /////////////////////////////////
 //////////////////////////////////
@@ -139,31 +138,20 @@ dotenv.config({
 
 console.log(process.env.GOOGLE_CLIENT_ID);
 
-app.use(passport.initialize());
-app.use(session({ secret: "secret", resave: false, saveUninitialized: true }));
-app.use(passport.session());
-
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:8000/api/v1/auth/google/callback",
-    },
-    (accessToken, refreshToken, profile, done) => {
-      return done(null, profile);
-    }
-  )
+//GOOGLE AUTHENCTICATION
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+  })
 );
 
-passport.serializeUser((user, done) => {
-  done(null, user);
-});
-passport.deserializeUser((user, done) => {
-  done(null, user);
-});
+// app.set("view engine", "ejs");
 
-// Handle unhandled routes
+app.use("/", passportRoute);
+
+// Handle unhandled routes`
 app.use("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
@@ -174,4 +162,4 @@ app.use(globalErrorHandler);
 // SESSION MIDDLEWARE
 
 // Export the app
-module.exports = app;
+module.exports = { app, passport };
