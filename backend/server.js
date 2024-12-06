@@ -1,6 +1,6 @@
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const app = require("./app");
+const { app } = require("./app");
 
 dotenv.config({
   path: "./config.env",
@@ -13,7 +13,7 @@ dotenv.config({
 
 // console.log(DB);
 mongoose
-  .connect(process.env.DATABASE_LOCAL, {
+  .connect("mongodb://localhost:27017/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     autoIndex: true,

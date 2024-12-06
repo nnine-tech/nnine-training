@@ -62,7 +62,7 @@ exports.recoveryVerification = catchAsync(async (req, res, next) => {
 });
 
 exports.verifyEmail = catchAsync(async (req, res, next) => {
-  const { token } = req.query;
+  const { token, email } = req.query;
 
   console.log(typeof token);
   const admin = await Admin.findOne({
@@ -76,6 +76,8 @@ exports.verifyEmail = catchAsync(async (req, res, next) => {
     });
   }
   admin.emailVerificationStatus.verified = true;
+  admin.emailVerificationStatus.emailCode = undefined;
+  admin.recoveryEmail = email;
 
   await admin.save({ validateBeforeSave: false });
 
