@@ -149,7 +149,7 @@ app.use(
 
 // app.set("view engine", "ejs");
 
-app.use("/", passportRoute);
+app.use("/api/v1/auth", passportRoute);
 
 // Handle unhandled routes`
 app.use("*", (req, res, next) => {

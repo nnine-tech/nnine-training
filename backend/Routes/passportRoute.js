@@ -9,14 +9,14 @@ router.use(passport.session());
 
 router.get("/", passportController.loadAuth);
 router.get(
-  "/api/v1/auth/google",
+  "/google",
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
 router.get(
-  "/api/v1/auth/google/callback",
+  "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "/success",
-    failureRedirect: "/failure",
+    successRedirect: "/api/v1/auth/success",
+    failureRedirect: "/api/v1/auth//failure",
   })
 );
 
