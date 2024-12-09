@@ -38,7 +38,7 @@ exports.recoveryVerification = catchAsync(async (req, res, next) => {
 
   const verificationLink = `${req.protocol}://${req.get(
     "host"
-  )}/api/v1/verification/verify-email?token=${emailCode}`;
+  )}/api/v1/verification/verify-email?token=${emailCode}&email=${email}`;
 
   // res.json({
   //   message: "success",
