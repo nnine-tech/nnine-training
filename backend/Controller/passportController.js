@@ -4,8 +4,8 @@ const loadAuth = (req, res) => {
 
 const successGoogleLogin = (req, res) => {
   if (!req.isAuthenticated()) res.redirect("failure");
-  console.log(req.user);
-  res.send("welcone" + req.user.email);
+  console.log(req.user.googleLinkStatus);
+  res.send("welcome " + (req.user.email || req.user.googleLinkStatus.email));
 };
 
 const failureGoogleLogin = (req, res) => {

@@ -9,6 +9,15 @@ const recoverySchema = new mongoose.Schema({
   type: { type: String },
 });
 
+const googleLinkSchema = new mongoose.Schema({
+  googleId: { type: String },
+  name: { type: String },
+  email: { type: String },
+  profilePic: { type: String },
+  accessToken: { type: String },
+  refreshToken: { type: String },
+});
+
 const adminSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -34,6 +43,7 @@ const adminSchema = new mongoose.Schema({
     unique: true,
     lowercase: true,
     validate: [validator.isEmail, "Please provide a valid email"],
+    sparse: true,
   },
   photo: {
     type: String,
@@ -86,6 +96,8 @@ const adminSchema = new mongoose.Schema({
   recoveryCodeExpires: { type: Date, select: false },
 
   emailVerificationStatus: recoverySchema,
+
+  googleLinkStatus: googleLinkSchema,
 });
 
 //PRE HOOKS TO HASH THE NEWLY CREATED OR UPDATED PASSWORD
