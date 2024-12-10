@@ -6,6 +6,19 @@ import "slick-carousel/slick/slick.css";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
+// Custom arrow components for navigation
+const CustomArrow = ({ className, style, onClick, direction }) => {
+  return (
+    <div
+      className={`${className} ${
+        direction === "left" ? "left-[-20px]" : "right-[-20px]"
+      } z-10`}
+      style={{ ...style, display: "block" }}
+      onClick={onClick}
+    ></div>
+  );
+};
+
 const CourseSlide = (props) => {
   const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
@@ -13,11 +26,13 @@ const CourseSlide = (props) => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 1300,
+    speed: 1000,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 200,
+    autoplaySpeed: 1000, // Adjust autoplay speed in milliseconds
+    nextArrow: <CustomArrow direction="right" />, // Custom next arrow
+    prevArrow: <CustomArrow direction="left" />, // Custom prev arrow
     responsive: [
       {
         breakpoint: 1024,
