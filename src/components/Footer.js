@@ -37,13 +37,13 @@ const Footer = () => {
               </h2>
               <ul className="text-white text-sm md:text-base lg:text-[15px] space-y-2 lg:space-y-0 text-center lg:text-left font-poppins cursor-pointer leading-[22.5px]">
                 <Link href="/About">
-                  <li>About us</li>
+                  <li>About Us</li>
                 </Link>
                 <Link href="/Popularcourses">
                   <li>Courses</li>
                 </Link>
                 <Link href="/Contact">
-                  <li>Contact us</li>
+                  <li>Contact Us</li>
                 </Link>
               </ul>
             </div>
@@ -83,7 +83,7 @@ const Footer = () => {
                 </Link>
 
                 <Link
-                  href="https://np.linkedin.com/company/n9-solution"
+                  href="https://www.linkedin.com/company/n9-solution/posts/?feedView=all"
                   target="_blank"
                 >
                   <img
@@ -112,7 +112,7 @@ const Footer = () => {
 
           <div className="text-center mt-12 lg:mt-16">
             <p className="text-white text-sm md:text-base font-poppins">
-              Copyright © 2024 Nninesolutions. All rights reserved.
+              Copyright © 2024 Nninesolution. All rights reserved.
             </p>
           </div>
         </div>
