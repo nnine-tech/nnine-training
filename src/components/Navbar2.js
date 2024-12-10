@@ -45,11 +45,11 @@ const NavBar = () => {
 
       {showNav && (
         <div className="flex items-center justify-center">
-          <nav className="fixed top-0 left-0 right-0 lg:mx-auto  lg:w-screen xl:w-[1300px] md:w-screen w-full z-30 transition duration-300 ease-in-out mb-16 rounded-full bg-[#FFFF] shadow-lg mt-16  lg:h-[80px]">
-            <div className="flex items-center justify-between py-1 px-6">
+          <nav className=" fixed top-0 left-0 right-0 lg:mx-auto  lg:w-screen xl:w-[1275px] md:w-screen w-full z-30 transition duration-300 ease-in-out mb-16 rounded-full bg-[#FFFF] shadow-lg mt-16  lg:h-[80px] ">
+            <div className="flex items-center justify-between px-6">
               {/* Logo */}
               <Link href="/" onClick={handleLogoClick}>
-                <div className="flex items-center">
+                <div className=" flex items-center">
                   <img
                     src="/logo2.svg"
                     alt="N9 Solution Logo"
@@ -87,7 +87,7 @@ const NavBar = () => {
 
               {/* Navigation Links */}
               <ul
-                className={`absolute lg:static lg:flex lg:flex-row lg:space-x-6 lg:p-5 bg-white lg:bg-transparent w-full lg:w-auto transition-all duration-300 ease-in-out ${
+                className={`absolute lg:static lg:flex lg:flex-row lg:space-x-6 lg:p-5 bg-white lg:bg-transparent w-full lg:w-auto transition-all duration-300 ease-in-out lg:h-auto h-[200px] ${
                   isOpen ? "top-16 left-0 block" : "top-16 left-0 hidden"
                 }`}
               >
@@ -140,7 +140,7 @@ const NavBar = () => {
                     }`}
                     onClick={() => handleLinkClick("about")}
                   >
-                    About
+                    About Us
                   </Link>
                 </li>
                 {/* <li>

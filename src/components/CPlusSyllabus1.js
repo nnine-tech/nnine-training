@@ -131,7 +131,7 @@ const CPlusSyllabus1 = () => {
   ];
 
   return (
-    <div className=" flex flex-col md:flex-row sm:flex-row sm:mt-4 ml-20 mb-5">
+    <div className=" flex flex-col md:flex-row sm:flex-row sm:mt-4 ml-20 mb-10">
       <div className="w-[65%] flex flex-col mt-14">
         <div className="w-full">
           <h1 className="font-bold text-3xl ml-8 p-[10px] font-poppins mb-[37px] text-[#003366]">
