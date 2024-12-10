@@ -14,8 +14,8 @@ const WhyUs = () => {
         </h3>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="  grid-cols-2 place-content-center max-w-6xl mx-auto  px-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 ">
           {/* Card 1 */}
           <div className="p-4 md:p-6 flex flex-col items-center text-center">
             <img
@@ -49,37 +49,10 @@ const WhyUs = () => {
               learn at your own pace and revisit topics whenever necessary.
             </p>
           </div>
-
-          {/* Card 3 */}
-          <div className="p-4 md:p-6 flex flex-col items-center text-center">
-            <img
-              src="support.svg"
-              className="h-12 w-12 mb-4"
-              alt="Lifetime Support"
-            />
-            <h2 className="text-xl font-bold mb-3 font-Quicksand">
-              Lifetime Support
-            </h2>
-            <p className="text-black font-Quicksand">
-              Enjoy lifetime support from our team, ensuring that no matter
-              where your career takes you, we're here to assist and guide you.
-            </p>
-          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8 md:mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-8 mt-8 md:mt-12">
           {/* Card 4 */}
-          <div className="p-4 md:p-6 flex flex-col items-center text-center">
-            <img src="price.svg" className="h-12 w-12 mb-4" alt="Best Price" />
-            <h2 className="text-xl font-bold mb-3 font-Quicksand">
-              Best Price
-            </h2>
-            <p className="text-black font-Quicksand">
-              Our courses are competitively priced, ensuring you receive the
-              best value for your investment while gaining high-quality training
-              and resources.
-            </p>
-          </div>
 
           {/* Card 5 */}
           <div className="p-4 md:p-6 flex flex-col items-center text-center">

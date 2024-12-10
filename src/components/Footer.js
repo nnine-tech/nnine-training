@@ -37,13 +37,13 @@ const Footer = () => {
               </h2>
               <ul className="text-white text-sm md:text-base lg:text-[15px] space-y-2 lg:space-y-0 text-center lg:text-left font-poppins cursor-pointer leading-[22.5px]">
                 <Link href="/About">
-                  <li>About</li>
+                  <li>About us</li>
                 </Link>
                 <Link href="/Popularcourses">
-                  <li>Programs</li>
+                  <li>Courses</li>
                 </Link>
                 <Link href="/Contact">
-                  <li>Contact</li>
+                  <li>Contact us</li>
                 </Link>
               </ul>
             </div>
