@@ -69,13 +69,16 @@ const Footer = () => {
               </p>
               <div className="flex justify-center lg:justify-center gap-4 cursor-pointer">
                 <Link
-                  href="https://www.facebook.com/nninesolution "
-                  target="_black"
+                  href="https://www.facebook.com/nninesolution"
+                  target="_blank"
                 >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] mt-0.5 cursor-pointer"
-                    src="/ic_baseline-facebook (2).svg"
+                    src="/FacebookIcon.svg"
                     alt="Facebook"
+                    onError={(e) =>
+                      (e.currentTarget.src = "/fallback-facebook.svg")
+                    }
                   />
                 </Link>
 
@@ -85,8 +88,11 @@ const Footer = () => {
                 >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] cursor-pointer"
-                    src="/mingcute_linkedin-fill.svg"
+                    src="/LinkedinIcon.svg"
                     alt="LinkedIn"
+                    onError={(e) =>
+                      (e.currentTarget.src = "/fallback-linkedin.svg")
+                    }
                   />
                 </Link>
 
@@ -96,7 +102,7 @@ const Footer = () => {
                 >
                   <img
                     className="h-8 w-8 lg:h-[30px] lg:w-[30px] cursor-pointer mt-0.5"
-                    src="/mdi_instagram.svg"
+                    src="/InstagramIcon.svg"
                     alt="Instagram"
                   />
                 </Link>
