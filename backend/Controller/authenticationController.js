@@ -5,6 +5,8 @@ const AppError = require("./../Utils/appError");
 const { promisify } = require("util");
 const sendEmail = require("./../Utils/email");
 const crypto = require("crypto");
+const filter = require("../Utils/filter.js");
+const sendMailVerification = require("./../Utils/email.js");
 
 const tokenGeneration = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -38,17 +40,23 @@ const createSendToken = (admin, statusCode, res) => {
 };
 
 exports.createAdmin = catchAsync(async (req, res, next) => {
-  const newAdmin = await Admin.create({
-    name: req.body.name,
-    position: req.body.position,
-    address: req.body.address,
-    phone: req.body.phone,
-    email: req.body.email,
-    password: req.body.password,
-    passwordConfirm: req.body.passwordConfirm,
-    bio: req.body.bio,
-    taxId: req.body.taxId,
-  });
+  if (req.file) req.body.photo = req.file.filename;
+
+  const filteredBody = filter(
+    req.body,
+    "name",
+    "position",
+    "address",
+    "phone",
+    "email",
+    "password",
+    "passwordConfirm",
+    "bio",
+    "taxId"
+  );
+  if (req.file) filteredBody.photo = req.file.filename;
+
+  const newAdmin = await Admin.create(filteredBody);
 
   createSendToken(newAdmin, 201, res);
 
@@ -231,4 +239,82 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   await admin.save();
   //LOG IN USER IN,SEND JWT
   createSendToken(admin, 200, res);
+});
+
+exports.forgotEmail = catchAsync(async (req, res, next) => {
+  const recoveryEmail = req.body.recoveryEmail;
+  if (!recoveryEmail) return next(new AppError("No recovery email", 400));
+  console.log(typeof recoveryEmail, recoveryEmail);
+
+  const admin = await Admin.findOne({
+    recoveryEmail,
+    "emailVerificationStatus.verified": true,
+  }).select("+recoveryEmail");
+
+  // console.log(admin);
+  if (!admin) {
+    res.status(400).json({
+      status: "failure",
+      message: "Email not found or not verified",
+    });
+  }
+
+  const recoveryCode = crypto.randomInt(100000, 1000000);
+  //SAVING INTO DOCUMENT
+  admin.recoveryCode = recoveryCode;
+  admin.recoveryCodeExpires = Date.now() + 10 * 60 * 1000;
+  await admin.save({ validateBeforeSave: false });
+
+  console.log(admin);
+  try {
+    await sendMailVerification({
+      email: admin.recoveryEmail,
+      subject: "Your 6 digit OTP is valid for 10 min",
+      html: `<p>Your recovery code is: <strong>${recoveryCode}</strong></p>`,
+    });
+
+    res.status(200).json({
+      status: "success",
+      message: "6-digit recovery code sent to your recovery email.",
+    });
+  } catch (error) {
+    admin.recoveryCode = undefined;
+    admin.recoveryCodeExpires = undefined;
+    await admin.save({ validateBeforeSave: false });
+    return next(
+      new AppError("Something went wrong while sending the recovery code.", 500)
+    );
+    89;
+  }
+});
+
+exports.verifyRecoveryCode = catchAsync(async (req, res, next) => {
+  const { recoveryCode } = req.body;
+
+  if (!recoveryCode)
+    return next(new AppError("Please provide recoverCode sent to the email"));
+
+  const admin = await Admin.findOne({
+    recoveryCode: recoveryCode,
+    recoveryCodeExpires: { $gt: Date.now() },
+  });
+
+  //IF NO ADMIN FOUND CODE IS INCORRECT OR EXPIRED
+  if (!admin) {
+    return res.status(400).json({
+      status: "failure",
+      message: "Invalid or expired recovery code.",
+    });
+  }
+
+  admin.recoveryCode = undefined;
+  admin.recoveryCodeExpires = undefined;
+  await admin.save({ validateBeforeSave: false });
+
+  res.status(200).json({
+    status: "success",
+    message:
+      "Code verified successfully.Found your account. Please enter your password.",
+    email: admin.email, // RETURN THE EMAIL TO PRE FILL THE LOGIN PAGE
+  });
 });

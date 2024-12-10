@@ -1,10 +1,11 @@
 const Course = require("../Model/newCourseModel.js");
+const AppError = require("../Utils/appError.js");
 const filter = require("../Utils/filter.js");
 const APIFeatures = require("./../Utils/apiFeatures.js");
 const catchAsync = require("./../Utils/catchAsync.js");
 
 exports.CreateCourse = catchAsync(async (req, res, next) => {
-  console.log(req);
+  console.log(req.body);
 
   const filteredBody = filter(req.body, "coursename", "category", "duration");
   if (req.file) filteredBody.coursePhoto = req.file.filename;
@@ -155,5 +156,13 @@ exports.updateCourse = catchAsync(async (req, res, next) => {
     data: {
       data: course,
     },
+  });
+});
+
+exports.totalCourse = catchAsync(async (req, res, next) => {
+  const course = await Course.countDocuments();
+  res.status(200).json({
+    message: "Total number of courses",
+    data: course,
   });
 });

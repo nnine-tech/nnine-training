@@ -39,3 +39,8 @@ ttp://localhost:8000/student/total-student => Total student
   GET => http://localhost:8000/student/total-student
 
 
+
+
+
+
+

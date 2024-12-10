@@ -24,6 +24,10 @@ const CourseSyllabusSchema = new mongoose.Schema({
     ref: "Course",
     required: [true, "A syllabus must have a course"],
   },
+  photo: {
+    type: String,
+    default: "default-course-syllabus.jpeg",
+  },
 });
 
 const CourseSyllabus = mongoose.model(

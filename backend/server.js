@@ -1,17 +1,17 @@
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-const app = require("./app");
+const { app } = require("./app");
 
 dotenv.config({
   path: "./config.env",
 });
 
-const DB = process.env.DATABASE.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
-);
+// const DB = process.env.DATABASE.replace(
+//   "<PASSWORD>",
+//   process.env.DATABASE_PASSWORD
+// );
 
-console.log(DB);
+// console.log(DB);
 mongoose
   .connect("mongodb://localhost:27017/", {
     useNewUrlParser: true,
