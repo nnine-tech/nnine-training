@@ -8,6 +8,7 @@ process.on("uncaughtException", (err) => {
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
+const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
 const mongoSanitize = require("express-mongo-sanitize");
@@ -48,7 +49,15 @@ const passportRoute = require("./Routes/passportRoute");
 
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "pug");
+app.set("views", "./views");
+
+//FRONTEND ROUTES
+app.get("/login", (req, res) => {
+  res.render("login", { title: "Login Page" });
+});
 
 //DEBUGGING PURPOSE//MIDDLEWARES
 app.use(helmet());
@@ -147,7 +156,9 @@ app.use(
   })
 );
 
+const flash = require("connect-flash");
 // app.set("view engine", "ejs");
+app.use(flash());
 
 app.use("/api/v1/auth", passportRoute);
 

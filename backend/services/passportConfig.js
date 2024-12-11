@@ -14,12 +14,18 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: "http://localhost:8000/api/v1/auth/google/callback",
       passReqToCallback: true,
+      access_type: "offline",
     },
 
     async (request, accessToken, refreshToken, profile, done) => {
       try {
         const email = profile.emails[0].value;
         const emailVerified = profile.email_verified;
+
+        let googleAdmin = await Admin.findOne({
+          "googleLinkStatus.email": email,
+        });
+        if (googleAdmin) return done(null, googleAdmin);
 
         //FIND EXISITING ADMIN
         let admin = await Admin.findOne({ email });

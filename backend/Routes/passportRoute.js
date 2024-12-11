@@ -17,10 +17,20 @@ router.get(
   passport.authenticate("google", {
     successRedirect: "/api/v1/auth/success",
     failureRedirect: "/api/v1/auth//failure",
+    failureFlash: true,
   })
 );
 
 router.get("/success", passportController.successGoogleLogin);
 router.get("/failure", passportController.failureGoogleLogin);
+router.post("/logout", (req, res) => {
+  req.logout((err) => {
+    if (err) {
+      console.error(err);
+      return res.redirect("/api/v1/auth");
+    }
+    res.redirect("/api/v1/auth");
+  });
+});
 
 module.exports = router;
