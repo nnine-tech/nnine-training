@@ -1,13 +1,28 @@
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
 const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
+const CustomArrow = ({ className, style, onClick }) => {
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block" }}
+      onClick={onClick}
+      onMouseEnter={(e) => e.stopPropagation()} // Prevent auto-slide interruption on hover
+      onMouseLeave={(e) => e.stopPropagation()} // Allow auto-slide after hover
+    >
+      {className.includes("next") ? "→" : "←"}
+    </div>
+  );
+};
+
 const CourseSlide = (props) => {
   const [isMounted, setIsMounted] = useState(false);
+  const sliderRef = useRef(null);
   const router = useRouter();
 
   const settings = {
@@ -17,7 +32,10 @@ const CourseSlide = (props) => {
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 200,
+    autoplaySpeed: 1000,
+    arrows: true,
+    nextArrow: <CustomArrow />,
+    prevArrow: <CustomArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -66,10 +84,14 @@ const CourseSlide = (props) => {
         </p>
       </div>
 
-      <div className="relative pl-4 pr-4 max-w-full mx-auto">
+      <div
+        className="relative pl-4 pr-4 max-w-full mx-auto"
+        onMouseEnter={() => sliderRef.current?.slickPause()} // Stop auto-slide
+        onMouseLeave={() => sliderRef.current?.slickPlay()} // Resume auto-slide
+      >
         {isMounted && (
           <div className="pr-3 pl-3">
-            <Slider {...settings}>
+            <Slider ref={sliderRef} {...settings}>
               {props.course.map((course, index) => (
                 <div
                   key={index}
