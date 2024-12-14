@@ -3,7 +3,7 @@ import { useState } from "react";
 import DevopsClassType from "./DevopsClassType";
 
 const DevOpsSyllabus = () => {
-  // Sample syllabusSections array
+  //syllabus array
   const syllabusSections = [
     {
       title: "Introduction to DevOps",
@@ -719,7 +719,6 @@ const DevOpsSyllabus = () => {
     },
 
   ];
-
   // State to track which numbered topic is open
   const [openTopics, setOpenTopics] = useState({});
 
