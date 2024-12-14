@@ -83,7 +83,7 @@ const Footer = () => {
                 </Link>
 
                 <Link
-                  href="https://np.linkedin.com/company/n9-solution"
+                  href="https://www.linkedin.com/company/n9-solution/posts/?feedView=all"
                   target="_blank"
                 >
                   <img
