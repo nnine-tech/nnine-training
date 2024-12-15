@@ -17,6 +17,10 @@ const http = require("http");
 const { Server } = require("socket.io");
 const globalErrorHandler = require("./Controller/errorController");
 
+const passport = require("./services/passportConfig");
+const session = require("express-session");
+const GoogleStrategy = require("passport-google-oauth2").Strategy;
+
 // Importing routes
 const trainerRouter = require("./Routes/trainerRoute");
 const trainerReviewRouter = require("./Routes/trainerReviewRoute");
@@ -40,6 +44,7 @@ const khaltiPaymentRouter = require("./Routes/khaltiPaymentRoute");
 const {
   completeKhaltiPaymentController,
 } = require("./Controller/khaltiPaymentController");
+const passportRoute = require("./Routes/passportRoute");
 
 const app = express();
 app.use(express.json());
@@ -117,11 +122,36 @@ app.use("/api/v1/enroll-now", enrollRouter);
 app.use("/api/v1/contact-us", contactRouter);
 app.use("/api/v1/fees", feesRoute);
 app.use("/api/v1/file", fileRouter);
-app.use("/api/v1/", khaltiPaymentRouter);
-app.use("/", completeKhaltiPaymentController);
+// app.use("/api/v1/", khaltiPaymentRouter);
+// app.use("/", completeKhaltiPaymentController);
 app.use("/api/v1/student", studentRoute);
 
-// Handle unhandled routes
+/////////////////////////////////
+//////////////////////////////////
+//////////////////////////////////
+
+//PASSPORT CONFIGURATION
+
+dotenv.config({
+  path: "./config.env",
+});
+
+console.log(process.env.GOOGLE_CLIENT_ID);
+
+//GOOGLE AUTHENCTICATION
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+// app.set("view engine", "ejs");
+
+app.use("/api/v1/auth", passportRoute);
+
+// Handle unhandled routes`
 app.use("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
@@ -129,5 +159,7 @@ app.use("*", (req, res, next) => {
 // Global Error Handler
 app.use(globalErrorHandler);
 
+// SESSION MIDDLEWARE
+
 // Export the app
-module.exports = app;
+module.exports = { app, passport };

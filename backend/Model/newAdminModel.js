@@ -81,25 +81,11 @@ const adminSchema = new mongoose.Schema({
     select: false,
   },
 
-  recoveryEmail: { type: [String], select: false },
-  recoveryPhone: {
-    type: [Number],
-    select: false,
-  },
-  // emailVerificationStatus: {},
+  recoveryEmail: { type: String, select: false },
+  recoveryCode: { type: Number, select: false },
+  recoveryCodeExpires: { type: Date, select: false },
 
   emailVerificationStatus: recoverySchema,
-  // emailCode: {
-  //   type: String,
-  //   select: false,
-  // },
-  // verified: {
-  //   type: Boolean,
-  //   default: false,
-  // },
-  // verificationType: {
-  //   type: String,
-  // },
 });
 
 //PRE HOOKS TO HASH THE NEWLY CREATED OR UPDATED PASSWORD
