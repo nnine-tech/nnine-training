@@ -268,7 +268,7 @@ const EthicalHackingSyllabus1 = () => {
                 }`}
               >
                 <div
-                  className="flex items-center p-[10px] cursor-pointer"
+                  className="flex items-center p-[10px] cursor-pointer "
                   onClick={() => toggleDropdown(section.title)}
                 >
                   <button className="dropdown-button mr-2">

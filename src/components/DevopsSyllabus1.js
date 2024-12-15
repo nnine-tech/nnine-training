@@ -3,22 +3,12 @@ import { useState } from "react";
 import DevopsClassType from "./DevopsClassType";
 
 const DevOpsSyllabus = () => {
-  const [openDropdowns, setOpenDropdowns] = useState({});
-
-  const toggleDropdown = (title) => {
-    setOpenDropdowns((prevState) => ({
-      ...prevState,
-      [title]: !prevState[title],
-    }));
-  };
-
+  //syllabus array
   const syllabusSections = [
     {
       title: "Introduction to DevOps",
       lectures: [
-        // Change Lectures to lectures here
         {
-          type: "title",
           content: "1. Introduction [15 Min]",
           subLectures: [
             { type: "bullet", content: "Course Features and Tools" },
@@ -30,7 +20,6 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          type: "title",
           content: "2. DevOps Culture [15 Min]",
           subLectures: [
             { type: "bullet", content: "The Goals of DevOps" },
@@ -38,7 +27,6 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          type: "title",
           content: "3. DevOps Concepts and Practices [45 Min]",
           subLectures: [
             { type: "bullet", content: "Build Automation" },
@@ -55,10 +43,9 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          type: "title",
           content: "4. DevOps Tools [45 Min]",
           subLectures: [
-            { type: "bullet", content: "Introduction to DevOps Tools" },
+            { type: "bullet", content: "Introduction to Devops Tools" },
             {
               type: "bullet",
               content:
@@ -75,12 +62,10 @@ const DevOpsSyllabus = () => {
         },
       ],
     },
-
     {
       title: "Source Code Management",
       lectures: [
         {
-          type: "title",
           content: "5. Git Basics / The Basics of Using Git [1 Hr 30 Min]",
           subLectures: [
             { type: "bullet", content: "Understanding the Git Filesystem" },
@@ -95,10 +80,10 @@ const DevOpsSyllabus = () => {
               content:
                 "HOL: Creating Local Repositories with Git and Adding/Checking in Files",
             },
+
           ],
         },
         {
-          type: "title",
           content: "6. Tags, Branching, Merging and Reverting [45 Min]",
           subLectures: [
             { type: "bullet", content: "Using Tags" },
@@ -110,12 +95,10 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          type: "title",
           content: "7. Git's Logs and Auditing [15 Min]",
           subLectures: [{ type: "bullet", content: "Using Git's Logs" }],
         },
         {
-          type: "title",
           content: "8. Cloning Repositories [1 Hr]",
           subLectures: [
             { type: "bullet", content: "Cloning Local Repositories" },
@@ -132,19 +115,18 @@ const DevOpsSyllabus = () => {
               type: "subtitle",
               content: "HOL: Cloning a Remote GitHub Repository",
             },
-          ],
+          ]
         },
         {
-          type: "title",
           content: "9. Push, Pull, and Tracking Remote Repositories [30 Min]",
           subLectures: [
             { type: "bullet", content: "Tracking Remote Repositories" },
             { type: "bullet", content: "Pushing to Remote Repositories" },
             { type: "bullet", content: "Pull Requests" },
           ],
+
         },
         {
-          type: "title",
           content: "10. Git Branching Strategy [30 Min]",
           subLectures: [
             { type: "bullet", content: "What is a branching strategy?" },
@@ -170,15 +152,16 @@ const DevOpsSyllabus = () => {
               content: "Trunk-based Development",
             },
           ],
+
         },
       ],
     },
-
+    
     {
       title: "Build Automation and Continuous Integration",
       lectures: [
         {
-          type: "title",
+        
           content: "11. Build Automation [2 Hr]",
           subLectures: [
             { type: "bullet", content: "Introducing Build Automation" },
@@ -198,7 +181,7 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          type: "title",
+          
           content: "12. Continuous Integration & Jenkins Pipelines [3 Hr]",
           subLectures: [
             { type: "bullet", content: "CI Overview" },
@@ -241,7 +224,7 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          type: "title",
+          
           content: "13. Continuous Delivery and Continuous Deployment [3 Hr]",
           subLectures: [
             {
@@ -734,7 +717,18 @@ const DevOpsSyllabus = () => {
         },
       ],
     },
+
   ];
+  // State to track which numbered topic is open
+  const [openTopics, setOpenTopics] = useState({});
+
+  const toggleTopic = (title) => {
+    setOpenTopics((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }));
+  };
+
   return (
     <div className="flex flex-col lg:flex-row lg:ml-20 ml-5 mb-10">
       {/* Syllabus Section */}
@@ -743,74 +737,69 @@ const DevOpsSyllabus = () => {
           <h1 className="font-bold text-3xl p-4 font-Quicksand mb-6 text-[#003366]">
             Course Syllabus
           </h1>
+
           {syllabusSections.map((section, index) => (
             <div
               key={index}
               className="relative lg:w-full w-[250px] max-w-[800px] mx-auto lg:mx-0"
             >
-              {/* Section Title */}
-              <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all`}
-              >
-                <div
-                  className="flex items-center p-3 cursor-pointer font-Quicksand"
-                  onClick={() => toggleDropdown(section.title)}
-                >
-                  <button className="dropdown-button mr-2">
-                    <img
-                      src="/dropdown.svg"
-                      alt="Toggle Dropdown"
-                      className="w-4 h-4"
-                    />
-                  </button>
-                  <span className="font-semibold text-lg font-Quicksand">
+              {/* Main Section Title */}
+              <div className=" px-4 border-[#004AAD] border-opacity-[5%] transition-all">
+                <div className="flex items-center p-3 cursor-pointer font-Quicksand">
+                  <span className="font-bold text-xl text-[#003366]">
                     {section.title}
                   </span>
                 </div>
               </div>
 
-              {/* Dropdown Content */}
-              {openDropdowns[section.title] && (
-                <div className="w-full border border-[#004AAD] border-opacity-20 mt-1">
-                  <ul className="p-4">
-                    {section.lectures.map((lecture, idx) => (
-                      <li key={idx} className="py-2 font-bold font-Quicksand">
-                        {lecture.content}
-                        {lecture.subLectures && (
-                          <ul className="ml-6">
-                            {lecture.subLectures.map((subLecture, subIdx) => (
-                              <li
-                                key={subIdx}
-                                className={`py-1 ${
-                                  subLecture.type === "bullet"
-                                    ? "font-semibold list-disc"
-                                    : "font-normal list-square"
-                                }`}
-                              >
-                                {subLecture.content}
-                                {subLecture.subPoints && (
-                                  <ul className="ml-6">
-                                    {subLecture.subPoints.map(
-                                      (subPoint, pointIdx) => (
-                                        <li
-                                          key={pointIdx}
-                                          className="list-[square] py-1 font-Quicksand"
-                                        >
-                                          {subPoint.content}
-                                        </li>
-                                      )
-                                    )}
-                                  </ul>
-                                )}
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+              {/* Numbered Topics */}
+              <div className="w-full  ">
+                {section.lectures.map((lecture, idx) => (
+                  <div key={idx} className="">
+                    {/* Topic Number */}
+                    <div
+                      className="cursor-pointer font-semibold  border-2 px-4 p-3 border-[#004AAD] border-opacity-[5%] mt-1 font-Quicksand"
+                      onClick={() => toggleTopic(lecture.content)}
+                    >
+                      {lecture.content}
+                    </div>
+
+                    {/* Topic Content */}
+                    {openTopics[lecture.content] && (
+                      <div className="pl-20 font-Quicksand border-2 border-[#004AAD] border-opacity-[5%] mt-1">
+                        <ul>
+                          {lecture.subLectures.map((subLecture, subIdx) => (
+                            <li
+                              key={subIdx}
+                              className={`py-1 font-Quicksand font-semibold${
+                                subLecture.type === "bullet"
+                                  ? "font-semibold list-disc"
+                                  : "font-normal list-square"
+                              }`}
+                            >
+                              {subLecture.content}
+                              {subLecture.subPoints && (
+                                <ul className="ml-6">
+                                  {subLecture.subPoints.map(
+                                    (subPoint, pointIdx) => (
+                                      <li
+                                        key={pointIdx}
+                                        className="list-[square] py-1  font-Quicksand "
+                                      >
+                                        {subPoint.content}
+                                      </li>
+                                    )
+                                  )}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
