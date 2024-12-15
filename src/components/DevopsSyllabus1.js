@@ -9,7 +9,7 @@ const DevOpsSyllabus = () => {
       title: "Introduction to DevOps",
       lectures: [
         {
-          content: "1. Introduction [15 Min]",
+          content: " Introduction [15 Min]",
           subLectures: [
             { type: "bullet", content: "Course Features and Tools" },
             { type: "bullet", content: "What is DevOps?" },
@@ -20,14 +20,14 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          content: "2. DevOps Culture [15 Min]",
+          content: " DevOps Culture [15 Min]",
           subLectures: [
             { type: "bullet", content: "The Goals of DevOps" },
             { type: "bullet", content: "DevOps vs Traditional Silos" },
           ],
         },
         {
-          content: "3. DevOps Concepts and Practices [45 Min]",
+          content: " DevOps Concepts and Practices [45 Min]",
           subLectures: [
             { type: "bullet", content: "Build Automation" },
             { type: "bullet", content: "Continuous Integration" },
@@ -43,7 +43,7 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          content: "4. DevOps Tools [45 Min]",
+          content: " DevOps Tools [45 Min]",
           subLectures: [
             { type: "bullet", content: "Introduction to Devops Tools" },
             {
@@ -66,7 +66,7 @@ const DevOpsSyllabus = () => {
       title: "Source Code Management",
       lectures: [
         {
-          content: "5. Git Basics / The Basics of Using Git [1 Hr 30 Min]",
+          content: " Git Basics / The Basics of Using Git [1 Hr 30 Min]",
           subLectures: [
             { type: "bullet", content: "Understanding the Git Filesystem" },
             { type: "bullet", content: "Creating a Local Repository (Empty)" },
@@ -80,11 +80,10 @@ const DevOpsSyllabus = () => {
               content:
                 "HOL: Creating Local Repositories with Git and Adding/Checking in Files",
             },
-
           ],
         },
         {
-          content: "6. Tags, Branching, Merging and Reverting [45 Min]",
+          content: " Tags, Branching, Merging and Reverting [45 Min]",
           subLectures: [
             { type: "bullet", content: "Using Tags" },
             { type: "bullet", content: "Using Branches" },
@@ -95,11 +94,11 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          content: "7. Git's Logs and Auditing [15 Min]",
+          content: " Git's Logs and Auditing [15 Min]",
           subLectures: [{ type: "bullet", content: "Using Git's Logs" }],
         },
         {
-          content: "8. Cloning Repositories [1 Hr]",
+          content: "Cloning Repositories [1 Hr]",
           subLectures: [
             { type: "bullet", content: "Cloning Local Repositories" },
             {
@@ -115,19 +114,18 @@ const DevOpsSyllabus = () => {
               type: "subtitle",
               content: "HOL: Cloning a Remote GitHub Repository",
             },
-          ]
+          ],
         },
         {
-          content: "9. Push, Pull, and Tracking Remote Repositories [30 Min]",
+          content: " Push, Pull, and Tracking Remote Repositories [30 Min]",
           subLectures: [
             { type: "bullet", content: "Tracking Remote Repositories" },
             { type: "bullet", content: "Pushing to Remote Repositories" },
             { type: "bullet", content: "Pull Requests" },
           ],
-
         },
         {
-          content: "10. Git Branching Strategy [30 Min]",
+          content: " Git Branching Strategy [30 Min]",
           subLectures: [
             { type: "bullet", content: "What is a branching strategy?" },
             { type: "bullet", content: "Why you need a branching strategy" },
@@ -152,17 +150,15 @@ const DevOpsSyllabus = () => {
               content: "Trunk-based Development",
             },
           ],
-
         },
       ],
     },
-    
+
     {
       title: "Build Automation and Continuous Integration",
       lectures: [
         {
-        
-          content: "11. Build Automation [2 Hr]",
+          content: "Build Automation [2 Hr]",
           subLectures: [
             { type: "bullet", content: "Introducing Build Automation" },
             { type: "bullet", content: "Build Automation Tools" },
@@ -181,8 +177,7 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          
-          content: "12. Continuous Integration & Jenkins Pipelines [3 Hr]",
+          content: " Continuous Integration & Jenkins Pipelines [3 Hr]",
           subLectures: [
             { type: "bullet", content: "CI Overview" },
             { type: "bullet", content: "Installing Jenkins" },
@@ -224,8 +219,7 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          
-          content: "13. Continuous Delivery and Continuous Deployment [3 Hr]",
+          content: " Continuous Delivery and Continuous Deployment [3 Hr]",
           subLectures: [
             {
               type: "bullet",
@@ -264,7 +258,7 @@ const DevOpsSyllabus = () => {
       lectures: [
         {
           type: "title",
-          content: "14. DevOps Tools for Infrastructure Automation [30 Min]",
+          content: " DevOps Tools for Infrastructure Automation [30 Min]",
           subLectures: [
             { type: "bullet", content: "Infrastructure Provisioning" },
             { type: "bullet", content: "Configuration Management" },
@@ -275,7 +269,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "15. Understanding Infrastructure as a Code [30 Min]",
+          content: " Understanding Infrastructure as a Code [30 Min]",
           subLectures: [
             { type: "bullet", content: "IaC and Its Benefits" },
             { type: "bullet", content: "Cloud Agnostic IaC with Terraform" },
@@ -283,7 +277,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "16. IaC with Terraform [6 Hr]",
+          content: " IaC with Terraform [6 Hr]",
           subLectures: [
             { type: "bullet", content: "What is the Terraform Workflow?" },
             {
@@ -333,7 +327,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "17. Configuration Management with Ansible [6 Hr]",
+          content: " Configuration Management with Ansible [6 Hr]",
           subLectures: [
             { type: "bullet", content: "What is Configuration Management?" },
             { type: "bullet", content: "What is Ansible?" },
@@ -401,7 +395,7 @@ const DevOpsSyllabus = () => {
         {
           type: "title",
           content:
-            "18. Docker Community Edition Installation and Configuration [2 Hr]",
+            " Docker Community Edition Installation and Configuration [2 Hr]",
           subLectures: [
             { type: "bullet", content: "Installing Docker Community Edition" },
             { type: "bullet", content: "Docker Basics" },
@@ -423,7 +417,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "19. Image Creation, Management, and Registry [3 Hr]",
+          content: " Image Creation, Management, and Registry [3 Hr]",
           subLectures: [
             { type: "bullet", content: "Introduction to Docker Images" },
             { type: "bullet", content: "The Components of a Dockerfile" },
@@ -470,7 +464,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "21. Kubernetes- Container Orchestrator [10 Hr]",
+          content: " Kubernetes- Container Orchestrator [10 Hr]",
           subLectures: [
             { type: "bullet", content: "Kubernetes Fundamentals" },
             { type: "subbullet", content: "Kubernetes Fundamentals Intro" },
@@ -542,7 +536,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "22. Monitoring with Prometheus and Grafana [7 Hr]",
+          content: " Monitoring with Prometheus and Grafana [7 Hr]",
           subLectures: [
             { type: "bullet", content: "Monitoring Basics" },
             { type: "subbullet", content: "Push or Pull" },
@@ -597,7 +591,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "23. DevOps and the Cloud [8 Hr]",
+          content: " DevOps and the Cloud [8 Hr]",
           subLectures: [
             { type: "bullet", content: "DevOps and the Cloud" },
             { type: "bullet", content: "DevOps and Google Cloud Platform" },
@@ -652,7 +646,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "24. Modern Software Development [4 Hr]",
+          content: " Modern Software Development [4 Hr]",
           subLectures: [
             { type: "bullet", content: "RESTful APIs" },
             { type: "subbullet", content: "What is REST?" },
@@ -717,7 +711,6 @@ const DevOpsSyllabus = () => {
         },
       ],
     },
-
   ];
   // State to track which numbered topic is open
   const [openTopics, setOpenTopics] = useState({});
@@ -758,10 +751,15 @@ const DevOpsSyllabus = () => {
                   <div key={idx} className="">
                     {/* Topic Number */}
                     <div
-                      className="cursor-pointer font-semibold  border-2 px-4 p-3 border-[#004AAD] border-opacity-[5%] mt-1 font-Quicksand"
+                      className="cursor-pointer font-semibold flex flex-row items-center gap-3 border-2 px-4 p-3  border-[#004AAD] border-opacity-[5%] mt-1 font-Quicksand bg-gray-50"
                       onClick={() => toggleTopic(lecture.content)}
                     >
-                      {lecture.content}
+                      <img
+                        src="/dropdown.svg"
+                        alt="Toggle Dropdown"
+                        className="mr-0 w-[11px] h-[14px]"
+                      />
+                      <span>{lecture.content}</span>
                     </div>
 
                     {/* Topic Content */}
