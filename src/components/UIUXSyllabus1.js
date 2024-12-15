@@ -179,7 +179,7 @@ const UIUXSyllabus1 = () => {
           {syllabusSections.map((section, index) => (
             <div key={index} className="relative lg:w-full max-w-[800px] w-[250px]">
               <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 bg-gray-50 ${
                   !openDropdowns[section.title] &&
                   index !== syllabusSections.length - 1
                     ? "border-b-5"
