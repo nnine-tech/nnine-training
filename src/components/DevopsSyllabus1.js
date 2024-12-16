@@ -723,66 +723,68 @@ const DevOpsSyllabus = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:ml-20 ml-5 mb-10">
+    <div className="flex flex-col md:flex-row  lg:ml-20 ml-3 mb-10">
       {/* Syllabus Section */}
-      <div className="md:w-[650px] w-full flex flex-col sm:mt-4">
-        <div className="w-[65%] mx-auto lg:w-full lg:mx-0 flex flex-col mt-10">
-          <h1 className="font-bold text-3xl p-4 font-Quicksand mb-6 text-[#003366]">
+      <div className="w-full flex flex-col sm:mt-4">
+        <div className="w-full flex flex-col mt-10 px-3 sm:px-6">
+          <h1 className="font-bold text-xl sm:text-2xl md:text-3xl p-2 sm:p-4 font-Quicksand mb-4 sm:mb-6 text-[#003366]">
             Course Syllabus
           </h1>
-
+  
           {syllabusSections.map((section, index) => (
             <div
               key={index}
-              className="relative lg:w-full w-[250px] max-w-[800px] mx-auto lg:mx-0"
+              className="relative w-full lg:w-[500px] xl:w-[700px] mx-auto lg:mx-0 mb-4"
             >
               {/* Main Section Title */}
-              <div className=" px-4 border-[#004AAD] border-opacity-[5%] transition-all">
-                <div className="flex items-center p-3 cursor-pointer font-Quicksand">
-                  <span className="font-bold text-xl text-[#003366]">
+              <div className="px-2 sm:px-4 border-[#004AAD] border-opacity-[5%] transition-all">
+                <div className="flex items-center p-2 sm:p-3 cursor-pointer font-Quicksand">
+                  <span className="font-bold text-base sm:text-lg md:text-xl text-[#003366]">
                     {section.title}
                   </span>
                 </div>
               </div>
-
+  
               {/* Numbered Topics */}
-              <div className="w-full  ">
+              <div className="w-full">
                 {section.lectures.map((lecture, idx) => (
-                  <div key={idx} className="">
+                  <div key={idx} className="mb-1">
                     {/* Topic Number */}
                     <div
-                      className="cursor-pointer font-semibold flex flex-row items-center gap-3 border-2 px-4 p-3  border-[#004AAD] border-opacity-[5%] mt-1 font-Quicksand bg-gray-50"
+                      className="cursor-pointer font-semibold flex items-center gap-2 sm:gap-3 border-2 px-2 w-full sm:px-4 py-2 sm:py-3 border-[#004AAD] border-opacity-[5%] font-Quicksand bg-gray-50"
                       onClick={() => toggleTopic(lecture.content)}
                     >
                       <img
                         src="/dropdown.svg"
                         alt="Toggle Dropdown"
-                        className="mr-0 w-[11px] h-[14px]"
+                        className="w-[8px] sm:w-[11px] h-[10px] sm:h-[14px]"
                       />
-                      <span>{lecture.content}</span>
+                      <span className="text-sm sm:text-base">
+                        {lecture.content}
+                      </span>
                     </div>
-
+  
                     {/* Topic Content */}
                     {openTopics[lecture.content] && (
-                      <div className="pl-20 font-Quicksand border-2 border-[#004AAD] border-opacity-[5%] mt-1">
+                      <div className="pl-4 sm:pl-6 font-Quicksand border-2 border-[#004AAD] border-opacity-[5%] mt-2">
                         <ul>
                           {lecture.subLectures.map((subLecture, subIdx) => (
                             <li
                               key={subIdx}
-                              className={`py-1 font-Quicksand font-semibold${
+                              className={`py-1 font-Quicksand ${
                                 subLecture.type === "bullet"
-                                  ? "font-semibold list-disc"
-                                  : "font-normal list-square"
+                                  ? "list-disc"
+                                  : "list-square"
                               }`}
                             >
                               {subLecture.content}
                               {subLecture.subPoints && (
-                                <ul className="ml-6">
+                                <ul className="ml-4 sm:ml-6">
                                   {subLecture.subPoints.map(
                                     (subPoint, pointIdx) => (
                                       <li
                                         key={pointIdx}
-                                        className="list-[square] py-1  font-Quicksand "
+                                        className="list-[square] py-1 font-Quicksand"
                                       >
                                         {subPoint.content}
                                       </li>
@@ -802,13 +804,14 @@ const DevOpsSyllabus = () => {
           ))}
         </div>
       </div>
-
+  
       {/* DevopsClassType Section */}
-      <div className="mt-10 lg:mt-0 flex justify-center lg:ml-[300px] mr-[20px]">
+      <div className="mt-10 lg:mt-0 flex justify-center lg:mr-[70px] ">
         <DevopsClassType />
       </div>
     </div>
   );
-};
+}
+  
 
-export default DevOpsSyllabus;
+export default DevOpsSyllabus
