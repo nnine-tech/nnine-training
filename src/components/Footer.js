@@ -23,11 +23,11 @@ const Footer = () => {
                 N9 Solution
               </h2>
               <p className="text-white text-sm md:text-base lg:text-[15px] text-center lg:text-left leading-[22.5px]">
-                5th Floor White House Building
+                5th Floor, White House Building,
                 <br />
-                Chabahil, Kathmandu
-                <br />
-                Nepal
+                Ganesthan, Chabahil
+                
+                
               </p>
               <div className="text-center lg:text-left mt-4 text-white font-Quicksand font-[600]">
                 <p>Contact Us</p>
