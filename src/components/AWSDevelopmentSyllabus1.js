@@ -287,7 +287,7 @@ const AWSDevelopmentSyllabus1 = () => {
               className={`relative lg:w-full max-w-[800px] w-[250px]`}
             >
               <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all ${
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all bg-gray-50 ${
                   !openDropdowns[section.title] &&
                   index !== syllabusSections.length - 1
                     ? "border-b-5"

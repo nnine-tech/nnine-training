@@ -9,7 +9,7 @@ const DevOpsSyllabus = () => {
       title: "Introduction to DevOps",
       lectures: [
         {
-          content: "1. Introduction [15 Min]",
+          content: " Introduction [15 Min]",
           subLectures: [
             { type: "bullet", content: "Course Features and Tools" },
             { type: "bullet", content: "What is DevOps?" },
@@ -20,14 +20,14 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          content: "2. DevOps Culture [15 Min]",
+          content: " DevOps Culture [15 Min]",
           subLectures: [
             { type: "bullet", content: "The Goals of DevOps" },
             { type: "bullet", content: "DevOps vs Traditional Silos" },
           ],
         },
         {
-          content: "3. DevOps Concepts and Practices [45 Min]",
+          content: " DevOps Concepts and Practices [45 Min]",
           subLectures: [
             { type: "bullet", content: "Build Automation" },
             { type: "bullet", content: "Continuous Integration" },
@@ -43,7 +43,7 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          content: "4. DevOps Tools [45 Min]",
+          content: " DevOps Tools [45 Min]",
           subLectures: [
             { type: "bullet", content: "Introduction to Devops Tools" },
             {
@@ -66,7 +66,7 @@ const DevOpsSyllabus = () => {
       title: "Source Code Management",
       lectures: [
         {
-          content: "5. Git Basics / The Basics of Using Git [1 Hr 30 Min]",
+          content: " Git Basics / The Basics of Using Git [1 Hr 30 Min]",
           subLectures: [
             { type: "bullet", content: "Understanding the Git Filesystem" },
             { type: "bullet", content: "Creating a Local Repository (Empty)" },
@@ -80,11 +80,10 @@ const DevOpsSyllabus = () => {
               content:
                 "HOL: Creating Local Repositories with Git and Adding/Checking in Files",
             },
-
           ],
         },
         {
-          content: "6. Tags, Branching, Merging and Reverting [45 Min]",
+          content: " Tags, Branching, Merging and Reverting [45 Min]",
           subLectures: [
             { type: "bullet", content: "Using Tags" },
             { type: "bullet", content: "Using Branches" },
@@ -95,11 +94,11 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          content: "7. Git's Logs and Auditing [15 Min]",
+          content: " Git's Logs and Auditing [15 Min]",
           subLectures: [{ type: "bullet", content: "Using Git's Logs" }],
         },
         {
-          content: "8. Cloning Repositories [1 Hr]",
+          content: "Cloning Repositories [1 Hr]",
           subLectures: [
             { type: "bullet", content: "Cloning Local Repositories" },
             {
@@ -115,19 +114,18 @@ const DevOpsSyllabus = () => {
               type: "subtitle",
               content: "HOL: Cloning a Remote GitHub Repository",
             },
-          ]
+          ],
         },
         {
-          content: "9. Push, Pull, and Tracking Remote Repositories [30 Min]",
+          content: " Push, Pull, and Tracking Remote Repositories [30 Min]",
           subLectures: [
             { type: "bullet", content: "Tracking Remote Repositories" },
             { type: "bullet", content: "Pushing to Remote Repositories" },
             { type: "bullet", content: "Pull Requests" },
           ],
-
         },
         {
-          content: "10. Git Branching Strategy [30 Min]",
+          content: " Git Branching Strategy [30 Min]",
           subLectures: [
             { type: "bullet", content: "What is a branching strategy?" },
             { type: "bullet", content: "Why you need a branching strategy" },
@@ -152,17 +150,15 @@ const DevOpsSyllabus = () => {
               content: "Trunk-based Development",
             },
           ],
-
         },
       ],
     },
-    
+
     {
       title: "Build Automation and Continuous Integration",
       lectures: [
         {
-        
-          content: "11. Build Automation [2 Hr]",
+          content: "Build Automation [2 Hr]",
           subLectures: [
             { type: "bullet", content: "Introducing Build Automation" },
             { type: "bullet", content: "Build Automation Tools" },
@@ -181,8 +177,7 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          
-          content: "12. Continuous Integration & Jenkins Pipelines [3 Hr]",
+          content: " Continuous Integration & Jenkins Pipelines [3 Hr]",
           subLectures: [
             { type: "bullet", content: "CI Overview" },
             { type: "bullet", content: "Installing Jenkins" },
@@ -224,8 +219,7 @@ const DevOpsSyllabus = () => {
           ],
         },
         {
-          
-          content: "13. Continuous Delivery and Continuous Deployment [3 Hr]",
+          content: " Continuous Delivery and Continuous Deployment [3 Hr]",
           subLectures: [
             {
               type: "bullet",
@@ -264,7 +258,7 @@ const DevOpsSyllabus = () => {
       lectures: [
         {
           type: "title",
-          content: "14. DevOps Tools for Infrastructure Automation [30 Min]",
+          content: " DevOps Tools for Infrastructure Automation [30 Min]",
           subLectures: [
             { type: "bullet", content: "Infrastructure Provisioning" },
             { type: "bullet", content: "Configuration Management" },
@@ -275,7 +269,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "15. Understanding Infrastructure as a Code [30 Min]",
+          content: " Understanding Infrastructure as a Code [30 Min]",
           subLectures: [
             { type: "bullet", content: "IaC and Its Benefits" },
             { type: "bullet", content: "Cloud Agnostic IaC with Terraform" },
@@ -283,7 +277,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "16. IaC with Terraform [6 Hr]",
+          content: " IaC with Terraform [6 Hr]",
           subLectures: [
             { type: "bullet", content: "What is the Terraform Workflow?" },
             {
@@ -333,7 +327,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "17. Configuration Management with Ansible [6 Hr]",
+          content: " Configuration Management with Ansible [6 Hr]",
           subLectures: [
             { type: "bullet", content: "What is Configuration Management?" },
             { type: "bullet", content: "What is Ansible?" },
@@ -401,7 +395,7 @@ const DevOpsSyllabus = () => {
         {
           type: "title",
           content:
-            "18. Docker Community Edition Installation and Configuration [2 Hr]",
+            " Docker Community Edition Installation and Configuration [2 Hr]",
           subLectures: [
             { type: "bullet", content: "Installing Docker Community Edition" },
             { type: "bullet", content: "Docker Basics" },
@@ -423,7 +417,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "19. Image Creation, Management, and Registry [3 Hr]",
+          content: " Image Creation, Management, and Registry [3 Hr]",
           subLectures: [
             { type: "bullet", content: "Introduction to Docker Images" },
             { type: "bullet", content: "The Components of a Dockerfile" },
@@ -470,7 +464,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "21. Kubernetes- Container Orchestrator [10 Hr]",
+          content: " Kubernetes- Container Orchestrator [10 Hr]",
           subLectures: [
             { type: "bullet", content: "Kubernetes Fundamentals" },
             { type: "subbullet", content: "Kubernetes Fundamentals Intro" },
@@ -542,7 +536,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "22. Monitoring with Prometheus and Grafana [7 Hr]",
+          content: " Monitoring with Prometheus and Grafana [7 Hr]",
           subLectures: [
             { type: "bullet", content: "Monitoring Basics" },
             { type: "subbullet", content: "Push or Pull" },
@@ -597,7 +591,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "23. DevOps and the Cloud [8 Hr]",
+          content: " DevOps and the Cloud [8 Hr]",
           subLectures: [
             { type: "bullet", content: "DevOps and the Cloud" },
             { type: "bullet", content: "DevOps and Google Cloud Platform" },
@@ -652,7 +646,7 @@ const DevOpsSyllabus = () => {
         },
         {
           type: "title",
-          content: "24. Modern Software Development [4 Hr]",
+          content: " Modern Software Development [4 Hr]",
           subLectures: [
             { type: "bullet", content: "RESTful APIs" },
             { type: "subbullet", content: "What is REST?" },
@@ -717,7 +711,6 @@ const DevOpsSyllabus = () => {
         },
       ],
     },
-
   ];
   // State to track which numbered topic is open
   const [openTopics, setOpenTopics] = useState({});
@@ -730,61 +723,68 @@ const DevOpsSyllabus = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:ml-20 ml-5 mb-10">
+    <div className="flex flex-col md:flex-row  lg:ml-20 ml-3 mb-10">
       {/* Syllabus Section */}
-      <div className="md:w-[650px] w-full flex flex-col sm:mt-4">
-        <div className="w-[65%] mx-auto lg:w-full lg:mx-0 flex flex-col mt-10">
-          <h1 className="font-bold text-3xl p-4 font-Quicksand mb-6 text-[#003366]">
+      <div className="w-full flex flex-col sm:mt-4">
+        <div className="w-full flex flex-col mt-10 px-3 sm:px-6">
+          <h1 className="font-bold text-xl sm:text-2xl md:text-3xl p-2 sm:p-4 font-Quicksand mb-4 sm:mb-6 text-[#003366]">
             Course Syllabus
           </h1>
-
+  
           {syllabusSections.map((section, index) => (
             <div
               key={index}
-              className="relative lg:w-full w-[250px] max-w-[800px] mx-auto lg:mx-0"
+              className="relative w-full lg:w-[500px] xl:w-[700px] mx-auto lg:mx-0 mb-4"
             >
               {/* Main Section Title */}
-              <div className=" px-4 border-[#004AAD] border-opacity-[5%] transition-all">
-                <div className="flex items-center p-3 cursor-pointer font-Quicksand">
-                  <span className="font-bold text-xl text-[#003366]">
+              <div className="px-2 sm:px-4 border-[#004AAD] border-opacity-[5%] transition-all">
+                <div className="flex items-center p-2 sm:p-3 cursor-pointer font-Quicksand">
+                  <span className="font-bold text-base sm:text-lg md:text-xl text-[#003366]">
                     {section.title}
                   </span>
                 </div>
               </div>
-
+  
               {/* Numbered Topics */}
-              <div className="w-full  ">
+              <div className="w-full">
                 {section.lectures.map((lecture, idx) => (
-                  <div key={idx} className="">
+                  <div key={idx} className="mb-1">
                     {/* Topic Number */}
                     <div
-                      className="cursor-pointer font-semibold  border-2 px-4 p-3 border-[#004AAD] border-opacity-[5%] mt-1 font-Quicksand"
+                      className="cursor-pointer font-semibold flex items-center gap-2 sm:gap-3 border-2 px-2 w-full sm:px-4 py-2 sm:py-3 border-[#004AAD] border-opacity-[5%] font-Quicksand bg-gray-50"
                       onClick={() => toggleTopic(lecture.content)}
                     >
-                      {lecture.content}
+                      <img
+                        src="/dropdown.svg"
+                        alt="Toggle Dropdown"
+                        className="w-[8px] sm:w-[11px] h-[10px] sm:h-[14px]"
+                      />
+                      <span className="text-sm sm:text-base">
+                        {lecture.content}
+                      </span>
                     </div>
-
+  
                     {/* Topic Content */}
                     {openTopics[lecture.content] && (
-                      <div className="pl-20 font-Quicksand border-2 border-[#004AAD] border-opacity-[5%] mt-1">
+                      <div className="pl-4 sm:pl-6 font-Quicksand border-2 border-[#004AAD] border-opacity-[5%] mt-2">
                         <ul>
                           {lecture.subLectures.map((subLecture, subIdx) => (
                             <li
                               key={subIdx}
-                              className={`py-1 font-Quicksand font-semibold${
+                              className={`py-1 font-Quicksand ${
                                 subLecture.type === "bullet"
-                                  ? "font-semibold list-disc"
-                                  : "font-normal list-square"
+                                  ? "list-disc"
+                                  : "list-square"
                               }`}
                             >
                               {subLecture.content}
                               {subLecture.subPoints && (
-                                <ul className="ml-6">
+                                <ul className="ml-4 sm:ml-6">
                                   {subLecture.subPoints.map(
                                     (subPoint, pointIdx) => (
                                       <li
                                         key={pointIdx}
-                                        className="list-[square] py-1  font-Quicksand "
+                                        className="list-[square] py-1 font-Quicksand"
                                       >
                                         {subPoint.content}
                                       </li>
@@ -804,13 +804,14 @@ const DevOpsSyllabus = () => {
           ))}
         </div>
       </div>
-
+  
       {/* DevopsClassType Section */}
-      <div className="mt-10 lg:mt-0 flex justify-center lg:ml-[300px] mr-[20px]">
+      <div className="mt-10 lg:mt-0 flex justify-center lg:mr-[70px] ">
         <DevopsClassType />
       </div>
     </div>
   );
-};
+}
+  
 
-export default DevOpsSyllabus;
+export default DevOpsSyllabus

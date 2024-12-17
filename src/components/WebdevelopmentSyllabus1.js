@@ -119,7 +119,7 @@ const syllabusSections = [
                   className={`relative lg:w-full w-[240px] max-w-[800px]`}
                 >
                   <div
-                    className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
+                    className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 bg-gray-50 ${
                       !openDropdowns[section.title] &&
                       index !== syllabusSections.length - 1
                         ? "border-b-5"

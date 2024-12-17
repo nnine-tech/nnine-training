@@ -172,19 +172,19 @@ const FlutterSyllabus1 = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row sm:flex-row sm:mt-4 ml-20 mb-10">
-      <div className="w-[65%] flex flex-col mt-14">
+    <div className="flex flex-col md:flex-row sm:mt-4 ml-5 md:ml-10 lg:ml-20 mb-10">
+      <div className="w-full md:w-[65%] flex flex-col mt-8 md:mt-14 px-3 sm:px-4">
         <div className="w-full">
-          <h1 className="font-bold text-3xl p-[10px] font-Quicksand mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-2xl sm:text-3xl p-[10px] font-Quicksand mb-4 sm:mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
             <div
               key={index}
-              className="relative lg:w-full max-w-[800px] w-[250px] "
+              className="relative w-full sm:w-[90%] max-w-[800px] mx-auto md:mx-0 "
             >
               <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
+                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 bg-gray-50 ${
                   !openDropdowns[section.title] &&
                   index !== syllabusSections.length - 1
                     ? "border-b-5"
@@ -199,13 +199,13 @@ const FlutterSyllabus1 = () => {
                     <img
                       src="/dropdown.svg"
                       alt="Toggle Dropdown"
-                      className="mr-0 w-[11px] h-[14px]"
+                      className="mr-0 w-[8px] sm:w-[11px] h-[10px] sm:h-[14px]"
                     />
                   </button>
-                  <span className="font-semibold font-Quicksand">
+                  <span className="font-semibold font-Quicksand text-sm sm:text-base">
                     {section.title}
                   </span>
-                  <span className="hidden md:block text-right ml-auto font-Quicksand">
+                  <span className="hidden md:block text-right ml-auto font-Quicksand text-sm sm:text-base">
                     {section.info}
                   </span>
                 </div>
@@ -216,7 +216,7 @@ const FlutterSyllabus1 = () => {
                     {section.lectures.map((lecture, idx) => (
                       <li
                         key={idx}
-                        className={`py-1 font-Quicksand ml-14 ${
+                        className={`py-1 font-Quicksand ml-6 sm:ml-14 text-sm sm:text-base ${
                           lecture.startsWith("Lesson")
                             ? "font-bold list-none"
                             : ""
@@ -232,7 +232,7 @@ const FlutterSyllabus1 = () => {
           ))}
         </div>
       </div>
-      <div className="ml-[-65px] md:ml-[20px]">
+      <div className="mt-10 lg:mt-0 flex justify-center lg:ml-[300px] mr-[20px]">
         <FlutterClassType />
       </div>
     </div>

@@ -5,413 +5,450 @@ import MernSchedule from "./MernSchedule";
 import MernClassType from "./MernClassType";
 
 const CourseSyllabus1 = () => {
-  // State to manage dropdown visibility for each section
-  const [openDropdowns, setOpenDropdowns] = useState({});
+  // State to track which numbered topic is open
+  const [openTopics, setOpenTopics] = useState({});
 
   // Function to toggle dropdown visibility
-  const toggleDropdown = (section) => {
-    setOpenDropdowns((prev) => ({
+  const toggleTopic = (title) => {
+    setOpenTopics((prev) => ({
       ...prev,
-      [section]: !prev[section],
+      [title]: !prev[title],
     }));
   };
 
   // Array of syllabus sections
-  const syllabusSections = [
+  const lectures = [
     {
-      title: "Introduction",
-      lectures: [
-        "Introduction to MERN stack",
-        "Introduction to JavaScript programming language",
-        "Technologies around JavaScript",
+      content: "Introduction",
+      subLectures: [
+        { content: "Introduction to MERN stack" },
+        { content: "Introduction to JavaScript programming language" },
+        { content: "Technologies around JavaScript" },
       ],
-      info: "3 lectures",
     },
     {
-      title: "Environment Setup",
-      lectures: [
-        "Introduction to development tools",
-        "Text Editor, IDE",
-        "Command Prompt(command line)",
-        "Node setup",
-        "Postman",
+      content: "Environment Setup",
+      subLectures: [
+        { content: "Introduction to development tools" },
+        { content: "Text Editor, IDE" },
+        { content: "Command Prompt(command line)" },
+        { content: "Node setup" },
+        { content: "Postman" },
       ],
-      info: "5 lectures",
     },
     {
-      title: "JavaScript Basics",
-      lectures: [
-        "Overview of JavaScript",
-        "Brief History of JavaScript",
-        "Variables",
-        "Operator and Operands",
-        "Conditionals and Iterations",
-        "Data types and coercion",
-        "Introduction to data structures like stack, queues, array, and objects",
-        "Debugging JavaScript code",
-        "JavaScript naming conventions",
-        "Introduction to JavaScript functions and classes",
+      content: "JavaScript Basics",
+      subLectures: [
+        { content: "Overview of JavaScript" },
+        { content: "Brief History of JavaScript" },
+        { content: "Variables" },
+        { content: "Operator and Operands" },
+        { content: "Conditionals and Iterations" },
+        { content: "Data types and coercion" },
+        {
+          content:
+            "Introduction to data structures like stack, queues, array, and objects",
+        },
+        { content: "Debugging JavaScript code" },
+        { content: "JavaScript naming conventions" },
+        { content: "Introduction to JavaScript functions and classes" },
       ],
-      info: "10 lectures",
     },
     {
-      title: "Advanced JavaScript",
-      lectures: [
-        "EcmaScript and Modern JavaScript",
-        "Need of ES language specification",
-        "Understanding transpilers and polyfills",
-        "CommonJS vs ES modules",
-        "Modern ES6+ features",
-        "Introduction to TypeScript",
-        "TypeScript vs JavaScript",
-        "JavaScript under the Hood",
-        "Hoisting",
-        "Block/Global/Local Scopes and Temporal Dead Zones",
-        "Scopes and Closures",
-        "Prototypes",
-        "Asynchronous JavaScript and Web APIs usages",
-        "Global execution context",
-        "Event loops",
+      content: "Advanced JavaScript",
+      subLectures: [
+        { content: "EcmaScript and Modern JavaScript" },
+        { content: "Need of ES language specification" },
+        { content: "Understanding transpilers and polyfills" },
+        { content: "CommonJS vs ES modules" },
+        { content: "Modern ES6+ features" },
+        { content: "Introduction to TypeScript" },
+        { content: "TypeScript vs JavaScript" },
+        { content: "JavaScript under the Hood" },
+        { content: "Hoisting" },
+        { content: "Block/Global/Local Scopes and Temporal Dead Zones" },
+        { content: "Scopes and Closures" },
+        { content: "Prototypes" },
+        { content: "Asynchronous JavaScript and Web APIs usages" },
+        { content: "Global execution context" },
+        { content: "Event loops" },
       ],
-      info: "14 lectures",
     },
     {
-      title: "JavaScript Functions",
-      lectures: [
-        "Arguments and Parameters",
-        "Functions declaration and execution",
-        "ES6 arrow functions",
-        "Callback functions",
-        "Higher Order Functions",
+      content: "JavaScript Functions",
+      subLectures: [
+        { content: "Arguments and Parameters" },
+        { content: "Functions declaration and execution" },
+        { content: "ES6 arrow functions" },
+        { content: "Callback functions" },
+        { content: "Higher Order Functions" },
       ],
-      info: "5 lectures",
     },
     {
-      title: "Git and Versioning",
-      lectures: [
-        "Introduction to version control and usage",
-        "GitHub, Bitbucket, and GitLab",
-        "Initializing and cloning git projects",
-        "Git commit/push",
-        "Branches and Pull Requests",
-        "Standard practices for naming GitHub branches",
-        "The .gitignore file",
-        "GitHub exercises: Collaborating in the same repo and handling merge conflicts live",
+      content: "Git and Versioning",
+      subLectures: [
+        { content: "Introduction to version control and usage" },
+        { content: "GitHub, Bitbucket, and GitLab" },
+        { content: "Initializing and cloning git projects" },
+        { content: "Git commit/push" },
+        { content: "Branches and Pull Requests" },
+        { content: "Standard practices for naming GitHub branches" },
+        { content: "The .gitignore file" },
+        {
+          content:
+            "GitHub exercises: Collaborating in the same repo and handling merge conflicts live",
+        },
       ],
-      info: "8 lectures",
     },
     {
-      title: "Web Technology",
-      lectures: [
-        "Introduction to web flow and architecture",
-        "Introduction to web and how it works",
-        "Client-server architecture definition",
-        "Introduction to API and its need",
-        "Introduction to REST API",
-        "Software development/design patterns",
-        "MVC pattern",
+      content: "Web Technology",
+      subLectures: [
+        { content: "Introduction to web flow and architecture" },
+        { content: "Introduction to web and how it works" },
+        { content: "Client-server architecture definition" },
+        { content: "Introduction to API and its need" },
+        { content: "Introduction to REST API" },
+        { content: "Software development/design patterns" },
+        { content: "MVC pattern" },
       ],
-      info: "7 lectures",
     },
     {
-      title: "Node.js",
-      lectures: [
-        "Introduction to Node.js",
-        "Requirements for Node.js",
-        "Node.js and its usages",
-        "Setup Node.js",
-        "NPM (Node Package Manager)",
-        "Introduction to NPM",
-        "Global vs Local Installation",
-        "The package.json file",
-        "Attributes of package.json",
-        "Installing and uninstalling packages using npm",
-        "Introduction to dependency and dev-dependency",
+      content: "Node.js",
+      subLectures: [
+        { content: "Introduction to Node.js" },
+        { content: "Requirements for Node.js" },
+        { content: "Node.js and its usages" },
+        { content: "Setup Node.js" },
+        { content: "NPM (Node Package Manager)" },
+        { content: "Introduction to NPM" },
+        { content: "Global vs Local Installation" },
+        { content: "The package.json file" },
+        { content: "Attributes of package.json" },
+        { content: "Installing and uninstalling packages using npm" },
+        { content: "Introduction to dependency and dev-dependency" },
       ],
-      info: "11 lectures",
     },
     {
-      title: "Express.js",
-      lectures: [
-        "Introduction to Express.js",
-        "Introduction to framework and Express",
-        "Setting up an Express application",
-        "Creating a Hello World application using Express",
-        "Architecturing the Express.js application",
-        "Express flow and how it works",
-        "Introduction to Express application and usages",
-        "The HTTP protocol",
-        "Introduction to Express routing",
-        "Express request and response objects",
-        "Express Middlewares",
-        "Introduction to middlewares",
-        "Types of middlewares",
-        "Usages of middlewares",
-        "Error handling using middlewares",
-        "Serving static files using static",
-        "File handling using middlewares",
-        "Authorization and Authentication in Express",
-        "Introduction to auth and authorization",
-        "Introduction to JSON Web Token",
-        "Authorization using JWT",
-        "API protection",
+      content: "Express.js",
+      subLectures: [
+        { content: "Introduction to Express.js" },
+        { content: "Introduction to framework and Express" },
+        { content: "Setting up an Express application" },
+        { content: "Creating a Hello World application using Express" },
+        { content: "Architecturing the Express.js application" },
+        { content: "Express flow and how it works" },
+        { content: "Introduction to Express application and usages" },
+        { content: "The HTTP protocol" },
+        { content: "Introduction to Express routing" },
+        { content: "Express request and response objects" },
+        { content: "Express Middlewares" },
+        { content: "Introduction to middlewares" },
+        { content: "Types of middlewares" },
+        { content: "Usages of middlewares" },
+        { content: "Error handling using middlewares" },
+        { content: "Serving static files using static" },
+        { content: "File handling using middlewares" },
+        { content: "Authorization and Authentication in Express" },
+        { content: "Introduction to auth and authorization" },
+        { content: "Introduction to JSON Web Token" },
+        { content: "Authorization using JWT" },
+        { content: "API protection" },
       ],
-      info: "18 lectures",
     },
     {
-      title: "MongoDB",
-      lectures: [
-        "Detail of MongoDB",
-        "Introduction to database and existing databases",
-        "Understanding NoSQL (schema-less database)",
-        "Introduction to MongoDB (collection and documents)",
-        "CRUD operations using shell command",
-        "Using MongoDB Native driver with Node",
-        "Database modeling using ODM",
-        "Using MongoDB Compass (UI-based database system)",
-        "Update, insert, delete, and upsert documents",
-        "Aggregation in MongoDB",
-        "Map reduce",
+      content: "MongoDB",
+      subLectures: [
+        { content: "Detail of MongoDB" },
+        { content: "Introduction to database and existing databases" },
+        { content: "Understanding NoSQL (schema-less database)" },
+        { content: "Introduction to MongoDB (collection and documents)" },
+        { content: "CRUD operations using shell command" },
+        { content: "Using MongoDB Native driver with Node" },
+        { content: "Database modeling using ODM" },
+        { content: "Using MongoDB Compass (UI-based database system)" },
+        { content: "Update, insert, delete, and upsert documents" },
+        { content: "Aggregation in MongoDB" },
+        { content: "Map reduce" },
       ],
-      info: "11 lectures",
     },
     {
-      title: "Express with MongoDB",
-      lectures: [
-        "Building APIs with Express.js and MongoDB",
-        "Using MongoDB as a data store in Express app with Mongoose",
-        "Backend Project: API development using Node.js, Express.js, and MongoDB",
+      content: "Express with MongoDB",
+      subLectures: [
+        { content: "Building APIs with Express.js and MongoDB" },
+        {
+          content: "Using MongoDB as a data store in Express app with Mongoose",
+        },
+        {
+          content:
+            "Backend Project: API development using Node.js, Express.js, and MongoDB",
+        },
       ],
-      info: "3 lectures",
     },
     {
-      title: "Frontend Technology",
-      lectures: [
-        "Basic Web Overview",
-        "Introduction to HTML",
-        "Introduction to HTML tags, attributes, and properties",
-        "Introduction to CSS",
-        "Importance and uses of CSS in web design",
-        "HTML/CSS Practice: Creating and designing basic web designs",
-        "Responsive Web Design tools",
-        "Introduction to responsive vs non-responsive design",
-        "Bootstrap, a CSS-based framework",
-        "Alternatives to Bootstrap",
+      content: "Frontend Technology",
+      subLectures: [
+        { content: "Basic Web Overview" },
+        { content: "Introduction to HTML" },
+        { content: "Introduction to HTML tags, attributes, and properties" },
+        { content: "Introduction to CSS" },
+        { content: "Importance and uses of CSS in web design" },
+        {
+          content:
+            "HTML/CSS Practice: Creating and designing basic web designs",
+        },
+        { content: "Responsive Web Design tools" },
+        { content: "Introduction to responsive vs non-responsive design" },
+        { content: "Bootstrap, a CSS-based framework" },
+        { content: "Alternatives to Bootstrap" },
       ],
-      info: "10 lectures",
     },
     {
-      title: "React.js Fundamentals",
-      lectures: [
-        "Introduction to React.js",
-        "The objective of this training",
-        "Present scenario/Scopes of this technology",
-        "Environment setup",
-        "Node and npm",
-        "VS Code",
-        "Overview of JavaScript",
-        "Brief History of JavaScript",
-        "Variables",
-        "Operator and Operands",
-        "Conditionals and Iterations",
-        "Data types and coercion",
-        "Introduction to data structures like stack, queues, array, and objects",
-        "Debugging JavaScript code",
-        "JavaScript naming conventions",
-        "Introduction to JavaScript functions and classes",
-        "EcmaScript and modern JavaScript",
-        "Need of ES language specification",
-        "Understanding of transpilers and polyfills",
-        "CommonJS vs ES modules",
-        "Modern ES6+ features",
-        "JavaScript under the Hood",
-        "Hoisting",
-        "Block/Global/Local Scopes and Temporal Dead Zones",
-        "Scopes and Closures",
-        "Prototypes",
-        "Asynchronous JavaScript and Web APIs usages",
-        "Global execution context",
-        "Event loops",
+      content: "React.js Fundamentals",
+      subLectures: [
+        { content: "Introduction to React.js" },
+        { content: "The objective of this training" },
+        { content: "Present scenario/Scopes of this technology" },
+        { content: "Environment setup" },
+        { content: "Node and npm" },
+        { content: "VS Code" },
+        { content: "Overview of JavaScript" },
+        { content: "Brief History of JavaScript" },
+        { content: "Variables" },
+        { content: "Operator and Operands" },
+        { content: "Conditionals and Iterations" },
+        { content: "Data types and coercion" },
+        {
+          content:
+            "Introduction to data structures like stack, queues, array, and objects",
+        },
+        { content: "Debugging JavaScript code" },
+        { content: "JavaScript naming conventions" },
+        { content: "Introduction to JavaScript functions and classes" },
+        { content: "EcmaScript and modern JavaScript" },
+        { content: "Need of ES language specification" },
+        { content: "Understanding of transpilers and polyfills" },
+        { content: "CommonJS vs ES modules" },
+        { content: "Modern ES6+ features" },
+        { content: "JavaScript under the Hood" },
+        { content: "Hoisting" },
+        { content: "Block/Global/Local Scopes and Temporal Dead Zones" },
+        { content: "Scopes and Closures" },
+        { content: "Prototypes" },
+        { content: "Asynchronous JavaScript and Web APIs usages" },
+        { content: "Global execution context" },
+        { content: "Event loops" },
       ],
-      info: "21 lectures",
     },
     {
-      title: "React.js Functions",
-      lectures: [
-        "Arguments and Parameters",
-        "Functions declaration and execution",
-        "Pure and Impure Functions",
-        "ES6 arrow functions",
-        "IIFE and anonymous functions",
-        "Callback functions",
-        "Higher Order Functions",
+      content: "React.js Functions",
+      subLectures: [
+        { content: "Arguments and Parameters" },
+        { content: "Functions declaration and execution" },
+        { content: "Pure and Impure Functions" },
+        { content: "ES6 arrow functions" },
+        { content: "IIFE and anonymous functions" },
+        { content: "Callback functions" },
+        { content: "Higher Order Functions" },
       ],
-      info: "7 lectures",
     },
     {
-      title: "React Components and Routing",
-      lectures: [
-        "Understanding React as a library and its ecosystem",
-        "Difference between libraries and frameworks",
-        "Setting up React with CDN without using any frameworks",
-        "React components: Folder structure and architecture",
-        "Functional and Class-based Components in React",
-        "React Component Lifecycle Methods",
-        "Styling a React component",
-        "Introduction to SPAs",
-        "Virtual DOM in React",
-        "State",
-        "State exercise: Build a like button, counter apps, etc. using React state and useState hooks",
-        "Props",
-        "Props exercise: Pass data from parent to child, child to parent, and from one child to its siblings",
-        "Refs",
-        "Refs exercise: Targeting a particular DOM, scrolling to a particular DOM, auto-focusing an input field programmatically, etc. using useRef hooks",
-        "Higher-Order Components",
-        "HOC exercise: Building reusable components using Recompose",
-        "React Router",
-        "Setup React Router to handle routes",
-        "Protected and nested routes",
+      content: "React Components and Routing",
+      subLectures: [
+        { content: "Understanding React as a library and its ecosystem" },
+        { content: "Difference between libraries and frameworks" },
+        { content: "Setting up React with CDN without using any frameworks" },
+        { content: "React components: Folder structure and architecture" },
+        { content: "Functional and Class-based Components in React" },
+        { content: "React Component Lifecycle Methods" },
+        { content: "Styling a React component" },
+        { content: "Introduction to SPAs" },
+        { content: "Virtual DOM in React" },
+        { content: "State" },
+        {
+          content:
+            "State exercise: Build a like button, counter apps, etc. using React state and useState hooks",
+        },
+        { content: "Props" },
+        {
+          content:
+            "Props exercise: Pass data from parent to child, child to parent, and from one child to its siblings",
+        },
+        { content: "Refs" },
+        {
+          content:
+            "Refs exercise: Targeting a particular DOM, scrolling to a particular DOM, auto-focusing an input field programmatically, etc. using useRef hooks",
+        },
+        { content: "Higher-Order Components" },
+        {
+          content: "HOC exercise: Building reusable components using Recompose",
+        },
+        { content: "React Router" },
+        { content: "Setup React Router to handle routes" },
+        { content: "Protected and nested routes" },
       ],
-      info: "21 lectures",
     },
     {
-      title: "React Forms and Validation",
-      lectures: [
-        "Basics of React forms and handling various types of form fields and events",
-        "Client-side form validation",
-        "Advanced form handling with Formik and schema validators like Yup or regex",
+      content: "React Forms and Validation",
+      subLectures: [
+        {
+          content:
+            "Basics of React forms and handling various types of form fields and events",
+        },
+        { content: "Client-side form validation" },
+        {
+          content:
+            "Advanced form handling with Formik and schema validators like Yup or regex",
+        },
       ],
-      info: "4 lectures",
     },
     {
-      title: "Advanced React",
-      lectures: [
-        "Understanding React as a library and its ecosystem",
-        "Introduction to Next.js and its benefits",
-        "Intro to Next.js page router and app router",
-        "Creating API endpoints with Next.js",
-        "Understanding Server-Side Rendering (SSR) and Static Site Generation (SSG) with Next.js",
-        "Fetching data from API routes",
-        "Integrating API routes into a Next.js app",
-        "Implementing user authentication and handling cookies storage",
-        "Handling user sessions and access control",
-        "Introduction to serverless functions in Next.js",
-        "Implementing OAuth-based authentication (e.g., using OAuth providers like Google, Facebook, or GitHub)",
+      content: "Advanced React",
+      subLectures: [
+        { content: "Understanding React as a library and its ecosystem" },
+        { content: "Introduction to Next.js and its benefits" },
+        { content: "Intro to Next.js page router and app router" },
+        { content: "Creating API endpoints with Next.js" },
+        {
+          content:
+            "Understanding Server-Side Rendering (SSR) and Static Site Generation (SSG) with Next.js",
+        },
+        { content: "Fetching data from API routes" },
+        { content: "Integrating API routes into a Next.js app" },
+        {
+          content:
+            "Implementing user authentication and handling cookies storage",
+        },
+        { content: "Handling user sessions and access control" },
+        { content: "Introduction to serverless functions in Next.js" },
+        {
+          content:
+            "Implementing OAuth-based authentication (e.g., using OAuth providers like Google, Facebook, or GitHub)",
+        },
       ],
-      info: "11 lectures",
     },
     {
-      title: "Redux",
-      lectures: [
-        "Flux Architecture",
-        "State management using Redux",
-        "Reducers",
-        "Actions",
-        "Store",
-        "Middleware",
-        "React-Redux library",
-        "Setting up Redux in a React application",
-        "Connecting React components with Redux",
-        "Asynchronous actions with Redux Thunk or Saga",
-        "Redux Toolkit",
-        "Project using Redux: Implementing state management in a React application",
+      content: "Redux",
+      subLectures: [
+        { content: "Flux Architecture" },
+        { content: "State management using Redux" },
+        { content: "Reducers" },
+        { content: "Actions" },
+        { content: "Store" },
+        { content: "Middleware" },
+        { content: "React-Redux library" },
+        { content: "Setting up Redux in a React application" },
+        { content: "Connecting React components with Redux" },
+        { content: "Asynchronous actions with Redux Thunk or Saga" },
+        { content: "Redux Toolkit" },
+        {
+          content:
+            "Project using Redux: Implementing state management in a React application",
+        },
       ],
-      info: "12 lectures",
     },
     {
-      title: "Testing",
-      lectures: [
-        "Introduction to testing in JavaScript",
-        "Types of testing: Unit, Integration, End-to-End",
-        "Testing frameworks: Jest, Mocha, Chai",
-        "Testing React components with Jest and React Testing Library",
-        "Mocking and spying",
-        "Writing test cases for Redux actions and reducers",
-        "API testing with Postman",
-        "End-to-End testing with tools like Cypress",
+      content: "Testing",
+      subLectures: [
+        { content: "Introduction to testing in JavaScript" },
+        { content: "Types of testing: Unit, Integration, End-to-End" },
+        { content: "Testing frameworks: Jest, Mocha, Chai" },
+        {
+          content:
+            "Testing React components with Jest and React Testing Library",
+        },
+        { content: "Mocking and spying" },
+        { content: "Writing test cases for Redux actions and reducers" },
+        { content: "API testing with Postman" },
+        { content: "End-to-End testing with tools like Cypress" },
       ],
-      info: "8 lectures",
     },
     {
-      title: "Deployment",
-      lectures: [
-        "Introduction to deployment",
-        "Deployment options for Node.js applications",
-        "Deployment with services like Heroku, Vercel, Netlify, and AWS",
-        "Continuous Integration/Continuous Deployment (CI/CD) concepts",
-        "Setting up CI/CD pipelines",
-        "Monitoring and logging",
-        "Environment variables and configuration management",
+      content: "Deployment",
+      subLectures: [
+        { content: "Introduction to deployment" },
+        { content: "Deployment options for Node.js applications" },
+        {
+          content:
+            "Deployment with services like Heroku, Vercel, Netlify, and AWS",
+        },
+        {
+          content:
+            "Continuous Integration/Continuous Deployment (CI/CD) concepts",
+        },
+        { content: "Setting up CI/CD pipelines" },
+        { content: "Monitoring and logging" },
+        { content: "Environment variables and configuration management" },
       ],
-      info: "6 lectures",
     },
     {
-      title: "Final Project",
-      lectures: [
-        "Project requirements and planning",
-        "Design and architecture",
-        "Implementation",
-        "Testing and Debugging",
-        "Deployment and presentation",
-        "Code review and feedback",
+      content: "Final Project",
+      subLectures: [
+        { content: "Project requirements and planning" },
+        { content: "Design and architecture" },
+        { content: "Implementation" },
+        { content: "Testing and Debugging" },
+        { content: "Deployment and presentation" },
+        { content: "Code review and feedback" },
       ],
-      info: "5 lectures",
     },
   ];
 
   return (
-    <div className=" flex flex-col md:flex-row sm:flex-row  ml-20  mb-10 sm:mt-4 ">
-      <div className="w-[65%] flex flex-col mt-14 ">
-        <div className="w-full">
-          <h1 className="font-bold text-3xl p-[10px] font-Quicksand mb-[37px] text-[#003366]">
+    <div className="flex flex-col md:flex-row lg:ml-20 ml-3 mb-10">
+      {/* Syllabus Section */}
+      <div className="w-full flex flex-col sm:mt-4">
+        <div className="w-full flex flex-col mt-10 px-3 sm:px-6">
+          <h1 className="font-bold text-xl sm:text-2xl md:text-3xl p-2 sm:p-4 font-Quicksand mb-4 sm:mb-6 text-[#003366]">
             Course Syllabus
           </h1>
-          {syllabusSections.map((section, index) => (
-            <div key={index} className={`relative lg:w-full max-w-[800px] w-[250px]`}>
+
+          {lectures.map((lecture, index) => (
+            <div
+              key={index}
+              className="relative w-full lg:w-[500px] xl:w-[700px] mx-auto lg:mx-0 mb-1"
+            >
+              {/* Numbered Topics */}
               <div
-                className={`border-2 px-4 border-[#004AAD] border-opacity-[5%] transition-all mt-1 ${
-                  !openDropdowns[section.title] &&
-                  index !== syllabusSections.length - 1
-                    ? "border-b-5"
-                    : ""
-                }`}
+                className="cursor-pointer font-semibold flex items-center gap-2 sm:gap-3 border-2 px-2 w-full sm:px-4 py-2 sm:py-3 border-[#004AAD] border-opacity-[5%] font-Quicksand bg-gray-50"
+                onClick={() => toggleTopic(lecture.content)}
               >
-                <div
-                  className="flex items-center p-[10px] cursor-pointer "
-                  onClick={() => toggleDropdown(section.title)}
-                >
-                  <button className="dropdown-button mr-2">
-                    <img
-                      src="/dropdown.svg"
-                      alt="Toggle Dropdown"
-                      className="mr-0 w-[11px] h-[14px]"
-                    />
-                  </button>
-                  <span className="font-semibold font-Quicksand">
-                    {section.title}
-                  </span>
-                  <span className="hidden md:block text-right ml-auto font-Quicksand">
-                    {section.info}
-                  </span>
-                </div>
+                <img
+                  src="/dropdown.svg"
+                  alt="Toggle Dropdown"
+                  className={`w-[8px] sm:w-[11px] h-[10px] sm:h-[14px] ${
+                    openTopics[lecture.content] ? "rotate-180" : ""
+                  } transition-transform`}
+                />
+                <span className="text-sm sm:text-base">{lecture.content}</span>
               </div>
-              {openDropdowns[section.title] && (
-                <div className="w-full border border-[#004AAD] border-opacity-[5%] z-10 mt-1 mr-4">
-                  <ul className="p-2">
-                    {section.lectures.map((lecture, idx) => (
-                      <li key={idx} className="py-1 font-Quicksand ml-14">
-                        <span className="mx-1">•</span>
-                        {lecture}
+
+              {/* Expandable Content */}
+              {openTopics[lecture.content] && (
+                <div className="pl-4 sm:pl-6 font-Quicksand border-2 border-[#004AAD] border-opacity-[5%] mt-2">
+                  <ol className="list-decimal">
+                    {lecture.subLectures.map((subLecture, subIdx) => (
+                      <li key={subIdx} className="py-2">
+                        {subLecture.content}
+                        {/* Render subPoints if available */}
+                        {subLecture.subPoints && (
+                          <ul className="ml-4 sm:ml-6 list-disc">
+                            {subLecture.subPoints.map((subPoint, pointIdx) => (
+                              <li key={pointIdx}>{subPoint.content}</li>
+                            ))}
+                          </ul>
+                        )}
                       </li>
                     ))}
-                  </ul>
+                  </ol>
                 </div>
               )}
             </div>
           ))}
         </div>
       </div>
-      <div className="ml-[-80px] md:ml-12  ">
+
+      {/* MernClassType Section */}
+      <div className="mt-10 lg:mt-0 flex justify-center lg:mr-[70px]">
         <MernClassType />
       </div>
     </div>
