@@ -1,5 +1,14 @@
 "use client";
+import SimpleImageSlider from "react-simple-image-slider";
 const About = () => {
+  const images = [
+    { url: "IMG_2127.jpeg" },
+    { url: "IMG_2130.jpeg" },
+    { url: "IMG_2137.jpeg" },
+    { url: "IMG_2145.jpeg" },
+    { url: "IMG_2156.jpeg" },
+    { url: "IMG_2158.jpeg" },
+  ];
   return (
     <div className="w-full  bg-slate-100 ">
       {/* Contact Us Section */}
@@ -47,27 +56,32 @@ const About = () => {
       `}</style>
 
       {/* About N9 Solution Section */}
-      <div className="p-8 flex flex-col md:flex-row items-center pl-24">
+      <div className="p-8 flex flex-col md:flex-row items-center ">
         <div className="w-full md:w-1/2">
-          <h2 className="text-2xl sm:text-3xl font-bold text-[#031262]">
+          <h2 className="text-2xl sm:text-3xl font-bold md:px-6 text-[#031262]">
             About N9 Solution
           </h2>
-          <p className="mt-3 text-justify font-Quicksand font-semibold text-[16px] sm:text-[20px] leading-[24px] sm:leading-[30px]">
+          <p className="mt-3 text-justify font-Quicksand font-semibold text-[16px] sm:text-[20px] leading-[24px] sm:leading-[30px] md:px-6">
             Welcome to N9 Solution, your premier destination for cutting-edge
             expertise in DevOps, AWS, Blockchain, and game development. At N9
             Solution, we blend passion with proficiency, equipping individuals
             and organizations with the skills and strategies needed to thrive in
             today's rapidly evolving technological landscape.
           </p>
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <button className="text-[#1D0DD6] font-bold">GET IN TOUCH ➜</button>
-          </div>
+          </div> */}
         </div>
-        <img
-          className="w-full md:w-auto md:ml-5 mt-6 md:mt-0 lg:-mt-56"
-          src="image.png"
-          alt="N9 Solution"
-        />
+
+        <div className="lg:-mt-[160px] h-[300px] my-4  shadow-lg">
+          <SimpleImageSlider
+            width={700} // Adjust width based on the parent container
+            height={400} // Maintain aspect ratio
+            images={images}
+            autoPlay={true}
+            autoPlayDelay={4}
+          />
+        </div>
       </div>
 
       {/* Our Mission Section */}
@@ -91,17 +105,20 @@ const About = () => {
             </h3>
           </div>
           <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold">
-            At N9 Solution, we are driven by a singular mission - to empower
-            innovation. We believe in harnessing the power of technology to
-            drive positive change and unlock new possibilities. Through our
-            comprehensive training programs and strategic consultancy services,
-            we aim to catalyze growth, foster innovation, and elevate success.
+            At N9 Solution, we are committed to empowering individuals and
+            organizations through technology. Our mission is to educate by
+            providing state-of-the-art IT training tailored for students,
+            professionals, and corporations alike, and to transform lives and
+            businesses by fostering an environment of growth and success.
+            Through our comprehensive training programs and expert consultancy
+            services, we aim to be the catalyst for your success in the digital
+            age.
           </p>
         </div>
       </div>
 
       {/* Our Promise Section */}
-      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full h-auto rounded-[30px] mx-auto mt-[80px] mb-8 px-8 py-6 ml-0 md:ml-[60px] mr-0 md:mr-[115px] md:w-[1200px] ">
+      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full h-auto rounded-[30px] mx-auto mt-[80px] mb-8 px-8 py-6  ml-0 md:ml-[60px] mr-0 md:mr-[115px] md:w-auto ">
         <div className="flex-1">
           <div className="flex justify-center items-center mb-4">
             <img src="icon2.png" className="mr-3" alt="Icon" />
@@ -109,7 +126,7 @@ const About = () => {
               Our Promise
             </h3>
           </div>
-          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold pl-[20px] md:w-[1150px]">
+          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold pl-[20px] md:w-[800px]">
             When you choose N9 Solution, you're not just investing in training
             or consultancy services - you're investing in your future. We are
             committed to delivering excellence in everything we do, providing
@@ -132,12 +149,12 @@ const About = () => {
           {/* Image Container */}
           <div className="relative z-10 flex-shrink-0 mb-6 md:mb-0 md:mr-[100px]">
             <img
-              src="About3.png"
+              src="IMG_2156.jpeg"
               alt="Join Us Image"
-              className="w-[300px] h-[320px] md:w-[333px] md:h-[357px] object-cover rounded-tl-[100px] rounded-br-[100px]"
+              className="w-[300px]  h-[320px] md:w-[333px] md:h-[357px] object-fill rounded-tl-[100px]   rounded-br-[100px]"
             />
           </div>
-          <div className="relative z-0 bg-[#F2EEEE] w-full md:w-[900px] h-auto p-6 sm:p-10 pl-[20px] md:pl-[150px] rounded-md">
+          <div className="relative z-0 bg-[#F2EEEE] w-full md:w-[900px] h-auto p-6 sm:p-10 pl-[20px]  rounded-md">
             {/* Centered Join Us and Icon3 */}
             <div className="flex justify-center items-center mb-2">
               <img
@@ -150,11 +167,11 @@ const About = () => {
               </div>
             </div>
             {/* Left-Aligned Paragraph */}
-            <p className="text-md sm:text-lg text-left font-Quicksand font-semibold">
-              Ready to embark on a journey of innovation and growth? Contact N9
-              Solution today to learn more about our training programs and
-              consultancy services. Together, let's unlock the full potential of
-              technology and achieve greatness.
+            <p className="text-md sm:text-lg text-left font-Quicksand font-semibold md:px-[30px]">
+              Ready to dive into the world of IT mastery? Contact N9 Solution
+              today to explore our specialized training programs designed to
+              elevate your tech skills. Together, let's harness the power of
+              technology and turn your potential into expertise.
             </p>
           </div>
         </div>

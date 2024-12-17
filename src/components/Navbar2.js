@@ -117,7 +117,7 @@ const NavBar = () => {
                     Trainer
                   </Link>
                 </li> */}
-                {/* <li>
+                <li>
                   <Link
                     href="/Career"
                     className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
@@ -129,7 +129,7 @@ const NavBar = () => {
                   >
                     Career
                   </Link>
-                </li> */}
+                </li>
                 <li>
                   <Link
                     href="/About"
@@ -143,7 +143,7 @@ const NavBar = () => {
                     About Us
                   </Link>
                 </li>
-                {/* <li>
+                <li>
                   <Link
                     href="/Blog"
                     className={`font-medium font-Quicksand text-xl inline-block md:inline-flex items-center justify-center w-auto px-4 py-2 rounded-xl ${
@@ -155,7 +155,7 @@ const NavBar = () => {
                   >
                     Blogs
                   </Link>
-                </li> */}
+                </li>
                 <li>
                   <Link
                     href="/Contact"

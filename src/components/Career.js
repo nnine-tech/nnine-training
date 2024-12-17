@@ -60,9 +60,9 @@ const Career = () => {
         <img
           src="career.svg"
           alt=""
-          className="w-full h-[300px] sm:h-[500px] lg:h-[800px] object-cover"
+          className="w-full h-[300px] sm:h-[500px] lg:h-[600px] object-cover"
         />
-        <div className="absolute inset-0 flex flex-col gap-4 sm:gap-6 lg:gap-6 h-auto sm:h-[300px] w-full sm:w-[90%] lg:w-[1000px] justify-center items-center mx-auto mt-56 sm:mt-40 lg:mt-50 text-center px-4">
+        <div className="absolute inset-0 flex flex-col gap-4 sm:gap-6 lg:gap-6 h-auto sm:h-[300px] w-full sm:w-[90%] lg:w-[1000px] justify-center items-center mx-auto  sm:mt-40 lg:mt-50 text-center px-4">
           <h1 className="text-white font-Quicksand text-2xl sm:text-4xl lg:text-6xl font-bold mt-20">
             Join <span className="text-[#FFCF59]">Our</span> Team
           </h1>
@@ -75,8 +75,14 @@ const Career = () => {
           </p>
         </div>
       </div>
+      <div className="h-[150px] mt-3  md:h-[250px] w-[800px] mx-auto">
+        <h1 className="text-center text-[20px] lg:text-[40px] px-2  font-Quicksand font-[500]">
+          Thank you for your interest. But there is no job openings available at
+          this time. Please Check back another time.
+        </h1>
+      </div>
 
-      <div className="flex flex-wrap justify-center mx-auto max-w-6xl px-4 pb-28 relative gap-x-8 gap-y-10 -mt-[200px]">
+      {/* <div className="flex flex-wrap justify-center mx-auto max-w-6xl px-4 pb-28 relative gap-x-8 gap-y-10 -mt-[200px]">
         {jobPositions.slice(1).map((job, index) => (
           <div
             key={index}
@@ -126,7 +132,7 @@ const Career = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
