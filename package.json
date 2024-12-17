@@ -30,6 +30,7 @@
     "react-markdown": "^9.0.1",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.23.1",
+    "react-simple-image-slider": "^2.4.1",
     "react-slick": "^0.30.2",
     "react-toastify": "^10.0.6",
     "react-typed": "^2.0.12",
