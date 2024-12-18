@@ -117,7 +117,7 @@ const About = () => {
       </div>
 
       {/* Our Mission Section */}
-      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full sm:ml-6 sm:w-[700px] h-auto rounded-r-[30px] mx-auto mt-[80px] ml-0 md:ml-[120px] mb-8 shadow-lg p-6 md:w-[700px] lg:w-[1250px] lg:ml-[130px]">
+      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full sm:ml-6 sm:w-[700px] h-auto rounded-r-[30px] mx-auto mt-[80px] ml-0 md:ml-[120px] mb-8 shadow-lg p-6 md:w-fit md:mx-[10px] lg:w-[1250px] lg:ml-[130px]">
         <div className="absolute hidden  md:flex lg:flex lg:left-[30px] lg:top-[-80px] items-center justify-center">
           <img
             src="About1.png"
@@ -150,7 +150,7 @@ const About = () => {
       </div>
 
       {/* Our Promise Section */}
-      <div className="relative flex flex-col md:flex-row items-left bg-[#D7E4FE] max-w-full sm:w-[700px] h-auto rounded-[30px] mx-auto mt-[80px] mb-8 px-8  py-6  ml-0 md:ml-[20px] md:w-[750px] sm:ml-6 mr-0 md:mr-[115px] lg:w-[1150px] lg:left-[250px]">
+      <div className="relative flex flex-col md:flex-row items-left bg-[#D7E4FE] max-w-full sm:w-[700px] h-auto rounded-[30px] mx-auto mt-[80px] mb-8 px-8  py-6  ml-0  md:w-fit sm:ml-6 mr-0  lg:w-[1150px] lg:left-[250px] overflow-hidden md:mr-2 lg:overflow-visible">
         <div className="flex-1">
           <div className="flex justify-center  items-center mb-4">
             <img src="icon2.png" className="mr-3" alt="Icon" />
@@ -158,7 +158,7 @@ const About = () => {
               Our Promise
             </h3>
           </div>
-          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold px-[10px] md:w-[700px] lg:w-[1000px] sm:pr-8 ">
+          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold px-[10px] md:w-fit lg:w-[1000px] sm:pr-8 md:pr-[110px]">
             When you choose N9 Solution, you're not just investing in training
             or consultancy services - you're investing in your future. We are
             committed to delivering excellence in everything we do, providing
@@ -166,7 +166,7 @@ const About = () => {
             With N9 Solution by your side, the possibilities are endless.
           </p>
         </div>
-        <div className="absolute hidden md:flex lg:flex  lg:top-[-60px] lg:right-[-30px]  right-[-140px] md:right-[-120px] w-[200px] md:bottom-[-50px] lg:bottom-0 items-center justify-end">
+        <div className="absolute hidden md:flex lg:flex  lg:top-[-60px] lg:right-[-30px] md:w-[150px]   right-[-140px] md:right-[-8px]   w-[200px] md:bottom-[-50px]  lg:bottom-0 items-center justify-end">
           <img
             src="About2.png"
             alt="Promise Icon"
@@ -179,7 +179,7 @@ const About = () => {
       <div className="relative bg-[#D7E4FE] w-full flex justify-center p-[20px] sm:p-[37px] mx-auto mt-[80px] rounded-md ">
         <div className="relative flex flex-col lg:flex-row lg:gap-10 items-center">
           {/* Image Container */}
-          <div className="relative z-10  flex-shrink-0 mb-6 md:mb-0 md:mr-[100px]">
+          <div className="relative z-10 mx-auto  flex-shrink-0 mb-6 md:mb-0 ">
             <img
               src="IMG_2156.jpeg"
               alt="Join Us Image"
