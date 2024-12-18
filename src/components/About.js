@@ -1,6 +1,38 @@
 "use client";
+import { useEffect, useState } from "react";
 import SimpleImageSlider from "react-simple-image-slider";
+
 const About = () => {
+  const [sliderWidth, setSliderWidth] = useState(700); // Default width
+
+  useEffect(() => {
+    const updateSliderWidth = () => {
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth >= 1024) {
+        // Large screens (desktop)
+        setSliderWidth(700);
+      } else if (screenWidth >= 760) {
+        // Medium screens (tablet)
+        setSliderWidth(600);
+      } else if (screenWidth >= 820) {
+        // 821 screens (tablet)
+        setSliderWidth(800);
+      } else {
+        // Small screens (mobile)
+        setSliderWidth(350);
+      }
+    };
+
+    // Initial call and event listener for resize
+    updateSliderWidth();
+    window.addEventListener("resize", updateSliderWidth);
+
+    return () => {
+      window.removeEventListener("resize", updateSliderWidth);
+    };
+  }, []);
+
   const images = [
     { url: "IMG_2127.jpeg" },
     { url: "IMG_2130.jpeg" },
@@ -56,8 +88,8 @@ const About = () => {
       `}</style>
 
       {/* About N9 Solution Section */}
-      <div className="p-8 flex flex-col md:flex-row items-center ">
-        <div className="w-full md:w-1/2">
+      <div className="p-8 flex flex-col lg:flex-row items-center  ">
+        <div className="w-full sm:w-[700px] md:w-[700px] lg:w-[700px] lg:mx-[40px]  md:my-4">
           <h2 className="text-2xl sm:text-3xl font-bold md:px-6 text-[#031262]">
             About N9 Solution
           </h2>
@@ -73,9 +105,9 @@ const About = () => {
           </div> */}
         </div>
 
-        <div className="lg:-mt-[160px] h-[300px] my-4  shadow-lg">
+        <div className="lg:-mt-[160px] h-[300px] my-4  shadow-lg ">
           <SimpleImageSlider
-            width={700} // Adjust width based on the parent container
+            width={sliderWidth} // Adjust width based on the parent container
             height={400} // Maintain aspect ratio
             images={images}
             autoPlay={true}
@@ -85,15 +117,15 @@ const About = () => {
       </div>
 
       {/* Our Mission Section */}
-      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full h-auto rounded-r-[30px] mx-auto mt-[80px] ml-0 md:ml-[120px] mb-8 shadow-lg p-6 md:w-[1250px]">
-        <div className="absolute hidden md:flex items-center justify-center">
+      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full sm:ml-6 sm:w-[700px] h-auto rounded-r-[30px] mx-auto mt-[80px] ml-0 md:ml-[120px] mb-8 shadow-lg p-6 md:w-[700px] lg:w-[1250px] lg:ml-[130px]">
+        <div className="absolute hidden  md:flex lg:flex lg:left-[30px] lg:top-[-80px] items-center justify-center">
           <img
             src="About1.png"
             alt="Mission Icon"
-            className="h-[280px] w-[380px] -ml-[230px] "
+            className="h-[280px] w-[380px] -ml-[230px]  "
           />
         </div>
-        <div className="px-8 mt-6 md:mt-0">
+        <div className="px-8 mt-6 md:mt-0 ">
           <div className="flex justify-center items-center">
             <img
               className="h-[52px] w-[60px] mr-2"
@@ -104,7 +136,7 @@ const About = () => {
               Our Mission
             </h3>
           </div>
-          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold">
+          <p className="text-[14px] sm:text-[16px]  leading-[20px] sm:leading-[24px] font-Quicksand font-semibold">
             At N9 Solution, we are committed to empowering individuals and
             organizations through technology. Our mission is to educate by
             providing state-of-the-art IT training tailored for students,
@@ -118,15 +150,15 @@ const About = () => {
       </div>
 
       {/* Our Promise Section */}
-      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full h-auto rounded-[30px] mx-auto mt-[80px] mb-8 px-8 py-6  ml-0 md:ml-[60px] mr-0 md:mr-[115px] md:w-auto ">
+      <div className="relative flex flex-col md:flex-row items-left bg-[#D7E4FE] max-w-full sm:w-[700px] h-auto rounded-[30px] mx-auto mt-[80px] mb-8 px-8  py-6  ml-0 md:ml-[20px] md:w-[750px] sm:ml-6 mr-0 md:mr-[115px] lg:w-[1150px] lg:left-[250px]">
         <div className="flex-1">
-          <div className="flex justify-center items-center mb-4">
+          <div className="flex justify-center  items-center mb-4">
             <img src="icon2.png" className="mr-3" alt="Icon" />
             <h3 className="text-[#001D6E] font-Quicksand text-[20px] sm:text-[24px] leading-[30px] font-semibold">
               Our Promise
             </h3>
           </div>
-          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold pl-[20px] md:w-[800px]">
+          <p className="text-[14px] sm:text-[16px] leading-[20px] sm:leading-[24px] font-Quicksand font-semibold px-[10px] md:w-[700px] lg:w-[1000px] sm:pr-8 ">
             When you choose N9 Solution, you're not just investing in training
             or consultancy services - you're investing in your future. We are
             committed to delivering excellence in everything we do, providing
@@ -134,27 +166,27 @@ const About = () => {
             With N9 Solution by your side, the possibilities are endless.
           </p>
         </div>
-        <div className="absolute hidden md:flex right-[-170px] items-center justify-end">
+        <div className="absolute hidden md:flex lg:flex  lg:top-[-60px] lg:right-[-30px]  right-[-140px] md:right-[-120px] w-[200px] md:bottom-[-50px] lg:bottom-0 items-center justify-end">
           <img
             src="About2.png"
             alt="Promise Icon"
-            className="h-[320px] w-[300px]"
+            className="h-[320px] sm:w-[250px] lg:h-[280px] w-[300px] sm:mr-8"
           />
         </div>
       </div>
 
       {/* Join Us Section */}
       <div className="relative bg-[#D7E4FE] w-full flex justify-center p-[20px] sm:p-[37px] mx-auto mt-[80px] rounded-md ">
-        <div className="relative flex flex-col md:flex-row items-center">
+        <div className="relative flex flex-col lg:flex-row lg:gap-10 items-center">
           {/* Image Container */}
-          <div className="relative z-10 flex-shrink-0 mb-6 md:mb-0 md:mr-[100px]">
+          <div className="relative z-10  flex-shrink-0 mb-6 md:mb-0 md:mr-[100px]">
             <img
               src="IMG_2156.jpeg"
               alt="Join Us Image"
               className="w-[300px]  h-[320px] md:w-[333px] md:h-[357px] object-fill rounded-tl-[100px]   rounded-br-[100px]"
             />
           </div>
-          <div className="relative z-0 bg-[#F2EEEE] w-full md:w-[900px] h-auto p-6 sm:p-10 pl-[20px]  rounded-md">
+          <div className="relative z-0 bg-[#F2EEEE] w-full md:w-[700px] md:my-2 lg:my-0 h-auto p-6 sm:p-10 pl-[20px]  rounded-md lg:w-[900px]">
             {/* Centered Join Us and Icon3 */}
             <div className="flex justify-center items-center mb-2">
               <img
@@ -162,7 +194,7 @@ const About = () => {
                 src="icon3.png"
                 alt="Icon"
               />
-              <div className="text-[#001D6E] text-xl sm:text-2xl font-bold">
+              <div className="text-[#001D6E]  text-xl sm:text-2xl font-bold">
                 Join Us
               </div>
             </div>

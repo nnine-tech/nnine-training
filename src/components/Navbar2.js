@@ -87,7 +87,7 @@ const NavBar = () => {
 
               {/* Navigation Links */}
               <ul
-                className={`absolute lg:static lg:flex lg:flex-row lg:space-x-6 lg:p-5 bg-white lg:bg-transparent w-full lg:w-auto transition-all duration-300 ease-in-out lg:h-auto h-[200px] ${
+                className={`absolute lg:static lg:flex lg:flex-row lg:space-x-6 lg:p-5 bg-white lg:bg-transparent w-full lg:w-auto transition-all duration-300 ease-in-out lg:h-auto h-[300px] ${
                   isOpen ? "top-16 left-0 block" : "top-16 left-0 hidden"
                 }`}
               >
