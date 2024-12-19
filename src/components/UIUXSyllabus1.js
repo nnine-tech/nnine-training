@@ -170,16 +170,16 @@ const UIUXSyllabus1 = () => {
   ];
 
   return (
-    <div className=" flex flex-col md:flex-row sm:flex-row mb-10 sm:mt-4  ml-3 md:ml-2 lg:ml-20">
+    <div className=" flex flex-col md:flex-row sm:flex-row mb-10 sm:mt-4  ml-8 md:ml-2 lg:ml-20">
       <div className="w-[65%] flex flex-col mt-14">
         <div className="w-full">
-          <h1 className="font-bold text-3xl  p-[10px] font-Quicksand mb-[37px] text-[#003366]">
+          <h1 className="font-bold text-3xl md:ml-4  p-[10px] font-Quicksand mb-[37px] text-[#003366]">
             Course Syllabus
           </h1>
           {syllabusSections.map((section, index) => (
             <div
               key={index}
-              className="relative lg:w-full max-w-[800px] w-[310px]  md:w-[330px] "
+              className="relative lg:w-full max-w-[800px] w-[310px] md:ml-4  md:w-[380px] "
             >
               <div
                 className={`border-2  border-[#004AAD] border-opacity-[5%] transition-all mt-1 bg-gray-50 ${
@@ -230,7 +230,7 @@ const UIUXSyllabus1 = () => {
           ))}
         </div>
       </div>
-      <div className="sm:ml-[-100px] md:ml-[10px] lg:ml-[20px]">
+      <div className=" md:ml-[10px] lg:ml-[20px]">
         <UIUXClassType />
       </div>
     </div>
