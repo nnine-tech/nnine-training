@@ -27,7 +27,7 @@ const UIUXClassType = () => {
   };
 
   return (
-    <div className=" md:mr-10  mt-6 border">
+    <div className=" md:mr-10  mt-6 ">
       <div className="md:w-[300px] lg:w[390px] w-[300px] bg-[#F6F9ED] rounded-xl shadow-bottom mb-4 ">
         <div className="font-poppins text-center ">
           <h1 className="text-[#000080]  text-center p-[20px] text-xl font-medium ">
