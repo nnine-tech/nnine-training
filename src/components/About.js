@@ -9,9 +9,9 @@ const About = () => {
     const updateSliderWidth = () => {
       const screenWidth = window.innerWidth;
 
-      if (screenWidth >= 1024) {
+      if (screenWidth >= 1024 && screenWidth <= 1300) {
         // Large screens (desktop)
-        setSliderWidth(700);
+        setSliderWidth(500);
       } else if (screenWidth >= 760) {
         // Medium screens (tablet)
         setSliderWidth(600);
@@ -117,7 +117,7 @@ const About = () => {
       </div>
 
       {/* Our Mission Section */}
-      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full sm:ml-6 sm:w-[700px] h-auto rounded-r-[30px] mx-auto mt-[80px] ml-0 md:ml-[120px] mb-8 shadow-lg p-6 md:w-fit md:mx-[10px] lg:w-[1250px] lg:ml-[130px]">
+      <div className="relative flex flex-col md:flex-row items-center bg-[#D7E4FE] max-w-full sm:ml-6 sm:w-[700px] h-auto rounded-r-[30px] mx-auto mt-[80px] ml-0 md:ml-[120px] mb-8 shadow-lg p-6 md:w-fit md:mx-[10px] lg:w-fit xl:w-[1250px] lg:ml-[130px]">
         <div className="absolute hidden  md:flex lg:flex lg:left-[30px] lg:top-[-80px] items-center justify-center">
           <img
             src="About1.png"
@@ -150,7 +150,7 @@ const About = () => {
       </div>
 
       {/* Our Promise Section */}
-      <div className="relative flex flex-col md:flex-row items-left bg-[#D7E4FE] max-w-full sm:w-[700px] h-auto rounded-[30px] mx-auto mt-[80px] mb-8 px-8  py-6  ml-0  md:w-fit sm:ml-6 mr-0  lg:w-[1150px] lg:left-[250px] overflow-hidden md:mr-2 lg:overflow-visible">
+      <div className="relative flex flex-col md:flex-row items-left bg-[#D7E4FE] max-w-full sm:w-[700px] h-auto rounded-[30px] mx-auto mt-[80px] mb-8 px-8  py-6  ml-0  md:w-fit sm:ml-6 mr-0  lg:w-fit lg:left-[1px] xl:w-[1200px] xl:left-[250px] overflow-hidden md:mr-2 lg:overflow-visible">
         <div className="flex-1">
           <div className="flex justify-center  items-center mb-4">
             <img src="icon2.png" className="mr-3" alt="Icon" />
