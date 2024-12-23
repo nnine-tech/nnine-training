@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        // Custom sm range: 640px - 769px
+        // Custom md range: 770px - 1023px
+      },
       clipPath: {
         custom: "ellipse(100% 50% at 50% 100%)",
       },
