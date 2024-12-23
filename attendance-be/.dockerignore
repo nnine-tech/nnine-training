@@ -1,0 +1,19 @@
+# Node.js
+node_modules
+npm-debug.log
+
+# Build files
+/build
+
+# Editor specific
+.vscode
+.idea
+.env
+*.swp
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Test files
+coverage
