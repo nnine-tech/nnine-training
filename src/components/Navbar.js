@@ -21,7 +21,7 @@ const NavBar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 bg-white shadow-lg`}
+        className={`fixed top-0 w-full z-30 transition duration-300 ease-in-out mb-16 bg-white shadow-lg select-none`}
       >
         {/* <Banner /> */}
         <div className="flex flex-row justify-between items-center py-1">
