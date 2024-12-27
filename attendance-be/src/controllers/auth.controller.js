@@ -5,23 +5,26 @@ import { getUserByEmail, getUserById } from "../services/user.service.js";
 import isPasswordCorrect from "../services/password.service.js";
 import { generateAccessAndRefreshToken } from "../services/token.service.js";
 const login = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
-  const user = await getUserByEmail(email);
-  if (!user) {
+  const { email, password, keepMeLoggedIn } = req.body;
+  const userData = await getUserByEmail(email);
+  if (!userData) {
     throw new ApiError(400, "User not found");
   }
-  const isMatch = await isPasswordCorrect(user.password, password);
+  const isMatch = await isPasswordCorrect(userData.password, password);
   if (!isMatch) {
     throw new ApiError(400, "Invalid password");
   }
-  const tokens = await generateAccessAndRefreshToken(user);
-  user.password = undefined;
+  const tokens = await generateAccessAndRefreshToken({
+    userData,
+    keepMeLoggedIn,
+  });
+  userData.password = undefined;
   res.cookie("refreshToken", tokens.refreshToken, {
     httpOnly: true,
   });
   res.json(
     new ApiResponse(200, "Login successful", {
-      user,
+      userData,
       accessToken: tokens.accessToken,
       refreshToken: tokens.refreshToken,
     })

@@ -29,6 +29,10 @@ User.init(
       allowNull: false,
       unique: true,
     },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -40,6 +44,22 @@ User.init(
     departmentId: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    workScheduleId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "workschedules",
+        key: "id",
+      },
+      allowNull: true,
+    },
+    photo: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    panNo: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {

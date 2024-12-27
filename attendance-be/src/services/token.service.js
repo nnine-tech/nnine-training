@@ -1,10 +1,10 @@
 import jwt from "jsonwebtoken";
 import sequelize from "../../config/database.js";
 
-const generateAccessAndRefreshToken = async (
+const generateAccessAndRefreshToken = async ({
   userData,
-  keepMeLoggedIn = false
-) => {
+  keepMeLoggedIn = false,
+}) => {
   try {
     const accessToken = jwt.sign(
       {

@@ -1,12 +1,29 @@
+import Department from "../../models/department.model.js";
+import Role from "../../models/role.model.js";
 import User from "../../models/user.model.js";
+import WorkSchedule from "../../models/workschedule.model.js";
 
-const createUser = async (name, email, password, roleId, departmentId) => {
+const createUser = async (
+  name,
+  email,
+  password,
+  roleId,
+  departmentId,
+  workScheduleId,
+  phone,
+  panNo,
+  photo
+) => {
   return await User.create({
     name: name,
     email: email,
     password: password,
     roleId: roleId,
     departmentId: departmentId,
+    workScheduleId: workScheduleId,
+    phone: phone,
+    panNo: panNo,
+    photo: photo,
   });
 };
 
@@ -15,14 +32,46 @@ const getUsers = async () => {
 };
 
 const getUserById = async (id) => {
-  return await User.findByPk(id);
+  return await User.findOne({
+    where: {
+      id: id,
+    },
+    include: [
+      {
+        model: WorkSchedule,
+        as: "workSchedule",
+        attributes: ["id", "name", "days"],
+      },
+      {
+        model: Department,
+        as: "department",
+        attributes: ["id", "name"],
+      },
+      {
+        model: Role,
+        as: "role",
+        attributes: ["id", "name"],
+      },
+    ],
+  });
 };
 
 const getUserByEmail = async (email) => {
   return await User.findOne({ where: { email: email } });
 };
 
-const updateUser = async (id, name, email, password, roleId, departmentId) => {
+const updateUser = async (
+  id,
+  name,
+  email,
+  password,
+  roleId,
+  departmentId,
+  phone,
+  photo,
+  workScheduleId,
+  panNo
+) => {
   return await User.update(
     {
       name: name,
@@ -30,6 +79,10 @@ const updateUser = async (id, name, email, password, roleId, departmentId) => {
       password: password,
       roleId: roleId,
       departmentId: departmentId,
+      phone: phone,
+      photo: photo,
+      workScheduleId: workScheduleId,
+      panNo: panNo,
     },
     { where: { id: id } }
   );
