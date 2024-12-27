@@ -22,12 +22,16 @@ import roleRouter from "./routes/role.router.js";
 import userRouter from "./routes/user.router.js";
 import attendanceRouter from "./routes/attendance.rotuer.js";
 import authRouter from "./routes/auth.router.js";
+import holidayRouter from "./routes/holiday.router.js";
+import workScheduleRouter from "./routes/workSchedule.rouer.js";
 
 app.use("/api/v1/departments", departmentRouter);
 app.use("/api/v1/roles", roleRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/attendance", attendanceRouter);
+app.use("/api/v1/holidays", holidayRouter);
+app.use("/api/v1/work-schedules", workScheduleRouter);
 
 app.use(errorHandler);
 app.use("/", (req, res) => {

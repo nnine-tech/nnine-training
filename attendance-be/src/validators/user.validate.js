@@ -6,6 +6,10 @@ const userSchema = Joi.object({
   password: Joi.string().required(),
   roleId: Joi.string().required(),
   departmentId: Joi.string().required(),
+  phone: Joi.string().required(),
+  workScheduleId: Joi.string().allow(null),
+  photo: Joi.string().allow(null),
+  panNo: Joi.string().allow(null),
 });
 
 export default userSchema;

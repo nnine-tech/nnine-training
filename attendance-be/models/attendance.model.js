@@ -11,7 +11,7 @@ Attendance.init(
       primaryKey: true,
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     userId: {
@@ -32,9 +32,9 @@ Attendance.init(
       defaultValue: 0,
     },
     status: {
-      type: DataTypes.ENUM("Present", "Absent", "Late"),
+      type: DataTypes.ENUM("Present", "Absent", "Late", "Half Day"),
       allowNull: true,
-      defaultValue: "Absent",
+      defaultValue: "Present",
     },
   },
   {
