@@ -31,7 +31,6 @@ const getAttendanceById = async (id) => {
 
 const getAttendanceByUserId = async ({ userId, from, to }) => {
   const currentDate = new Date();
-  console.log(userId);
   const defaultFrom = new Date(currentDate);
   defaultFrom.setMonth(currentDate.getMonth() - 1);
 
@@ -68,7 +67,8 @@ const updateAttendance = async (id, userId, punchIn, punchOut) => {
 const validatePunchIn = async (punchIn) => {
   const punchInTime = new Date(punchIn);
   const punchInHour = punchInTime.getHours();
-  if (punchInHour < 9 || punchInHour > 3) {
+  console.log(punchInHour);
+  if (punchInHour < 9) {
     return false;
   }
   return true;

@@ -25,12 +25,14 @@ const create = asyncHandler(async (req, res) => {
     photo,
     workScheduleId,
     panNo,
+    address,
   } = req.body;
+  console.log(workScheduleId);
   const userExist = await getUserByEmail(email);
   if (userExist) {
     throw new ApiError(400, "Email already exists");
   }
-  const user = await createUser(
+  const user = await createUser({
     name,
     email,
     password,
@@ -39,8 +41,9 @@ const create = asyncHandler(async (req, res) => {
     phone,
     photo,
     workScheduleId,
-    panNo
-  );
+    panNo,
+    address,
+  });
   res.status(201).json(new ApiResponse(201, "User created successfully", user));
 });
 
@@ -78,7 +81,7 @@ const getAttendanceByDay = asyncHandler(async (req, res) => {
 
 const getAllAttendance = asyncHandler(async (req, res) => {
   const userId = req.user.id;
-  const { from, to } = req.body;
+  const { from, to } = req.query;
   const attendance = await getAttendanceByUserId({ userId, from, to });
   if (!attendance || attendance.length === 0) {
     throw new ApiError(404, "Attendance not found");
@@ -100,6 +103,7 @@ const update = asyncHandler(async (req, res) => {
     photo,
     workScheduleId,
     panNo,
+    address,
   } = req.body;
   const user = await updateUser(
     id,
@@ -111,7 +115,8 @@ const update = asyncHandler(async (req, res) => {
     phone,
     photo,
     workScheduleId,
-    panNo
+    panNo,
+    address
   );
   if (user[0] === 0) {
     throw new ApiError(404, "User not found");

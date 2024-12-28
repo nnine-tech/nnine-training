@@ -3,7 +3,7 @@ import Role from "../../models/role.model.js";
 import User from "../../models/user.model.js";
 import WorkSchedule from "../../models/workschedule.model.js";
 
-const createUser = async (
+const createUser = async ({
   name,
   email,
   password,
@@ -12,8 +12,9 @@ const createUser = async (
   workScheduleId,
   phone,
   panNo,
-  photo
-) => {
+  photo,
+  address,
+}) => {
   return await User.create({
     name: name,
     email: email,
@@ -24,6 +25,7 @@ const createUser = async (
     phone: phone,
     panNo: panNo,
     photo: photo,
+    address: address,
   });
 };
 
@@ -60,7 +62,7 @@ const getUserByEmail = async (email) => {
   return await User.findOne({ where: { email: email } });
 };
 
-const updateUser = async (
+const updateUser = async ({
   id,
   name,
   email,
@@ -70,8 +72,9 @@ const updateUser = async (
   phone,
   photo,
   workScheduleId,
-  panNo
-) => {
+  panNo,
+  address,
+}) => {
   return await User.update(
     {
       name: name,
@@ -83,6 +86,7 @@ const updateUser = async (
       photo: photo,
       workScheduleId: workScheduleId,
       panNo: panNo,
+      address: address,
     },
     { where: { id: id } }
   );
