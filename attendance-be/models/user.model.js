@@ -45,6 +45,10 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     workScheduleId: {
       type: DataTypes.INTEGER,
       references: {

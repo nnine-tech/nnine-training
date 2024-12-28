@@ -1,3 +1,7 @@
+import Role from "../../models/role.model.js";
+import User from "../../models/user.model.js";
+import { asyncHandler } from "../utils/asyncHandler.js";
+
 export const allowManagerOnly = asyncHandler(async (req, _, next) => {
   try {
     const token =
@@ -11,30 +15,19 @@ export const allowManagerOnly = asyncHandler(async (req, _, next) => {
     const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
 
     const user = await User.findByPk(decodedToken?.id, {
-      attributes: { exclude: ["Password", "RefreshToken"] },
+      attributes: { exclude: ["password", "refreshToken"] },
     });
 
     if (!user) {
       throw new ApiError(401, "Invalid Access Token");
     }
 
-    const userRoleMapping = await UserRole.findOne({
-      where: { UserId: user.id },
-    });
+    const userRole = await Role.findByPk(user.roleId);
 
-    if (!userRoleMapping) {
-      throw new ApiError(401, "Role not assigned to the user");
-    }
-
-    const userRole = await Role.findByPk(userRoleMapping.RoleId);
-
-    if (userRole.Name !== "manager") {
+    if (userRole.name !== "manager") {
       throw new ApiError(403, "Access denied: Only managers are allowed");
     }
-
-    // Attach user and role info to the request
     req.user = user;
-    req.userRole = userRole.Name;
 
     next();
   } catch (error) {

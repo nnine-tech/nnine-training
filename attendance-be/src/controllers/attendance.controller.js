@@ -4,7 +4,6 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import {
   createAttendance,
   existAttendance,
-  getAttendanceByUserId,
   getTodayAttendance,
   validatePunchIn,
 } from "../services/attendance.service.js";
@@ -18,7 +17,9 @@ const punchIn = asyncHandler(async (req, res) => {
   if (exist) {
     throw new ApiError(400, "Already punched In");
   }
-  const isValidatedPunchIn = validatePunchIn(punchIn);
+  const isValidatedPunchIn = await validatePunchIn(punchIn);
+  console.log(isValidatedPunchIn);
+
   if (!isValidatedPunchIn) {
     throw new ApiError(400, "You can't punch in before 9 AM or after 3 PM");
   }

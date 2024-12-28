@@ -10,6 +10,7 @@ const userSchema = Joi.object({
   workScheduleId: Joi.string().allow(null),
   photo: Joi.string().allow(null),
   panNo: Joi.string().allow(null),
+  address: Joi.string().allow(null),
 });
 
 export default userSchema;
