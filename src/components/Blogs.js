@@ -9,50 +9,49 @@ const Blogs = () => {
     router.push(`/Blog/${id}`);
   };
 
-  const blogData = [
-    {
-      id: 1,
-      title:
-        "If you want a specific word count, you can trim the text in JavaScript.",
-      description:
-        "To limit the number of words displayed in your text in React with Tailwind CSS, you can use CSS to set a maximum number of lines, or use JavaScript to trim the text to a specific word count.",
-      image: "/openShift.jpg",
-    },
-    {
-      id: 2,
-      title: "Understanding React Hooks and Their Usage.",
-      description:
-        "React hooks have changed the way we write functional components in React. Learn how to use useState, useEffect, and custom hooks to manage state and side effects in your applications.",
-      image: "/mern3.png",
-    },
-    {
-      id: 3,
-      title: "Understanding React Hooks and Their Usage.",
-      description:
-        "React hooks have changed the way we write functional components in React. Learn how to use useState, useEffect, and custom hooks to manage state and side effects in your applications.",
-      image: "/mern3.png",
-    },
-    {
-      id: 4,
-      title: "Understanding React Hooks and Their Usage.",
-      description:
-        "React hooks have changed the way we write functional components in React. Learn how to use useState, useEffect, and custom hooks to manage state and side effects in your applications.",
-      image: "/mern3.png",
-    },
-  ];
+  // const blogData = [
+  //   {
+  //     id: 1,
+  //     title:
+  //       "If you want a specific word count, you can trim the text in JavaScript.",
+  //     description:
+  //       "To limit the number of words displayed in your text in React with Tailwind CSS, you can use CSS to set a maximum number of lines, or use JavaScript to trim the text to a specific word count.",
+  //     image: "/openShift.jpg",
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Understanding React Hooks and Their Usage.",
+  //     description:
+  //       "React hooks have changed the way we write functional components in React. Learn how to use useState, useEffect, and custom hooks to manage state and side effects in your applications.",
+  //     image: "/mern3.png",
+  //   },
+  //   {
+  //     id: 3,
+  //     title: "Understanding React Hooks and Their Usage.",
+  //     description:
+  //       "React hooks have changed the way we write functional components in React. Learn how to use useState, useEffect, and custom hooks to manage state and side effects in your applications.",
+  //     image: "/mern3.png",
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Understanding React Hooks and Their Usage.",
+  //     description:
+  //       "React hooks have changed the way we write functional components in React. Learn how to use useState, useEffect, and custom hooks to manage state and side effects in your applications.",
+  //     image: "/mern3.png",
+  //   },
+  // ];
 
   return (
     <div className="bg-[#F9F9F9]">
       {/* Hero Section */}
-      <div className="w-full lg:h-screen h-[500px] bg-cover bg-center bg-[url('/blogbg.svg')] py-20 md:py-60 flex justify-center items-center">
-        <div className="flex flex-col w-11/12 max-w-[500px] gap-6 md:gap-10 text-center">
+      <div className="w-full lg:h-[500px] h-[500px] bg-cover bg-center bg-[url('/blogbg.svg')] py-20 md:py-60 flex justify-center items-center ">
+        <div className="flex flex-col w-11/12 max-w-[500px] lg:mt-[100px] gap-6 md:gap-10 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-Quicksand font-bold text-white">
             Our <strong className="text-[#FFCF59]">Blogs</strong>
           </h1>
-          <h2 className="text-[#EFEBEB] font-Quicksand font-semibold text-lg md:text-xl">
-            We provide comprehensive training, guaranteed internships, and
-            placement support to drive your career forward.
-          </h2>
+          <h1 className="text-center text-white text-[20px] md:text-[40px] font-Quicksand font-[700]">
+            Sorry, There is No Blogs Available...
+          </h1>
         </div>
       </div>
       <div>
@@ -88,8 +87,9 @@ const Blogs = () => {
       `}</style>
 
       {/* Blog Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 -mt-40 lg:-mt-40 md:-mt-44 px-4 sm:px-10 lg:px-20 xl:px-40 2xl:px-60 pb-11">
-        {blogData.map((blog, index) => (
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 -mt-40 lg:-mt-40 md:-mt-44 px-4 sm:px-10 lg:px-20 xl:px-40 2xl:px-60 pb-11 md:h-[400px] border border-red-700"> */}
+
+      {/* {blogData.map((blog, index) => (
           <div
             key={index}
             className="bg-[#FFFFFF] rounded-2xl shadow-xl p-6 transform transition-transform duration-300 hover:scale-105"
@@ -118,8 +118,7 @@ const Blogs = () => {
               </button>
             </div>
           </div>
-        ))}
-      </div>
+        ))} */}
     </div>
   );
 };

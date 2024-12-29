@@ -1,0 +1,293 @@
+# Department API
+
+This README provides details about the `/api/v1/departments` endpoint for managing departments in your application. Each department consists of an `id` (auto-incremented) and a `name`.
+
+## API Endpoints
+
+### POST /api/v1/departments
+
+#### Description
+
+This endpoint is used to create a new department by providing a name. The server will automatically generate a unique ID for the department.
+
+#### Request URL
+
+```
+/api/v1/departments
+```
+
+#### Request Method
+
+```
+POST
+```
+
+#### Request Headers
+
+| Header       | Value            |
+| ------------ | ---------------- |
+| Content-Type | application/json |
+
+#### Request Body
+
+The request body must be in JSON format and include the following field:
+
+| Field | Type   | Required | Description                 |
+| ----- | ------ | -------- | --------------------------- |
+| name  | string | Yes      | The name of the department. |
+
+##### Example Request Body
+
+```json
+{
+  "name": "Human Resources"
+}
+```
+
+#### Response
+
+##### Success Response
+
+**Status Code:** `201 Created`
+
+**Response Body:**
+
+```json
+{
+  "statusCode": 201,
+  "message": "Department created successfully",
+  "data": {
+    "id": 9,
+    "name": "human resource",
+    "updatedAt": "2024-12-24T11:11:14.341Z",
+    "createdAt": "2024-12-24T11:11:14.341Z"
+  },
+  "success": true
+}
+```
+
+##### Error Responses
+
+1. **Validation Error:**
+
+   - **Status Code:** `400 Bad Request`
+   - **Response Body:**
+     `json
+{
+  "message": "Name is required",
+  "data": null
+}
+`
+
+2. **Duplicate Department Name:**
+   - **Status Code:** `409 Conflict`
+   - **Response Body:**
+     ```json
+     {
+       "error": "Department name already exists."
+     }
+     ```
+
+#### Notes
+
+- Ensure the `name` field is unique and non-empty.
+- Additional validation rules (e.g., maximum length for `name`) can be applied as per your application’s requirements.
+
+### GET /api/v1/departments
+
+#### Description
+
+This endpoint retrieves a list of all departments.
+
+#### Request URL
+
+```
+/api/v1/departments
+```
+
+#### Request Method
+
+```
+GET
+```
+
+#### Response
+
+##### Success Response
+
+**Status Code:** `200 OK`
+
+**Response Body:**
+
+```json
+{
+  "statusCode": 200,
+  "message": "Departments retrieved successfully",
+  "data": [
+    {
+      "id": 8,
+      "name": "Manager",
+      "createdAt": "2024-12-24T10:49:27.934Z",
+      "updatedAt": "2024-12-24T10:49:27.934Z"
+    },
+    {
+      "id": 9,
+      "name": "human resource",
+      "createdAt": "2024-12-24T11:11:14.341Z",
+      "updatedAt": "2024-12-24T11:11:14.341Z"
+    }
+  ],
+  "success": true
+}
+```
+
+### DELETE /api/v1/departments/:id
+
+#### Description
+
+This endpoint deletes a department by its ID.
+
+#### Request URL
+
+```
+/api/v1/departments/:id
+```
+
+#### Request Method
+
+```
+DELETE
+```
+
+#### URL Parameters
+
+| Parameter | Type   | Required | Description                         |
+| --------- | ------ | -------- | ----------------------------------- |
+| id        | number | Yes      | The ID of the department to delete. |
+
+#### Response
+
+##### Success Response
+
+**Status Code:** `200 OK`
+
+**Response Body:**
+
+```json
+{
+  "message": "Department deleted successfully."
+}
+```
+
+##### Error Responses
+
+1. **Not Found:**
+
+   - **Status Code:** `404 Not Found`
+   - **Response Body:**
+     ```json
+     {
+       "error": "Department not found."
+     }
+     ```
+
+2. **Invalid ID:**
+   - **Status Code:** `400 Bad Request`
+   - **Response Body:**
+     ```json
+     {
+       "error": "Invalid department ID."
+     }
+     ```
+
+### PUT /api/v1/departments/:id
+
+#### Description
+
+This endpoint updates the name of a department by its ID.
+
+#### Request URL
+
+```
+/api/v1/departments/:id
+```
+
+#### Request Method
+
+```
+PUT
+```
+
+#### Request Headers
+
+| Header       | Value            |
+| ------------ | ---------------- |
+| Content-Type | application/json |
+
+#### URL Parameters
+
+| Parameter | Type   | Required | Description                         |
+| --------- | ------ | -------- | ----------------------------------- |
+| id        | number | Yes      | The ID of the department to update. |
+
+#### Request Body
+
+The request body must be in JSON format and include the following field:
+
+| Field | Type   | Required | Description                     |
+| ----- | ------ | -------- | ------------------------------- |
+| name  | string | Yes      | The new name of the department. |
+
+##### Example Request Body
+
+```json
+{
+  "name": "Operations"
+}
+```
+
+#### Response
+
+##### Success Response
+
+**Status Code:** `200 OK`
+
+**Response Body:**
+
+```json
+{
+  "id": 1,
+  "name": "Operations"
+}
+```
+
+##### Error Responses
+
+1. **Validation Error:**
+
+   - **Status Code:** `400 Bad Request`
+   - **Response Body:**
+     ```json
+     {
+       "error": "Department name is required."
+     }
+     ```
+
+2. **Not Found:**
+
+   - **Status Code:** `404 Not Found`
+   - **Response Body:**
+     ```json
+     {
+       "error": "Department not found."
+     }
+     ```
+
+3. **Duplicate Department Name:**
+   - **Status Code:** `409 Conflict`
+   - **Response Body:**
+     ```json
+     {
+       "error": "Department name already exists."
+     }
+     ```

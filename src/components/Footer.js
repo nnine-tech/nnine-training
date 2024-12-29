@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#08418C] w-full  lg:h-[520px] lg:w-full xl:w-auto">
+      <footer className="bg-[#08418C] w-full  lg:h-[580px] lg:w-full xl:w-auto select-none">
         <div className="container mx-auto px-4 py-10 lg:py-20">
           <div className="text-center lg:text-left">
             <h1 className="text-white font-Quicksand font-bold text-2xl lg:text-[30px]  mb-6 lg:ml-11 leading-[22.5px]">
@@ -23,12 +23,16 @@ const Footer = () => {
                 N9 Solution
               </h2>
               <p className="text-white text-sm md:text-base lg:text-[15px] text-center lg:text-left leading-[22.5px]">
-                5th Floor White House Building
+                5th Floor, White House Building,
                 <br />
-                Chabahil, Kathmandu
-                <br />
-                Nepal
+                Ganesthan, Chabahil
               </p>
+              <div className="text-center lg:text-left mt-4 text-white font-Quicksand font-[600]">
+                <p>Contact Us</p>
+                <h1 className=" underline">01-5920559</h1>
+                <h1 className=" underline">+977-9851359759</h1>
+                <span className="underline">nninesolutions@gmail.com</span>
+              </div>
             </div>
 
             <div className="lg:w-[163px] flex-1">
@@ -36,14 +40,21 @@ const Footer = () => {
                 LINKS
               </h2>
               <ul className="text-white text-sm md:text-base lg:text-[15px] space-y-2 lg:space-y-0 text-center lg:text-left font-poppins cursor-pointer leading-[22.5px]">
-                <Link href="/About">
-                  <li>About Us</li>
-                </Link>
                 <Link href="/Popularcourses">
-                  <li>Courses</li>
+                  <li className="hover:underline">Courses</li>
                 </Link>
+                <Link href="/Career">
+                  <li className="hover:underline">Career</li>
+                </Link>
+                <Link href="/About">
+                  <li className="hover:underline">About Us</li>
+                </Link>
+                <Link href="/Blog">
+                  <li className="hover:underline">Blogs</li>
+                </Link>
+
                 <Link href="/Contact">
-                  <li>Contact Us</li>
+                  <li className="hover:underline">Contact Us</li>
                 </Link>
               </ul>
             </div>
