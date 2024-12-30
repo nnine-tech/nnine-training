@@ -6,16 +6,15 @@ import { useRouter } from "next/navigation";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#08418C] w-full  lg:h-[580px] lg:w-full xl:w-auto select-none">
-        <div className="container mx-auto px-4 py-10 lg:py-20">
+      <footer className="bg-[#08418C] w-full  lg:h-[550px] lg:w-full xl:w-auto select-none">
+        <div className="container mx-auto px-4 py-10 ">
           <div className="text-center lg:text-left">
-            <h1 className="text-white font-Quicksand font-bold text-2xl lg:text-[30px]  mb-6 lg:ml-11 leading-[22.5px]">
+            <h1 className="text-white font-Quicksand font-bold text-2xl mt-2 lg:text-[30px]  mb-6 lg:ml-11 leading-[22.5px]">
               “Crafting the Future with Technology”
             </h1>
           </div>
 
-          {/* <hr className="border-t-2 border-white my-8 lg:w-[1150px] lg:mx-auto lg:my-12" /> */}
-          <hr className="border-t-2 border-white my-8 mx-4 mx:ml-10 sm:mx-6 md:mx-8 lg:w-[93%] lg:ml-10 lg:mx-auto xl:w-[92%] xl:ml-10 lg:my-12 2xl:w-[90%]" />
+          <hr className="border-t-2 border-white my-8 sm:mx-6 md:mx-8 lg:w-full lg:mx-0 lg:my-12" />
 
           <div className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-10">
             <div className=" lg:w-[377px]  lg:ml-11 flex-1">
@@ -27,11 +26,11 @@ const Footer = () => {
                 <br />
                 Ganesthan, Chabahil
               </p>
-              <div className="text-center lg:text-left mt-4 text-white font-Quicksand font-[600]">
+              <div className="text-center lg:text-left mt-4 space-y-2 text-white font-Quicksand font-[600]">
                 <p>Contact Us</p>
                 <h1 className=" underline">01-5920559</h1>
                 <h1 className=" underline">+977-9851359759</h1>
-                <span className="underline">nninesolutions@gmail.com</span>
+                <h1 className="underline">nninesolutions@gmail.com</h1>
               </div>
             </div>
 
@@ -41,20 +40,20 @@ const Footer = () => {
               </h2>
               <ul className="text-white text-sm md:text-base lg:text-[15px] space-y-2 lg:space-y-0 text-center lg:text-left font-poppins cursor-pointer leading-[22.5px]">
                 <Link href="/Popularcourses">
-                  <li className="hover:underline">Courses</li>
+                  <li className="hover:underline pb-2">Courses</li>
                 </Link>
                 <Link href="/Career">
-                  <li className="hover:underline">Career</li>
+                  <li className="hover:underline pb-2">Career</li>
                 </Link>
                 <Link href="/About">
-                  <li className="hover:underline">About Us</li>
+                  <li className="hover:underline pb-2">About Us</li>
                 </Link>
                 <Link href="/Blog">
-                  <li className="hover:underline">Blogs</li>
+                  <li className="hover:underline pb-2">Blogs</li>
                 </Link>
 
                 <Link href="/Contact">
-                  <li className="hover:underline">Contact Us</li>
+                  <li className="hover:underline pb-2">Contact Us</li>
                 </Link>
               </ul>
             </div>
@@ -63,7 +62,7 @@ const Footer = () => {
               <h2 className="text-white font-Quicksand text-xl md:text-2xl lg:text-[20px] font-bold mb-2 lg:mb-4 text-center lg:text-left leading-[22.5px]">
                 SERVICES
               </h2>
-              <ul className="text-white text-sm md:text-base lg:text-[15px] space-y-2 lg:space-y-0 text-center lg:text-left cursor-pointer font-[poppins] leading-[22.5px]">
+              <ul className="text-white text-sm md:text-base lg:text-[15px] space-y-2 text-center lg:text-left cursor-pointer font-[poppins] leading-[22.5px]">
                 <li>DevOps Services</li>
                 <li>Web 3.0 DevOps Service</li>
                 <li>Cloud Services & Migrations</li>
@@ -78,7 +77,7 @@ const Footer = () => {
               <p className="text-white text-sm md:text-base lg:text-[12px] mb-4 text-center font-poppins">
                 FOLLOW US ON SOCIAL MEDIA.
               </p>
-              <div className="flex justify-center lg:justify-center gap-4 cursor-pointer">
+              <div className="flex justify-center lg:justify-center gap-6 cursor-pointer">
                 <Link
                   href="https://www.facebook.com/nninesolution"
                   target="_blank"
@@ -123,7 +122,7 @@ const Footer = () => {
 
           <div className="text-center mt-12 lg:mt-16">
             <p className="text-white text-sm md:text-base font-poppins">
-              Copyright © 2024 Nninesolution. All rights reserved.
+              Copyright © 2025 Nninesolution. All rights reserved.
             </p>
           </div>
         </div>
