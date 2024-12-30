@@ -4,7 +4,7 @@ const SPSSintro = () => {
   return (
     <div className="flex flex-col md:flex-row w-full sm:w-screen lg:w-full md:w-full  bg-[#014AAC] select-none  md:p-7">
       <div className="flex flex-col w-full mt-20">
-        <h1 className="mt-10 md:mt-24 font-bold font-Quicksand text-white text-3xl md:text-4xl md:ml-20 text-center md:text-left">
+        <h1 className="mt-10 md:mt-24 font-bold font-Quicksand text-white text-3xl md:text-4xl md:ml-14 text-center md:text-left">
           USING SPSS FOR DATA ANALYSIS
         </h1>
         <div className="flex flex-col md:flex-row-reverse mt-6 w-full">
@@ -51,7 +51,7 @@ const SPSSintro = () => {
               <div className="flex items-center gap-2">
                 <img src="/duration.svg" alt="Duration" />
                 <h2 className="text-[#FFFFFF] font-Quicksand">
-                  Duration: 16 hours, 1 Credit
+                  Duration: 16 hours
                 </h2>
               </div>
               <div className="flex items-center gap-2 ml-8 sm:ml-0">
