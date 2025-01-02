@@ -1,6 +1,3 @@
-
-
-
 # Introduction to DevOps
 
 ## Introduction   [20 Min]    
@@ -484,7 +481,7 @@
 
   Status Codes
 
-  *Examples*
+  _Examples_
 
   HOL: Build Simple RESTful API with Python and Flask
 
