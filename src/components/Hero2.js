@@ -53,7 +53,7 @@ const Hero2 = () => {
         >
           <img
             src="/whatapp.svg"
-            alt="WhatsApp Icon"
+            alt="WhatsApp"
             className="w-[50px] h-[50px] md:w-[70px] md:h-[70px] fixed right-5"
             style={{
               top: "50%",

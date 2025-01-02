@@ -46,14 +46,14 @@ const Footer = () => {
                   <li className="hover:underline pb-2">Career</li>
                 </Link>
                 <Link href="/About">
-                  <li className="hover:underline pb-2">About Us</li>
+                  <li className="hover:underline pb-2">About</li>
                 </Link>
-                <Link href="/Blog">
+                <Link href="/Blogs">
                   <li className="hover:underline pb-2">Blogs</li>
                 </Link>
 
                 <Link href="/Contact">
-                  <li className="hover:underline pb-2">Contact Us</li>
+                  <li className="hover:underline pb-2">Contact</li>
                 </Link>
               </ul>
             </div>
@@ -93,7 +93,7 @@ const Footer = () => {
                 </Link>
 
                 <Link
-                  href="https://www.linkedin.com/company/n9-solution/posts/?feedView=all"
+                  href="https://www.linkedin.com/company/n9-solution/"
                   target="_blank"
                 >
                   <img
