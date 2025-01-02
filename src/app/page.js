@@ -1,7 +1,7 @@
 "use client"; // This marks the file as a client component
 
 import { useEffect, useState } from "react";
-
+import Head from 'next/head'
 import CourseList from "../components/CourseList";
 
 import { fetchMarkdownFile } from "../utils/fetchMarkdown";
@@ -31,6 +31,10 @@ export default function Home() {
   return (
 
     <div className="bg-[#F6F8FC] ">
+      
+      <meta name="google-site-verification" content="p6gjQyIVvK9VnIXujxcHUsnudhUcA6CT3oFrcIde-Hg" />
+      
+    
     
       <Hero2 />
       <Gifpage />
