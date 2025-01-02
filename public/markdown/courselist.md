@@ -41,7 +41,7 @@ courses:
   - imageUrl: "/SPSS.jpg"
     imageAlt: "SPSS"
     title: "SPSS"
-    courseDuration: "1 Months"
+    courseDuration: "16 Hours"
     syllabusUrl: "/Syllabus/SPSS"
     googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfuHU-I10NxIU1XH37Yv7lik4pp3aP3WS18QwiU-NWYhDRh8g/viewform?usp=sf_link"
 
