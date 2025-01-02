@@ -66,6 +66,7 @@ const DevOpsSyllabus = () => {
             activeTopic === title ? "rotate-180" : ""
           } transition-transform`}
         />
+        
         <h2 className="text-sm sm:text-base">{title}</h2>
       </div>
       {activeTopic === title && (
@@ -133,4 +134,6 @@ const DevOpsSyllabus = () => {
 };
 
 export default DevOpsSyllabus;
+
+
 

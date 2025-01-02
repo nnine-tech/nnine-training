@@ -3,7 +3,9 @@
 
 # Introduction to DevOps
 
-## Introduction [15 Min]
+## Introduction   [20 Min]    
+
+
 
 - Course Features and Test
 - What is DevOps?

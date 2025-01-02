@@ -98,12 +98,12 @@ const NavBar = () => {
             className={`${linkClasses("/About")} ${underlineClasses}`}
             onClick={() => handleLinkClick("/About")}
           >
-            About Us
+            About
           </Link>
           <Link
-            href="/Blog"
-            className={`${linkClasses("/Blog")} ${underlineClasses}`}
-            onClick={() => handleLinkClick("/Blog")}
+            href="/Blogs"
+            className={`${linkClasses("/Blogs")} ${underlineClasses}`}
+            onClick={() => handleLinkClick("/Blogs")}
           >
             Blogs
           </Link>
@@ -185,12 +185,12 @@ const NavBar = () => {
               className={`${linkClasses("/About")} py-2`}
               onClick={() => handleLinkClick("/About")}
             >
-              About Us
+              About
             </Link>
             <Link
-              href="/Blog"
-              className={`${linkClasses("/Blog")}  py-2`}
-              onClick={() => handleLinkClick("/Blog")}
+              href="/Blogs"
+              className={`${linkClasses("/Blogs")}  py-2`}
+              onClick={() => handleLinkClick("/Blogs")}
             >
               Blogs
             </Link>
