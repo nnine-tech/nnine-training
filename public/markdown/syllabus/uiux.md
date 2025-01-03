@@ -1,15 +1,15 @@
 
 
-## Overview
+## Overview [7 lectures • 1.5 hours]
 The UI/UX Design course takes a design-centric approach to user interface and user experience design, providing practical, skill-based training focused on visual communications rather than marketing or programming alone. You will learn all aspects of the UI/UX development process, from user research to establishing a project's strategy, scope, and information architecture, to generating sitemaps and wireframes.
 
-### Required Textbooks [7 lectures • 1.5 hours]
+### Required Textbooks 
 - Joel Marsh, *UX for Beginners*, O’Reilly
 - Jenifer Tidwell, Charles Brewer, and Aynne Valencia, *Designing Interfaces*, O’Reilly
 
 
 
----
+
 
 ## Unit 1: Design Fundamentals - User Interface [ 21 lectures • 8 hours]
 
@@ -45,7 +45,7 @@ The UI/UX Design course takes a design-centric approach to user interface and us
 
 
 
----
+
 
 ## Unit 2: Common Terms, Tools, and Frameworks in UX Design [ 18 lectures • 6 hours]
 
@@ -73,7 +73,7 @@ The UI/UX Design course takes a design-centric approach to user interface and us
 
 
 
----
+
 
 ## Unit 3: Advanced Figma Techniques [25 lectures • 9 hours]
 
@@ -109,7 +109,7 @@ The UI/UX Design course takes a design-centric approach to user interface and us
 
  
 
----
+
 
 ## Unit 4: Exporting and HTML Basics [ 18 lectures • 7 hours]
 
@@ -140,7 +140,7 @@ The UI/UX Design course takes a design-centric approach to user interface and us
 
 
 
----
+
 
 ## Learning Outcomes [5 lectures • 2 hours]
 
@@ -152,11 +152,11 @@ The UI/UX Design course takes a design-centric approach to user interface and us
 
 
 
----
 
-## Labs
 
-### Lectures [ 1 lecture • 6 hours]
+## Labs  [ 1 lecture • 6 hours]
+
+### Lectures
 - Lab assignments will focus on the practice and mastery of content covered in lectures and introduce critical and fundamental problem-solving techniques to the students.
 
 
