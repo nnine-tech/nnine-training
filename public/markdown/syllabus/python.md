@@ -61,7 +61,6 @@
 - Working with Branches and Merging Changes
 - Remote Repository Management: Pushing and Pulling Changes
 
----
 
 ## Data Analysis with Pandas [5 lectures • 2 hours  ]
 
@@ -72,7 +71,7 @@
 - Data Manipulation and Analysis with Pandas
 - Basic Data Visualization with Matplotlib, Seaborn, and Plotly
 
----
+
 
 ## Installing MySQL Server and MySQL Connector/Python [7 lectures • 1 hour  ]
 

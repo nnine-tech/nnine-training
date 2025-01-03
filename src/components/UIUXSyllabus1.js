@@ -189,7 +189,7 @@ const UIUXSyllabus = () => {
       <div className="w-full flex flex-col sm:mt-4">
         <div className="w-full flex flex-col mt-10 px-3 sm:px-6">
           <h1 className="font-bold text-xl sm:text-2xl md:text-3xl p-2 sm:p-4 font-Quicksand mb-4 sm:mb-6 text-[#003366]">
-            Flutter Course Syllabus
+            UIUX Course Syllabus
           </h1>
 
           <div className="relative w-full lg:w-[500px] xl:w-[700px] mx-auto lg:mx-0 mb-4 font-Quicksand">
