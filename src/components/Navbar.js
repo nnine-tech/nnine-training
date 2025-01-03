@@ -98,7 +98,7 @@ const NavBar = () => {
             className={`${linkClasses("/About")} ${underlineClasses}`}
             onClick={() => handleLinkClick("/About")}
           >
-            About
+            About Us
           </Link>
           <Link
             href="/Blogs"
@@ -185,7 +185,7 @@ const NavBar = () => {
               className={`${linkClasses("/About")} py-2`}
               onClick={() => handleLinkClick("/About")}
             >
-              About
+              About Us
             </Link>
             <Link
               href="/Blogs"
