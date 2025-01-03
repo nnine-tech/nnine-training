@@ -7,7 +7,7 @@ const DataScienceAndMLSyllabus = () => {
   const [activeTopic, setActiveTopic] = useState(null);
 
   useEffect(() => {
-    fetch("/markdown/syllabus/uiux.md")
+    fetch("/markdown/syllabus/datascienceandml.md")
       .then((response) => response.text())
       .then((data) => {
         setMarkdownContent(data);
